@@ -45,12 +45,7 @@ export default function HomeValuation() {
             <div className="valuation-widget-container">
               <h3>Instant Property Valuation</h3>
               <div className="realscout-container">
-                {/* Temporarily commented out until TypeScript types are resolved */}
-                {/* <realscout-home-value agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-home-value> */}
-                <div className="realscout-placeholder">
-                  <p>RealScout home value widget will be displayed here</p>
-                  <p>TypeScript types need to be resolved for build to succeed</p>
-                </div>
+                <realscout-home-value agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-home-value>
               </div>
             </div>
           </div>

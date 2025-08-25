@@ -54,19 +54,14 @@ export default function HomesForSale() {
             <div className="listings-widget">
               <h3>Live MLS Listings</h3>
               <div className="realscout-container">
-                {/* Temporarily commented out until TypeScript types are resolved */}
-                {/* <realscout-office-listings 
+                <realscout-office-listings 
                   agent-encoded-id="QWdlbnQtMjI1MDUw" 
                   sort-order="PRICE_HIGH" 
                   listing-status="For Sale,For Rent" 
                   property-types="MF,SFR,OTHER,LAL" 
                   price-min="500000" 
                   price-max="750000"
-                ></realscout-office-listings> */}
-                <div className="realscout-placeholder">
-                  <p>RealScout office listings will be displayed here</p>
-                  <p>TypeScript types need to be resolved for build to succeed</p>
-                </div>
+                ></realscout-office-listings>
               </div>
             </div>
 
