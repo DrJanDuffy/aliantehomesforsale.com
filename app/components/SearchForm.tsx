@@ -2,6 +2,22 @@
 
 import { useId, useState } from 'react';
 
+// TypeScript declarations for RealScout custom elements
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'realscout-simple-search': {
+        'agent-encoded-id': string;
+        [key: string]: any;
+      };
+      'realscout-advanced-search': {
+        'agent-encoded-id': string;
+        [key: string]: any;
+      };
+    }
+  }
+}
+
 interface SearchFormProps {
   priority?: boolean;
 }
