@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import SearchForm from './components/SearchForm';
 import StructuredData from './components/StructuredData';
 
 // Force Vercel rebuild - Real Estate Website Implementation
@@ -23,53 +22,14 @@ declare global {
 }
 
 export const metadata: Metadata = {
-  title: 'Aliante Homes for Sale | #1 North Las Vegas Real Estate Expert | 286+ Properties',
-  description:
-    'Find your dream home in Aliante, North Las Vegas. 286+ verified listings from $250K-$800K+. Expert local agents, virtual tours, instant alerts. Start your search now!',
-  keywords:
-    'Aliante homes for sale, North Las Vegas real estate, Aliante properties, Las Vegas homes, real estate agent',
-  authors: [{ name: 'DrJanDuffy' }],
+  title: 'Aliante Homes For Sale | Expert Real Estate Guidance Since 2018',
+  description: 'Find your perfect home in Aliante, North Las Vegas. 286+ verified listings with live MLS data. Expert local guidance since 2018.',
+  keywords: 'Aliante homes for sale, North Las Vegas real estate, Aliante realtor, MLS listings',
   openGraph: {
-    title: 'Aliante Homes for Sale | North Las Vegas Real Estate',
-    description:
-      '286+ homes for sale in Aliante, North Las Vegas. Expert local guidance, virtual tours, instant market updates.',
+    title: 'Aliante Homes For Sale | Expert Real Estate Guidance',
+    description: '286+ verified listings with live MLS data in Aliante, North Las Vegas',
     type: 'website',
     url: 'https://aliantehomesforsale.com',
-    images: [
-      {
-        url: '/images/aliante-homes-og.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Aliante Homes for Sale - North Las Vegas Real Estate',
-      },
-    ],
-    siteName: 'Aliante Homes For Sale',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Aliante Homes for Sale | North Las Vegas Real Estate',
-    description:
-      '286+ homes for sale in Aliante, North Las Vegas. Expert local guidance, virtual tours, instant market updates.',
-    images: ['/images/aliante-homes-og.jpg'],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  verification: {
-    google: 'your-google-verification-code',
-    yandex: 'your-yandex-verification-code',
-    yahoo: 'your-yahoo-verification-code',
-  },
-  alternates: {
-    canonical: 'https://aliantehomesforsale.com',
   },
 };
 
@@ -79,28 +39,19 @@ export default function Home() {
       <StructuredData type="RealEstateAgent" />
 
       <main className="homepage">
-        {/* Hero Section with CLS optimization */}
-        <section className="hero" style={{ minHeight: '60vh' }}>
+        {/* Hero Section */}
+        <section className="page-hero">
           <div className="hero-content">
-            <h1>Find Your Perfect Home in Aliante, North Las Vegas</h1>
+            <h1>Discover Beautiful Homes in Aliante, North Las Vegas</h1>
             <p className="hero-subtitle">
-              286+ verified properties | Expert local guidance since 2018 | Average 14 days to close
+              Expert guidance since 2018 | 286+ verified listings | Live MLS data updated every 15 minutes
             </p>
-
-            <SearchForm priority={true} />
-
-            <div className="trust-indicators">
-              <div className="stat">
-                <h2>500+</h2>
-                <h3>Happy Families</h3>
-              </div>
-              <div className="stat">
-                <h2>$2.5M+</h2>
-                <h3>Properties Sold</h3>
-              </div>
-              <div className="stat">
-                <h2>4.9★</h2>
-                <h3>Client Rating</h3>
+            
+            {/* Quick Search Widget */}
+            <div className="hero-search-widget">
+              <h3>Quick Search</h3>
+              <div className="realscout-container">
+                <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
               </div>
             </div>
           </div>

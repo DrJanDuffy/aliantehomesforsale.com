@@ -1135,26 +1135,70 @@ h3 {
 }
 
 /* RealScout Search Widget Styling */
-.realscout-search-widget {
+.realscout-search-widgets {
   margin-top: 2rem;
   padding-top: 2rem;
   border-top: 2px solid #E2E8F0;
 }
 
-.realscout-search-widget h3 {
+.realscout-search-widgets h3 {
   text-align: center;
   color: #0A2540;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   font-size: 1.5rem;
+}
+
+.realscout-widget-section {
+  margin-bottom: 2rem;
+}
+
+.realscout-widget-section h4 {
+  text-align: center;
+  color: #3A8DDE;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 
 .realscout-container realscout-advanced-search {
   --rs-as-button-text-color: #ffffff;
   --rs-as-background-color: #ffffff;
-  --rs-as-button-color: #3A8DDE;
-  --rs-as-widget-width: 100% !important;
+  --rs-as-button-color: #1c71c3;
+  --rs-as-widget-width: 500px !important;
   width: 100%;
   max-width: 100%;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.realscout-container realscout-simple-search {
+  --rs-ss-font-primary-color: #726a6d;
+  --rs-ss-searchbar-border-color: #1d6fbd;
+  --rs-ss-box-shadow: 0 10px 15px -3px #0000001a;
+  --rs-ss-widget-width: 500px !important;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero Search Widget Styling */
+.hero-search-widget {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.hero-search-widget h3 {
+  color: #0A2540;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.hero-search-widget .realscout-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }

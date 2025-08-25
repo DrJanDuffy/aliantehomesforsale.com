@@ -132,13 +132,24 @@ export default function SearchForm({ priority = false }: SearchFormProps) {
         </p>
       </form>
 
-      {/* RealScout Advanced Search Widget */}
-      <div className="realscout-search-widget">
-        <h3>Advanced MLS Search</h3>
-        <div className="realscout-container">
-          <realscout-advanced-search 
-            agent-encoded-id="QWdlbnQtMjI1MDUw"
-          ></realscout-advanced-search>
+      {/* RealScout Search Widgets */}
+      <div className="realscout-search-widgets">
+        <h3>Professional MLS Search Tools</h3>
+        
+        {/* Simple Search Widget */}
+        <div className="realscout-widget-section">
+          <h4>Quick Search</h4>
+          <div className="realscout-container">
+            <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
+          </div>
+        </div>
+
+        {/* Advanced Search Widget */}
+        <div className="realscout-widget-section">
+          <h4>Advanced Search</h4>
+          <div className="realscout-container">
+            <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
+          </div>
         </div>
       </div>
     </section>
