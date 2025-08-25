@@ -1,0 +1,22 @@
+# Global owners - these users will be requested for review on all pull requests
+* @DrJanDuffy
+
+# Specific file owners
+/app/ @DrJanDuffy
+/docs/ @DrJanDuffy
+/.github/ @DrJanDuffy
+/lib/ @DrJanDuffy
+/types/ @DrJanDuffy
+/public/ @DrJanDuffy
+
+# Configuration files
+*.config.* @DrJanDuffy
+*.json @DrJanDuffy
+*.ts @DrJanDuffy
+*.tsx @DrJanDuffy
+
+# Documentation
+*.md @DrJanDuffy
+README.md @DrJanDuffy
+CONTRIBUTING.md @DrJanDuffy
+CHANGELOG.md @DrJanDuffy

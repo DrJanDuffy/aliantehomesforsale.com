@@ -1,0 +1,166 @@
+# Dependabot configuration for automatic dependency updates
+# https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-dependabot-version-updates
+
+version: 2
+updates:
+  # Enable version updates for npm dependencies
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "America/Los_Angeles"
+    
+    # Group updates for better PR management
+    groups:
+      # Group all React-related packages
+      react-packages:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
+        update-types:
+          - "minor"
+          - "patch"
+      
+      # Group Next.js and related packages
+      nextjs-packages:
+        patterns:
+          - "next"
+          - "@next/*"
+        update-types:
+          - "minor"
+          - "patch"
+      
+      # Group development dependencies
+      dev-dependencies:
+        patterns:
+          - "@types/*"
+          - "eslint*"
+          - "prettier*"
+          - "biome*"
+          - "typescript"
+        update-types:
+          - "minor"
+          - "patch"
+      
+      # Group testing and build tools
+      build-tools:
+        patterns:
+          - "webpack*"
+          - "babel*"
+          - "jest*"
+          - "cypress*"
+        update-types:
+          - "minor"
+          - "patch"
+    
+    # Security update settings
+    open-pull-requests-limit: 10
+    assignees:
+      - "DrJanDuffy"
+    labels:
+      - "dependencies"
+      - "automated"
+    
+    # Commit message format
+    commit-message:
+      prefix: "chore"
+      prefix-development: "chore"
+      include: "scope"
+    
+    # Version update strategy
+    versioning-strategy: "auto"
+    
+    # Allow updates for all update types
+    allow:
+      - dependency-type: "direct"
+      - dependency-type: "indirect"
+    
+    # Ignore specific packages if needed
+    # ignore:
+    #   - dependency-name: "package-name"
+    #     versions: ["1.x", "2.x"]
+    
+    # Rebase strategy
+    rebase-strategy: "auto"
+    
+    # Target branch for updates
+    target-branch: "main"
+
+  # Enable version updates for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "America/Los_Angeles"
+    
+    # Group GitHub Actions updates
+    groups:
+      actions:
+        patterns:
+          - "actions/*"
+        update-types:
+          - "minor"
+          - "patch"
+    
+    # Settings for GitHub Actions
+    open-pull-requests-limit: 5
+    assignees:
+      - "DrJanDuffy"
+    labels:
+      - "github-actions"
+      - "automated"
+    
+    # Commit message format
+    commit-message:
+      prefix: "ci"
+      include: "scope"
+    
+    # Target branch
+    target-branch: "main"
+
+  # Enable version updates for Docker (if using containers)
+  # - package-ecosystem: "docker"
+  #   directory: "/"
+  #   schedule:
+  #     interval: "weekly"
+  #     day: "monday"
+  #     time: "09:00"
+  #     timezone: "America/Los_Angeles"
+  #   
+  #   # Docker update settings
+  #   open-pull-requests-limit: 3
+  #   reviewers:
+  #     - "DrJanDuffy"
+  #   assignees:
+  #     - "DrJanDuffy"
+  #   labels:
+  #     - "docker"
+  #     - "automated"
+  #   
+  #   # Commit message format
+  #   commit-message:
+  #     prefix: "ci"
+  #     include: "scope"
+  #   
+  #   # Target branch
+  #   target-branch: "main"
+
+# Global settings
+# registries:
+#   # Configure npm registry if using private packages
+#   npmjs:
+#     type: "npm-registry"
+#     url: "https://registry.npmjs.org"
+#     token: "${{ secrets.NPM_TOKEN }}"
+
+# Ignore specific dependencies globally
+# ignore:
+#   - dependency-name: "package-name"
+#     reason: "Breaking changes in v2"
+#     versions: ["2.x"]
