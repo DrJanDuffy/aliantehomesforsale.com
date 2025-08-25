@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import SearchForm from './components/SearchForm';
 import StructuredData from './components/StructuredData';
 
+// Force Vercel rebuild - Real Estate Website Implementation
 // TypeScript declarations for RealScout custom elements
 declare global {
   namespace JSX {
