@@ -24,6 +24,7 @@
       "@/lib/*": ["./lib/*"],
       "@/types/*": ["./types/*"]
     },
+    "typeRoots": ["./types", "./node_modules/@types"],
     // Advanced TypeScript optimizations
     "forceConsistentCasingInFileNames": true,
     "noUnusedLocals": true,
@@ -45,6 +46,12 @@
     "downlevelIteration": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts", 
+    "**/*.ts", 
+    "**/*.tsx", 
+    ".next/types/**/*.ts",
+    "types/**/*.d.ts"
+  ],
   "exclude": ["node_modules"]
 }
