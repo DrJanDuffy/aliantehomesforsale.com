@@ -225,3 +225,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Made with ❤️ by the Aliante Homes Team**
 
 *Built for the future of real estate technology*
+# Trigger Vercel deployment
