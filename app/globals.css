@@ -1202,3 +1202,28 @@ h3 {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
+
+/* RealScout Placeholder Styling */
+.realscout-placeholder {
+  background: #f8f9fa;
+  border: 2px dashed #dee2e6;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  color: #6c757d;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.realscout-placeholder p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.realscout-placeholder p:first-child {
+  font-weight: 600;
+  color: #495057;
+}
