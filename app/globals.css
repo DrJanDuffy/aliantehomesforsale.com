@@ -1096,3 +1096,65 @@ h3 {
     grid-template-columns: 1fr;
   }
 }
+
+/* RealScout Widget Styling */
+.realscout-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin: 1rem 0;
+  min-height: 400px;
+}
+
+.realscout-container realscout-office-listings {
+  --rs-listing-divider-color: rgb(101, 141, 172);
+  --rs-primary-color: #0A2540;
+  --rs-secondary-color: #3A8DDE;
+  --rs-accent-color: #16B286;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure RealScout widgets are responsive */
+.realscout-container realscout-office-listings {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Loading state for RealScout widgets */
+.realscout-container:empty::before {
+  content: "Loading MLS listings...";
+  display: block;
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* RealScout Search Widget Styling */
+.realscout-search-widget {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid #E2E8F0;
+}
+
+.realscout-search-widget h3 {
+  text-align: center;
+  color: #0A2540;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.realscout-container realscout-advanced-search {
+  --rs-as-button-text-color: #ffffff;
+  --rs-as-background-color: #ffffff;
+  --rs-as-button-color: #3A8DDE;
+  --rs-as-widget-width: 100% !important;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

@@ -53,17 +53,15 @@ export default function HomesForSale() {
             {/* RealScout Listings Widget */}
             <div className="listings-widget">
               <h3>Live MLS Listings</h3>
-              <div className="realscout-placeholder">
-                <p>RealScout listings will be displayed here</p>
-                <p>Configure RealScout integration to show live MLS data</p>
-                <div className="widget-config">
-                  <h4>Widget Configuration Needed:</h4>
-                  <ul>
-                    <li>Agent ID: [Your RealScout Agent ID]</li>
-                    <li>Office ID: [Your RealScout Office ID]</li>
-                    <li>MLS Integration: [Configure your MLS feeds]</li>
-                  </ul>
-                </div>
+              <div className="realscout-container">
+                <realscout-office-listings 
+                  agent-encoded-id="QWdlbnQtMjI1MDUw" 
+                  sort-order="PRICE_HIGH" 
+                  listing-status="For Sale,For Rent" 
+                  property-types="MF,SFR,OTHER,LAL" 
+                  price-min="500000" 
+                  price-max="750000"
+                ></realscout-office-listings>
               </div>
             </div>
 

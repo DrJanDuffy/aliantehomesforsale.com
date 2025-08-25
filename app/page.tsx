@@ -114,18 +114,30 @@ export default function Home() {
           {/* Premium Properties */}
           <div className="listings-section">
             <h3>Premium Homes ($500K - $750K)</h3>
-            <div className="placeholder-listings">
-              <p>RealScout listings will be displayed here</p>
-              <p>Configure RealScout integration to show live MLS data</p>
+            <div className="realscout-container">
+              <realscout-office-listings 
+                agent-encoded-id="QWdlbnQtMjI1MDUw" 
+                sort-order="PRICE_HIGH" 
+                listing-status="For Sale" 
+                property-types="SFR" 
+                price-min="500000" 
+                price-max="750000"
+              ></realscout-office-listings>
             </div>
           </div>
 
           {/* Mid-Range Properties */}
           <div className="listings-section">
             <h3>Family Homes ($350K - $500K)</h3>
-            <div className="placeholder-listings">
-              <p>RealScout listings will be displayed here</p>
-              <p>Configure RealScout integration to show live MLS data</p>
+            <div className="realscout-container">
+              <realscout-office-listings 
+                agent-encoded-id="QWdlbnQtMjI1MDUw" 
+                sort-order="PRICE_HIGH" 
+                listing-status="For Sale" 
+                property-types="SFR" 
+                price-min="350000" 
+                price-max="500000"
+              ></realscout-office-listings>
             </div>
           </div>
 

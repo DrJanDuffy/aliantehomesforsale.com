@@ -16,7 +16,7 @@ export default function SearchForm({ priority = false }: SearchFormProps) {
     maxPrice: '',
     propertyType: '',
     bedrooms: '',
-    location: '',
+    location: ''
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -25,7 +25,7 @@ export default function SearchForm({ priority = false }: SearchFormProps) {
     if (typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('event', 'search', {
         search_term: JSON.stringify(searchParams),
-        event_category: 'property_search',
+        event_category: 'property_search'
       });
     }
   };
@@ -45,7 +45,7 @@ export default function SearchForm({ priority = false }: SearchFormProps) {
               id={locationId}
               name="location"
               value={searchParams.location}
-              onChange={(e) => setSearchParams({ ...searchParams, location: e.target.value })}
+              onChange={(e) => setSearchParams({...searchParams, location: e.target.value})}
             >
               <option value="">All Aliante</option>
               <option value="gated">Gated Communities</option>
@@ -64,7 +64,7 @@ export default function SearchForm({ priority = false }: SearchFormProps) {
               id={propertyTypeId}
               name="propertyType"
               value={searchParams.propertyType}
-              onChange={(e) => setSearchParams({ ...searchParams, propertyType: e.target.value })}
+              onChange={(e) => setSearchParams({...searchParams, propertyType: e.target.value})}
             >
               <option value="">All Types</option>
               <option value="single-family">Single Family</option>
@@ -81,7 +81,7 @@ export default function SearchForm({ priority = false }: SearchFormProps) {
                 name="minPrice"
                 aria-label="Minimum price"
                 value={searchParams.minPrice}
-                onChange={(e) => setSearchParams({ ...searchParams, minPrice: e.target.value })}
+                onChange={(e) => setSearchParams({...searchParams, minPrice: e.target.value})}
               >
                 <option value="">Min Price</option>
                 <option value="250000">$250,000</option>
@@ -93,7 +93,7 @@ export default function SearchForm({ priority = false }: SearchFormProps) {
                 name="maxPrice"
                 aria-label="Maximum price"
                 value={searchParams.maxPrice}
-                onChange={(e) => setSearchParams({ ...searchParams, maxPrice: e.target.value })}
+                onChange={(e) => setSearchParams({...searchParams, maxPrice: e.target.value})}
               >
                 <option value="">Max Price</option>
                 <option value="400000">$400,000</option>
@@ -112,7 +112,7 @@ export default function SearchForm({ priority = false }: SearchFormProps) {
               id={bedroomsId}
               name="bedrooms"
               value={searchParams.bedrooms}
-              onChange={(e) => setSearchParams({ ...searchParams, bedrooms: e.target.value })}
+              onChange={(e) => setSearchParams({...searchParams, bedrooms: e.target.value})}
             >
               <option value="">Any</option>
               <option value="2">2+ Beds</option>
@@ -131,6 +131,16 @@ export default function SearchForm({ priority = false }: SearchFormProps) {
           Get instant email alerts for new listings matching your criteria
         </p>
       </form>
+
+      {/* RealScout Advanced Search Widget */}
+      <div className="realscout-search-widget">
+        <h3>Advanced MLS Search</h3>
+        <div className="realscout-container">
+          <realscout-advanced-search 
+            agent-encoded-id="QWdlbnQtMjI1MDUw"
+          ></realscout-advanced-search>
+        </div>
+      </div>
     </section>
   );
 }
