@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "build": "next build",
     "start": "next start",
     "format": "biome format --write .",
     "format:check": "biome format .",
@@ -37,6 +37,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@vercel/analytics": "^1.5.0",
+    "critters": "^0.0.23",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

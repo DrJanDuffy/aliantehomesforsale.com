@@ -1,5 +1,5 @@
-import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+import { NextResponse } from 'next/server';
 
 export function middleware(request: NextRequest) {
   const response = NextResponse.next();
@@ -12,18 +12,12 @@ export function middleware(request: NextRequest) {
 
   // Advanced caching for static assets
   if (request.nextUrl.pathname.startsWith('/_next/static/')) {
-    response.headers.set(
-      'Cache-Control',
-      'public, max-age=31536000, immutable'
-    );
+    response.headers.set('Cache-Control', 'public, max-age=31536000, immutable');
   }
 
   // API route optimizations
   if (request.nextUrl.pathname.startsWith('/api/')) {
-    response.headers.set(
-      'Cache-Control',
-      'public, max-age=0, must-revalidate'
-    );
+    response.headers.set('Cache-Control', 'public, max-age=0, must-revalidate');
   }
 
   // Security headers
@@ -37,8 +31,9 @@ export function middleware(request: NextRequest) {
   response.headers.set('X-Response-Time', `${Date.now() - start}ms`);
 
   // Rate limiting (basic implementation)
-  const ip = request.ip || request.headers.get('x-forwarded-for') || 'unknown';
-  
+  const ip =
+    request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown';
+
   // You can implement more sophisticated rate limiting here
   // For now, we'll just add the header
   response.headers.set('X-RateLimit-Limit', '1000');

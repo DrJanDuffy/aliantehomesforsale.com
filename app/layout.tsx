@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
+import Navigation from './components/Navigation';
 import PerformanceMonitor from './components/PerformanceMonitor';
 
 const geistSans = Geist({
@@ -75,14 +76,15 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* RealScout Integration - Single script tag for all widgets */}
-        <script 
-          src="https://em.realscout.com/widgets/realscout-web-components.umd.js" 
+        <script
+          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
           type="module"
         />
-        
+
         {/* Critical CSS inline for performance */}
-        <style dangerouslySetInnerHTML={{
-          __html: `
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
             /* Critical above-the-fold styles */
             body { margin: 0; font-family: system-ui; }
             .hero { min-height: 60vh; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
@@ -120,14 +122,15 @@ export default function RootLayout({
               margin: 0 auto;
               border-radius: 8px;
             }
-          `
-        }} />
+          `,
+          }}
+        />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Navigation />
         {children}
         <PerformanceMonitor />
-        
+
         {/* Footer */}
         <footer className="main-footer">
           <section className="footer-content">
@@ -135,7 +138,7 @@ export default function RootLayout({
               <div className="footer-section">
                 <h2>Aliante Real Estate</h2>
                 <p>Your trusted partner for Aliante homes since 2018</p>
-                
+
                 <div className="contact-info">
                   <h3>Contact Information</h3>
                   <p>📞 (702) 555-0123</p>
@@ -144,39 +147,65 @@ export default function RootLayout({
                   <p>North Las Vegas, NV 89084</p>
                 </div>
               </div>
-              
+
               <div className="footer-section">
                 <h3>New Construction</h3>
                 <ul>
-                  <li><a href="/builders">All Builders Guide</a></li>
-                  <li><a href="/builders/lennar">Lennar (#1 Volume)</a></li>
-                  <li><a href="/builders/dr-horton">D.R. Horton (Tule Springs)</a></li>
-                  <li><a href="/builders/tri-pointe">Tri Pointe (5-Star Rating)</a></li>
-                  <li><a href="/builders/pulte-del-webb">Del Webb (55+)</a></li>
+                  <li>
+                    <a href="/builders">All Builders Guide</a>
+                  </li>
+                  <li>
+                    <a href="/builders/lennar">Lennar (#1 Volume)</a>
+                  </li>
+                  <li>
+                    <a href="/builders/dr-horton">D.R. Horton (Tule Springs)</a>
+                  </li>
+                  <li>
+                    <a href="/builders/tri-pointe">Tri Pointe (5-Star Rating)</a>
+                  </li>
+                  <li>
+                    <a href="/builders/pulte-del-webb">Del Webb (55+)</a>
+                  </li>
                 </ul>
               </div>
-              
+
               <div className="footer-section">
                 <h3>Neighborhoods</h3>
                 <ul>
-                  <li><a href="/neighborhoods/prominence">The Prominence</a></li>
-                  <li><a href="/neighborhoods/desert-willows">Desert Willows</a></li>
-                  <li><a href="/neighborhoods/club-aliante">Club Aliante</a></li>
-                  <li><a href="/neighborhoods/paseos">The Paseos</a></li>
+                  <li>
+                    <a href="/neighborhoods/prominence">The Prominence</a>
+                  </li>
+                  <li>
+                    <a href="/neighborhoods/desert-willows">Desert Willows</a>
+                  </li>
+                  <li>
+                    <a href="/neighborhoods/club-aliante">Club Aliante</a>
+                  </li>
+                  <li>
+                    <a href="/neighborhoods/paseos">The Paseos</a>
+                  </li>
                 </ul>
               </div>
-              
+
               <div className="footer-section">
                 <h3>Resources</h3>
                 <ul>
-                  <li><a href="/market-report">Market Report</a></li>
-                  <li><a href="/mortgage-calculator">Mortgage Calculator</a></li>
-                  <li><a href="/home-valuation">Home Valuation</a></li>
-                  <li><a href="/buyer-guide">First-Time Buyer Guide</a></li>
+                  <li>
+                    <a href="/market-report">Market Report</a>
+                  </li>
+                  <li>
+                    <a href="/mortgage-calculator">Mortgage Calculator</a>
+                  </li>
+                  <li>
+                    <a href="/home-valuation">Home Valuation</a>
+                  </li>
+                  <li>
+                    <a href="/buyer-guide">First-Time Buyer Guide</a>
+                  </li>
                 </ul>
               </div>
             </div>
-            
+
             <div className="footer-bottom">
               <p>&copy; 2024 Aliante Real Estate. Licensed Real Estate Brokerage.</p>
               <p>Nevada Real Estate License #B.0123456.LLC</p>

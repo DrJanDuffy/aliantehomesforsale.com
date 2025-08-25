@@ -13,7 +13,8 @@ export const appConfig = {
   seo: {
     defaultTitle: 'Aliante Homes For Sale - Las Vegas Real Estate',
     titleTemplate: '%s | Aliante Homes For Sale',
-    defaultDescription: 'Discover beautiful homes for sale in Aliante, Las Vegas. Find your dream home with our comprehensive real estate listings and expert guidance.',
+    defaultDescription:
+      'Discover beautiful homes for sale in Aliante, Las Vegas. Find your dream home with our comprehensive real estate listings and expert guidance.',
     siteUrl: 'https://aliantehomesforsale.com',
     openGraph: {
       type: 'website',
@@ -89,7 +90,7 @@ export const appConfig = {
 // Environment-specific overrides
 export const getConfig = () => {
   const baseConfig = appConfig;
-  
+
   if (process.env.NODE_ENV === 'development') {
     return {
       ...baseConfig,
@@ -107,7 +108,7 @@ export const getConfig = () => {
       },
     };
   }
-  
+
   if (process.env.NODE_ENV === 'production') {
     return {
       ...baseConfig,
@@ -118,6 +119,6 @@ export const getConfig = () => {
       },
     };
   }
-  
+
   return baseConfig;
 };

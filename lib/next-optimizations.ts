@@ -3,9 +3,7 @@
 // Next.js Optimization Utilities
 
 // Lazy loading with error boundary
-export function createLazyComponent<T>(
-  importFunc: () => Promise<{ default: T }>
-) {
+export function createLazyComponent<T>(importFunc: () => Promise<{ default: T }>) {
   return function LazyWrapper() {
     // This function returns a promise that resolves to the component
     return importFunc();
@@ -13,9 +11,7 @@ export function createLazyComponent<T>(
 }
 
 // Dynamic imports with preloading
-export function preloadComponent<T>(
-  importFunc: () => Promise<{ default: T }>
-) {
+export function preloadComponent<T>(importFunc: () => Promise<{ default: T }>) {
   return () => {
     const promise = importFunc();
     promise.then(() => {
@@ -59,11 +55,11 @@ export const performanceUtils = {
     const start = performance.now();
     const result = fn();
     const end = performance.now();
-    
+
     if (process.env.NODE_ENV === 'development') {
       console.log(`${name} took ${end - start}ms`);
     }
-    
+
     return result;
   },
 
@@ -89,7 +85,9 @@ export const performanceUtils = {
       if (!inThrottle) {
         func(...args);
         inThrottle = true;
-        setTimeout(() => (inThrottle = false), limit);
+        setTimeout(() => {
+          inThrottle = false;
+        }, limit);
       }
     };
   },
@@ -153,25 +151,28 @@ export const cacheUtils = {
   // Simple in-memory cache
   createCache: <T>(maxSize: number = 100) => {
     const cache = new Map<string, { value: T; timestamp: number }>();
-    
+
     return {
       get: (key: string): T | undefined => {
         const item = cache.get(key);
-        if (item && Date.now() - item.timestamp < 5 * 60 * 1000) { // 5 minutes
+        if (item && Date.now() - item.timestamp < 5 * 60 * 1000) {
+          // 5 minutes
           return item.value;
         }
         cache.delete(key);
         return undefined;
       },
-      
+
       set: (key: string, value: T): void => {
         if (cache.size >= maxSize) {
           const firstKey = cache.keys().next().value;
-          cache.delete(firstKey);
+          if (firstKey) {
+            cache.delete(firstKey);
+          }
         }
         cache.set(key, { value, timestamp: Date.now() });
       },
-      
+
       clear: (): void => {
         cache.clear();
       },

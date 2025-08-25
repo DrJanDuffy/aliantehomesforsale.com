@@ -1,15 +1,37 @@
-import { Metadata } from 'next'
-import SearchForm from '../components/SearchForm'
-import StructuredData from '../components/StructuredData'
+import type { Metadata } from 'next';
+import SearchForm from './components/SearchForm';
+import StructuredData from './components/StructuredData';
+
+// TypeScript declarations for RealScout custom elements
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'realscout-office-listings': React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLElement>,
+        HTMLElement
+      > & {
+        'agent-encoded-id'?: string;
+        'sort-order'?: string;
+        'listing-status'?: string;
+        'property-types'?: string;
+        'price-min'?: string;
+        'price-max'?: string;
+      };
+    }
+  }
+}
 
 export const metadata: Metadata = {
   title: 'Aliante Homes for Sale | #1 North Las Vegas Real Estate Expert | 286+ Properties',
-  description: 'Find your dream home in Aliante, North Las Vegas. 286+ verified listings from $250K-$800K+. Expert local agents, virtual tours, instant alerts. Start your search now!',
-  keywords: 'Aliante homes for sale, North Las Vegas real estate, Aliante properties, Las Vegas homes, real estate agent',
+  description:
+    'Find your dream home in Aliante, North Las Vegas. 286+ verified listings from $250K-$800K+. Expert local agents, virtual tours, instant alerts. Start your search now!',
+  keywords:
+    'Aliante homes for sale, North Las Vegas real estate, Aliante properties, Las Vegas homes, real estate agent',
   authors: [{ name: 'DrJanDuffy' }],
   openGraph: {
     title: 'Aliante Homes for Sale | North Las Vegas Real Estate',
-    description: '286+ homes for sale in Aliante, North Las Vegas. Expert local guidance, virtual tours, instant market updates.',
+    description:
+      '286+ homes for sale in Aliante, North Las Vegas. Expert local guidance, virtual tours, instant market updates.',
     type: 'website',
     url: 'https://aliantehomesforsale.com',
     images: [
@@ -17,16 +39,17 @@ export const metadata: Metadata = {
         url: '/images/aliante-homes-og.jpg',
         width: 1200,
         height: 630,
-        alt: 'Aliante Homes for Sale - North Las Vegas Real Estate'
-      }
+        alt: 'Aliante Homes for Sale - North Las Vegas Real Estate',
+      },
     ],
-    siteName: 'Aliante Homes For Sale'
+    siteName: 'Aliante Homes For Sale',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Aliante Homes for Sale | North Las Vegas Real Estate',
-    description: '286+ homes for sale in Aliante, North Las Vegas. Expert local guidance, virtual tours, instant market updates.',
-    images: ['/images/aliante-homes-og.jpg']
+    description:
+      '286+ homes for sale in Aliante, North Las Vegas. Expert local guidance, virtual tours, instant market updates.',
+    images: ['/images/aliante-homes-og.jpg'],
   },
   robots: {
     index: true,
@@ -36,33 +59,35 @@ export const metadata: Metadata = {
       follow: true,
       'max-video-preview': -1,
       'max-image-preview': 'large',
-      'max-snippet': -1
-    }
+      'max-snippet': -1,
+    },
   },
   verification: {
     google: 'your-google-verification-code',
     yandex: 'your-yandex-verification-code',
-    yahoo: 'your-yahoo-verification-code'
+    yahoo: 'your-yahoo-verification-code',
   },
   alternates: {
-    canonical: 'https://aliantehomesforsale.com'
-  }
-}
+    canonical: 'https://aliantehomesforsale.com',
+  },
+};
 
 export default function Home() {
   return (
     <>
       <StructuredData type="RealEstateAgent" />
-      
+
       <main className="homepage">
         {/* Hero Section with CLS optimization */}
         <section className="hero" style={{ minHeight: '60vh' }}>
           <div className="hero-content">
             <h1>Find Your Perfect Home in Aliante, North Las Vegas</h1>
-            <p className="hero-subtitle">286+ verified properties | Expert local guidance since 2018 | Average 14 days to close</p>
-            
+            <p className="hero-subtitle">
+              286+ verified properties | Expert local guidance since 2018 | Average 14 days to close
+            </p>
+
             <SearchForm priority={true} />
-            
+
             <div className="trust-indicators">
               <div className="stat">
                 <h2>500+</h2>
@@ -84,33 +109,25 @@ export default function Home() {
         <section className="featured-properties">
           <h2>Featured Aliante Properties - Live MLS Listings</h2>
           <p>Updated every 15 minutes | Directly from MLS</p>
-          
+
           {/* Premium Properties */}
           <div className="listings-section">
             <h3>Premium Homes ($500K - $750K)</h3>
-            <realscout-office-listings 
-              agent-encoded-id="QWdlbnQtMjI1MDUw" 
-              sort-order="PRICE_HIGH" 
-              listing-status="For Sale" 
-              property-types="SFR,MF" 
-              price-min="500000" 
-              price-max="750000"
-            ></realscout-office-listings>
+            <div className="placeholder-listings">
+              <p>RealScout listings will be displayed here</p>
+              <p>Configure RealScout integration to show live MLS data</p>
+            </div>
           </div>
-          
+
           {/* Mid-Range Properties */}
           <div className="listings-section">
             <h3>Family Homes ($350K - $500K)</h3>
-            <realscout-office-listings 
-              agent-encoded-id="QWdlbnQtMjI1MDUw" 
-              sort-order="NEWEST" 
-              listing-status="For Sale" 
-              property-types="SFR" 
-              price-min="350000" 
-              price-max="500000"
-            ></realscout-office-listings>
+            <div className="placeholder-listings">
+              <p>RealScout listings will be displayed here</p>
+              <p>Configure RealScout integration to show live MLS data</p>
+            </div>
           </div>
-          
+
           <div className="view-all-properties">
             <a href="/homes-for-sale" className="cta-button large">
               View All 286+ Available Properties
@@ -124,23 +141,33 @@ export default function Home() {
         {/* Why Choose Aliante - E-A-T Content */}
         <section className="why-aliante">
           <h2>Why Aliante is North Las Vegas's #1 Choice for Families</h2>
-          
+
           <div className="benefits-grid">
             <article>
               <h3>Master-Planned Community Excellence</h3>
-              <p>Developed by Del Webb and Richmond American Homes since 2003, Aliante offers planned infrastructure, maintained green spaces, and family-focused amenities that retain property value.</p>
+              <p>
+                Developed by Del Webb and Richmond American Homes since 2003, Aliante offers planned
+                infrastructure, maintained green spaces, and family-focused amenities that retain
+                property value.
+              </p>
               <a href="/neighborhoods">Explore Neighborhoods</a>
             </article>
-            
+
             <article>
               <h3>Top-Rated Schools & Safety</h3>
-              <p>CCSD schools with 8-10 star ratings. Crime rates 23% below Nevada average. Family-friendly streets with sidewalks and street lighting throughout.</p>
+              <p>
+                CCSD schools with 8-10 star ratings. Crime rates 23% below Nevada average.
+                Family-friendly streets with sidewalks and street lighting throughout.
+              </p>
               <a href="/schools-safety">School Reports</a>
             </article>
-            
+
             <article>
               <h3>Investment Growth Potential</h3>
-              <p>Home values increased 45% over past 5 years. Strategic location with planned infrastructure improvements and job growth in North Las Vegas corridor.</p>
+              <p>
+                Home values increased 45% over past 5 years. Strategic location with planned
+                infrastructure improvements and job growth in North Las Vegas corridor.
+              </p>
               <a href="/market-report">View Market Data</a>
             </article>
           </div>
@@ -149,7 +176,7 @@ export default function Home() {
         {/* Property Types with Internal Linking */}
         <section className="property-types">
           <h2>Explore Aliante's Diverse Housing Options</h2>
-          
+
           <div className="types-grid">
             <div className="property-type">
               <h3>Gated Communities</h3>
@@ -163,7 +190,7 @@ export default function Home() {
                 View 86 Gated Homes
               </a>
             </div>
-            
+
             <div className="property-type">
               <h3>Golf Course Properties</h3>
               <p>32 properties available | $550K-$1.2M average</p>
@@ -176,7 +203,7 @@ export default function Home() {
                 View 32 Golf Homes
               </a>
             </div>
-            
+
             <div className="property-type">
               <h3>Sun City Aliante (55+)</h3>
               <p>41 properties available | $380K-$650K average</p>
@@ -195,7 +222,7 @@ export default function Home() {
         {/* Local Market Insights - Fresh Content */}
         <section className="market-insights">
           <h2>Aliante Real Estate Market - December 2024</h2>
-          
+
           <div className="insights-grid">
             <div className="insight">
               <h3>Current Inventory</h3>
@@ -214,13 +241,19 @@ export default function Home() {
               <p>Lennar (#1 - 2,143 sales), D.R. Horton (#2 - 1,910 sales)</p>
             </div>
           </div>
-          
+
           <div className="builder-highlights">
             <h3>Top Builder Activity in Aliante Area</h3>
-            <p><strong>Villages at Tule Springs</strong> - Major D.R. Horton development with Heartland communities</p>
-            <p><strong>Sun City Aliante</strong> - Continued Pulte/Del Webb expansion for active adults 55+</p>
+            <p>
+              <strong>Villages at Tule Springs</strong> - Major D.R. Horton development with
+              Heartland communities
+            </p>
+            <p>
+              <strong>Sun City Aliante</strong> - Continued Pulte/Del Webb expansion for active
+              adults 55+
+            </p>
           </div>
-          
+
           <a href="/market-report" className="cta-button">
             Get Detailed Market Report
           </a>
@@ -232,35 +265,53 @@ export default function Home() {
         {/* Trust & Authority Section */}
         <section className="trust-authority">
           <h2>Your Trusted Aliante Real Estate Partners</h2>
-          
+
           <div className="credentials">
             <div className="credential">
               <h3>Local Expertise Since 2018</h3>
-              <p>6+ years specializing exclusively in Aliante and North Las Vegas properties with deep builder relationships.</p>
+              <p>
+                6+ years specializing exclusively in Aliante and North Las Vegas properties with
+                deep builder relationships.
+              </p>
             </div>
             <div className="credential">
               <h3>Builder Intelligence Network</h3>
-              <p>Direct relationships with all major builders - Lennar, D.R. Horton, Tri Pointe, Del Webb. We track incentives, lot premiums, and construction schedules.</p>
+              <p>
+                Direct relationships with all major builders - Lennar, D.R. Horton, Tri Pointe, Del
+                Webb. We track incentives, lot premiums, and construction schedules.
+              </p>
             </div>
             <div className="credential">
               <h3>500+ Successful Transactions</h3>
-              <p>Proven track record including new construction, resales, and builder negotiations with verified client testimonials.</p>
+              <p>
+                Proven track record including new construction, resales, and builder negotiations
+                with verified client testimonials.
+              </p>
             </div>
           </div>
-          
+
           <div className="builder-expertise-highlight">
             <h3>🏗️ New Construction Specialists</h3>
             <p>We monitor all active builders in North Las Vegas and can help you navigate:</p>
             <ul>
-              <li>✅ <strong>Builder incentives & negotiations</strong> (average $15K+ in additional credits)</li>
-              <li>✅ <strong>Lot selection strategy</strong> (premium vs. standard placement)</li>
-              <li>✅ <strong>Construction timeline management</strong> (avoid delays & issues)</li>
-              <li>✅ <strong>Quality control inspections</strong> (pre-drywall, pre-close walkthroughs)</li>
+              <li>
+                ✅ <strong>Builder incentives & negotiations</strong> (average $15K+ in additional
+                credits)
+              </li>
+              <li>
+                ✅ <strong>Lot selection strategy</strong> (premium vs. standard placement)
+              </li>
+              <li>
+                ✅ <strong>Construction timeline management</strong> (avoid delays & issues)
+              </li>
+              <li>
+                ✅ <strong>Quality control inspections</strong> (pre-drywall, pre-close
+                walkthroughs)
+              </li>
             </ul>
           </div>
         </section>
       </main>
     </>
-  )
+  );
 }
-// Force Vercel deployment - 08/25/2025 10:43:03

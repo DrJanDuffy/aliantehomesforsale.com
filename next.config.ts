@@ -25,7 +25,7 @@ const nextConfig: NextConfig = {
     },
     // Advanced Turbopack optimizations
     resolveAlias: {
-      'react': require.resolve('react'),
+      react: require.resolve('react'),
       'react-dom': require.resolve('react-dom'),
     },
   },
