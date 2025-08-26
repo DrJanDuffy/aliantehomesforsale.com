@@ -293,6 +293,83 @@ export default function RootLayout({
             </div>
           </section>
         </footer>
+        {/* Script verification */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Comprehensive RealScout widget troubleshooting
+              console.log('Starting RealScout widget troubleshooting...');
+              
+              setTimeout(() => {
+                const scriptStatus = document.getElementById('script-status');
+                const officeWidget = document.querySelector('realscout-office-listings');
+                const searchWidget = document.querySelector('realscout-simple-search');
+                
+                console.log('Office widget element:', officeWidget);
+                console.log('Search widget element:', searchWidget);
+                
+                // Check if RealScout library is available
+                if (typeof window.realscout !== 'undefined') {
+                  console.log('RealScout library found:', window.realscout);
+                  scriptStatus.textContent = 'RealScout library loaded successfully';
+                  scriptStatus.style.color = 'green';
+                  
+                  // Try to manually initialize widgets
+                  if (officeWidget) {
+                    console.log('Attempting to initialize office listings widget...');
+                    // Force a re-render
+                    officeWidget.style.display = 'none';
+                    setTimeout(() => {
+                      officeWidget.style.display = 'block';
+                      console.log('Office widget re-rendered');
+                    }, 100);
+                  }
+                  
+                  if (searchWidget) {
+                    console.log('Attempting to initialize simple search widget...');
+                    // Force a re-render
+                    searchWidget.style.display = 'none';
+                    setTimeout(() => {
+                      searchWidget.style.display = 'block';
+                      console.log('Search widget re-rendered');
+                    }, 100);
+                  }
+                  
+                } else {
+                  console.log('RealScout library not found in window object');
+                  scriptStatus.textContent = 'RealScout library not found';
+                  scriptStatus.style.color = 'red';
+                  
+                  // Check if the script loaded but didn't attach to window
+                  const script = document.querySelector('script[src*="realscout-web-components.umd.js"]');
+                  if (script) {
+                    console.log('RealScout script tag found:', script);
+                    scriptStatus.textContent = 'Script tag found but library not accessible';
+                  }
+                }
+                
+                // Check for any JavaScript errors
+                window.addEventListener('error', function(e) {
+                  console.error('JavaScript error detected:', e.error);
+                  if (scriptStatus) {
+                    scriptStatus.textContent = 'JavaScript error: ' + e.message;
+                    scriptStatus.style.color = 'red';
+                  }
+                });
+                
+                // Check for unhandled promise rejections
+                window.addEventListener('unhandledrejection', function(e) {
+                  console.error('Unhandled promise rejection:', e.reason);
+                  if (scriptStatus) {
+                    scriptStatus.textContent = 'Promise error: ' + e.reason;
+                    scriptStatus.style.color = 'red';
+                  }
+                });
+                
+              }, 3000);
+            `,
+          }}
+        />
       </body>
     </html>
   );
