@@ -10,22 +10,10 @@ export default function Home() {
     <>
       <StructuredData type="RealEstateAgent" />
       
-      {/* RealScout Widgets */}
-      <script src="https://em.realscout.com/widgets/realscout-web-components.umd.js" type="module"></script>
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-            realscout-office-listings {
-              --rs-listing-divider-color: rgb(101, 141, 172);
-              width: 100%;
-            }
-          `,
-        }}
-      />
-      
       {/* Additional structured data for homepage */}
       <script
         type="application/ld+json"
+        id="homepage-structured-data"
         suppressHydrationWarning
       >
         {JSON.stringify({

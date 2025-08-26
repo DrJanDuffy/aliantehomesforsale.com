@@ -82,32 +82,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <head>
-        <title>Aliante Homes For Sale</title>
-        <meta name="description" content="Find your dream home in Aliante, North Las Vegas" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-        
-        {/* RealScout Widgets */}
-        <script src="https://em.realscout.com/widgets/realscout-web-components.umd.js" type="module"></script>
-        <style
-          dangerouslySetInnerHTML={{
-            __html: `
-              realscout-office-listings {
-                --rs-listing-divider-color: rgb(101, 141, 172);
-                width: 100%;
-              }
-            `,
-          }}
-        />
-        
-        {/* Critical CSS moved to globals.css for security */}
-      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Navigation />
         

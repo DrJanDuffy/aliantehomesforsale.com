@@ -64,17 +64,17 @@ export default function RealScoutWidget({
     
     script.onload = () => {
       console.log('✅ RealScoutWidget: Script loaded successfully');
-      setStatus('script-loaded');
       
       // Wait a bit for the component to register
       setTimeout(() => {
         if (customElements.get('realscout-office-listings')) {
+          setStatus('script-loaded');
           createWidget();
         } else {
           setError('Script loaded but component not registered');
           setStatus('error');
         }
-      }, 1000);
+      }, 3000);
     };
     
     script.onerror = (error) => {
