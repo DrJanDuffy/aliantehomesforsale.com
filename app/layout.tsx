@@ -175,8 +175,8 @@ export default function RootLayout({
             <realscout-office-listings 
               agent-encoded-id="QWdlbnQtMjI1MDUw" 
               sort-order="PRICE_HIGH" 
-              listing-status="For Sale,For Rent" 
-              property-types="MF,SFR,OTHER,LAL" 
+              listing-status="For Sale" 
+              property-types="SFR" 
               price-min="500000" 
               price-max="750000"
             ></realscout-office-listings>
