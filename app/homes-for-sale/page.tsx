@@ -50,17 +50,18 @@ export default function HomesForSale() {
               </div>
             </div>
 
-            {/* RealScout Listings Widget */}
+            {/* Office Listings Widget */}
             <div className="listings-widget">
               <h3>Live MLS Listings</h3>
               <div className="realscout-container">
+                {/* @ts-ignore */}
                 <realscout-office-listings 
                   agent-encoded-id="QWdlbnQtMjI1MDUw" 
                   sort-order="PRICE_HIGH" 
-                  listing-status="For Sale,For Rent" 
-                  property-types="MF,SFR,OTHER,LAL" 
-                  price-min="500000" 
-                  price-max="750000"
+                  listing-status="For Sale" 
+                  property-types="SFR,MF,OTHER" 
+                  price-min="250000" 
+                  price-max="1000000"
                 ></realscout-office-listings>
               </div>
             </div>

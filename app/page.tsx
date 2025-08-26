@@ -33,6 +33,7 @@ export default function Home() {
             <div className="hero-search-widget">
               <h3>Quick Search</h3>
               <div className="realscout-container">
+                {/* @ts-ignore */}
                 <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
               </div>
             </div>
@@ -48,6 +49,7 @@ export default function Home() {
           <div className="listings-section">
             <h3>Premium Homes ($500K - $750K)</h3>
             <div className="realscout-container">
+              {/* @ts-ignore */}
               <realscout-office-listings 
                 agent-encoded-id="QWdlbnQtMjI1MDUw" 
                 sort-order="PRICE_HIGH" 
@@ -63,6 +65,7 @@ export default function Home() {
           <div className="listings-section">
             <h3>Family Homes ($350K - $500K)</h3>
             <div className="realscout-container">
+              {/* @ts-ignore */}
               <realscout-office-listings 
                 agent-encoded-id="QWdlbnQtMjI1MDUw" 
                 sort-order="PRICE_HIGH" 

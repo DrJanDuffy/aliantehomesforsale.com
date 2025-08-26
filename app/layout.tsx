@@ -151,6 +151,7 @@ export default function RootLayout({
         {/* Global Advanced Search Widget - Available on every page */}
         <div className="global-advanced-search">
           <div className="realscout-container">
+            {/* @ts-ignore */}
             <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
           </div>
         </div>
@@ -158,6 +159,7 @@ export default function RootLayout({
         {/* Global Office Listings Widget - Available on every page */}
         <div className="global-office-listings">
           <div className="realscout-container">
+            {/* @ts-ignore */}
             <realscout-office-listings 
               agent-encoded-id="QWdlbnQtMjI1MDUw" 
               sort-order="PRICE_HIGH" 
@@ -173,6 +175,7 @@ export default function RootLayout({
         <div className="global-past-sales">
           <div className="realscout-container">
             <h2 className="past-sales-title">Recent Sales & Market Activity</h2>
+            {/* @ts-ignore */}
             <realscout-your-listings 
               agent-encoded-id="QWdlbnQtMjI1MDUw" 
               sort-order="STATUS_AND_SIGNIFICANT_CHANGE" 

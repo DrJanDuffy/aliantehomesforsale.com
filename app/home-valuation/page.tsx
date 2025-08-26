@@ -41,10 +41,11 @@ export default function HomeValuation() {
               </p>
             </div>
 
-            {/* RealScout Home Value Widget */}
-            <div className="valuation-widget-container">
-              <h3>Instant Property Valuation</h3>
+            {/* Home Value Widget */}
+            <div className="valuation-widget">
+              <h3>Get Your Home's Current Market Value</h3>
               <div className="realscout-container">
+                {/* @ts-ignore */}
                 <realscout-home-value agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-home-value>
               </div>
             </div>

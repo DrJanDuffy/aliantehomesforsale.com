@@ -154,6 +154,7 @@ export default function SearchForm({ priority = false }: SearchFormProps) {
         <div className="realscout-widget-section">
           <h4>Quick Search</h4>
           <div className="realscout-container">
+            {/* @ts-ignore */}
             <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
           </div>
         </div>
@@ -162,6 +163,7 @@ export default function SearchForm({ priority = false }: SearchFormProps) {
         <div className="realscout-widget-section">
           <h4>Advanced Search</h4>
           <div className="realscout-container">
+            {/* @ts-ignore */}
             <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
           </div>
         </div>
