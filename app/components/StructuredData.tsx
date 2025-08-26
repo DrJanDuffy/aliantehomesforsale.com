@@ -1,5 +1,5 @@
 interface StructuredDataProps {
-  type: 'RealEstateAgent' | 'PropertyListing';
+  type: 'RealEstateAgent' | 'PropertyListing' | 'NeighborhoodDetail';
   property?: {
     title: string;
     description: string;
@@ -66,6 +66,52 @@ export default function StructuredData({ type, property }: StructuredDataProps) 
         },
         numberOfRooms: property.bedrooms,
         numberOfBathroomsTotal: property.bathrooms,
+      };
+    }
+
+    if (type === 'NeighborhoodDetail') {
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'Place',
+        name: 'Aliante Neighborhoods',
+        description: 'Discover the best neighborhoods in Aliante, North Las Vegas with detailed community information, amenities, and lifestyle details.',
+        url: 'https://aliantehomesforsale.com/neighborhoods',
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Aliante',
+          addressRegion: 'NV',
+          addressCountry: 'US',
+        },
+        containsPlace: [
+          {
+            '@type': 'Place',
+            name: 'The Prominence',
+            description: 'Luxury gated community in Aliante',
+            url: 'https://aliantehomesforsale.com/neighborhoods/prominence',
+          },
+          {
+            '@type': 'Place',
+            name: 'Desert Willows',
+            description: 'Family-friendly neighborhood in Aliante',
+            url: 'https://aliantehomesforsale.com/neighborhoods/desert-willows',
+          },
+          {
+            '@type': 'Place',
+            name: 'Club Aliante',
+            description: 'Golf course community in Aliante',
+            url: 'https://aliantehomesforsale.com/neighborhoods/club-aliante',
+          },
+          {
+            '@type': 'Place',
+            name: 'The Paseos',
+            description: 'Affordable living community in Aliante',
+            url: 'https://aliantehomesforsale.com/neighborhoods/paseos',
+          },
+        ],
+        areaServed: {
+          '@type': 'Place',
+          name: 'Aliante, North Las Vegas, Nevada',
+        },
       };
     }
 
