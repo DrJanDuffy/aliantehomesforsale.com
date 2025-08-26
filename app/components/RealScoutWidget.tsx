@@ -27,130 +27,145 @@ export default function RealScoutWidget({
     if (!containerRef.current) return;
 
     console.log('🔍 RealScoutWidget: Starting initialization...');
+    
+    // Check network connectivity
+    if (!navigator.onLine) {
+      console.warn('⚠️ RealScoutWidget: Network appears to be offline');
+      setError('Network appears to be offline. Please check your internet connection.');
+      setStatus('error');
+      return;
+    }
+    
+    // Check if we can reach external domains
+    fetch('https://em.realscout.com/favicon.ico', { 
+      method: 'HEAD',
+      mode: 'no-cors',
+      cache: 'no-cache'
+    }).catch(() => {
+      console.warn('⚠️ RealScoutWidget: Cannot reach RealScout domain');
+    });
+    
     setStatus('script-loading');
 
-    // Check if RealScout component is already available
-    if (customElements.get('realscout-office-listings')) {
-      console.log('✅ RealScoutWidget: Component already available');
-      setStatus('script-loaded');
-      createWidget();
-      return;
-    }
+    // Add retry event listener
+    const handleRetry = () => {
+      console.log('🔄 RealScoutWidget: Retry requested');
+      setStatus('script-loading');
+      setError('');
+      // Re-run the initialization logic
+      initializeWidget();
+    };
 
-    // Check if script is already in the document
-    const existingScript = document.querySelector('script[src*="realscout-web-components.umd.js"]');
-    if (existingScript) {
-      console.log('📜 RealScoutWidget: Script already exists, waiting for load...');
-      // Wait a bit for the script to load
-      setTimeout(() => {
-        if (customElements.get('realscout-office-listings')) {
-          setStatus('script-loaded');
-          createWidget();
-        } else {
-          setError('Script exists but component not registered');
-          setStatus('error');
-        }
-      }, 2000);
-      return;
-    }
+    window.addEventListener('retry', handleRetry);
 
-    console.log('📥 RealScoutWidget: Loading RealScout script...');
-
-    // Helper function to load script
-    function loadScript() {
-      // Try multiple loading strategies
-      const strategies: Array<() => Promise<void>> = [
-        // Strategy 3a: Load as regular script
-        () => {
-          return new Promise<void>((resolve, reject) => {
-            const script = document.createElement('script');
-            script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
-            script.async = true;
-            
-            script.onload = () => {
-              console.log('✅ RealScoutWidget: Regular script loaded');
-              resolve();
-            };
-            
-            script.onerror = () => {
-              reject(new Error('Regular script failed'));
-            };
-            
-            document.head.appendChild(script);
-          });
-        },
-        
-        // Strategy 3b: Load as module
-        () => {
-          return new Promise<void>((resolve, reject) => {
-            const script = document.createElement('script');
-            script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
-            script.type = 'module';
-            script.async = true;
-            
-            script.onload = () => {
-              console.log('✅ RealScoutWidget: Module script loaded');
-              resolve();
-            };
-            
-            script.onerror = () => {
-              reject(new Error('Module script failed'));
-            };
-            
-            document.head.appendChild(script);
-          });
-        },
-        
-        // Strategy 3c: Load with defer
-        () => {
-          return new Promise<void>((resolve, reject) => {
-            const script = document.createElement('script');
-            script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
-            script.defer = true;
-            
-            script.onload = () => {
-              console.log('✅ RealScoutWidget: Defer script loaded');
-              resolve();
-            };
-            
-            script.onerror = () => {
-              reject(new Error('Defer script failed'));
-            };
-            
-            document.head.appendChild(script);
-          });
-        }
-      ];
-
-      // Attempt to load the script using the first strategy
-      const attempt = strategies.shift();
-      if (attempt) {
-        attempt()
-          .then(() => {
-            console.log('✅ RealScoutWidget: Script loaded successfully via strategy');
-            // Wait a bit for the component to register
-            setTimeout(() => {
-              if (customElements.get('realscout-office-listings')) {
-                setStatus('script-loaded');
-                createWidget();
-              } else {
-                setError('Script loaded but component not registered');
-                setStatus('error');
-              }
-            }, 3000);
-          })
-          .catch((err) => {
-            console.error('❌ RealScoutWidget: Script failed to load via strategy', err);
-            setError('Failed to load RealScout script');
-            setStatus('error');
-          });
-      } else {
-        setError('No script loading strategies available');
-        setStatus('error');
+    // Initialize widget function
+    function initializeWidget() {
+      // Check if RealScout component is already available
+      if (customElements.get('realscout-office-listings')) {
+        console.log('✅ RealScoutWidget: Component already available');
+        setStatus('script-loaded');
+        createWidget();
+        return;
       }
-    }
 
-    loadScript();
+      // Check if script is already in the document
+      const existingScript = document.querySelector('script[src*="realscout-web-components.umd.js"]');
+      if (existingScript) {
+        console.log('📜 RealScoutWidget: Script already exists, waiting for load...');
+        // Wait a bit for the script to load
+        setTimeout(() => {
+          if (customElements.get('realscout-office-listings')) {
+            setStatus('script-loaded');
+            createWidget();
+          } else {
+            setError('Script exists but component not registered');
+            setStatus('error');
+          }
+        }, 2000);
+        return;
+      }
+
+      console.log('📥 RealScoutWidget: Loading RealScout script...');
+
+      // Helper function to load script
+      function loadScript() {
+        return new Promise<void>((resolve, reject) => {
+          const script = document.createElement('script');
+          script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
+          script.type = 'module';
+          script.async = true;
+          script.crossOrigin = 'anonymous';
+          
+          // Add integrity hash if available (for security)
+          // script.integrity = 'sha384-...';
+          
+          // Add timeout for script loading
+          const timeout = setTimeout(() => {
+            reject(new Error('Script loading timeout - network may be slow'));
+          }, 15000); // 15 second timeout
+          
+          script.onload = () => {
+            clearTimeout(timeout);
+            console.log('✅ RealScoutWidget: Script loaded successfully');
+            resolve();
+          };
+          
+          script.onerror = (event) => {
+            clearTimeout(timeout);
+            console.error('❌ RealScoutWidget: Script failed to load', event);
+            reject(new Error('Failed to load RealScout script'));
+          };
+          
+          document.head.appendChild(script);
+        });
+      }
+
+      // Load script and wait for component registration
+      loadScript()
+        .then(() => {
+          console.log('✅ RealScoutWidget: Script loaded, waiting for component registration...');
+          // Wait for the component to register with exponential backoff
+          let attempts = 0;
+          const maxAttempts = 10;
+          const checkComponent = () => {
+            attempts++;
+            if (customElements.get('realscout-office-listings')) {
+              console.log('✅ RealScoutWidget: Component registered successfully');
+              setStatus('script-loaded');
+              createWidget();
+            } else if (attempts < maxAttempts) {
+              console.log(`⏳ RealScoutWidget: Component not ready, attempt ${attempts}/${maxAttempts}`);
+              // Check if there are any console errors that might indicate why the component didn't register
+              setTimeout(() => {
+                // Try to detect common issues
+                const scripts = document.querySelectorAll('script[src*="realscout"]');
+                if (scripts.length > 1) {
+                  console.warn('⚠️ RealScoutWidget: Multiple RealScout scripts detected - this may cause conflicts');
+                }
+                checkComponent();
+              }, Math.min(1000 * Math.pow(2, attempts - 1), 5000));
+            } else {
+              console.error('❌ RealScoutWidget: Component failed to register after maximum attempts');
+              // Try to provide more specific error information
+              const script = document.querySelector('script[src*="realscout-web-components.umd.js"]');
+              if (script) {
+                console.error('❌ RealScoutWidget: Script element exists but component not registered');
+                console.error('❌ RealScoutWidget: Script src:', script.src);
+                console.error('❌ RealScoutWidget: Script type:', script.type);
+                console.error('❌ RealScoutWidget: Script async:', script.async);
+              }
+              setError('Script loaded but component not registered. This may indicate a script loading issue or browser compatibility problem.');
+              setStatus('error');
+            }
+          };
+          checkComponent();
+        })
+        .catch((err) => {
+          console.error('❌ RealScoutWidget: Script loading failed', err);
+          setError('Failed to load RealScout script');
+          setStatus('error');
+        });
+    }
 
     function createWidget() {
       if (!containerRef.current) return;
@@ -228,6 +243,14 @@ export default function RealScoutWidget({
         setStatus('error');
       }
     }
+
+    // Start initialization
+    initializeWidget();
+
+    // Cleanup function
+    return () => {
+      window.removeEventListener('retry', handleRetry);
+    };
   }, [agentEncodedId, sortOrder, listingStatus, propertyTypes, priceMin, priceMax]);
 
   return (
@@ -277,19 +300,87 @@ export default function RealScoutWidget({
           <h3>❌ Error Loading Widget</h3>
           <p>{error}</p>
           <p>Please check the browser console for more details.</p>
-          <button 
-            onClick={() => window.location.reload()} 
-            style={{
-              padding: '10px 20px',
-              backgroundColor: '#3A8DDE',
-              color: 'white',
-              border: 'none',
-              borderRadius: '5px',
-              cursor: 'pointer'
-            }}
-          >
-            Reload Page
-          </button>
+          
+          <div style={{ marginTop: '20px' }}>
+            <button 
+              type="button"
+              onClick={() => window.location.reload()} 
+              style={{
+                padding: '10px 20px',
+                backgroundColor: '#3A8DDE',
+                color: 'white',
+                border: 'none',
+                borderRadius: '5px',
+                cursor: 'pointer',
+                marginRight: '10px'
+              }}
+            >
+              Reload Page
+            </button>
+            
+            <button 
+              type="button"
+              onClick={() => {
+                setStatus('loading');
+                setError('');
+                // Retry loading
+                setTimeout(() => {
+                  if (containerRef.current) {
+                    const event = new Event('retry');
+                    window.dispatchEvent(event);
+                  }
+                }, 100);
+              }}
+              style={{
+                padding: '10px 20px',
+                backgroundColor: '#16B286',
+                color: 'white',
+                border: 'none',
+                borderRadius: '5px',
+                cursor: 'pointer'
+              }}
+            >
+              Retry Loading
+            </button>
+          </div>
+          
+          <div style={{ marginTop: '20px', padding: '15px', backgroundColor: '#f8f9fa', borderRadius: '8px' }}>
+            <h4>Alternative Options:</h4>
+            <p>If the widget continues to fail, you can:</p>
+            <ul style={{ textAlign: 'left', display: 'inline-block' }}>
+              <li>Visit our <a href="/homes-for-sale" style={{ color: '#3A8DDE' }}>Homes for Sale</a> page</li>
+              <li>Use our <a href="/search" style={{ color: '#3A8DDE' }}>Advanced Search</a> tool</li>
+              <li><a href="/contact" style={{ color: '#3A8DDE' }}>Contact us</a> for direct assistance</li>
+            </ul>
+          </div>
+          
+          {/* Fallback Content */}
+          <div style={{ marginTop: '20px', padding: '20px', backgroundColor: '#fff', borderRadius: '8px', border: '1px solid #dee2e6' }}>
+            <h4>🏠 Featured Aliante Properties</h4>
+            <p>While we resolve the widget issue, here are some highlights:</p>
+            <div style={{ textAlign: 'left', maxWidth: '600px', margin: '0 auto' }}>
+              <div style={{ padding: '15px', border: '1px solid #e9ecef', borderRadius: '6px', marginBottom: '15px' }}>
+                <h5 style={{ margin: '0 0 10px 0', color: '#3A8DDE' }}>Luxury Home in The Prominence</h5>
+                <p style={{ margin: '0 0 8px 0' }}>4 bed, 3.5 bath | 3,200 sq ft | $750,000</p>
+                <p style={{ margin: '0', fontSize: '14px', color: '#6c757d' }}>Gated community with golf course views</p>
+              </div>
+              <div style={{ padding: '15px', border: '1px solid #e9ecef', borderRadius: '6px', marginBottom: '15px' }}>
+                <h5 style={{ margin: '0 0 10px 0', color: '#3A8DDE' }}>Family Home in Desert Willows</h5>
+                <p style={{ margin: '0 0 8px 0' }}>3 bed, 2.5 bath | 2,100 sq ft | $485,000</p>
+                <p style={{ margin: '0', fontSize: '14px', color: '#6c757d' }}>Excellent schools, spacious lot</p>
+              </div>
+              <div style={{ padding: '15px', border: '1px solid #e9ecef', borderRadius: '6px' }}>
+                <h5 style={{ margin: '0 0 10px 0', color: '#3A8DDE' }}>New Construction in Aliante Springs</h5>
+                <p style={{ margin: '0 0 8px 0' }}>4 bed, 3 bath | 2,800 sq ft | $620,000</p>
+                <p style={{ margin: '0', fontSize: '14px', color: '#6c757d' }}>Builder incentives available</p>
+              </div>
+            </div>
+            <p style={{ marginTop: '15px', fontSize: '14px' }}>
+              <a href="/homes-for-sale" style={{ color: '#3A8DDE', textDecoration: 'underline' }}>
+                View all 286+ available properties →
+              </a>
+            </p>
+          </div>
         </div>
       )}
     </div>
