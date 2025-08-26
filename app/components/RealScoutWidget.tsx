@@ -147,7 +147,7 @@ export default function RealScoutWidget({
             } else {
               console.error('❌ RealScoutWidget: Component failed to register after maximum attempts');
               // Try to provide more specific error information
-              const script = document.querySelector('script[src*="realscout-web-components.umd.js"]');
+              const script = document.querySelector('script[src*="realscout-web-components.umd.js"]') as HTMLScriptElement;
               if (script) {
                 console.error('❌ RealScoutWidget: Script element exists but component not registered');
                 console.error('❌ RealScoutWidget: Script src:', script.src);
