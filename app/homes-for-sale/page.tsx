@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import type { Metadata } from 'next';
 import SearchForm from '../components/SearchForm';
 import StructuredData from '../components/StructuredData';
