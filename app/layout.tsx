@@ -147,6 +147,42 @@ export default function RootLayout({
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Navigation />
+        
+        {/* Global Advanced Search Widget - Available on every page */}
+        <div className="global-advanced-search">
+          <div className="realscout-container">
+            <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
+          </div>
+        </div>
+        
+        {/* Global Office Listings Widget - Available on every page */}
+        <div className="global-office-listings">
+          <div className="realscout-container">
+            <realscout-office-listings 
+              agent-encoded-id="QWdlbnQtMjI1MDUw" 
+              sort-order="PRICE_HIGH" 
+              listing-status="For Sale,For Rent" 
+              property-types="MF,SFR,OTHER,LAL" 
+              price-min="500000" 
+              price-max="750000"
+            ></realscout-office-listings>
+          </div>
+        </div>
+        
+        {/* Global Past Sales Widget - Available on every page */}
+        <div className="global-past-sales">
+          <div className="realscout-container">
+            <h2 className="past-sales-title">Recent Sales & Market Activity</h2>
+            <realscout-your-listings 
+              agent-encoded-id="QWdlbnQtMjI1MDUw" 
+              sort-order="STATUS_AND_SIGNIFICANT_CHANGE" 
+              listing-status="For Sale,Sold" 
+              property-types="" 
+              price-min="500000"
+            ></realscout-your-listings>
+          </div>
+        </div>
+        
         {children}
         <PerformanceMonitor />
 
