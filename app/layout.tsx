@@ -163,6 +163,14 @@ export default function RootLayout({
           <div className="realscout-container">
             <h2 className="office-listings-title">Current Aliante Properties</h2>
             <p className="office-listings-subtitle">Live MLS listings updated every 15 minutes</p>
+            
+            {/* Debug Info */}
+            <div className="widget-debug-info">
+              <p>Widget Status: Loading RealScout Data...</p>
+              <p>Agent ID: QWdlbnQtMjI1MDUw</p>
+              <p>Price Range: $500K - $750K</p>
+            </div>
+            
             {/* @ts-ignore */}
             <realscout-office-listings 
               agent-encoded-id="QWdlbnQtMjI1MDUw" 
@@ -172,6 +180,11 @@ export default function RootLayout({
               price-min="500000" 
               price-max="750000"
             ></realscout-office-listings>
+            
+            {/* Fallback if widget doesn't load */}
+            <div className="widget-fallback" style={{display: 'none'}}>
+              <p>If you don't see listings above, please refresh the page or contact support.</p>
+            </div>
           </div>
         </div>
         

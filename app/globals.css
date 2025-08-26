@@ -1293,4 +1293,27 @@ h3 {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   padding: 1rem;
   background: #ffffff;
+  min-height: 400px; /* Ensure widget has minimum height */
+}
+
+/* Debug Info Styling */
+.widget-debug-info {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.widget-debug-info p {
+  margin: 0.25rem 0;
+}
+
+/* Ensure RealScout widget content is visible */
+.realscout-container realscout-office-listings {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
