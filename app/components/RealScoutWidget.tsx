@@ -56,35 +56,101 @@ export default function RealScoutWidget({
 
     console.log('📥 RealScoutWidget: Loading RealScout script...');
 
-    // Dynamically load the RealScout script
-    const script = document.createElement('script');
-    script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
-    script.type = 'module';
-    script.async = true;
-    
-    script.onload = () => {
-      console.log('✅ RealScoutWidget: Script loaded successfully');
-      
-      // Wait a bit for the component to register
-      setTimeout(() => {
-        if (customElements.get('realscout-office-listings')) {
-          setStatus('script-loaded');
-          createWidget();
-        } else {
-          setError('Script loaded but component not registered');
-          setStatus('error');
+    // Helper function to load script
+    function loadScript() {
+      // Try multiple loading strategies
+      const strategies: Array<() => Promise<void>> = [
+        // Strategy 3a: Load as regular script
+        () => {
+          return new Promise<void>((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
+            script.async = true;
+            
+            script.onload = () => {
+              console.log('✅ RealScoutWidget: Regular script loaded');
+              resolve();
+            };
+            
+            script.onerror = () => {
+              reject(new Error('Regular script failed'));
+            };
+            
+            document.head.appendChild(script);
+          });
+        },
+        
+        // Strategy 3b: Load as module
+        () => {
+          return new Promise<void>((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
+            script.type = 'module';
+            script.async = true;
+            
+            script.onload = () => {
+              console.log('✅ RealScoutWidget: Module script loaded');
+              resolve();
+            };
+            
+            script.onerror = () => {
+              reject(new Error('Module script failed'));
+            };
+            
+            document.head.appendChild(script);
+          });
+        },
+        
+        // Strategy 3c: Load with defer
+        () => {
+          return new Promise<void>((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
+            script.defer = true;
+            
+            script.onload = () => {
+              console.log('✅ RealScoutWidget: Defer script loaded');
+              resolve();
+            };
+            
+            script.onerror = () => {
+              reject(new Error('Defer script failed'));
+            };
+            
+            document.head.appendChild(script);
+          });
         }
-      }, 3000);
-    };
-    
-    script.onerror = (error) => {
-      console.error('❌ RealScoutWidget: Script failed to load', error);
-      setError('Failed to load RealScout script');
-      setStatus('error');
-    };
+      ];
 
-    // Add script to head
-    document.head.appendChild(script);
+      // Attempt to load the script using the first strategy
+      const attempt = strategies.shift();
+      if (attempt) {
+        attempt()
+          .then(() => {
+            console.log('✅ RealScoutWidget: Script loaded successfully via strategy');
+            // Wait a bit for the component to register
+            setTimeout(() => {
+              if (customElements.get('realscout-office-listings')) {
+                setStatus('script-loaded');
+                createWidget();
+              } else {
+                setError('Script loaded but component not registered');
+                setStatus('error');
+              }
+            }, 3000);
+          })
+          .catch((err) => {
+            console.error('❌ RealScoutWidget: Script failed to load via strategy', err);
+            setError('Failed to load RealScout script');
+            setStatus('error');
+          });
+      } else {
+        setError('No script loading strategies available');
+        setStatus('error');
+      }
+    }
+
+    loadScript();
 
     function createWidget() {
       if (!containerRef.current) return;
