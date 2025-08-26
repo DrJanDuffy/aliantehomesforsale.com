@@ -54,6 +54,22 @@ export default function RealScoutWidget({
       
       // Append to container
       containerRef.current.appendChild(widget);
+
+      // Check if widget is actually visible
+      setTimeout(() => {
+        if (containerRef.current) {
+          const widgetElement = containerRef.current.querySelector('realscout-office-listings') as HTMLElement;
+          console.log('RealScoutWidget: Widget element found:', widgetElement);
+          if (widgetElement) {
+            console.log('RealScoutWidget: Widget dimensions:', {
+              offsetWidth: widgetElement.offsetWidth,
+              offsetHeight: widgetElement.offsetHeight,
+              clientWidth: widgetElement.clientWidth,
+              clientHeight: widgetElement.clientHeight
+            });
+          }
+        }
+      }, 1000);
     }
   }, [agentEncodedId, sortOrder, listingStatus, propertyTypes, priceMin, priceMax]);
 
