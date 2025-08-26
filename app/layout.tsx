@@ -89,12 +89,9 @@ export default function RootLayout({
             body { margin: 0; font-family: system-ui; }
             .hero { min-height: 60vh; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
             
-            /* RealScout Custom Styling */
+            /* RealScout Global Styling - Applied to all pages */
             realscout-office-listings {
               --rs-listing-divider-color: rgb(101, 141, 172);
-              --rs-primary-color: #1a365d;
-              --rs-secondary-color: #2c5aa0;
-              --rs-accent-color: #ed8936;
               width: 100%;
               border-radius: 8px;
               box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -121,6 +118,21 @@ export default function RootLayout({
               max-width: 500px;
               margin: 0 auto;
               border-radius: 8px;
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            
+            realscout-home-value {
+              --rs-hvw-background-color: #ffffff;
+              --rs-hvw-title-color: #000000;
+              --rs-hvw-subtitle-color: rgba(28, 30, 38, 0.5);
+              --rs-hvw-primary-button-text-color: #ffffff;
+              --rs-hvw-primary-button-color: rgb(35, 93, 137);
+              --rs-hvw-secondary-button-text-color: rgb(35, 93, 137);
+              --rs-hvw-secondary-button-color: #ffffff;
+              --rs-hvw-widget-width: auto;
+              width: 100%;
+              border-radius: 8px;
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             }
           `,
           }}
