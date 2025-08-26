@@ -2382,3 +2382,39 @@ h3 {
   color: var(--text-secondary);
   line-height: 1.6;
 }
+
+/* RealScout Widget Styling */
+.realscout-widget-container {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.realscout-widget-container realscout-office-listings {
+  width: 100%;
+  min-height: 400px;
+  display: block;
+}
+
+/* Hero CTA Styling */
+.hero-cta {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.hero-cta h2 {
+  font-size: 1.8rem;
+  color: #0A2540;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.hero-cta p {
+  font-size: 1.1rem;
+  color: #666;
+  margin: 0;
+}

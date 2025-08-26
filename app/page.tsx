@@ -66,23 +66,28 @@ export default function Home() {
 
       <main className="homepage">
         {/* Hero Section */}
-        <section className="page-hero">
+        <section className="hero">
           <div className="hero-content">
             <h1>Discover Beautiful Homes in Aliante, North Las Vegas</h1>
             <p className="hero-subtitle">
               Expert guidance since 2018 | 286+ verified listings | Live MLS data updated every 15 minutes
             </p>
             
-            {/* Hero Search Widget */}
-            <div className="hero-search-widget">
-              <div className="search-container">
-                <h2>Find Your Dream Home</h2>
-                <p>Search 286+ verified listings updated every 15 minutes</p>
-                <div className="search-placeholder">
-                  <p>🔍 Property search coming soon</p>
-                  <p>We're setting up advanced MLS search tools</p>
-                </div>
-              </div>
+            <div className="hero-cta">
+              <h2>Find Your Dream Home</h2>
+              <p>Search 286+ verified listings updated every 15 minutes</p>
+            </div>
+
+            {/* RealScout Office Listings Widget */}
+            <div className="realscout-widget-container">
+              <realscout-office-listings 
+                agent-encoded-id="QWdlbnQtMjI1MDUw" 
+                sort-order="PRICE_HIGH" 
+                listing-status="For Sale,For Rent" 
+                property-types="MF,SFR,OTHER,LAL" 
+                price-min="450000" 
+                price-max="750000"
+              ></realscout-office-listings>
             </div>
           </div>
         </section>
