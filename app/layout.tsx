@@ -82,6 +82,30 @@ export default function RootLayout({
           src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
           type="module"
         />
+        
+        {/* Fallback script loading if the first one fails */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Fallback script loading for RealScout
+              if (typeof window.realscout === 'undefined') {
+                console.log('Primary RealScout script failed, trying fallback...');
+                const fallbackScript = document.createElement('script');
+                fallbackScript.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
+                fallbackScript.onload = function() {
+                  console.log('Fallback RealScout script loaded');
+                  if (typeof window.realscout !== 'undefined') {
+                    console.log('RealScout library now accessible:', window.realscout);
+                  }
+                };
+                fallbackScript.onerror = function() {
+                  console.error('Fallback RealScout script also failed');
+                };
+                document.head.appendChild(fallbackScript);
+              }
+            `,
+          }}
+        />
 
         {/* Critical CSS inline for performance */}
         <style
