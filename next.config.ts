@@ -43,8 +43,8 @@ const nextConfig: NextConfig = {
     loader: 'default',
     // Modern format support
     formats: ['image/webp', 'image/avif'],
-    // External domains for RealScout and other services
-    domains: ['images.unsplash.com', 'cdn.pixabay.com', 'em.realscout.com'],
+    // External domains for images and other services
+    domains: ['images.unsplash.com', 'cdn.pixabay.com'],
   },
 
   // Headers for security and performance

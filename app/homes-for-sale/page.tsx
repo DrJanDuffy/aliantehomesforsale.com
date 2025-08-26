@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import type { Metadata } from 'next';
 import SearchForm from '../components/SearchForm';
 import StructuredData from '../components/StructuredData';
@@ -36,7 +34,7 @@ export default function HomesForSale() {
         <section className="advanced-search-section">
           <div className="container">
             <h2>Find Your Perfect Aliante Home</h2>
-            <SearchForm priority={true} />
+            <SearchForm />
           </div>
         </section>
 

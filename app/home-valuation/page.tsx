@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import type { Metadata } from 'next';
 import StructuredData from '../components/StructuredData';
 

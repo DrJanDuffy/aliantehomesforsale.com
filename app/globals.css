@@ -385,7 +385,7 @@ h3 {
   opacity: 1;
 }
 
-/* RealScout Integration Enhancements */
+/* Listings Section Styling */
 .listings-section {
   margin: 3rem 0;
   padding: 2rem;
@@ -484,12 +484,7 @@ h3 {
   text-align: center;
 }
 
-.realscout-placeholder {
-  background: white;
-  padding: 3rem;
-  border-radius: 8px;
-  border: 2px dashed #3A8DDE;
-}
+
 
 .widget-config {
   background: #F7F9FC;
