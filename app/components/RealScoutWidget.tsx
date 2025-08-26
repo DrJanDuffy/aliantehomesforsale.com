@@ -31,6 +31,8 @@ export default function RealScoutWidget({
     // Add a small delay to ensure DOM is fully ready
     const initTimer = setTimeout(() => {
       try {
+        console.log('🔍 RealScoutWidget: DOM ready, starting initialization...');
+        
         // Check network connectivity
         if (!navigator.onLine) {
           console.warn('⚠️ RealScoutWidget: Network appears to be offline');
@@ -40,12 +42,15 @@ export default function RealScoutWidget({
         }
         
         // Check if we can reach external domains
+        console.log('🌐 RealScoutWidget: Testing network connectivity...');
         fetch('https://em.realscout.com/favicon.ico', { 
           method: 'HEAD',
           mode: 'no-cors',
           cache: 'no-cache'
-        }).catch(() => {
-          console.warn('⚠️ RealScoutWidget: Cannot reach RealScout domain');
+        }).then(() => {
+          console.log('✅ RealScoutWidget: Network connectivity confirmed');
+        }).catch((err) => {
+          console.warn('⚠️ RealScoutWidget: Cannot reach RealScout domain:', err);
         });
         
         setStatus('script-loading');
@@ -93,17 +98,21 @@ export default function RealScoutWidget({
           // Helper function to load script
           function loadScript() {
             return new Promise<void>((resolve, reject) => {
+              console.log('📥 RealScoutWidget: Creating script element...');
               const script = document.createElement('script');
               script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
               script.type = 'module';
               script.async = true;
               script.crossOrigin = 'anonymous';
               
+              console.log('📥 RealScoutWidget: Script element created with src:', script.src);
+              
               // Add integrity hash if available (for security)
               // script.integrity = 'sha384-...';
               
               // Add timeout for script loading
               const timeout = setTimeout(() => {
+                console.error('⏰ RealScoutWidget: Script loading timeout after 15 seconds');
                 reject(new Error('Script loading timeout - network may be slow'));
               }, 15000); // 15 second timeout
               
@@ -119,11 +128,14 @@ export default function RealScoutWidget({
                 reject(new Error('Failed to load RealScout script'));
               };
               
+              console.log('📥 RealScoutWidget: Appending script to document.head...');
               document.head.appendChild(script);
+              console.log('📥 RealScoutWidget: Script appended to document.head');
             });
           }
 
           // Load script and wait for component registration
+          console.log('🚀 RealScoutWidget: Calling loadScript()...');
           loadScript()
             .then(() => {
               console.log('✅ RealScoutWidget: Script loaded, waiting for component registration...');
@@ -248,6 +260,7 @@ export default function RealScoutWidget({
         }
 
         // Start initialization
+        console.log('🚀 RealScoutWidget: Calling initializeWidget()...');
         initializeWidget();
 
         // Cleanup function for this scope
