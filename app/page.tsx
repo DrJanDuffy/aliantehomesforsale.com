@@ -1,20 +1,9 @@
-import type { Metadata } from 'next';
+'use client';
+
 import StructuredData from './components/StructuredData';
 import RealScoutWidget from './components/RealScoutWidget';
 
 // Force Vercel rebuild - Real Estate Website Implementation
-
-export const metadata: Metadata = {
-  title: 'Aliante Homes For Sale | Expert Real Estate Guidance Since 2018',
-  description: 'Find your perfect home in Aliante, North Las Vegas. 286+ verified listings with live MLS data. Expert local guidance since 2018.',
-  keywords: 'Aliante homes for sale, North Las Vegas real estate, Aliante realtor, MLS listings',
-  openGraph: {
-    title: 'Aliante Homes For Sale | Expert Real Estate Guidance',
-    description: '286+ verified listings with live MLS data in Aliante, North Las Vegas',
-    type: 'website',
-    url: 'https://aliantehomesforsale.com',
-  },
-};
 
 export default function Home() {
   return (
