@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useId } from "react";
 
 export default function SearchForm() {
   const [searchParams, setSearchParams] = useState({
@@ -9,102 +9,113 @@ export default function SearchForm() {
     minPrice: "",
     maxPrice: "",
     bedrooms: "",
+    bathrooms: "",
+    sqft: "",
   });
+
+  // Generate unique IDs for accessibility
+  const locationId = useId();
+  const propertyTypeId = useId();
+  const minPriceId = useId();
+  const maxPriceId = useId();
+  const bedroomsId = useId();
+  const bathroomsId = useId();
+  const sqftId = useId();
+
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setSearchParams(prev => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle search form submission
-    console.log("Search submitted:", searchParams);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setSearchParams(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    // Handle search submission
+    console.log('Search submitted:', searchParams);
   };
 
   return (
-    <section className="property-search priority">
-      <h2>Find Your Perfect Aliante Home</h2>
-      <p>Search 286+ verified listings updated every 15 minutes</p>
-      
+    <div className="search-form-container">
       <form className="search-form" onSubmit={handleSubmit}>
         <div className="search-grid">
-          <div className="form-group">
-            <label htmlFor="location">
+          {/* Location Filter */}
+          <div className="search-field">
+            <label htmlFor={locationId}>
               <h3>Neighborhood</h3>
             </label>
             <select
-              id="location"
+              id={locationId}
               name="location"
               value={searchParams.location}
               onChange={handleChange}
             >
               <option value="">All Aliante</option>
               <option value="gated">Gated Communities</option>
-              <option value="golf">Golf Course Homes</option>
-              <option value="sun-city">Sun City Aliante</option>
               <option value="prominence">The Prominence</option>
               <option value="desert-willows">Desert Willows</option>
+              <option value="club-aliante">Club Aliante</option>
+              <option value="paseos">The Paseos</option>
             </select>
           </div>
 
-          <div className="form-group">
-            <label htmlFor="propertyType">
+          {/* Property Type Filter */}
+          <div className="search-field">
+            <label htmlFor={propertyTypeId}>
               <h3>Property Type</h3>
             </label>
             <select
-              id="propertyType"
+              id={propertyTypeId}
               name="propertyType"
               value={searchParams.propertyType}
               onChange={handleChange}
             >
               <option value="">All Types</option>
               <option value="single-family">Single Family</option>
-              <option value="townhome">Townhome</option>
+              <option value="townhouse">Townhouse</option>
               <option value="condo">Condo</option>
-              <option value="luxury">Luxury ($600K+)</option>
+              <option value="new-construction">New Construction</option>
             </select>
           </div>
 
-          <div className="form-group">
-            <h3>Price Range</h3>
-            <div className="price-inputs">
-              <select
-                name="minPrice"
-                value={searchParams.minPrice}
-                onChange={handleChange}
-                aria-label="Minimum price"
-              >
-                <option value="">Min Price</option>
-                <option value="250000">$250,000</option>
-                <option value="350000">$350,000</option>
-                <option value="450000">$450,000</option>
-                <option value="550000">$550,000</option>
-              </select>
-              <select
-                name="maxPrice"
-                value={searchParams.maxPrice}
-                onChange={handleChange}
-                aria-label="Maximum price"
-              >
-                <option value="">Max Price</option>
-                <option value="400000">$400,000</option>
-                <option value="500000">$500,000</option>
-                <option value="600000">$600,000</option>
-                <option value="800000">$800,000+</option>
-              </select>
-            </div>
+          {/* Price Range */}
+          <div className="search-field">
+            <label htmlFor={minPriceId}>
+              <h3>Min Price</h3>
+            </label>
+            <input
+              type="number"
+              id={minPriceId}
+              name="minPrice"
+              value={searchParams.minPrice}
+              onChange={handleChange}
+              placeholder="Min Price"
+              min="0"
+              aria-label="Minimum price"
+            />
           </div>
 
-          <div className="form-group">
-            <label htmlFor="bedrooms">
+          <div className="search-field">
+            <label htmlFor={maxPriceId}>
+              <h3>Max Price</h3>
+            </label>
+            <input
+              type="number"
+              id={maxPriceId}
+              name="maxPrice"
+              value={searchParams.maxPrice}
+              onChange={handleChange}
+              placeholder="Max Price"
+              min="0"
+              aria-label="Maximum price"
+            />
+          </div>
+
+          {/* Bedrooms */}
+          <div className="search-field">
+            <label htmlFor={bedroomsId}>
               <h3>Bedrooms</h3>
             </label>
             <select
-              id="bedrooms"
+              id={bedroomsId}
               name="bedrooms"
               value={searchParams.bedrooms}
               onChange={handleChange}
@@ -116,31 +127,59 @@ export default function SearchForm() {
               <option value="5">5+ Beds</option>
             </select>
           </div>
+
+          {/* Bathrooms */}
+          <div className="search-field">
+            <label htmlFor={bathroomsId}>
+              <h3>Bathrooms</h3>
+            </label>
+            <select
+              id={bathroomsId}
+              name="bathrooms"
+              value={searchParams.bathrooms}
+              onChange={handleChange}
+            >
+              <option value="">Any</option>
+              <option value="2">2+ Baths</option>
+              <option value="3">3+ Baths</option>
+              <option value="4">4+ Baths</option>
+            </select>
+          </div>
+
+          {/* Square Footage */}
+          <div className="search-field">
+            <label htmlFor={sqftId}>
+              <h3>Min Sq Ft</h3>
+            </label>
+            <input
+              type="number"
+              id={sqftId}
+              name="sqft"
+              value={searchParams.sqft}
+              onChange={handleChange}
+              placeholder="Min Sq Ft"
+              min="0"
+            />
+          </div>
         </div>
 
-        <button type="submit" className="search-button">
-          Search 286+ Properties
-        </button>
-        <p className="search-note">
-          Get instant email alerts for new listings matching your criteria
-        </p>
+        <div className="search-actions">
+          <button type="submit" className="search-button primary">
+            Search Properties
+          </button>
+          <button type="button" className="search-button secondary" onClick={() => setSearchParams({
+            location: '',
+            propertyType: '',
+            minPrice: '',
+            maxPrice: '',
+            bedrooms: '',
+            bathrooms: '',
+            sqft: '',
+          })}>
+            Clear Filters
+          </button>
+        </div>
       </form>
-
-      {/* Search Tools Coming Soon */}
-      <div className="search-tools-coming-soon">
-        <h3>Professional MLS Search Tools</h3>
-        <p>Advanced property search and filtering tools coming soon!</p>
-        <div className="tools-placeholder">
-          <div className="tool-item">
-            <h4>🔍 Quick Search</h4>
-            <p>Simple property search by location and price</p>
-          </div>
-          <div className="tool-item">
-            <h4>⚡ Advanced Search</h4>
-            <p>Detailed filtering with MLS data</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
   );
 }

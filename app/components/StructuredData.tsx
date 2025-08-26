@@ -1,3 +1,7 @@
+'use client';
+
+import { useId } from 'react';
+
 interface StructuredDataProps {
   type: 'RealEstateAgent' | 'PropertyListing' | 'NeighborhoodDetail' | 'NeighborhoodGuide';
   property?: {
@@ -13,6 +17,8 @@ interface StructuredDataProps {
 }
 
 export default function StructuredData({ type, property }: StructuredDataProps) {
+  const scriptId = useId();
+  
   const getSchemaData = () => {
     if (type === 'RealEstateAgent') {
       return {
@@ -183,10 +189,16 @@ export default function StructuredData({ type, property }: StructuredDataProps) 
 
   if (!schemaData) return null;
 
+  // Create a script element safely without XSS risk
+  const scriptContent = JSON.stringify(schemaData);
+  
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-    />
+      id={scriptId}
+      suppressHydrationWarning
+    >
+      {scriptContent}
+    </script>
   );
 }

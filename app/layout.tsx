@@ -80,16 +80,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         
-        {/* Critical CSS inline for performance */}
-        <style
-          dangerouslySetInnerHTML={{
-            __html: `
-            /* Critical above-the-fold styles */
-            body { margin: 0; font-family: system-ui; }
-            .hero { min-height: 60vh; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-          `,
-          }}
-        />
+        {/* Critical CSS moved to globals.css for security */}
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Navigation />

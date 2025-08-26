@@ -1,34 +1,43 @@
 'use client';
 
-import { useId, useState } from 'react';
+import { useState, useId } from 'react';
+
+// Type definitions for Google Analytics
+interface GoogleAnalytics {
+  gtag: (command: string, action: string, params: Record<string, unknown>) => void;
+}
+
+declare global {
+  interface Window {
+    gtag?: GoogleAnalytics['gtag'];
+  }
+}
 
 export default function ContactForm() {
-  const firstNameId = useId();
-  const lastNameId = useId();
-  const emailId = useId();
-  const phoneId = useId();
-  const inquiryTypeId = useId();
-  const timelineId = useId();
-  const budgetId = useId();
-  const messageId = useId();
-
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
     phone: '',
     inquiryType: '',
-    timeline: '',
-    budget: '',
     message: '',
-    newsletter: false
+    newsletter: false,
   });
+
+  // Generate unique IDs for accessibility
+  const firstNameId = useId();
+  const lastNameId = useId();
+  const emailId = useId();
+  const phoneId = useId();
+  const inquiryTypeId = useId();
+  const messageId = useId();
+  const newsletterId = useId();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Analytics tracking for Core Web Vitals
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'form_submit', {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'form_submit', {
         form_name: 'contact_form',
         event_category: 'contact'
       });
@@ -126,41 +135,6 @@ export default function ContactForm() {
       </div>
       
       <div className="form-group">
-        <label htmlFor={timelineId}>When are you looking to move? *</label>
-        <select 
-          id={timelineId} 
-          name="timeline" 
-          value={formData.timeline}
-          onChange={handleChange}
-          required
-        >
-          <option value="">Select timeline</option>
-          <option value="immediately">Immediately</option>
-          <option value="1-3-months">1-3 months</option>
-          <option value="3-6-months">3-6 months</option>
-          <option value="6-12-months">6-12 months</option>
-          <option value="just-looking">Just looking</option>
-        </select>
-      </div>
-      
-      <div className="form-group">
-        <label htmlFor={budgetId}>What's your budget range?</label>
-        <select 
-          id={budgetId} 
-          name="budget"
-          value={formData.budget}
-          onChange={handleChange}
-        >
-          <option value="">Select budget</option>
-          <option value="250k-350k">$250K - $350K</option>
-          <option value="350k-450k">$350K - $450K</option>
-          <option value="450k-550k">$450K - $550K</option>
-          <option value="550k-650k">$550K - $650K</option>
-          <option value="650k-plus">$650K+</option>
-        </select>
-      </div>
-      
-      <div className="form-group">
         <label htmlFor={messageId}>Additional Details</label>
         <textarea
           id={messageId}
@@ -173,9 +147,10 @@ export default function ContactForm() {
       </div>
       
       <div className="form-group checkbox-group">
-        <label className="checkbox-label">
+        <label htmlFor={newsletterId} className="checkbox-label">
           <input 
             type="checkbox" 
+            id={newsletterId}
             name="newsletter"
             checked={formData.newsletter}
             onChange={handleChange}
