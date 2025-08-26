@@ -161,6 +161,8 @@ export default function RootLayout({
         {/* Global Office Listings Widget - Available on every page */}
         <div className="global-office-listings">
           <div className="realscout-container">
+            <h2 className="office-listings-title">Current Aliante Properties</h2>
+            <p className="office-listings-subtitle">Live MLS listings updated every 15 minutes</p>
             {/* @ts-ignore */}
             <realscout-office-listings 
               agent-encoded-id="QWdlbnQtMjI1MDUw" 

@@ -1267,6 +1267,22 @@ h3 {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+  text-align: center;
+}
+
+.office-listings-title {
+  color: #0A2540;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.office-listings-subtitle {
+  color: #64748b;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 .global-office-listings .realscout-container realscout-office-listings {
@@ -1276,4 +1292,5 @@ h3 {
   border-radius: 12px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   padding: 1rem;
+  background: #ffffff;
 }
