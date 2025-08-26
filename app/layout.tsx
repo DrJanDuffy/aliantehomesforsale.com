@@ -169,6 +169,7 @@ export default function RootLayout({
               <p>Widget Status: Loading RealScout Data...</p>
               <p>Agent ID: QWdlbnQtMjI1MDUw</p>
               <p>Price Range: $500K - $750K</p>
+              <p id="script-status">Checking RealScout script...</p>
             </div>
             
             {/* @ts-ignore */}
