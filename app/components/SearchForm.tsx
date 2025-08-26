@@ -1,67 +1,48 @@
 // @ts-nocheck
 
-'use client';
+"use client";
 
-// TypeScript declarations for RealScout custom elements
-declare namespace JSX {
-  interface IntrinsicElements {
-    'realscout-simple-search': {
-      'agent-encoded-id': string;
-      [key: string]: any;
-    };
-    'realscout-advanced-search': {
-      'agent-encoded-id': string;
-      [key: string]: any;
-    };
-  }
-}
+import { useState } from "react";
 
-import { useId, useState } from 'react';
-
-interface SearchFormProps {
-  priority?: boolean;
-}
-
-export default function SearchForm({ priority = false }: SearchFormProps) {
-  const locationId = useId();
-  const propertyTypeId = useId();
-  const bedroomsId = useId();
-
+export default function SearchForm() {
   const [searchParams, setSearchParams] = useState({
-    minPrice: '',
-    maxPrice: '',
-    propertyType: '',
-    bedrooms: '',
-    location: ''
+    location: "",
+    propertyType: "",
+    minPrice: "",
+    maxPrice: "",
+    bedrooms: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Analytics tracking for Core Web Vitals
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'search', {
-        search_term: JSON.stringify(searchParams),
-        event_category: 'property_search'
-      });
-    }
+    // Handle search form submission
+    console.log("Search submitted:", searchParams);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setSearchParams(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
   return (
-    <section className={`property-search ${priority ? 'priority' : ''}`}>
+    <section className="property-search priority">
       <h2>Find Your Perfect Aliante Home</h2>
       <p>Search 286+ verified listings updated every 15 minutes</p>
-
+      
       <form className="search-form" onSubmit={handleSubmit}>
         <div className="search-grid">
           <div className="form-group">
-            <label htmlFor={locationId}>
+            <label htmlFor="location">
               <h3>Neighborhood</h3>
             </label>
             <select
-              id={locationId}
+              id="location"
               name="location"
               value={searchParams.location}
-              onChange={(e) => setSearchParams({...searchParams, location: e.target.value})}
+              onChange={handleChange}
             >
               <option value="">All Aliante</option>
               <option value="gated">Gated Communities</option>
@@ -73,14 +54,14 @@ export default function SearchForm({ priority = false }: SearchFormProps) {
           </div>
 
           <div className="form-group">
-            <label htmlFor={propertyTypeId}>
+            <label htmlFor="propertyType">
               <h3>Property Type</h3>
             </label>
             <select
-              id={propertyTypeId}
+              id="propertyType"
               name="propertyType"
               value={searchParams.propertyType}
-              onChange={(e) => setSearchParams({...searchParams, propertyType: e.target.value})}
+              onChange={handleChange}
             >
               <option value="">All Types</option>
               <option value="single-family">Single Family</option>
@@ -95,9 +76,9 @@ export default function SearchForm({ priority = false }: SearchFormProps) {
             <div className="price-inputs">
               <select
                 name="minPrice"
-                aria-label="Minimum price"
                 value={searchParams.minPrice}
-                onChange={(e) => setSearchParams({...searchParams, minPrice: e.target.value})}
+                onChange={handleChange}
+                aria-label="Minimum price"
               >
                 <option value="">Min Price</option>
                 <option value="250000">$250,000</option>
@@ -107,9 +88,9 @@ export default function SearchForm({ priority = false }: SearchFormProps) {
               </select>
               <select
                 name="maxPrice"
-                aria-label="Maximum price"
                 value={searchParams.maxPrice}
-                onChange={(e) => setSearchParams({...searchParams, maxPrice: e.target.value})}
+                onChange={handleChange}
+                aria-label="Maximum price"
               >
                 <option value="">Max Price</option>
                 <option value="400000">$400,000</option>
@@ -121,14 +102,14 @@ export default function SearchForm({ priority = false }: SearchFormProps) {
           </div>
 
           <div className="form-group">
-            <label htmlFor={bedroomsId}>
+            <label htmlFor="bedrooms">
               <h3>Bedrooms</h3>
             </label>
             <select
-              id={bedroomsId}
+              id="bedrooms"
               name="bedrooms"
               value={searchParams.bedrooms}
-              onChange={(e) => setSearchParams({...searchParams, bedrooms: e.target.value})}
+              onChange={handleChange}
             >
               <option value="">Any</option>
               <option value="2">2+ Beds</option>
@@ -142,31 +123,23 @@ export default function SearchForm({ priority = false }: SearchFormProps) {
         <button type="submit" className="search-button">
           Search 286+ Properties
         </button>
-
         <p className="search-note">
           Get instant email alerts for new listings matching your criteria
         </p>
       </form>
 
-      {/* RealScout Search Widgets */}
-      <div className="realscout-search-widgets">
+      {/* Search Tools Coming Soon */}
+      <div className="search-tools-coming-soon">
         <h3>Professional MLS Search Tools</h3>
-        
-        {/* Simple Search Widget */}
-        <div className="realscout-widget-section">
-          <h4>Quick Search</h4>
-          <div className="realscout-container">
-            {/* @ts-ignore */}
-            <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
+        <p>Advanced property search and filtering tools coming soon!</p>
+        <div className="tools-placeholder">
+          <div className="tool-item">
+            <h4>🔍 Quick Search</h4>
+            <p>Simple property search by location and price</p>
           </div>
-        </div>
-
-        {/* Advanced Search Widget */}
-        <div className="realscout-widget-section">
-          <h4>Advanced Search</h4>
-          <div className="realscout-container">
-            {/* @ts-ignore */}
-            <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
+          <div className="tool-item">
+            <h4>⚡ Advanced Search</h4>
+            <p>Detailed filtering with MLS data</p>
           </div>
         </div>
       </div>

@@ -1097,223 +1097,168 @@ h3 {
   }
 }
 
-/* RealScout Widget Styling */
-.realscout-container {
-  background: white;
-  padding: 2rem;
+/* Placeholder Content Styling */
+.listings-placeholder,
+.search-placeholder,
+.widget-placeholder,
+.tools-placeholder {
+  background: #f8f9fa;
+  border: 2px dashed #dee2e6;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  margin: 1rem 0;
-  min-height: 400px;
-}
-
-.realscout-container realscout-office-listings {
-  --rs-listing-divider-color: rgb(101, 141, 172);
-  --rs-primary-color: #0A2540;
-  --rs-secondary-color: #3A8DDE;
-  --rs-accent-color: #16B286;
-  width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Ensure RealScout widgets are responsive */
-.realscout-container realscout-office-listings {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-}
-
-/* Loading state for RealScout widgets */
-.realscout-container:empty::before {
-  content: "Loading MLS listings...";
-  display: block;
-  text-align: center;
   padding: 2rem;
-  color: #666;
-  font-style: italic;
-}
-
-/* RealScout Search Widget Styling */
-.realscout-search-widgets {
-  margin-top: 2rem;
-  padding-top: 2rem;
-  border-top: 2px solid #E2E8F0;
-}
-
-.realscout-search-widgets h3 {
   text-align: center;
-  color: #0A2540;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
+}
+
+.listings-placeholder h3,
+.listings-placeholder h4,
+.search-placeholder h3,
+.widget-placeholder h3,
+.widget-placeholder h4,
+.tools-placeholder h3 {
+  color: #495057;
+  margin-bottom: 1rem;
   font-size: 1.5rem;
 }
 
-.realscout-widget-section {
-  margin-bottom: 2rem;
-}
-
-.realscout-widget-section h4 {
-  text-align: center;
-  color: #3A8DDE;
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
-  font-weight: 600;
-}
-
-.realscout-container realscout-advanced-search {
-  --rs-as-button-text-color: #ffffff;
-  --rs-as-background-color: #ffffff;
-  --rs-as-button-color: #1c71c3;
-  --rs-as-widget-width: 500px !important;
-  width: 100%;
-  max-width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.realscout-container realscout-simple-search {
-  --rs-ss-font-primary-color: #726a6d;
-  --rs-ss-searchbar-border-color: #1d6fbd;
-  --rs-ss-box-shadow: 0 10px 15px -3px #0000001a;
-  --rs-ss-widget-width: 500px !important;
-  width: 100%;
-  max-width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* RealScout Home Value Widget Styling */
-.realscout-container realscout-home-value {
-  --rs-hvw-background-color: #ffffff;
-  --rs-hvw-title-color: #000000;
-  --rs-hvw-subtitle-color: rgba(28, 30, 38, 0.5);
-  --rs-hvw-primary-button-text-color: #ffffff;
-  --rs-hvw-primary-button-color: rgb(35, 93, 137);
-  --rs-hvw-secondary-button-text-color: rgb(35, 93, 137);
-  --rs-hvw-secondary-button-color: #ffffff;
-  --rs-hvw-widget-width: auto;
-  width: 100%;
-  max-width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
-}
-
-/* RealScout Office Listings Widget Styling */
-.realscout-container realscout-office-listings {
-  --rs-listing-divider-color: rgb(101, 141, 172);
-  width: 100%;
-  max-width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
-}
-
-/* Hero Search Widget Styling */
-.hero-search-widget {
-  margin-top: 2rem;
-  text-align: center;
-}
-
-.hero-search-widget h3 {
-  color: #0A2540;
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
-  font-weight: 600;
-}
-
-.hero-search-widget .realscout-container {
-  max-width: 500px;
-  margin: 0 auto;
-  background: rgba(255, 255, 255, 0.95);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-}
-
-/* RealScout Placeholder Styling */
-.realscout-placeholder {
-  background: #f8f9fa;
-  border: 2px dashed #dee2e6;
-  border-radius: 8px;
-  padding: 2rem;
-  text-align: center;
+.listings-placeholder p,
+.search-placeholder p,
+.widget-placeholder p,
+.tools-placeholder p {
   color: #6c757d;
-  min-height: 200px;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.placeholder-stats,
+.placeholder-features {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
 }
 
-.realscout-placeholder p {
-  margin: 0.5rem 0;
-  font-size: 0.9rem;
-}
-
-.realscout-placeholder p:first-child {
-  font-weight: 600;
+.placeholder-stats span,
+.placeholder-features span {
+  background: #e9ecef;
   color: #495057;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
 }
 
-/* Global Office Listings Widget - Available on every page */
-.global-office-listings {
-  background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
-  padding: 2rem 0;
-  border-bottom: 1px solid #e2e8f0;
+.tools-placeholder {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.tool-item {
+  background: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.tool-item h4 {
+  color: #495057;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.tool-item p {
+  color: #6c757d;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+/* Search Container Styling */
+.search-container {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-container h2 {
+  color: #495057;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.search-container p {
+  color: #6c757d;
   margin-bottom: 2rem;
+  font-size: 1.125rem;
 }
 
-.global-office-listings .realscout-container {
+/* Section Styling */
+.premium-homes,
+.family-homes,
+.starter-homes {
+  padding: 3rem 0;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.premium-homes:last-child,
+.family-homes:last-child,
+.starter-homes:last-child {
+  border-bottom: none;
+}
+
+.container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
-  text-align: center;
 }
 
-.office-listings-title {
-  color: #0A2540;
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  text-align: center;
-}
-
-.office-listings-subtitle {
-  color: #64748b;
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.global-office-listings .realscout-container realscout-office-listings {
-  --rs-listing-divider-color: rgb(101, 141, 172);
-  width: 100%;
-  max-width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
-  background: #ffffff;
-  min-height: 400px; /* Ensure widget has minimum height */
-}
-
-/* Debug Info Styling */
-.widget-debug-info {
-  background: #f8f9fa;
-  border: 1px solid #dee2e6;
-  border-radius: 8px;
-  padding: 1rem;
+.container h2 {
+  color: #495057;
   margin-bottom: 1rem;
-  font-size: 0.9rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.container p {
   color: #6c757d;
+  margin-bottom: 2rem;
+  font-size: 1.125rem;
+  text-align: center;
 }
 
-.widget-debug-info p {
-  margin: 0.25rem 0;
+/* Home Value Widget Styling */
+.home-value-widget {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 2rem 0;
 }
 
-/* Ensure RealScout widget content is visible */
-.realscout-container realscout-office-listings {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+.home-value-widget h3 {
+  color: #495057;
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+/* Search Tools Coming Soon */
+.search-tools-coming-soon {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.search-tools-coming-soon h3 {
+  color: #495057;
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+}
+
+.search-tools-coming-soon p {
+  color: #6c757d;
+  margin-bottom: 2rem;
+  font-size: 1.125rem;
 }

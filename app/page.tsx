@@ -31,12 +31,15 @@ export default function Home() {
               Expert guidance since 2018 | 286+ verified listings | Live MLS data updated every 15 minutes
             </p>
             
-            {/* Quick Search Widget */}
+            {/* Hero Search Widget */}
             <div className="hero-search-widget">
-              <h3>Quick Search</h3>
-              <div className="realscout-container">
-                {/* @ts-ignore */}
-                <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
+              <div className="search-container">
+                <h2>Find Your Dream Home</h2>
+                <p>Search 286+ verified listings updated every 15 minutes</p>
+                <div className="search-placeholder">
+                  <p>🔍 Property search coming soon</p>
+                  <p>We're setting up advanced MLS search tools</p>
+                </div>
               </div>
             </div>
           </div>
@@ -47,37 +50,44 @@ export default function Home() {
           <h2>Featured Aliante Properties - Live MLS Listings</h2>
           <p>Updated every 15 minutes | Directly from MLS</p>
 
-          {/* Premium Properties */}
-          <div className="listings-section">
-            <h3>Premium Homes ($500K - $750K)</h3>
-            <div className="realscout-container">
-              {/* @ts-ignore */}
-              <realscout-office-listings 
-                agent-encoded-id="QWdlbnQtMjI1MDUw" 
-                sort-order="PRICE_HIGH" 
-                listing-status="For Sale" 
-                property-types="SFR" 
-                price-min="500000" 
-                price-max="750000"
-              ></realscout-office-listings>
+          {/* Premium Homes Section */}
+          <section className="premium-homes">
+            <div className="container">
+              <h2>Premium Homes ($500K - $750K)</h2>
+              <p>Luxury properties with premium amenities</p>
+              <div className="listings-placeholder">
+                <h3>🏠 Premium Home Listings</h3>
+                <p>Live MLS data integration coming soon</p>
+                <p>Contact us for current premium listings</p>
+              </div>
             </div>
-          </div>
+          </section>
 
-          {/* Mid-Range Properties */}
-          <div className="listings-section">
-            <h3>Family Homes ($350K - $500K)</h3>
-            <div className="realscout-container">
-              {/* @ts-ignore */}
-              <realscout-office-listings 
-                agent-encoded-id="QWdlbnQtMjI1MDUw" 
-                sort-order="PRICE_HIGH" 
-                listing-status="For Sale" 
-                property-types="SFR" 
-                price-min="350000" 
-                price-max="500000"
-              ></realscout-office-listings>
+          {/* Family Homes Section */}
+          <section className="family-homes">
+            <div className="container">
+              <h2>Family Homes ($350K - $500K)</h2>
+              <p>Perfect for growing families</p>
+              <div className="listings-placeholder">
+                <h3>🏡 Family Home Listings</h3>
+                <p>Live MLS data integration coming soon</p>
+                <p>Contact us for current family home listings</p>
+              </div>
             </div>
-          </div>
+          </section>
+
+          {/* Starter Homes Section */}
+          <section className="starter-homes">
+            <div className="container">
+              <h2>Starter Homes ($250K - $350K)</h2>
+              <p>Great for first-time buyers</p>
+              <div className="listings-placeholder">
+                <h3>🏘️ Starter Home Listings</h3>
+                <p>Live MLS data integration coming soon</p>
+                <p>Contact us for current starter home listings</p>
+              </div>
+            </div>
+          </section>
 
           <div className="view-all-properties">
             <a href="/homes-for-sale" className="cta-button large">

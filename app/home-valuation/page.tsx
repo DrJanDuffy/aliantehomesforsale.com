@@ -44,11 +44,17 @@ export default function HomeValuation() {
             </div>
 
             {/* Home Value Widget */}
-            <div className="valuation-widget">
-              <h3>Get Your Home's Current Market Value</h3>
-              <div className="realscout-container">
-                {/* @ts-ignore */}
-                <realscout-home-value agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-home-value>
+            <div className="home-value-widget">
+              <h3>Get Your Home's Current Value</h3>
+              <div className="widget-placeholder">
+                <h4>💰 Home Value Calculator</h4>
+                <p>Professional home valuation tools coming soon</p>
+                <p>Contact us for a free home value assessment</p>
+                <div className="placeholder-features">
+                  <span>Instant Valuation</span>
+                  <span>Market Analysis</span>
+                  <span>Expert Review</span>
+                </div>
               </div>
             </div>
           </div>
