@@ -1,0 +1,27 @@
+{
+  "projects": [
+    {
+      "vercelProjectId": "aliantehomesforsale",
+      "localPath": "./",
+      "autoFix": true,
+      "fixAttempts": 3
+    }
+  ],
+  "webhookUrl": "https://aliantehomesforsale.com/api/webhooks/vercel",
+  "cursorSettings": {
+    "aiModel": "claude-3",
+    "fixTimeout": 300000,
+    "autoCommit": true,
+    "autoPush": true
+  },
+  "vercelSettings": {
+    "teamId": "",
+    "projectId": "aliantehomesforsale",
+    "environment": "production"
+  },
+  "notifications": {
+    "slack": false,
+    "email": false,
+    "discord": false
+  }
+}

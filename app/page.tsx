@@ -8,25 +8,26 @@ import PropertyTypes from './components/PropertyTypes';
 import MarketInsights from './components/MarketInsights';
 import TrustAuthority from './components/TrustAuthority';
 
-// Force Vercel rebuild - Enhanced Real Estate Website Implementation
+// Force Vercel rebuild from main branch - Enhanced Real Estate Website Implementation
 
 export default function Home() {
   const heroHeadingId = useId();
-  
+  const mainContentId = useId();
+
   return (
     <>
       <StructuredData type="RealEstateAgent" />
-      
+
       {/* Additional structured data for homepage */}
       <StructuredData type="WebSite" />
 
-      <main>
+      <main id={mainContentId}>
         {/* Hero Section */}
         <section className="hero" aria-labelledby={heroHeadingId}>
           <div className="hero-content">
             <h1 id={heroHeadingId}>Find Your Perfect Aliante Home with Local Experts</h1>
             <p className="hero-subtitle">286+ verified MLS listings • Updated every 15 minutes • Free market analysis & buyer consultation</p>
-            
+
             <PropertySearch />
           </div>
         </section>

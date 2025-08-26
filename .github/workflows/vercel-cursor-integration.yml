@@ -1,0 +1,39 @@
+name: Vercel-Cursor Integration
+
+on:
+  repository_dispatch:
+    types: [vercel-deployment-failed]
+
+jobs:
+  auto-fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Install Cursor CLI
+        run: |
+          curl -fsSL https://cursor.sh/install.sh | sh
+          
+      - name: Install dependencies
+        run: npm install
+        
+      - name: Run Cursor Auto-fix
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+        run: |
+          node cursor-integration-service.js
+          
+      - name: Commit and push fixes
+        if: success()
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Auto-fix: Resolved Vercel deployment issues" || exit 0
+          git push
