@@ -19,6 +19,50 @@ export default function Home() {
   return (
     <>
       <StructuredData type="RealEstateAgent" />
+      
+      {/* RealScout Widgets */}
+      <script src="https://em.realscout.com/widgets/realscout-web-components.umd.js" type="module"></script>
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+            realscout-office-listings {
+              --rs-listing-divider-color: rgb(101, 141, 172);
+              width: 100%;
+            }
+          `,
+        }}
+      />
+      
+      {/* Additional structured data for homepage */}
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+      >
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          name: 'Aliante Homes For Sale',
+          url: 'https://aliantehomesforsale.com',
+          description: 'Find your dream home in Aliante, North Las Vegas with expert real estate guidance since 2018',
+          potentialAction: {
+            '@type': 'SearchAction',
+            target: 'https://aliantehomesforsale.com/search?q={search_term_string}',
+            'query-input': 'required name=search_term_string',
+          },
+          publisher: {
+            '@type': 'RealEstateAgent',
+            name: 'Aliante Real Estate',
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress: '2590 Nature Park Drive, Suite 275',
+              addressLocality: 'North Las Vegas',
+              addressRegion: 'NV',
+              postalCode: '89084',
+              addressCountry: 'US',
+            },
+          },
+        })}
+      </script>
 
       <main className="homepage">
         {/* Hero Section */}

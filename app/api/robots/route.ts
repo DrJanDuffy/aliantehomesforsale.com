@@ -4,10 +4,22 @@ export async function GET() {
   const robotsTxt = `User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: ${process.env.VERCEL_URL || 'https://aliantehomesforsale.com'}/sitemap.xml
+# Sitemaps
+Sitemap: https://aliantehomesforsale.com/sitemap.xml
 
-# Crawl-delay
+# Disallow admin and private areas
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Allow important pages
+Allow: /neighborhoods/
+Allow: /homes-for-sale/
+Allow: /new-construction/
+Allow: /contact/
+Allow: /home-valuation/
+
+# Crawl delay for better server performance
 Crawl-delay: 1`;
 
   return new NextResponse(robotsTxt, {

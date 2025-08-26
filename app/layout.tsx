@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   description:
     'Discover beautiful homes for sale in Aliante, Las Vegas. Find your dream home with our comprehensive real estate listings and expert guidance.',
   keywords:
-    'Aliante homes for sale, Las Vegas real estate, Aliante real estate, homes in Aliante, Las Vegas homes',
+    'Aliante homes for sale, Las Vegas real estate, Aliante real estate, homes in Aliante, Las Vegas homes, North Las Vegas real estate, Aliante neighborhoods, new construction Aliante',
   authors: [{ name: 'Aliante Homes For Sale' }],
   creator: 'Aliante Homes For Sale',
   publisher: 'Aliante Homes For Sale',
@@ -38,18 +38,25 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Aliante Homes For Sale - Las Vegas Real Estate',
-    description:
-      'Discover beautiful homes for sale in Aliante, Las Vegas. Find your dream home with our comprehensive real estate listings and expert guidance.',
+    description: 'Discover beautiful homes for sale in Aliante, Las Vegas. Find your dream home with our comprehensive real estate listings and expert guidance.',
     url: 'https://aliantehomesforsale.com',
     siteName: 'Aliante Homes For Sale',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Aliante Homes For Sale - Las Vegas Real Estate',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Aliante Homes For Sale - Las Vegas Real Estate',
-    description:
-      'Discover beautiful homes for sale in Aliante, Las Vegas. Find your dream home with our comprehensive real estate listings and expert guidance.',
+    description: 'Discover beautiful homes for sale in Aliante, Las Vegas. Find your dream home with our comprehensive real estate listings and expert guidance.',
+    images: ['/og-image.jpg'],
   },
   robots: {
     index: true,
@@ -65,6 +72,12 @@ export const metadata: Metadata = {
   verification: {
     google: 'your-google-verification-code',
   },
+  other: {
+    'geo.region': 'US-NV',
+    'geo.placename': 'Aliante, North Las Vegas',
+    'geo.position': '36.1699;-115.1398',
+    'ICBM': '36.1699, -115.1398',
+  },
 };
 
 export default function RootLayout({
@@ -79,6 +92,19 @@ export default function RootLayout({
         <meta name="description" content="Find your dream home in Aliante, North Las Vegas" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        
+        {/* RealScout Widgets */}
+        <script src="https://em.realscout.com/widgets/realscout-web-components.umd.js" type="module"></script>
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+              realscout-office-listings {
+                --rs-listing-divider-color: rgb(101, 141, 172);
+                width: 100%;
+              }
+            `,
+          }}
+        />
         
         {/* Critical CSS moved to globals.css for security */}
       </head>

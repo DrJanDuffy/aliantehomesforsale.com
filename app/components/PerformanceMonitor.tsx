@@ -12,23 +12,63 @@ interface LayoutShift extends PerformanceEntry {
   }>;
 }
 
+interface PerformanceMetrics {
+  lcp: number;
+  fid: number;
+  cls: number;
+  ttfb: number;
+  domContentLoaded: number;
+  loadComplete: number;
+}
+
 export default function PerformanceMonitor() {
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
+    const metrics: PerformanceMetrics = {
+      lcp: 0,
+      fid: 0,
+      cls: 0,
+      ttfb: 0,
+      domContentLoaded: 0,
+      loadComplete: 0,
+    };
+
     const handlePerformanceEntry = (entry: PerformanceEntry) => {
       switch (entry.entryType) {
         case 'largest-contentful-paint':
-          console.log('LCP:', entry.startTime);
+          metrics.lcp = entry.startTime;
+          // Send to analytics instead of console
+          if (window.gtag) {
+            window.gtag('event', 'web_vitals', {
+              event_category: 'Web Vitals',
+              event_label: 'LCP',
+              value: Math.round(entry.startTime),
+            });
+          }
           break;
         case 'first-input': {
           const firstInputEntry = entry as PerformanceEventTiming;
-          console.log('FID:', firstInputEntry.processingStart - firstInputEntry.startTime);
+          metrics.fid = firstInputEntry.processingStart - firstInputEntry.startTime;
+          if (window.gtag) {
+            window.gtag('event', 'web_vitals', {
+              event_category: 'Web Vitals',
+              event_label: 'FID',
+              value: Math.round(metrics.fid),
+            });
+          }
           break;
         }
         case 'layout-shift': {
           const layoutShiftEntry = entry as LayoutShift;
-          console.log('CLS:', layoutShiftEntry.value);
+          metrics.cls += layoutShiftEntry.value;
+          if (window.gtag) {
+            window.gtag('event', 'web_vitals', {
+              event_category: 'Web Vitals',
+              event_label: 'CLS',
+              value: Math.round(metrics.cls * 1000) / 1000,
+            });
+          }
           break;
         }
       }
@@ -40,12 +80,19 @@ export default function PerformanceMonitor() {
           'navigation'
         )[0] as PerformanceNavigationTiming;
         if (navEntry) {
-          console.log('TTFB:', navEntry.responseStart - navEntry.requestStart);
-          console.log(
-            'DOM Content Loaded:',
-            navEntry.domContentLoadedEventEnd - navEntry.domContentLoadedEventStart
-          );
-          console.log('Load Complete:', navEntry.loadEventEnd - navEntry.loadEventStart);
+          metrics.ttfb = navEntry.responseStart - navEntry.requestStart;
+          metrics.domContentLoaded = navEntry.domContentLoadedEventEnd - navEntry.domContentLoadedEventStart;
+          metrics.loadComplete = navEntry.loadEventEnd - navEntry.loadEventStart;
+          
+          // Send navigation metrics to analytics
+          if (window.gtag) {
+            window.gtag('event', 'navigation_timing', {
+              event_category: 'Performance',
+              ttfb: Math.round(metrics.ttfb),
+              dom_content_loaded: Math.round(metrics.domContentLoaded),
+              load_complete: Math.round(metrics.loadComplete),
+            });
+          }
         }
       }
     };

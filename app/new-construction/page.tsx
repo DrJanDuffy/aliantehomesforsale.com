@@ -18,6 +18,19 @@ export default function NewConstruction() {
     <>
       <StructuredData type="PropertyListing" />
       
+      {/* RealScout Widgets */}
+      <script src="https://em.realscout.com/widgets/realscout-web-components.umd.js" type="module"></script>
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+            realscout-office-listings {
+              --rs-listing-divider-color: rgb(101, 141, 172);
+              width: 100%;
+            }
+          `,
+        }}
+      />
+      
       <main className="new-construction-page">
         {/* Hero Section */}
         <section className="page-hero">
