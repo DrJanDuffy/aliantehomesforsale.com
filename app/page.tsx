@@ -1,7 +1,6 @@
-'use client';
-
 import StructuredData from './components/StructuredData';
 import RealScoutWidget from './components/RealScoutWidget';
+import ErrorBoundary from './components/ErrorBoundary';
 
 // Force Vercel rebuild - Real Estate Website Implementation
 
@@ -11,36 +10,7 @@ export default function Home() {
       <StructuredData type="RealEstateAgent" />
       
       {/* Additional structured data for homepage */}
-      <script
-        type="application/ld+json"
-        id="homepage-structured-data"
-        suppressHydrationWarning
-      >
-        {JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'WebSite',
-          name: 'Aliante Homes For Sale',
-          url: 'https://aliantehomesforsale.com',
-          description: 'Find your dream home in Aliante, North Las Vegas with expert real estate guidance since 2018',
-          potentialAction: {
-            '@type': 'SearchAction',
-            target: 'https://aliantehomesforsale.com/search?q={search_term_string}',
-            'query-input': 'required name=search_term_string',
-          },
-          publisher: {
-            '@type': 'RealEstateAgent',
-            name: 'Aliante Real Estate',
-            address: {
-              '@type': 'PostalAddress',
-              streetAddress: '2590 Nature Park Drive, Suite 275',
-              addressLocality: 'North Las Vegas',
-              addressRegion: 'NV',
-              postalCode: '89084',
-              addressCountry: 'US',
-            },
-          },
-        })}
-      </script>
+      <StructuredData type="WebSite" />
 
       <main className="homepage">
         {/* Hero Section */}
@@ -58,14 +28,16 @@ export default function Home() {
 
             {/* RealScout Office Listings Widget */}
             <div className="realscout-widget-container">
-              <RealScoutWidget
-                agentEncodedId="QWdlbnQtMjI1MDUw"
-                sortOrder="PRICE_HIGH"
-                listingStatus="For Sale,For Rent"
-                propertyTypes="MF,SFR,OTHER,LAL"
-                priceMin="450000"
-                priceMax="750000"
-              />
+              <ErrorBoundary>
+                <RealScoutWidget
+                  agentEncodedId="QWdlbnQtMjI1MDUw"
+                  sortOrder="PRICE_HIGH"
+                  listingStatus="For Sale,For Rent"
+                  propertyTypes="MF,SFR,OTHER,LAL"
+                  priceMin="450000"
+                  priceMax="750000"
+                />
+              </ErrorBoundary>
             </div>
           </div>
         </section>
