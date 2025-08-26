@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import StructuredData from './components/StructuredData';
+import RealScoutWidget from './components/RealScoutWidget';
 
 // Force Vercel rebuild - Real Estate Website Implementation
 
@@ -80,14 +81,14 @@ export default function Home() {
 
             {/* RealScout Office Listings Widget */}
             <div className="realscout-widget-container">
-              <realscout-office-listings 
-                agent-encoded-id="QWdlbnQtMjI1MDUw" 
-                sort-order="PRICE_HIGH" 
-                listing-status="For Sale,For Rent" 
-                property-types="MF,SFR,OTHER,LAL" 
-                price-min="450000" 
-                price-max="750000"
-              ></realscout-office-listings>
+              <RealScoutWidget
+                agentEncodedId="QWdlbnQtMjI1MDUw"
+                sortOrder="PRICE_HIGH"
+                listingStatus="For Sale,For Rent"
+                propertyTypes="MF,SFR,OTHER,LAL"
+                priceMin="450000"
+                priceMax="750000"
+              />
             </div>
           </div>
         </section>
