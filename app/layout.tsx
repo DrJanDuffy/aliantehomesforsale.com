@@ -324,7 +324,31 @@ export default function RootLayout({
               // Comprehensive RealScout widget troubleshooting
               console.log('Starting RealScout widget troubleshooting...');
               
-              setTimeout(() => {
+              // Function to wait for RealScout library
+              function waitForRealScout(callback, maxAttempts = 20) {
+                let attempts = 0;
+                const checkInterval = setInterval(() => {
+                  attempts++;
+                  console.log('Checking for RealScout library, attempt:', attempts);
+                  
+                  if (typeof window.realscout !== 'undefined') {
+                    clearInterval(checkInterval);
+                    console.log('RealScout library found on attempt:', attempts);
+                    callback();
+                  } else if (attempts >= maxAttempts) {
+                    clearInterval(checkInterval);
+                    console.error('RealScout library not found after', maxAttempts, 'attempts');
+                    const scriptStatus = document.getElementById('script-status');
+                    if (scriptStatus) {
+                      scriptStatus.textContent = 'RealScout library failed to load after multiple attempts';
+                      scriptStatus.style.color = 'red';
+                    }
+                  }
+                }, 500);
+              }
+              
+              // Wait for library then initialize widgets
+              waitForRealScout(function() {
                 const scriptStatus = document.getElementById('script-status');
                 const officeWidget = document.querySelector('realscout-office-listings');
                 const searchWidget = document.querySelector('realscout-simple-search');
@@ -332,65 +356,62 @@ export default function RootLayout({
                 console.log('Office widget element:', officeWidget);
                 console.log('Search widget element:', searchWidget);
                 
-                // Check if RealScout library is available
-                if (typeof window.realscout !== 'undefined') {
-                  console.log('RealScout library found:', window.realscout);
-                  scriptStatus.textContent = 'RealScout library loaded successfully';
-                  scriptStatus.style.color = 'green';
-                  
-                  // Try to manually initialize widgets
-                  if (officeWidget) {
-                    console.log('Attempting to initialize office listings widget...');
-                    // Force a re-render
-                    officeWidget.style.display = 'none';
+                scriptStatus.textContent = 'RealScout library loaded successfully - initializing widgets...';
+                scriptStatus.style.color = 'green';
+                
+                // Try to manually initialize widgets
+                if (officeWidget) {
+                  console.log('Attempting to initialize office listings widget...');
+                  // Force a re-render
+                  officeWidget.style.display = 'none';
+                  setTimeout(() => {
+                    officeWidget.style.display = 'block';
+                    console.log('Office widget re-rendered');
+                    
+                    // Check if widget has content after re-render
                     setTimeout(() => {
-                      officeWidget.style.display = 'block';
-                      console.log('Office widget re-rendered');
-                    }, 100);
-                  }
-                  
-                  if (searchWidget) {
-                    console.log('Attempting to initialize simple search widget...');
-                    // Force a re-render
-                    searchWidget.style.display = 'none';
-                    setTimeout(() => {
-                      searchWidget.style.display = 'block';
-                      console.log('Search widget re-rendered');
-                    }, 100);
-                  }
-                  
-                } else {
-                  console.log('RealScout library not found in window object');
-                  scriptStatus.textContent = 'RealScout library not found';
-                  scriptStatus.style.color = 'red';
-                  
-                  // Check if the script loaded but didn't attach to window
-                  const script = document.querySelector('script[src*="realscout-web-components.umd.js"]');
-                  if (script) {
-                    console.log('RealScout script tag found:', script);
-                    scriptStatus.textContent = 'Script tag found but library not accessible';
-                  }
+                      if (officeWidget.shadowRoot || officeWidget.children.length > 0) {
+                        console.log('Office widget appears to have content');
+                        scriptStatus.textContent = 'Widgets initialized successfully!';
+                      } else {
+                        console.log('Office widget still appears empty');
+                        scriptStatus.textContent = 'Widgets initialized but content not loading';
+                        scriptStatus.style.color = 'orange';
+                      }
+                    }, 2000);
+                  }, 100);
                 }
                 
-                // Check for any JavaScript errors
-                window.addEventListener('error', function(e) {
-                  console.error('JavaScript error detected:', e.error);
-                  if (scriptStatus) {
-                    scriptStatus.textContent = 'JavaScript error: ' + e.message;
-                    scriptStatus.style.color = 'red';
-                  }
-                });
-                
-                // Check for unhandled promise rejections
-                window.addEventListener('unhandledrejection', function(e) {
-                  console.error('Unhandled promise rejection:', e.reason);
-                  if (scriptStatus) {
-                    scriptStatus.textContent = 'Promise error: ' + e.reason;
-                    scriptStatus.style.color = 'red';
-                  }
-                });
-                
-              }, 3000);
+                if (searchWidget) {
+                  console.log('Attempting to initialize simple search widget...');
+                  // Force a re-render
+                  searchWidget.style.display = 'none';
+                  setTimeout(() => {
+                    searchWidget.style.display = 'block';
+                    console.log('Search widget re-rendered');
+                  }, 100);
+                }
+              });
+              
+              // Check for any JavaScript errors
+              window.addEventListener('error', function(e) {
+                console.error('JavaScript error detected:', e.error);
+                const scriptStatus = document.getElementById('script-status');
+                if (scriptStatus) {
+                  scriptStatus.textContent = 'JavaScript error: ' + e.message;
+                  scriptStatus.style.color = 'red';
+                }
+              });
+              
+              // Check for unhandled promise rejections
+              window.addEventListener('unhandledrejection', function(e) {
+                console.error('Unhandled promise rejection:', e.reason);
+                const scriptStatus = document.getElementById('script-status');
+                if (scriptStatus) {
+                  scriptStatus.textContent = 'Promise error: ' + e.reason;
+                  scriptStatus.style.color = 'red';
+                }
+              });
             `,
           }}
         />
