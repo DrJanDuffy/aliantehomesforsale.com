@@ -1,5 +1,5 @@
 interface StructuredDataProps {
-  type: 'RealEstateAgent' | 'PropertyListing' | 'NeighborhoodDetail';
+  type: 'RealEstateAgent' | 'PropertyListing' | 'NeighborhoodDetail' | 'NeighborhoodGuide';
   property?: {
     title: string;
     description: string;
@@ -66,6 +66,67 @@ export default function StructuredData({ type, property }: StructuredDataProps) 
         },
         numberOfRooms: property.bedrooms,
         numberOfBathroomsTotal: property.bathrooms,
+      };
+    }
+
+    if (type === 'NeighborhoodGuide') {
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: 'Aliante Neighborhoods Guide',
+        description: 'Comprehensive guide to Aliante neighborhoods: The Prominence, Desert Willows, Club Aliante, and The Paseos. Find your perfect community with detailed information.',
+        url: 'https://aliantehomesforsale.com/neighborhoods',
+        mainEntity: {
+          '@type': 'ItemList',
+          name: 'Aliante Neighborhoods',
+          description: 'Complete guide to all neighborhoods in Aliante, North Las Vegas',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              item: {
+                '@type': 'Place',
+                name: 'The Prominence',
+                description: 'Luxury gated community with premium amenities',
+                url: 'https://aliantehomesforsale.com/neighborhoods/prominence',
+              },
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              item: {
+                '@type': 'Place',
+                name: 'Desert Willows',
+                description: 'Family-friendly neighborhood with excellent schools',
+                url: 'https://aliantehomesforsale.com/neighborhoods/desert-willows',
+              },
+            },
+            {
+              '@type': 'ListItem',
+              position: 3,
+              item: {
+                '@type': 'Place',
+                name: 'Club Aliante',
+                description: 'Golf course community with championship golf access',
+                url: 'https://aliantehomesforsale.com/neighborhoods/club-aliante',
+              },
+            },
+            {
+              '@type': 'ListItem',
+              position: 4,
+              item: {
+                '@type': 'Place',
+                name: 'The Paseos',
+                description: 'Affordable living community for first-time buyers',
+                url: 'https://aliantehomesforsale.com/neighborhoods/paseos',
+              },
+            },
+          ],
+        },
+        areaServed: {
+          '@type': 'Place',
+          name: 'Aliante, North Las Vegas, Nevada',
+        },
       };
     }
 
