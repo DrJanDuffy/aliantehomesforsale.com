@@ -1,18 +1,11 @@
-import type { Metadata } from 'next';
 import ContactForm from '../components/ContactForm';
 import StructuredData from '../components/StructuredData';
+import { generateMetadata as genMeta, pageSEO } from '@/lib/seo-utils';
 
-export const metadata: Metadata = {
-  title: 'Contact Aliante Real Estate | Expert Local Guidance Since 2018',
-  description: 'Contact Aliante Real Estate for expert guidance on homes in Aliante, North Las Vegas. Call (702) 555-0123 or fill out our contact form.',
-  keywords: 'contact Aliante real estate, Aliante realtor, North Las Vegas real estate agent',
-  openGraph: {
-    title: 'Contact Aliante Real Estate',
-    description: 'Get expert guidance on Aliante homes',
-    type: 'website',
-    url: 'https://aliantehomesforsale.com/contact',
-  },
-};
+export const metadata = genMeta({
+  ...pageSEO.contact,
+  path: '/contact',
+});
 
 export default function Contact() {
   return (

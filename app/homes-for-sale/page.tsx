@@ -1,18 +1,11 @@
-import type { Metadata } from 'next';
 import SearchForm from '../components/SearchForm';
 import StructuredData from '../components/StructuredData';
+import { generateMetadata as genMeta, pageSEO } from '@/lib/seo-utils';
 
-export const metadata: Metadata = {
-  title: 'Homes for Sale in Aliante, North Las Vegas | 286+ Properties',
-  description: 'Browse 286+ homes for sale in Aliante, North Las Vegas. Filter by price, bedrooms, property type. Live MLS data updated every 15 minutes.',
-  keywords: 'homes for sale Aliante, Aliante real estate, North Las Vegas homes, MLS listings',
-  openGraph: {
-    title: 'Homes for Sale in Aliante, North Las Vegas',
-    description: '286+ homes for sale with live MLS data',
-    type: 'website',
-    url: 'https://aliantehomesforsale.com/homes-for-sale',
-  },
-};
+export const metadata = genMeta({
+  ...pageSEO['homes-for-sale'],
+  path: '/homes-for-sale',
+});
 
 export default function HomesForSale() {
   return (

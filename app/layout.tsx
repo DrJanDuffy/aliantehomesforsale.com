@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import Navigation from './components/Navigation';
 import PerformanceMonitor from './components/PerformanceMonitor';
+import GoogleAnalytics from './components/GoogleAnalytics';
+import StructuredData from './components/StructuredData';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -32,14 +34,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://aliantehomesforsale.com'),
+  metadataBase: new URL('https://www.aliantehomesforsale.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: 'Aliante Homes For Sale - Expert Local Realtors | North Las Vegas NV',
     description: 'Find your perfect Aliante home with local experts. 286+ verified MLS listings updated every 15 minutes. Free market analysis & buyer consultation. Call (702) 555-0123',
-    url: 'https://aliantehomesforsale.com',
+    url: 'https://www.aliantehomesforsale.com',
     siteName: 'Aliante Real Estate',
     locale: 'en_US',
     type: 'website',
@@ -87,7 +89,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        {/* Google Analytics */}
+        <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-XXXXXXXXXX'} />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        {/* Core Structured Data - Organization & LocalBusiness */}
+        <StructuredData type="Organization" />
+        <StructuredData type="LocalBusiness" />
+        
         <Navigation />
         
         {children}

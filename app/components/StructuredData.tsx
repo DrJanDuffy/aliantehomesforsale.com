@@ -3,7 +3,7 @@
 import { useId } from 'react';
 
 interface StructuredDataProps {
-  type: 'RealEstateAgent' | 'PropertyListing' | 'NeighborhoodDetail' | 'NeighborhoodGuide' | 'WebSite';
+  type: 'RealEstateAgent' | 'PropertyListing' | 'NeighborhoodDetail' | 'NeighborhoodGuide' | 'WebSite' | 'LocalBusiness' | 'Organization' | 'Breadcrumbs' | 'FAQPage';
   property?: {
     title: string;
     description: string;
@@ -14,6 +14,9 @@ interface StructuredDataProps {
     bedrooms: number;
     bathrooms: number;
   };
+  breadcrumbs?: Array<{ name: string; url: string }>;
+  faqs?: Array<{ question: string; answer: string }>;
+  customData?: Record<string, unknown>;
 }
 
 export default function StructuredData({ type, property }: StructuredDataProps) {
@@ -26,7 +29,7 @@ export default function StructuredData({ type, property }: StructuredDataProps) 
         '@type': 'RealEstateAgent',
         name: 'Aliante Real Estate',
         description: 'Expert real estate services in Aliante, North Las Vegas',
-        url: 'https://aliantehomesforsale.com',
+        url: 'https://www.aliantehomesforsale.com',
         address: {
           '@type': 'PostalAddress',
           streetAddress: '2590 Nature Park Drive, Suite 275',
@@ -81,7 +84,7 @@ export default function StructuredData({ type, property }: StructuredDataProps) 
         '@type': 'WebPage',
         name: 'Aliante Neighborhoods Guide',
         description: 'Comprehensive guide to Aliante neighborhoods: The Prominence, Desert Willows, Club Aliante, and The Paseos. Find your perfect community with detailed information.',
-        url: 'https://aliantehomesforsale.com/neighborhoods',
+        url: 'https://www.aliantehomesforsale.com/neighborhoods',
         mainEntity: {
           '@type': 'ItemList',
           name: 'Aliante Neighborhoods',
@@ -94,7 +97,7 @@ export default function StructuredData({ type, property }: StructuredDataProps) 
                 '@type': 'Place',
                 name: 'The Prominence',
                 description: 'Luxury gated community with premium amenities',
-                url: 'https://aliantehomesforsale.com/neighborhoods/prominence',
+                url: 'https://www.aliantehomesforsale.com/neighborhoods/prominence',
               },
             },
             {
@@ -104,7 +107,7 @@ export default function StructuredData({ type, property }: StructuredDataProps) 
                 '@type': 'Place',
                 name: 'Desert Willows',
                 description: 'Family-friendly neighborhood with excellent schools',
-                url: 'https://aliantehomesforsale.com/neighborhoods/desert-willows',
+                url: 'https://www.aliantehomesforsale.com/neighborhoods/desert-willows',
               },
             },
             {
@@ -114,7 +117,7 @@ export default function StructuredData({ type, property }: StructuredDataProps) 
                 '@type': 'Place',
                 name: 'Club Aliante',
                 description: 'Golf course community with championship golf access',
-                url: 'https://aliantehomesforsale.com/neighborhoods/club-aliante',
+                url: 'https://www.aliantehomesforsale.com/neighborhoods/club-aliante',
               },
             },
             {
@@ -124,7 +127,7 @@ export default function StructuredData({ type, property }: StructuredDataProps) 
                 '@type': 'Place',
                 name: 'The Paseos',
                 description: 'Affordable living community for first-time buyers',
-                url: 'https://aliantehomesforsale.com/neighborhoods/paseos',
+                url: 'https://www.aliantehomesforsale.com/neighborhoods/paseos',
               },
             },
           ],
@@ -141,11 +144,11 @@ export default function StructuredData({ type, property }: StructuredDataProps) 
         '@context': 'https://schema.org',
         '@type': 'WebSite',
         name: 'Aliante Homes For Sale',
-        url: 'https://aliantehomesforsale.com',
+        url: 'https://www.aliantehomesforsale.com',
         description: 'Find your dream home in Aliante, North Las Vegas with expert real estate guidance since 2018',
         potentialAction: {
           '@type': 'SearchAction',
-          target: 'https://aliantehomesforsale.com/search?q={search_term_string}',
+          target: 'https://www.aliantehomesforsale.com/search?q={search_term_string}',
           'query-input': 'required name=search_term_string',
         },
         publisher: {
@@ -169,7 +172,7 @@ export default function StructuredData({ type, property }: StructuredDataProps) 
         '@type': 'Place',
         name: 'Aliante Neighborhoods',
         description: 'Discover the best neighborhoods in Aliante, North Las Vegas with detailed community information, amenities, and lifestyle details.',
-        url: 'https://aliantehomesforsale.com/neighborhoods',
+        url: 'https://www.aliantehomesforsale.com/neighborhoods',
         address: {
           '@type': 'PostalAddress',
           addressLocality: 'Aliante',
@@ -207,6 +210,120 @@ export default function StructuredData({ type, property }: StructuredDataProps) 
           name: 'Aliante, North Las Vegas, Nevada',
         },
       };
+    }
+
+    if (type === 'LocalBusiness') {
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'RealEstateAgent',
+        '@id': 'https://www.aliantehomesforsale.com/#organization',
+        name: 'Aliante Real Estate',
+        image: 'https://www.aliantehomesforsale.com/logo.png',
+        url: 'https://www.aliantehomesforsale.com',
+        telephone: '+17025550123',
+        email: 'info@aliantehomesforsale.com',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: '2590 Nature Park Drive, Suite 275',
+          addressLocality: 'North Las Vegas',
+          addressRegion: 'NV',
+          postalCode: '89084',
+          addressCountry: 'US',
+        },
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: 36.1699,
+          longitude: -115.1398,
+        },
+        openingHoursSpecification: [
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+            opens: '08:00',
+            closes: '19:00',
+          },
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Saturday', 'Sunday'],
+            opens: '09:00',
+            closes: '18:00',
+          },
+        ],
+        priceRange: '$$',
+        areaServed: [
+          {
+            '@type': 'City',
+            name: 'North Las Vegas',
+          },
+          {
+            '@type': 'Place',
+            name: 'Aliante',
+          },
+        ],
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: '4.9',
+          reviewCount: '127',
+          bestRating: '5',
+          worstRating: '1',
+        },
+      };
+    }
+
+    if (type === 'Organization') {
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        '@id': 'https://www.aliantehomesforsale.com/#organization',
+        name: 'Aliante Real Estate',
+        url: 'https://www.aliantehomesforsale.com',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://aliantehomesforsale.com/logo.png',
+          width: 250,
+          height: 60,
+        },
+        description: 'Expert real estate services in Aliante, North Las Vegas since 2018',
+        contactPoint: {
+          '@type': 'ContactPoint',
+          telephone: '+1-702-555-0123',
+          contactType: 'Customer Service',
+          areaServed: 'US-NV',
+          availableLanguage: ['English', 'Spanish'],
+        },
+      };
+    }
+
+    if (type === 'Breadcrumbs' && breadcrumbs) {
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: breadcrumbs.map((item, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: item.name,
+          item: item.url,
+        })),
+      };
+    }
+
+    if (type === 'FAQPage' && faqs) {
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.answer,
+          },
+        })),
+      };
+    }
+
+    if (customData) {
+      return customData;
     }
 
     return null;

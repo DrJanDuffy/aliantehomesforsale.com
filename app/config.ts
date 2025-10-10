@@ -15,7 +15,7 @@ export const appConfig = {
     titleTemplate: '%s | Aliante Homes For Sale',
     defaultDescription:
       'Discover beautiful homes for sale in Aliante, Las Vegas. Find your dream home with our comprehensive real estate listings and expert guidance.',
-    siteUrl: 'https://aliantehomesforsale.com',
+    siteUrl: 'https://www.aliantehomesforsale.com',
     openGraph: {
       type: 'website',
       locale: 'en_US',

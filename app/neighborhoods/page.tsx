@@ -1,17 +1,12 @@
-import type { Metadata } from 'next';
 import StructuredData from '../components/StructuredData';
+import { generateMetadata as genMeta } from '@/lib/seo-utils';
 
-export const metadata: Metadata = {
+export const metadata = genMeta({
   title: 'Aliante Neighborhoods Guide | North Las Vegas Communities',
   description: 'Explore Aliante neighborhoods: The Prominence, Desert Willows, Club Aliante, The Paseos. Find your perfect community with amenities, schools, and lifestyle.',
-  keywords: 'Aliante neighborhoods, The Prominence, Desert Willows, Club Aliante, The Paseos, North Las Vegas communities',
-  openGraph: {
-    title: 'Aliante Neighborhoods Guide - North Las Vegas',
-    description: 'Discover the best neighborhoods in Aliante with detailed community information',
-    type: 'website',
-    url: 'https://aliantehomesforsale.com/neighborhoods',
-  },
-};
+  keywords: ['Aliante neighborhoods', 'The Prominence', 'Desert Willows', 'Club Aliante', 'The Paseos', 'North Las Vegas communities'],
+  path: '/neighborhoods',
+});
 
 export default function Neighborhoods() {
   return (
