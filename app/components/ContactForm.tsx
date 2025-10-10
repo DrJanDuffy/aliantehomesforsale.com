@@ -2,17 +2,6 @@
 
 import { useState, useId } from 'react';
 
-// Type definitions for Google Analytics
-interface GoogleAnalytics {
-  gtag: (command: string, action: string, params: Record<string, unknown>) => void;
-}
-
-declare global {
-  interface Window {
-    gtag?: GoogleAnalytics['gtag'];
-  }
-}
-
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     firstName: '',
