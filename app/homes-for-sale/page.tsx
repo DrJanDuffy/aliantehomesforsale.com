@@ -1,11 +1,14 @@
+import type { Metadata } from 'next';
 import SearchForm from '../components/SearchForm';
 import StructuredData from '../components/StructuredData';
-import { generateMetadata as genMeta, pageSEO } from '@/lib/seo-utils';
 
-export const metadata = genMeta({
-  ...pageSEO['homes-for-sale'],
-  path: '/homes-for-sale',
-});
+export const metadata: Metadata = {
+  title: 'Homes For Sale in Aliante - 286+ MLS Listings | Updated Every 15 Minutes',
+  description: '286+ verified MLS listings in Aliante, North Las Vegas. Updated every 15 minutes. Search by price, beds, baths. Expert buyer representation.',
+  alternates: {
+    canonical: 'https://www.aliantehomesforsale.com/homes-for-sale',
+  },
+};
 
 export default function HomesForSale() {
   return (

@@ -1,11 +1,14 @@
+import type { Metadata } from 'next';
 import ContactForm from '../components/ContactForm';
 import StructuredData from '../components/StructuredData';
-import { generateMetadata as genMeta, pageSEO } from '@/lib/seo-utils';
 
-export const metadata = genMeta({
-  ...pageSEO.contact,
-  path: '/contact',
-});
+export const metadata: Metadata = {
+  title: 'Contact Aliante Real Estate - Call (702) 555-0123',
+  description: 'Contact our local Aliante real estate experts. Office: 2590 Nature Park Drive, Suite 275. Open 7 days a week. Free buyer consultation.',
+  alternates: {
+    canonical: 'https://www.aliantehomesforsale.com/contact',
+  },
+};
 
 export default function Contact() {
   return (
