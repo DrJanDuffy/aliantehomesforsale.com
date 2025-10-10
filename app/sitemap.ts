@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 
 // This file generates sitemap.xml for Google Search Console
+// Updated: 2025-10-10 - Force production URL
 export default function sitemap(): MetadataRoute.Sitemap {
   // ALWAYS use production URL - never Vercel preview URLs for sitemap
   const baseUrl = 'https://www.aliantehomesforsale.com';
