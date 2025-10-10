@@ -3,12 +3,13 @@
 import Script from 'next/script';
 import { useEffect } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
 interface GoogleAnalyticsProps {
   measurementId?: string;
 }
 
-export default function GoogleAnalytics({ measurementId = 'G-XXXXXXXXXX' }: GoogleAnalyticsProps) {
+function GoogleAnalyticsInner({ measurementId = 'G-XXXXXXXXXX' }: GoogleAnalyticsProps) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -16,10 +17,21 @@ export default function GoogleAnalytics({ measurementId = 'G-XXXXXXXXXX' }: Goog
   useEffect(() => {
     if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('config', measurementId, {
-        page_path: pathname + (searchParams.toString() ? `?${searchParams.toString()}` : ''),
+        page_path: pathname + (searchParams ? `?${searchParams.toString()}` : ''),
       });
     }
   }, [pathname, searchParams, measurementId]);
+
+  // Don't load in development
+  if (process.env.NODE_ENV === 'development') {
+    return null;
+  }
+
+  return null;
+}
+
+export default function GoogleAnalytics(props: GoogleAnalyticsProps) {
+  const { measurementId = 'G-XXXXXXXXXX' } = props;
 
   // Don't load in development
   if (process.env.NODE_ENV === 'development') {
@@ -47,6 +59,9 @@ export default function GoogleAnalytics({ measurementId = 'G-XXXXXXXXXX' }: Goog
           `,
         }}
       />
+      <Suspense fallback={null}>
+        <GoogleAnalyticsInner measurementId={measurementId} />
+      </Suspense>
     </>
   );
 }
