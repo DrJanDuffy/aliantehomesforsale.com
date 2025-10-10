@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 
 // Custom sitemap API route at /api/sitemap
 // Accessed via /sitemap.xml through Next.js rewrites
+// Updated: 2025-10-10 16:45 - Force production URLs with zero cache
 export async function GET() {
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
