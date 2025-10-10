@@ -177,6 +177,8 @@ const nextConfig: NextConfig = {
   // Performance monitoring
   env: {
     CUSTOM_KEY: process.env.CUSTOM_KEY,
+    // Force sitemap to use production URL
+    NEXT_PUBLIC_SITE_URL: 'https://www.aliantehomesforsale.com',
   },
 };
 

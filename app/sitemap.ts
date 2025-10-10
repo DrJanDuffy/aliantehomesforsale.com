@@ -1,52 +1,53 @@
 import type { MetadataRoute } from 'next';
 
 // This file generates sitemap.xml for Google Search Console
-// Updated: 2025-10-10 - Force production URL
+// IMPORTANT: Must return absolute URLs with https:// protocol
 export default function sitemap(): MetadataRoute.Sitemap {
-  // ALWAYS use production URL - never Vercel preview URLs for sitemap
+  // Force production URL - ignore VERCEL_URL and all env detection
+  // Next.js sitemap REQUIRES absolute URLs with protocol
   const baseUrl = 'https://www.aliantehomesforsale.com';
   const currentDate = new Date();
 
-  // Define all static routes
+  // Define all static routes with ABSOLUTE URLs
   const routes: MetadataRoute.Sitemap = [
     {
-      url: baseUrl,
+      url: 'https://www.aliantehomesforsale.com',
       lastModified: currentDate,
       changeFrequency: 'daily',
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/homes-for-sale`,
+      url: 'https://www.aliantehomesforsale.com/homes-for-sale',
       lastModified: currentDate,
       changeFrequency: 'hourly',
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/new-construction`,
+      url: 'https://www.aliantehomesforsale.com/new-construction',
       lastModified: currentDate,
       changeFrequency: 'daily',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/search`,
+      url: 'https://www.aliantehomesforsale.com/search',
       lastModified: currentDate,
       changeFrequency: 'hourly',
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/neighborhoods`,
+      url: 'https://www.aliantehomesforsale.com/neighborhoods',
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/contact`,
+      url: 'https://www.aliantehomesforsale.com/contact',
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/home-valuation`,
+      url: 'https://www.aliantehomesforsale.com/home-valuation',
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.7,
@@ -63,7 +64,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   neighborhoods.forEach((neighborhood) => {
     routes.push({
-      url: `${baseUrl}/neighborhoods/${neighborhood}`,
+      url: `https://www.aliantehomesforsale.com/neighborhoods/${neighborhood}`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.7,
