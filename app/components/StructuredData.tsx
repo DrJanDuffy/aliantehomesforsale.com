@@ -19,7 +19,7 @@ interface StructuredDataProps {
   customData?: Record<string, unknown>;
 }
 
-export default function StructuredData({ type, property }: StructuredDataProps) {
+export default function StructuredData({ type, property, breadcrumbs, faqs, customData }: StructuredDataProps) {
   const scriptId = useId();
   
   const getSchemaData = () => {
