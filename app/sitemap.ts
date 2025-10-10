@@ -2,7 +2,8 @@ import type { MetadataRoute } from 'next';
 
 // This file generates sitemap.xml for Google Search Console
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.aliantehomesforsale.com';
+  // Always use production URL, never Vercel preview URLs
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aliantehomesforsale.com';
   const currentDate = new Date();
 
   // Define all static routes
