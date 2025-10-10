@@ -124,6 +124,16 @@ const nextConfig: NextConfig = {
     ];
   },
 
+  // Rewrites for sitemap
+  async rewrites() {
+    return [
+      {
+        source: '/sitemap.xml',
+        destination: '/api/sitemap',
+      },
+    ];
+  },
+
   // Advanced Next.js optimizations
   compiler: {
     // Remove console logs in production

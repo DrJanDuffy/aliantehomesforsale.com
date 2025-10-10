@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
-// Custom sitemap route that returns RAW XML with hardcoded production URLs
-// This bypasses Next.js's automatic URL detection/replacement
+// Custom sitemap API route at /api/sitemap
+// Accessed via /sitemap.xml through Next.js rewrites
 export async function GET() {
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -77,7 +77,7 @@ export async function GET() {
     status: 200,
     headers: {
       'Content-Type': 'application/xml; charset=utf-8',
-      'Cache-Control': 'public, max-age=3600, s-maxage=3600',
+      'Cache-Control': 'public, max-age=0, must-revalidate',
       'X-Robots-Tag': 'noindex',
     },
   });
