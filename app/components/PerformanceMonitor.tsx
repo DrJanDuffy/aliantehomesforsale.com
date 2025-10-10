@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 // Type definitions for performance metrics
 interface LayoutShift extends PerformanceEntry {

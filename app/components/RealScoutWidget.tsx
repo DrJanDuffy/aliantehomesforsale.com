@@ -24,7 +24,9 @@ export default function RealScoutWidget({
   const [error, setError] = useState<string>('');
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    if (!containerRef.current) {
+      return;
+    }
 
     console.log('🔍 RealScoutWidget: Starting initialization...');
     
@@ -272,6 +274,7 @@ export default function RealScoutWidget({
         console.error('❌ RealScoutWidget: Initialization error:', err);
         setError(`Initialization error: ${err}`);
         setStatus('error');
+        return;
       }
     }, 100); // 100ms delay to ensure DOM is ready
 

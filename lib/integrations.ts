@@ -8,10 +8,10 @@ interface FollowUpBossLead {
   firstName: string;
   lastName: string;
   email: string;
-  phone?: string;
-  message?: string;
-  source?: string;
-  tags?: string[];
+  phone?: string | undefined;
+  message?: string | undefined;
+  source?: string | undefined;
+  tags?: string[] | undefined;
 }
 
 export async function sendLeadToFollowUpBoss(lead: FollowUpBossLead) {
