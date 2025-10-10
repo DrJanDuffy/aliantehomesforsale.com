@@ -61,9 +61,9 @@ Would you like to schedule a showing or request more information?`;
     alert(message);
     
     // Track property views for analytics
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'property_view', {
-        'property_id': propertyId
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'property_view', {
+        property_id: propertyId
       });
     }
   };

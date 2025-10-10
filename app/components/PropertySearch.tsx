@@ -47,9 +47,9 @@ export default function PropertySearch() {
       }, 5000);
       
       // Track search for analytics (would integrate with actual analytics)
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'property_search', {
-          'property_type': searchCriteria.propertyType,
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'property_search', {
+          property_type: searchCriteria.propertyType,
           'price_min': searchCriteria.priceMin,
           'price_max': searchCriteria.priceMax,
           'bedrooms': searchCriteria.bedrooms
