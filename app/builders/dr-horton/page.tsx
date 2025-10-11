@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'D.R. Horton Homes Aliante - Tule Springs Development',
-  description: 'D.R. Horton new construction in Tule Springs and Aliante area. America's Builder with affordable quality homes. View floor plans and incentives.',
+  description: 'D.R. Horton new construction in Tule Springs and Aliante area. America\'s Builder with affordable quality homes. View floor plans and incentives.',
   alternates: { canonical: 'https://www.aliantehomesforsale.com/builders/dr-horton' },
 };
 
