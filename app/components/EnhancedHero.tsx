@@ -45,9 +45,7 @@ export default function EnhancedHero() {
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
           style={{ textShadow: '0 2px 10px rgba(0,0,0,0.3)' }}
         >
-          Aliante North Las Vegas
-          <br />
-          <span className="text-yellow-300">Real Estate & Homes For Sale</span>
+          Aliante North Las Vegas Homes For Sale | 286+ MLS Listings Updated Daily
         </h1>
 
         {/* Subheading */}

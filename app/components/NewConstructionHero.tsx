@@ -38,9 +38,7 @@ export default function NewConstructionHero() {
             className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight"
             style={{ textShadow: '0 2px 10px rgba(0,0,0,0.3)' }}
           >
-            New Construction Homes in Aliante
-            <br />
-            <span className="text-yellow-300">& North Las Vegas</span>
+            New Construction Homes Aliante | Top Builders + Up to $25K Incentives
           </h1>
 
           <p className="text-lg sm:text-xl text-white/95 max-w-4xl mx-auto leading-relaxed">
