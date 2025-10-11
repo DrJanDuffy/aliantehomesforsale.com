@@ -23,8 +23,27 @@ export default function Breadcrumbs() {
     })
   ];
 
+  // Generate Schema.org BreadcrumbList JSON-LD
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    'itemListElement': breadcrumbItems.map((item, index) => ({
+      '@type': 'ListItem',
+      'position': index + 1,
+      'name': item.name,
+      'item': `https://www.aliantehomesforsale.com${item.url}`
+    }))
+  };
+
   return (
-    <nav aria-label="Breadcrumb" className="bg-gray-50 border-b border-gray-200">
+    <>
+      {/* Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
+      <nav aria-label="Breadcrumb" className="bg-gray-50 border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
         <ol className="flex flex-wrap items-center space-x-2 text-sm">
           {breadcrumbItems.map((item, index) => (
