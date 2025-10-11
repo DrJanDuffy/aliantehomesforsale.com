@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import NewConstructionHero from '../../components/NewConstructionHero';
 import TopBuilders from '../../components/TopBuilders';
 import BuilderComparison from '../../components/BuilderComparison';
+import BuilderIncentivesInfo from '../../components/BuilderIncentivesInfo';
 import NewConstructionCTA from '../../components/NewConstructionCTA';
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export default function Incentives() {
       <NewConstructionHero />
       <BuilderComparison />
       <TopBuilders />
+      <BuilderIncentivesInfo />
       <NewConstructionCTA />
     </main>
   );

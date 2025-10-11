@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import NewConstructionHero from '../../components/NewConstructionHero';
 import TopBuilders from '../../components/TopBuilders';
 import CommunityAmenities from '../../components/CommunityAmenities';
+import SunCityContent from '../../components/SunCityContent';
 import NewConstructionCTA from '../../components/NewConstructionCTA';
 
 export const metadata: Metadata = {
@@ -15,6 +16,7 @@ export default function DelWebb() {
     <main>
       <NewConstructionHero />
       <TopBuilders />
+      <SunCityContent />
       <CommunityAmenities />
       <NewConstructionCTA />
     </main>

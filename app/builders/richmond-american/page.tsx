@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import NewConstructionHero from '../../components/NewConstructionHero';
 import TopBuilders from '../../components/TopBuilders';
 import ConstructionProcess from '../../components/ConstructionProcess';
+import BuilderDetailContent from '../../components/BuilderDetailContent';
 import NewConstructionCTA from '../../components/NewConstructionCTA';
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export default function RichmondAmerican() {
       <NewConstructionHero />
       <TopBuilders />
       <ConstructionProcess />
+      <BuilderDetailContent />
       <NewConstructionCTA />
     </main>
   );

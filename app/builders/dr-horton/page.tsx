@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import NewConstructionHero from '../../components/NewConstructionHero';
 import TopBuilders from '../../components/TopBuilders';
 import ConstructionProcess from '../../components/ConstructionProcess';
+import BuilderDetailContent from '../../components/BuilderDetailContent';
 import QuickMoveInHomes from '../../components/QuickMoveInHomes';
 import NewConstructionCTA from '../../components/NewConstructionCTA';
 
@@ -17,6 +18,7 @@ export default function DrHorton() {
       <NewConstructionHero />
       <TopBuilders />
       <ConstructionProcess />
+      <BuilderDetailContent />
       <QuickMoveInHomes />
       <NewConstructionCTA />
     </main>
