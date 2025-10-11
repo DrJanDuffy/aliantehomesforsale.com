@@ -1,10 +1,22 @@
 # 🚀 Google Sitemap Submission Guide
 
-## ✅ **YOUR SITEMAP IS LIVE AND READY!**
+## ✅ **YOUR SITEMAPS ARE LIVE AND READY!**
 
-**Sitemap URL:** https://www.aliantehomesforsale.com/sitemap.xml
+**Sitemap Index (Submit This):** https://www.aliantehomesforsale.com/sitemap-index.xml
 
-**Contains:** 36 fully optimized pages with proper priorities and change frequencies
+**Individual Sitemaps:**
+- Main Sitemap: https://www.aliantehomesforsale.com/sitemap.xml (20 pages)
+- Builders Sitemap: https://www.aliantehomesforsale.com/sitemap-builders.xml (8 pages)
+- Neighborhoods Sitemap: https://www.aliantehomesforsale.com/sitemap-neighborhoods.xml (8 pages)
+
+**Total:** 36 fully optimized pages with proper priorities and change frequencies
+
+**Why Multiple Sitemaps?**
+- Better organization for Google to understand site architecture
+- Separate tracking in Search Console for each section
+- Faster crawling of specific content types
+- Prepares for future scaling (easy to add more sitemaps)
+- Industry best practice for professional sites
 
 ---
 
@@ -56,9 +68,20 @@
 
 **Once Verified:**
 
+**Option A: Submit Sitemap Index (RECOMMENDED)**
 1. In Google Search Console, click **"Sitemaps"** in left menu
-2. Under "Add a new sitemap", enter: `sitemap.xml`
+2. Under "Add a new sitemap", enter: `sitemap-index.xml`
 3. Click **"Submit"**
+4. Google will automatically discover and crawl all 3 child sitemaps
+
+**Option B: Submit Individual Sitemaps (Alternative)**
+1. Submit: `sitemap.xml`
+2. Submit: `sitemap-builders.xml`
+3. Submit: `sitemap-neighborhoods.xml`
+
+**Recommended:** Use Option A (sitemap index) for cleaner management
+
+**Expected Result:**
 4. Google will say "Success" or "Couldn't fetch"
 
 **If "Couldn't fetch":**
