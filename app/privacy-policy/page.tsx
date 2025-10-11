@@ -47,13 +47,13 @@ export default function PrivacyPolicy() {
           <h2>Your Rights</h2>
           <p>
             You have the right to access, correct, or delete your personal information. Contact us 
-            at info@aliantehomesforsale.com to exercise these rights.
+            at DrDuffy@AlianteHomesForSale.com to exercise these rights.
           </p>
 
           <h2>Contact Us</h2>
           <p>
             Questions about this privacy policy? Contact us at:<br/>
-            Email: info@aliantehomesforsale.com<br/>
+            Email: DrDuffy@AlianteHomesForSale.com<br/>
             Phone: (702) 555-0123
           </p>
         </div>

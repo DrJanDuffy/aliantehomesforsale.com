@@ -39,7 +39,7 @@ export default function StructuredData({ type, property, breadcrumbs, faqs, cust
           addressCountry: 'US',
         },
         telephone: '(702) 555-0123',
-        email: 'info@aliantehomesforsale.com',
+        email: 'DrDuffy@AlianteHomesForSale.com',
         areaServed: {
           '@type': 'Place',
           name: 'Aliante, North Las Vegas, Nevada',
@@ -221,7 +221,7 @@ export default function StructuredData({ type, property, breadcrumbs, faqs, cust
         image: 'https://www.aliantehomesforsale.com/logo.png',
         url: 'https://www.aliantehomesforsale.com',
         telephone: '+17025550123',
-        email: 'info@aliantehomesforsale.com',
+        email: 'DrDuffy@AlianteHomesForSale.com',
         address: {
           '@type': 'PostalAddress',
           streetAddress: '2590 Nature Park Drive, Suite 275',

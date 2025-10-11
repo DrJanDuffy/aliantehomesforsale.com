@@ -112,7 +112,7 @@ export default function RootLayout({
                 <p style={{ marginBottom: '1rem' }}>Your trusted partner for Aliante homes since 2018</p>
                 <div>
                   <p><strong>📞 Phone:</strong> <a href="tel:+17025550123" style={{ color: '#97d8c4' }}>(702) 555-0123</a></p>
-                  <p><strong>✉️ Email:</strong> <a href="mailto:info@aliantehomesforsale.com" style={{ color: '#97d8c4' }}>info@aliantehomesforsale.com</a></p>
+                  <p><strong>✉️ Email:</strong> <a href="mailto:DrDuffy@AlianteHomesForSale.com" style={{ color: '#97d8c4' }}>DrDuffy@AlianteHomesForSale.com</a></p>
                   <p><strong>📍 Office:</strong> 2590 Nature Park Drive, Suite 275<br />North Las Vegas, NV 89084</p>
                   <p><strong>🕒 Hours:</strong> Mon-Fri 8AM-7PM, Sat-Sun 9AM-6PM</p>
                 </div>

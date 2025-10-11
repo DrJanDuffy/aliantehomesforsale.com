@@ -42,7 +42,7 @@ export default function Accessibility() {
             We welcome your feedback on the accessibility of this website. Please contact us if you encounter accessibility barriers:
           </p>
           <ul>
-            <li>Email: info@aliantehomesforsale.com</li>
+            <li>Email: DrDuffy@AlianteHomesForSale.com</li>
             <li>Phone: (702) 555-0123</li>
             <li>Office: 2590 Nature Park Drive, Suite 275, North Las Vegas, NV 89084</li>
           </ul>

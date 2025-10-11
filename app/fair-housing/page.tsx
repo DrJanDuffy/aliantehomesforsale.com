@@ -71,7 +71,7 @@ export default function FairHousing() {
             If you have questions about our fair housing practices, please contact us:
           </p>
           <p>
-            Email: info@aliantehomesforsale.com<br/>
+            Email: DrDuffy@AlianteHomesForSale.com<br/>
             Phone: (702) 555-0123<br/>
             Office: 2590 Nature Park Drive, Suite 275, North Las Vegas, NV 89084
           </p>

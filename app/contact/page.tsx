@@ -41,7 +41,7 @@ export default function Contact() {
               
               <div className="contact-card">
                 <h3>✉️ Email Us</h3>
-                <p className="email">info@aliantehomesforsale.com</p>
+                <p className="email">DrDuffy@AlianteHomesForSale.com</p>
                 <p>Response within 2 hours</p>
               </div>
               
