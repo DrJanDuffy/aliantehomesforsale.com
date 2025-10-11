@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import EnhancedHero from '../components/EnhancedHero';
+import GolfHomesContent from '../components/GolfHomesContent';
 import NeighborhoodCards from '../components/NeighborhoodCards';
 import CommunityAmenities from '../components/CommunityAmenities';
 import HomesCTA from '../components/HomesCTA';
@@ -16,6 +17,7 @@ export default function GolfHomes() {
   return (
     <main>
       <EnhancedHero />
+      <GolfHomesContent />
       <NeighborhoodCards />
       <CommunityAmenities />
       <HomesCTA />

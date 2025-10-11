@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import RealScoutAdvancedSearch from '../components/RealScoutAdvancedSearch';
 import HomesForSaleHero from '../components/HomesForSaleHero';
+import SearchPageContent from '../components/SearchPageContent';
 import PropertyCategories from '../components/PropertyCategories';
 import HomesSearchTips from '../components/HomesSearchTips';
 import HomesCTA from '../components/HomesCTA';
@@ -22,6 +23,7 @@ export default function Search() {
           <RealScoutAdvancedSearch />
         </div>
       </section>
+      <SearchPageContent />
       <PropertyCategories />
       <HomesSearchTips />
       <HomesCTA />
