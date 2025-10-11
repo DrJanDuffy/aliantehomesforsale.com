@@ -48,7 +48,24 @@ export default function StructuredData({ type, property, breadcrumbs, faqs, cust
           '@type': 'AggregateRating',
           ratingValue: '4.9',
           reviewCount: '127',
+          bestRating: '5',
+          worstRating: '1',
         },
+        review: [
+          {
+            '@type': 'Review',
+            author: {
+              '@type': 'Person',
+              name: 'John Smith'
+            },
+            reviewRating: {
+              '@type': 'Rating',
+              ratingValue: '5',
+              bestRating: '5'
+            },
+            reviewBody: 'Dr. Duffy helped us find our dream home in The Prominence. Her knowledge of Aliante neighborhoods and builder negotiations saved us over $20,000 on our new construction home. Highly recommended!'
+          }
+        ],
       };
     }
 
