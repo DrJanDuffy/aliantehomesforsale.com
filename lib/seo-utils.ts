@@ -21,13 +21,12 @@ export function generateMetadata(config: SEOConfig = {}): Metadata {
     description = DEFAULT_DESCRIPTION,
     keywords = [],
     path = '',
-    image = '/og-image.jpg',
+    image = null,
     noindex = false,
     type = 'website',
   } = config;
 
   const url = `${SITE_URL}${path}`;
-  const fullImageUrl = image.startsWith('http') ? image : `${SITE_URL}${image}`;
 
   const defaultKeywords = [
     'Aliante homes for sale',
@@ -38,6 +37,39 @@ export function generateMetadata(config: SEOConfig = {}): Metadata {
   ];
 
   const allKeywords = [...defaultKeywords, ...keywords].join(', ');
+
+  const openGraphConfig: any = {
+    title,
+    description,
+    url,
+    siteName: SITE_NAME,
+    locale: 'en_US',
+    type,
+  };
+
+  if (image) {
+    const fullImageUrl = image.startsWith('http') ? image : `${SITE_URL}${image}`;
+    openGraphConfig.images = [
+      {
+        url: fullImageUrl,
+        width: 1200,
+        height: 630,
+        alt: title,
+      },
+    ];
+  }
+
+  const twitterConfig: any = {
+    card: image ? 'summary_large_image' : 'summary',
+    title,
+    description,
+    creator: '@aliantehomes',
+  };
+
+  if (image) {
+    const fullImageUrl = image.startsWith('http') ? image : `${SITE_URL}${image}`;
+    twitterConfig.images = [fullImageUrl];
+  }
 
   return {
     title,
@@ -50,29 +82,8 @@ export function generateMetadata(config: SEOConfig = {}): Metadata {
     alternates: {
       canonical: url,
     },
-    openGraph: {
-      title,
-      description,
-      url,
-      siteName: SITE_NAME,
-      images: [
-        {
-          url: fullImageUrl,
-          width: 1200,
-          height: 630,
-          alt: title,
-        },
-      ],
-      locale: 'en_US',
-      type,
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      images: [fullImageUrl],
-      creator: '@aliantehomes',
-    },
+    openGraph: openGraphConfig,
+    twitter: twitterConfig,
     robots: {
       index: !noindex,
       follow: !noindex,
