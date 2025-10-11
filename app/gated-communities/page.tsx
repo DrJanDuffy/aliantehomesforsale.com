@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import EnhancedHero from '../components/EnhancedHero';
-import EnhancedFeaturedProperties from '../components/EnhancedFeaturedProperties';
-import EnhancedPropertyTypes from '../components/EnhancedPropertyTypes';
+import GatedCommunitiesContent from '../components/GatedCommunitiesContent';
 import NeighborhoodCards from '../components/NeighborhoodCards';
+import EnhancedFeaturedProperties from '../components/EnhancedFeaturedProperties';
 import HomesCTA from '../components/HomesCTA';
 
 export const metadata: Metadata = {
@@ -17,6 +17,7 @@ export default function GatedCommunities() {
   return (
     <main>
       <EnhancedHero />
+      <GatedCommunitiesContent />
       <NeighborhoodCards />
       <EnhancedFeaturedProperties />
       <HomesCTA />
