@@ -62,7 +62,7 @@ const nextConfig = {
   reactStrictMode: true,
   
   // Standalone output for optimal deployment
-  output: 'standalone',
+  // output: 'standalone', // Disabled for Vercel deployment
 };
 
 module.exports = nextConfig;
