@@ -23,9 +23,7 @@ export default function HomesForSaleHero() {
           className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight"
           style={{ textShadow: '0 2px 10px rgba(0,0,0,0.3)' }}
         >
-          286+ Homes for Sale in Aliante
-          <br />
-          <span className="text-cyan-300">North Las Vegas</span>
+          Aliante Homes For Sale | 286+ Active MLS Listings in North Las Vegas
         </h1>
         
         <p className="text-lg sm:text-xl text-white/95 max-w-3xl mx-auto mb-8 leading-relaxed">
