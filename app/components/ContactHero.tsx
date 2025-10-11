@@ -18,13 +18,13 @@ export default function ContactHero() {
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto w-full text-center">
-        <h1 
-          id="contact-hero-heading"
-          className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight"
-          style={{ textShadow: '0 2px 10px rgba(0,0,0,0.3)' }}
-        >
-          Contact Dr. Jan Duffy
-        </h1>
+          <h1 
+            id="contact-hero-heading"
+            className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight"
+            style={{ textShadow: '0 2px 10px rgba(0,0,0,0.3)' }}
+          >
+            Contact Aliante Real Estate Expert | (702) 707-7273
+          </h1>
         
         <p className="text-xl sm:text-2xl text-white/95 mb-4 leading-relaxed">
           Aliante Las Vegas Real Estate Expert

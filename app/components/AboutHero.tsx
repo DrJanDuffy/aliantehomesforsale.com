@@ -18,13 +18,13 @@ export default function AboutHero() {
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto w-full text-center">
-        <h1 
-          id="about-hero-heading"
-          className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight"
-          style={{ textShadow: '0 2px 10px rgba(0,0,0,0.3)' }}
-        >
-          About Dr. Jan Duffy
-        </h1>
+          <h1 
+            id="about-hero-heading"
+            className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight"
+            style={{ textShadow: '0 2px 10px rgba(0,0,0,0.3)' }}
+          >
+            Expert Aliante Real Estate Agent | Dr. Jan Duffy Since 2018
+          </h1>
         
         <p className="text-xl sm:text-2xl text-white/95 mb-4 leading-relaxed">
           Aliante Las Vegas Real Estate

@@ -17,13 +17,13 @@ export default function NeighborhoodsHero() {
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto w-full text-center">
-        <h1 
-          id="neighborhoods-hero-heading"
-          className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight"
-          style={{ textShadow: '0 2px 10px rgba(0,0,0,0.3)' }}
-        >
-          Aliante Neighborhoods Guide
-        </h1>
+          <h1 
+            id="neighborhoods-hero-heading"
+            className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight"
+            style={{ textShadow: '0 2px 10px rgba(0,0,0,0.3)' }}
+          >
+            Aliante Neighborhoods Guide | North Las Vegas Communities & Schools
+          </h1>
         
         <p className="text-xl sm:text-2xl text-white/95 max-w-3xl mx-auto leading-relaxed">
           Discover the perfect community for your lifestyle in North Las Vegas
