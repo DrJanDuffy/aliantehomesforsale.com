@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 const SITE_URL = 'https://www.aliantehomesforsale.com';
-const SITE_NAME = 'Aliante Homes For Sale';
+const SITE_NAME = 'Aliante Las Vegas | Homes by Dr. Jan Duffy';
 const DEFAULT_TITLE = 'Aliante Homes For Sale - Expert Local Realtors | North Las Vegas NV';
 const DEFAULT_DESCRIPTION = 'Find your perfect Aliante home with local experts. 286+ verified MLS listings updated every 15 minutes. Free market analysis & buyer consultation. Call (702) 555-0123';
 
@@ -182,7 +182,7 @@ export function generateLocalBusinessSchema() {
     '@context': 'https://schema.org',
     '@type': 'RealEstateAgent',
     '@id': `${SITE_URL}/#organization`,
-    name: 'Aliante Real Estate',
+          name: 'Aliante Las Vegas | Homes by Dr. Jan Duffy',
     image: `${SITE_URL}/logo.png`,
     url: SITE_URL,
     telephone: '+17025550123',
@@ -277,7 +277,7 @@ export function generateOrganizationSchema() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     '@id': `${SITE_URL}/#organization`,
-    name: 'Aliante Real Estate',
+          name: 'Aliante Las Vegas | Homes by Dr. Jan Duffy',
     url: SITE_URL,
     logo: {
       '@type': 'ImageObject',

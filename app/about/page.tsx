@@ -14,9 +14,9 @@ export default function About() {
       {/* Hero Section */}
       <section className="page-hero">
         <div className="hero-content">
-          <h1>About Aliante Real Estate</h1>
+          <h1>About Dr. Jan Duffy - Aliante Las Vegas Real Estate</h1>
           <p className="hero-subtitle">
-            Your Trusted Local Experts Since 2018
+            Your Trusted Local Expert Since 2018
           </p>
         </div>
       </section>
@@ -26,7 +26,7 @@ export default function About() {
         <div className="container">
           <h2>Who We Are</h2>
           <p>
-            Aliante Real Estate has been serving the North Las Vegas community since 2018, 
+            Dr. Jan Duffy and Aliante Las Vegas have been serving the North Las Vegas community since 2018, 
             specializing exclusively in Aliante and surrounding areas. With over 500 successful 
             transactions, we've built our reputation on local expertise, integrity, and results.
           </p>

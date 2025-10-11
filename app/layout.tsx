@@ -26,9 +26,9 @@ export const metadata: Metadata = {
     'Browse 286+ Aliante homes for sale in North Las Vegas, NV. Updated every 15 minutes from MLS. Gated communities, Sun City Aliante 55+, new construction. Call (702) 707-7273 for expert local guidance.',
   keywords:
     'Aliante North Las Vegas homes for sale, Aliante real estate, North Las Vegas homes, 89084 homes for sale, Aliante gated community, Sun City Aliante, Club Aliante, new construction Aliante, Aliante MLS listings, houses for rent Aliante',
-  authors: [{ name: 'Aliante Real Estate' }],
-  creator: 'Aliante Real Estate',
-  publisher: 'Aliante Real Estate',
+  authors: [{ name: 'Aliante Las Vegas | Homes by Dr. Jan Duffy' }],
+  creator: 'Aliante Las Vegas | Homes by Dr. Jan Duffy',
+  publisher: 'Aliante Las Vegas | Homes by Dr. Jan Duffy',
   formatDetection: {
     email: false,
     address: false,
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: 'Aliante North Las Vegas Real Estate & Homes For Sale | 286+ MLS Listings',
     description: 'Browse 286+ Aliante homes for sale in North Las Vegas, NV. Updated every 15 minutes from MLS. Gated communities, Sun City Aliante 55+, new construction.',
     url: 'https://www.aliantehomesforsale.com',
-    siteName: 'Aliante Real Estate',
+    siteName: 'Aliante Las Vegas | Homes by Dr. Jan Duffy',
     locale: 'en_US',
     type: 'website',
     images: [
@@ -108,7 +108,7 @@ export default function RootLayout({
           <div className="container">
             <div className="footer-grid">
               <div className="footer-section">
-                <h3>Contact Aliante Real Estate</h3>
+                <h3>Contact Dr. Jan Duffy</h3>
                 <p style={{ marginBottom: '1rem' }}>Your trusted partner for Aliante homes since 2018</p>
                 <div>
                   <p><strong>📞 Phone:</strong> <a href="tel:+17027077273" style={{ color: '#97d8c4' }}>(702) 707-7273</a></p>
@@ -163,7 +163,7 @@ export default function RootLayout({
             </div>
             
             <div className="footer-bottom">
-              <p>© 2025 Aliante Real Estate. Licensed Real Estate Brokerage in Nevada.</p>
+              <p>© 2025 Aliante Las Vegas | Homes by Dr. Jan Duffy. Licensed Real Estate Brokerage in Nevada.</p>
               <p>All information deemed reliable but not guaranteed. All properties subject to prior sale, change, or withdrawal.</p>
               <div style={{ marginTop: '1rem' }}>
                 <a href="/privacy-policy" style={{ margin: '0 1rem' }}>Privacy Policy</a> |

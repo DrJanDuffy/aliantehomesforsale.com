@@ -27,7 +27,7 @@ export default function StructuredData({ type, property, breadcrumbs, faqs, cust
       return {
         '@context': 'https://schema.org',
         '@type': 'RealEstateAgent',
-        name: 'Aliante Real Estate',
+        name: 'Aliante Las Vegas | Homes by Dr. Jan Duffy',
         description: 'Expert real estate services in Aliante, North Las Vegas',
         url: 'https://www.aliantehomesforsale.com',
         address: {
@@ -153,7 +153,7 @@ export default function StructuredData({ type, property, breadcrumbs, faqs, cust
         },
         publisher: {
           '@type': 'RealEstateAgent',
-          name: 'Aliante Real Estate',
+          name: 'Aliante Las Vegas | Homes by Dr. Jan Duffy',
           address: {
             '@type': 'PostalAddress',
             streetAddress: '2590 Nature Park Drive, Suite 275',
@@ -217,7 +217,7 @@ export default function StructuredData({ type, property, breadcrumbs, faqs, cust
         '@context': 'https://schema.org',
         '@type': 'RealEstateAgent',
         '@id': 'https://www.aliantehomesforsale.com/#organization',
-        name: 'Aliante Real Estate',
+        name: 'Aliante Las Vegas | Homes by Dr. Jan Duffy',
         image: 'https://www.aliantehomesforsale.com/logo.png',
         url: 'https://www.aliantehomesforsale.com',
         telephone: '+17027077273',
@@ -275,7 +275,7 @@ export default function StructuredData({ type, property, breadcrumbs, faqs, cust
         '@context': 'https://schema.org',
         '@type': 'Organization',
         '@id': 'https://www.aliantehomesforsale.com/#organization',
-        name: 'Aliante Real Estate',
+        name: 'Aliante Las Vegas | Homes by Dr. Jan Duffy',
         url: 'https://www.aliantehomesforsale.com',
         logo: {
           '@type': 'ImageObject',

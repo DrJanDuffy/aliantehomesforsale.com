@@ -21,9 +21,9 @@ export default function Contact() {
         {/* Hero Section */}
         <section className="page-hero">
           <div className="hero-content">
-            <h1>Contact Aliante Real Estate</h1>
-            <p className="hero-subtitle">
-              Expert local guidance since 2018 | 500+ successful transactions | Your trusted Aliante partner
+          <h1>Contact Dr. Jan Duffy - Aliante Las Vegas Real Estate Expert</h1>
+          <p className="hero-subtitle">
+            Your trusted Aliante specialist since 2018 | 500+ successful transactions | Call (702) 707-7273
             </p>
           </div>
         </section>
