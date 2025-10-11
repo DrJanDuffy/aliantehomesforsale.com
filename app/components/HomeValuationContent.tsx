@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 export default function HomeValuationContent() {
   return (
     <>
@@ -41,7 +43,7 @@ export default function HomeValuationContent() {
           
           <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
             <p className="leading-relaxed">
-              Location within Aliante significantly impacts property values, with gated communities commanding 10-15% premiums over non-gated areas, and golf course properties adding another 10-20% premium. Corner lots, cul-de-sac locations, and properties with mountain or golf course views all enhance value compared to interior lots or busy street locations. School quality matters tremendously – homes in attendance zones for highly rated elementary schools typically sell for 5-10% more than similar homes in less desirable school zones.
+              Location within Aliante significantly impacts property values, with <Link href="/gated-communities" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">gated communities</Link> commanding 10-15% premiums over non-gated areas, and <Link href="/golf-homes" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">golf course properties</Link> adding another 10-20% premium. Corner lots, cul-de-sac locations, and properties with mountain or golf course views all enhance value compared to interior lots or busy street locations. <Link href="/schools" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">School quality</Link> matters tremendously – homes in attendance zones for highly rated elementary schools typically sell for 5-10% more than similar homes in less desirable school zones. Compare values across different <Link href="/neighborhoods/compare" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">neighborhoods</Link> to understand pricing variations.
             </p>
 
             <p className="leading-relaxed">

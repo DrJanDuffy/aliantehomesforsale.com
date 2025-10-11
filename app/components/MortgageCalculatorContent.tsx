@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 export default function MortgageCalculatorContent() {
   return (
     <>
@@ -15,7 +17,7 @@ export default function MortgageCalculatorContent() {
             </p>
             
             <p className="leading-relaxed">
-              For a median-priced Aliante home at $450,000 with 10% down ($45,000), here's how a typical monthly payment breaks down: Principal and interest at 7% rate equals approximately $2,696, property taxes of roughly $375/month, homeowners insurance around $150/month, HOA fees averaging $100-$200/month, and PMI of approximately $270/month. Total monthly housing payment: $3,591-$3,691. This comprehensive view helps you understand the true cost of home ownership beyond just the mortgage payment you see advertised.
+              For a median-priced Aliante home at $450,000 with 10% down ($45,000), here's how a typical monthly payment breaks down: Principal and interest at 7% rate equals approximately $2,696, property taxes of roughly $375/month, homeowners insurance around $150/month, HOA fees averaging $100-$200/month, and PMI of approximately $270/month. Total monthly housing payment: $3,591-$3,691. This comprehensive view helps you understand the true cost of home ownership beyond just the mortgage payment you see advertised. View current <Link href="/homes-for-sale" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">Aliante homes for sale</Link> to calculate payments on specific properties, or check our <Link href="/market-report" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">market report</Link> for current pricing trends.
             </p>
 
             <h3 className="text-2xl font-bold mt-8 mb-4" style={{ color: '#2c5aa0' }}>

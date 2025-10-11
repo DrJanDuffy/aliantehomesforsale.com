@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 export default function SchoolsContent() {
   return (
     <>
@@ -11,7 +13,7 @@ export default function SchoolsContent() {
           
           <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
             <p className="leading-relaxed">
-              School quality ranks among the top priorities for families considering a move to Aliante, and with good reason – the area is served by some of North Las Vegas's highest-rated schools. The master-planned nature of Aliante included careful consideration of educational facilities from the community's inception, resulting in modern school buildings, well-maintained campuses, and strong parental involvement that contribute to exceptional learning environments. Schools within Aliante boundaries consistently score above district and state averages on standardized testing and offer robust programs in academics, arts, athletics, and technology.
+              School quality ranks among the top priorities for families considering a move to Aliante, and with good reason – the area is served by some of North Las Vegas's highest-rated schools. The master-planned nature of Aliante included careful consideration of educational facilities from the community's inception, resulting in modern school buildings, well-maintained campuses, and strong parental involvement that contribute to exceptional learning environments. Schools within Aliante boundaries consistently score above district and state averages on standardized testing and offer robust programs in academics, arts, athletics, and technology. View <Link href="/neighborhoods" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">Aliante neighborhoods</Link> to see school ratings for each area, or browse <Link href="/homes-for-sale" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">homes for sale</Link> in top school districts.
             </p>
             
             <p className="leading-relaxed">
