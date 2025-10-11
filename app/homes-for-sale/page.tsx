@@ -52,6 +52,9 @@ export default function HomesForSale() {
         {/* Search Tips */}
         <HomesSearchTips />
 
+        {/* FAQ Section */}
+        <AlianteFAQ />
+
         {/* CTA Section */}
         <HomesCTA />
       </main>

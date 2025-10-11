@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 export default function BuilderIncentivesInfo() {
   return (
     <section className="py-16 px-4 bg-white">
@@ -17,9 +19,9 @@ export default function BuilderIncentivesInfo() {
             Current Incentive Programs in Aliante
           </h3>
           
-          <p className="leading-relaxed">
-            As of 2025, builders in the Aliante and North Las Vegas area are offering some of the most aggressive incentive packages we've seen in years. Lennar is currently providing up to $25,000 in closing cost assistance on select quick move-in homes, plus their Everything's Included® package that adds smart home technology, upgraded appliances, and designer finishes at no additional cost. D.R. Horton has partnered with their preferred lender to offer 2-1 mortgage rate buydowns, effectively reducing your interest rate by 2% in the first year and 1% in the second year – a savings that can exceed $500 per month.
-          </p>
+            <p className="leading-relaxed">
+              As of 2025, builders in the Aliante and North Las Vegas area are offering some of the most aggressive incentive packages we've seen in years. <Link href="/builders/lennar" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">Lennar</Link> is currently providing up to $25,000 in closing cost assistance on select quick move-in homes, plus their Everything's Included® package that adds smart home technology, upgraded appliances, and designer finishes at no additional cost. <Link href="/builders/dr-horton" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">D.R. Horton</Link> has partnered with their preferred lender to offer 2-1 <Link href="/mortgage-calculator" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">mortgage rate buydowns</Link>, effectively reducing your interest rate by 2% in the first year and 1% in the second year – a savings that can exceed $500 per month.
+            </p>
 
           <p className="leading-relaxed">
             Tri Pointe and Toll Brothers take a different approach, offering free room additions (bonus rooms, extended garages, or outdoor living spaces) and upgrade packages worth $30,000-$50,000 when you use their preferred lender. Del Webb's active adult communities include special incentives for age-qualified buyers, including golf club memberships, resort passes, and furniture packages that can add tremendous value beyond just the monetary savings.
