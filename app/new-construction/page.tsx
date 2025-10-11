@@ -3,7 +3,7 @@ import RealScoutAdvancedSearch from '../components/RealScoutAdvancedSearch';
 
 export const metadata: Metadata = {
   title: 'New Construction Homes Aliante North Las Vegas NV | Builder Incentives',
-  description: 'Browse 67+ new construction homes in Aliante and North Las Vegas from Lennar, D.R. Horton, Tri Pointe, Del Webb. Builder incentives up to $25K. Updated daily. Call (702) 707-7273.',
+  description: 'Browse 95+ new construction homes in North Las Vegas from Lennar, D.R. Horton, Toll Brothers, Tri Pointe, Del Webb. Luxury to affordable. Builder incentives up to $25K. Call (702) 707-7273.',
   keywords: 'new construction Aliante, new homes North Las Vegas, Lennar homes, DR Horton, builder incentives, new construction Las Vegas',
   alternates: { canonical: 'https://www.aliantehomesforsale.com/new-construction' },
 };
@@ -16,7 +16,7 @@ export default function NewConstruction() {
         <div className="hero-content">
           <h1>New Construction Homes in Aliante & North Las Vegas</h1>
           <p className="hero-subtitle">
-            67+ new homes available | Builder incentives up to $25,000 | Expert guidance through the entire process
+            95+ new homes available | Luxury to affordable | Builder incentives up to $25,000 | Expert guidance through the entire process
           </p>
         </div>
       </section>
@@ -30,9 +30,10 @@ export default function NewConstruction() {
           <RealScoutAdvancedSearch />
           
           <div className="filter-chips">
-            <button type="button" className="filter-chip active">All Builders (67)</button>
+            <button type="button" className="filter-chip active">All Builders (95+)</button>
             <button type="button" className="filter-chip">Lennar (45)</button>
             <button type="button" className="filter-chip">D.R. Horton (32)</button>
+            <button type="button" className="filter-chip">Toll Brothers (28)</button>
             <button type="button" className="filter-chip">Tri Pointe (18)</button>
             <button type="button" className="filter-chip">Del Webb 55+ (25)</button>
           </div>
@@ -262,6 +263,60 @@ export default function NewConstruction() {
                 </div>
               </div>
             </div>
+
+            {/* Toll Brothers */}
+            <div className="builder-card featured">
+              <div className="builder-header">
+                <div className="builder-logo">
+                  <div className="logo-placeholder">TOLL BROTHERS</div>
+                </div>
+                <div className="builder-badge">Ultra-Luxury</div>
+              </div>
+              <div className="builder-stats">
+                <div className="stat">
+                  <strong>Fortune 500</strong>
+                  <span>Elite Builder</span>
+                </div>
+                <div className="stat">
+                  <strong>12+</strong>
+                  <span>Communities</span>
+                </div>
+                <div className="stat">
+                  <strong>$575K-$1.6M</strong>
+                  <span>Price Range</span>
+                </div>
+              </div>
+              <div className="builder-content">
+                <h3>Toll Brothers - The Nation's Luxury Homebuilder®</h3>
+                <p>Fortune 500 builder delivering ultra-luxury homes since 1967. Renowned for superior design, premium materials, and unparalleled attention to detail. The benchmark for luxury new construction.</p>
+                
+                <h4>Popular Communities:</h4>
+                <ul>
+                  <li>Elkhorn Grove - Luxury estates $800K-$1.2M</li>
+                  <li>Glenrock - Premium single-family $1.5M-$1.8M</li>
+                  <li>Raven Crest - Luxury townhomes $635K-$750K</li>
+                  <li>Cordillera - Modern townhomes $575K-$680K</li>
+                  <li>Mira Villa - Luxury condos $1M-$1.4M</li>
+                </ul>
+
+                <h4>Current Incentives:</h4>
+                <ul>
+                  <li>✅ 3.625% first-year rate (2/1 buydown)</li>
+                  <li>✅ Fall Savings Event - limited time</li>
+                  <li>✅ Quick move-in homes available</li>
+                  <li>✅ Premium upgrades and finishes included</li>
+                </ul>
+
+                <div className="builder-actions">
+                  <a href="/builders/toll-brothers" className="cta-button primary">
+                    View Toll Brothers Homes
+                  </a>
+                  <a href="/contact" className="cta-button secondary">
+                    Schedule Private Tour
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -466,6 +521,14 @@ export default function NewConstruction() {
                   <td>25+ homes</td>
                   <td>Active adult lifestyle</td>
                   <td>Up to $12K</td>
+                </tr>
+                <tr>
+                  <td><strong>Toll Brothers</strong></td>
+                  <td>★★★★★ Ultra-Luxury</td>
+                  <td>$575K-$1.6M</td>
+                  <td>28+ homes</td>
+                  <td>Fortune 500 luxury</td>
+                  <td>2/1 Rate Buydown</td>
                 </tr>
                 <tr>
                   <td><strong>Richmond American</strong></td>
