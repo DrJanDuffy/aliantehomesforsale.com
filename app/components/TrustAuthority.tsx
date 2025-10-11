@@ -18,13 +18,13 @@ export default function TrustAuthority() {
         
         <div className="credentials">
           <div className="credential">
-            <h3>🏠 Hyperlocal Aliante Expertise</h3>
-            <p>6+ years specializing exclusively in Aliante and North Las Vegas properties. We know every street, every builder, every school district, and every market trend. Our hyperlocal knowledge gives our clients the competitive advantage they need.</p>
+            <h3>🏆 D.R. Horton's #1 Premiere Buyers Agent</h3>
+            <p>Dr. Jan Duffy is recognized as D.R. Horton's #1 premiere buyers agent in North Las Vegas. Award-winning specialist for Heartland at Tule Springs - the primary active builder community adjacent to Aliante where new construction homes are selling in just 8 days at a median price of $639,900.</p>
             <ul style={{ marginTop: '1rem', listStyle: 'none' }}>
-              <li>✓ All 15+ Aliante neighborhoods and communities</li>
-              <li>✓ Builder relationships with Lennar, D.R. Horton, Tri Pointe</li>
-              <li>✓ School district boundaries and ratings</li>
-              <li>✓ Future development and infrastructure plans</li>
+              <li>✓ Award-winning D.R. Horton premiere agent status</li>
+              <li>✓ Average $18,000+ client savings through expert negotiation</li>
+              <li>✓ Direct relationships with Lennar, D.R. Horton, Tri Pointe, Toll Brothers</li>
+              <li>✓ Construction quality monitoring at every phase</li>
             </ul>
           </div>
           
