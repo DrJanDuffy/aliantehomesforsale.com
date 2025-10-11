@@ -19,6 +19,10 @@ declare global {
       'realscout-similar-properties': {
         [key: string]: any;
       };
+      'realscout-advanced-search': {
+        'agent-encoded-id'?: string;
+        [key: string]: any;
+      };
     }
   }
 }
