@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import RealScoutAdvancedSearch from '../components/RealScoutAdvancedSearch';
 import HomesForSaleHero from '../components/HomesForSaleHero';
+import AdvancedSearchForm from '../components/AdvancedSearchForm';
 import SearchPageContent from '../components/SearchPageContent';
 import PropertyCategories from '../components/PropertyCategories';
 import HomesSearchTips from '../components/HomesSearchTips';
@@ -19,8 +19,8 @@ export default function Search() {
     <main>
       <HomesForSaleHero />
       <section className="py-16 px-4 bg-gray-50">
-        <div className="container max-w-5xl mx-auto">
-          <RealScoutAdvancedSearch />
+        <div className="container mx-auto">
+          <AdvancedSearchForm />
         </div>
       </section>
       <SearchPageContent />
