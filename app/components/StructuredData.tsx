@@ -38,7 +38,7 @@ export default function StructuredData({ type, property, breadcrumbs, faqs, cust
           postalCode: '89084',
           addressCountry: 'US',
         },
-        telephone: '(702) 555-0123',
+        telephone: '(702) 707-7273',
         email: 'DrDuffy@AlianteHomesForSale.com',
         areaServed: {
           '@type': 'Place',
@@ -220,7 +220,7 @@ export default function StructuredData({ type, property, breadcrumbs, faqs, cust
         name: 'Aliante Real Estate',
         image: 'https://www.aliantehomesforsale.com/logo.png',
         url: 'https://www.aliantehomesforsale.com',
-        telephone: '+17025550123',
+        telephone: '+17027077273',
         email: 'DrDuffy@AlianteHomesForSale.com',
         address: {
           '@type': 'PostalAddress',
@@ -286,7 +286,7 @@ export default function StructuredData({ type, property, breadcrumbs, faqs, cust
         description: 'Expert real estate services in Aliante, North Las Vegas since 2018',
         contactPoint: {
           '@type': 'ContactPoint',
-          telephone: '+1-702-555-0123',
+          telephone: '+1-702-707-7273',
           contactType: 'Customer Service',
           areaServed: 'US-NV',
           availableLanguage: ['English', 'Spanish'],

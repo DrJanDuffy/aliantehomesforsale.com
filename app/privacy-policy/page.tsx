@@ -54,7 +54,7 @@ export default function PrivacyPolicy() {
           <p>
             Questions about this privacy policy? Contact us at:<br/>
             Email: DrDuffy@AlianteHomesForSale.com<br/>
-            Phone: (702) 555-0123
+            Phone: (702) 707-7273
           </p>
         </div>
       </section>

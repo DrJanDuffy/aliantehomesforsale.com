@@ -34,7 +34,7 @@ export default function Contact() {
             <div className="contact-grid">
               <div className="contact-card primary">
                 <h3>📞 Call Us Today</h3>
-                <p className="phone-number">(702) 555-0123</p>
+                <p className="phone-number">(702) 707-7273</p>
                 <p>Available 7 days a week</p>
                 <p>9:00 AM - 8:00 PM PST</p>
               </div>

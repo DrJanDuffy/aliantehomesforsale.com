@@ -72,7 +72,7 @@ export default function FairHousing() {
           </p>
           <p>
             Email: DrDuffy@AlianteHomesForSale.com<br/>
-            Phone: (702) 555-0123<br/>
+            Phone: (702) 707-7273<br/>
             Office: 2590 Nature Park Drive, Suite 275, North Las Vegas, NV 89084
           </p>
 
