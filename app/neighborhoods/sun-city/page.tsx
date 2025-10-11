@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import NeighborhoodsHero from '../../components/NeighborhoodsHero';
 import CommunityAmenities from '../../components/CommunityAmenities';
+import SunCityContent from '../../components/SunCityContent';
 import EnhancedFeaturedProperties from '../../components/EnhancedFeaturedProperties';
 import NeighborhoodCards from '../../components/NeighborhoodCards';
 import NeighborhoodsCTA from '../../components/NeighborhoodsCTA';
@@ -16,6 +17,7 @@ export default function SunCity() {
     <main>
       <NeighborhoodsHero />
       <CommunityAmenities />
+      <SunCityContent />
       <EnhancedFeaturedProperties />
       <NeighborhoodCards />
       <NeighborhoodsCTA />

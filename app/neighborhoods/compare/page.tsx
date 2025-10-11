@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import NeighborhoodsHero from '../../components/NeighborhoodsHero';
 import NeighborhoodCards from '../../components/NeighborhoodCards';
 import NeighborhoodComparison from '../../components/NeighborhoodComparison';
+import NeighborhoodDetailContent from '../../components/NeighborhoodDetailContent';
 import NeighborhoodsCTA from '../../components/NeighborhoodsCTA';
 
 export const metadata: Metadata = {
@@ -15,6 +16,7 @@ export default function Compare() {
     <main>
       <NeighborhoodsHero />
       <NeighborhoodComparison />
+      <NeighborhoodDetailContent />
       <NeighborhoodCards />
       <NeighborhoodsCTA />
     </main>

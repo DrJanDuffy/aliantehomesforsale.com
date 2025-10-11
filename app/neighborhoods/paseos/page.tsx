@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import NeighborhoodsHero from '../../components/NeighborhoodsHero';
 import NeighborhoodCards from '../../components/NeighborhoodCards';
+import NeighborhoodDetailContent from '../../components/NeighborhoodDetailContent';
 import EnhancedFeaturedProperties from '../../components/EnhancedFeaturedProperties';
 import NeighborhoodsCTA from '../../components/NeighborhoodsCTA';
 
@@ -15,6 +16,7 @@ export default function Paseos() {
     <main>
       <NeighborhoodsHero />
       <EnhancedFeaturedProperties />
+      <NeighborhoodDetailContent />
       <NeighborhoodCards />
       <NeighborhoodsCTA />
     </main>

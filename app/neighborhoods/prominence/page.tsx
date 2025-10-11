@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import NeighborhoodsHero from '../../components/NeighborhoodsHero';
 import NeighborhoodCards from '../../components/NeighborhoodCards';
 import CommunityAmenities from '../../components/CommunityAmenities';
+import NeighborhoodDetailContent from '../../components/NeighborhoodDetailContent';
 import EnhancedFeaturedProperties from '../../components/EnhancedFeaturedProperties';
 import NeighborhoodsCTA from '../../components/NeighborhoodsCTA';
 
@@ -17,6 +18,7 @@ export default function Prominence() {
       <NeighborhoodsHero />
       <EnhancedFeaturedProperties />
       <CommunityAmenities />
+      <NeighborhoodDetailContent />
       <NeighborhoodCards />
       <NeighborhoodsCTA />
     </main>

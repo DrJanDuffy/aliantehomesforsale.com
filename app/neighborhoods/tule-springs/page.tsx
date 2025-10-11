@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import NeighborhoodsHero from '../../components/NeighborhoodsHero';
 import NewConstructionHero from '../../components/NewConstructionHero';
 import TopBuilders from '../../components/TopBuilders';
+import BuilderDetailContent from '../../components/BuilderDetailContent';
 import NeighborhoodCards from '../../components/NeighborhoodCards';
 import NeighborhoodsCTA from '../../components/NeighborhoodsCTA';
 
@@ -16,6 +17,7 @@ export default function TuleSprings() {
     <main>
       <NewConstructionHero />
       <TopBuilders />
+      <BuilderDetailContent />
       <NeighborhoodCards />
       <NeighborhoodsCTA />
     </main>
