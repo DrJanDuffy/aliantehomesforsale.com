@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import EnhancedNavigation from './components/EnhancedNavigation';
+import Breadcrumbs from './components/Breadcrumbs';
 import EnhancedFooter from './components/EnhancedFooter';
 import PerformanceMonitor from './components/PerformanceMonitor';
 import GoogleAnalytics from './components/GoogleAnalytics';
@@ -100,6 +101,7 @@ export default function RootLayout({
         <StructuredData type="LocalBusiness" />
         
         <EnhancedNavigation />
+        <Breadcrumbs />
         
         {children}
         <PerformanceMonitor />
