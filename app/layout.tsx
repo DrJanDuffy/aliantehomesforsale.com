@@ -130,6 +130,7 @@ export default function RootLayout({
                   <li><a href="/builders/dr-horton">D.R. Horton (Tule Springs)</a></li>
                   <li><a href="/builders/tri-pointe">Tri Pointe (Luxury Homes)</a></li>
                   <li><a href="/builders/del-webb">Del Webb (Active Adult 55+)</a></li>
+                  <li><a href="/builders/toll-brothers">Toll Brothers (Ultra-Luxury)</a></li>
                   <li><a href="/builders/richmond-american">Richmond American Homes</a></li>
                   <li><a href="/builders/incentives">Builder Incentives Tracker</a></li>
                 </ul>
