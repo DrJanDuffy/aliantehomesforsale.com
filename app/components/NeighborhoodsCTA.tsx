@@ -1,0 +1,64 @@
+'use client';
+
+export default function NeighborhoodsCTA() {
+  return (
+    <section 
+      className="py-16 px-4 relative overflow-hidden"
+      style={{
+        background: 'linear-gradient(135deg, #0A2540 0%, #3A8DDE 100%)'
+      }}
+    >
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+          backgroundSize: '40px 40px'
+        }} />
+      </div>
+
+      <div className="max-w-4xl mx-auto text-center relative z-10">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+          Ready to Find Your Perfect Neighborhood?
+        </h2>
+        <p className="text-xl sm:text-2xl text-white/95 mb-10 leading-relaxed">
+          Get expert guidance on choosing the right Aliante community for your lifestyle
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a
+            href="/contact"
+            className="inline-block py-4 px-10 rounded-lg font-semibold text-lg transition-all transform hover:scale-105 hover:shadow-2xl focus:ring-4 focus:ring-white/30 focus:outline-none"
+            style={{ 
+              backgroundColor: '#ed8936',
+              color: 'white'
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#dd6b20'}
+            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#ed8936'}
+          >
+            Schedule a Neighborhood Tour
+          </a>
+          
+          <a
+            href="/homes-for-sale"
+            className="inline-block py-4 px-10 rounded-lg font-semibold text-lg transition-all transform hover:scale-105 hover:shadow-2xl border-2 focus:ring-4 focus:ring-white/30 focus:outline-none"
+            style={{ 
+              backgroundColor: 'transparent',
+              color: 'white',
+              borderColor: 'white'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = 'white';
+              e.currentTarget.style.color = '#0A2540';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'transparent';
+              e.currentTarget.style.color = 'white';
+            }}
+          >
+            View Available Homes
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
