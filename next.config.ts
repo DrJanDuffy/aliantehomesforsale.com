@@ -44,7 +44,16 @@ const nextConfig: NextConfig = {
     // Modern format support
     formats: ['image/webp', 'image/avif'],
     // External domains for images and other services
-    domains: ['images.unsplash.com', 'cdn.pixabay.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.pixabay.com',
+      },
+    ],
   },
 
   // Headers for security and performance

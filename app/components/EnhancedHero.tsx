@@ -25,11 +25,18 @@ export default function EnhancedHero() {
   return (
     <section 
       className="relative min-h-[90vh] flex items-center justify-center px-4 py-16 overflow-hidden"
-      style={{
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
-      }}
       aria-labelledby="hero-heading"
     >
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1920&h=1080&fit=crop&q=80"
+          alt="Aliante Luxury Homes"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/90 to-indigo-900/90"></div>
+      </div>
+      
       {/* Background pattern overlay */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{

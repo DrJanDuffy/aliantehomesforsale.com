@@ -48,11 +48,20 @@ export const metadata: Metadata = {
     siteName: 'Aliante Las Vegas | Homes by Dr. Jan Duffy',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&h=630&fit=crop&q=80',
+        width: 1200,
+        height: 630,
+        alt: 'Luxury Home in Aliante North Las Vegas',
+      },
+    ],
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: 'Aliante North Las Vegas Real Estate & Homes For Sale | 286+ MLS Listings',
     description: 'Browse 286+ Aliante homes for sale in North Las Vegas, NV. Updated every 15 minutes from MLS. Gated communities, Sun City, new construction.',
+    images: ['https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&h=630&fit=crop&q=80'],
   },
   robots: {
     index: true,

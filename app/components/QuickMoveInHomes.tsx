@@ -11,14 +11,22 @@ interface QuickMoveInHomeProps {
 }
 
 function QuickMoveInCard({ badge, builder, community, specs, price, features, gradient }: QuickMoveInHomeProps) {
+  // Use different Unsplash images for each builder
+  const imageId = builder === 'Lennar' ? 'photo-1600585154340-be6161a56a0c' : 
+                  builder === 'D.R. Horton' ? 'photo-1600047509807-ba8f99d2cdde' : 
+                  'photo-1600573472592-401b489a3cdc';
+  const imageUrl = `https://images.unsplash.com/${imageId}?w=600&h=400&fit=crop&q=80`;
+  
   return (
     <article className="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
-      {/* Image Placeholder */}
-      <div 
-        className="relative h-48 flex items-center justify-center"
-        style={{ background: gradient }}
-      >
-        <div className="text-6xl">🏠</div>
+      {/* Property Image */}
+      <div className="relative h-48 overflow-hidden">
+        <img 
+          src={imageUrl}
+          alt={`${builder} new construction home in ${community}`}
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
         <div className="absolute top-4 left-4 bg-green-500 text-white px-4 py-2 rounded-full font-bold text-sm shadow-lg">
           {badge}
         </div>
