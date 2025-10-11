@@ -111,21 +111,21 @@ export default function NewConstruction() {
             </div>
 
             {/* D.R. Horton */}
-            <div className="builder-card">
+            <div className="builder-card featured">
               <div className="builder-header">
                 <div className="builder-logo">
                   <div className="logo-placeholder">D.R. HORTON</div>
                 </div>
-                <div className="builder-badge">#2 Volume Builder</div>
+                <div className="builder-badge">🏆 Dr. Duffy #1 Premiere Agent</div>
               </div>
               <div className="builder-stats">
                 <div className="stat">
-                  <strong>1,910</strong>
-                  <span>Homes Sold in Area</span>
+                  <strong>$639,900</strong>
+                  <span>Median New Price</span>
                 </div>
                 <div className="stat">
-                  <strong>32+</strong>
-                  <span>Available Now</span>
+                  <strong>8 Days</strong>
+                  <span>Avg Days on Market</span>
                 </div>
                 <div className="stat">
                   <strong>$380K-$680K</strong>
@@ -133,30 +133,31 @@ export default function NewConstruction() {
                 </div>
               </div>
               <div className="builder-content">
-                <h3>D.R. Horton - America's Builder</h3>
-                <p>The nation's largest homebuilder since 1978, delivering quality and affordability in the Villages at Tule Springs master-planned community.</p>
+                <h3>D.R. Horton - America's #1 Builder</h3>
+                <p><strong>🏆 Dr. Jan Duffy is D.R. Horton's #1 Premiere Buyers Agent in North Las Vegas.</strong> Award-winning expert for Heartland at Tule Springs - the primary active builder community directly adjacent to Aliante with quick access to Aliante Resort and 215 Beltway.</p>
                 
-                <h4>Popular Communities:</h4>
+                <h4>Heartland at Tule Springs (Primary Active Community):</h4>
                 <ul>
-                  <li>Villages at Tule Springs - Master-planned $380K-$550K</li>
-                  <li>Heartland Communities - Family-friendly $410K-$620K</li>
-                  <li>Aliante Ranch - Move-in ready $395K-$680K</li>
+                  <li>Master-planned directly adjacent to Aliante</li>
+                  <li>Median price: $639,900 - Homes selling in 8 days!</li>
+                  <li>Quick access to Aliante Resort & 215 Beltway</li>
+                  <li>32+ homes available in multiple collections</li>
                 </ul>
 
-                <h4>Current Incentives:</h4>
+                <h4>Dr. Duffy's Premiere Agent Advantage:</h4>
                 <ul>
-                  <li>✅ Up to $20,000 in savings</li>
-                  <li>✅ Preferred lender incentives</li>
-                  <li>✅ Quick move-in homes available</li>
-                  <li>✅ Lot premiums waived on select homes</li>
+                  <li>✅ Award-winning D.R. Horton #1 specialist</li>
+                  <li>✅ Average $18,000+ savings per client</li>
+                  <li>✅ Direct builder relationships & priority access</li>
+                  <li>✅ Construction quality monitoring included</li>
                 </ul>
 
                 <div className="builder-actions">
                   <a href="/builders/dr-horton" className="cta-button primary">
-                    View 32+ D.R. Horton Homes
+                    Work with #1 D.R. Horton Agent
                   </a>
                   <a href="/contact" className="cta-button secondary">
-                    Get Info
+                    Schedule Heartland Tour
                   </a>
                 </div>
               </div>
