@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import ContactHero from '../components/ContactHero';
+import HomeValuationContent from '../components/HomeValuationContent';
 import EnhancedContactForm from '../components/EnhancedContactForm';
 import AboutExpertise from '../components/AboutExpertise';
 import AboutCTA from '../components/AboutCTA';
@@ -16,6 +17,7 @@ export default function HomeValuation() {
   return (
     <main>
       <ContactHero />
+      <HomeValuationContent />
       <section className="py-16 px-4 bg-white">
         <div className="container">
           <EnhancedContactForm />

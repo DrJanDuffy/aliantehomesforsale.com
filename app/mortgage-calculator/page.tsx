@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import ContactHero from '../components/ContactHero';
+import MortgageCalculatorContent from '../components/MortgageCalculatorContent';
 import EnhancedContactForm from '../components/EnhancedContactForm';
 import HomesMarketSnapshot from '../components/HomesMarketSnapshot';
 import HomesCTA from '../components/HomesCTA';
@@ -16,6 +17,7 @@ export default function MortgageCalculator() {
   return (
     <main>
       <ContactHero />
+      <MortgageCalculatorContent />
       <section className="py-16 px-4 bg-white">
         <div className="container">
           <EnhancedContactForm />
