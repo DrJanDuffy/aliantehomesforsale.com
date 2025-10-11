@@ -5,6 +5,7 @@ import HomesForSaleHero from '../components/HomesForSaleHero';
 import PropertyCategories from '../components/PropertyCategories';
 import HomesMarketSnapshot from '../components/HomesMarketSnapshot';
 import HomesSearchTips from '../components/HomesSearchTips';
+import AlianteFAQ from '../components/AlianteFAQ';
 import HomesCTA from '../components/HomesCTA';
 
 export const metadata: Metadata = {
