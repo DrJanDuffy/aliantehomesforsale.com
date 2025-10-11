@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 export default function BuyerGuideContent() {
   return (
     <>
@@ -41,7 +43,7 @@ export default function BuyerGuideContent() {
           
           <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
             <p className="leading-relaxed">
-              Aliante encompasses multiple distinct neighborhoods, each with its own character, amenities, and price points. Understanding these differences is crucial for focusing your search on areas that align with your lifestyle priorities and budget. The Prominence offers luxury gated living with golf course access, appealing to move-up buyers and retirees seeking premium amenities and security. Club Aliante focuses on golf lifestyle, with homes surrounding the championship course attracting golf enthusiasts and entertaining-focused buyers.
+              Aliante encompasses multiple distinct <Link href="/neighborhoods" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">neighborhoods</Link>, each with its own character, amenities, and price points. Understanding these differences is crucial for focusing your search on areas that align with your lifestyle priorities and budget. <Link href="/neighborhoods/prominence" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">The Prominence</Link> offers luxury <Link href="/gated-communities" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">gated living</Link> with golf course access, appealing to move-up buyers and retirees seeking premium amenities and security. <Link href="/neighborhoods/club-aliante" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">Club Aliante</Link> focuses on <Link href="/golf-homes" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">golf lifestyle</Link>, with homes surrounding the championship course attracting golf enthusiasts and entertaining-focused buyers.
             </p>
 
             <p className="leading-relaxed">

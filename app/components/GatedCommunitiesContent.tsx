@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 export default function GatedCommunitiesContent() {
   return (
     <>
@@ -41,11 +43,11 @@ export default function GatedCommunitiesContent() {
           
           <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
             <p className="leading-relaxed">
-              Aliante is home to several nationally recognized gated communities, each with its own character and amenity offerings. The Prominence stands as the area's most exclusive community, featuring luxury homes from $600,000 to over $1.2 million with direct golf course access, resort-style pools, and concierge services. Homes here are architectural showcases with premium finishes, expansive lots, and views of the manicured golf course and surrounding mountains.
+              Aliante is home to several nationally recognized gated communities, each with its own character and amenity offerings. <Link href="/neighborhoods/prominence" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">The Prominence</Link> stands as the area's most exclusive community, featuring luxury homes from $600,000 to over $1.2 million with direct golf course access, resort-style pools, and concierge services. Homes here are architectural showcases with premium finishes, expansive lots, and views of the manicured <Link href="/golf-homes" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">golf course</Link> and surrounding mountains.
             </p>
 
             <p className="leading-relaxed">
-              Club Aliante offers a different take on gated living, focusing on golf lifestyle with homes surrounding the championship 18-hole course. Residents enjoy preferred tee times, clubhouse dining privileges, and a tight-knit community of golf enthusiasts. The gated sections of this community provide the perfect blend of security and golf course living, with homes ranging from $500,000 to $900,000 offering exceptional value for the amenities provided.
+              <Link href="/neighborhoods/club-aliante" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">Club Aliante</Link> offers a different take on gated living, focusing on golf lifestyle with homes surrounding the championship 18-hole course. Residents enjoy preferred tee times, clubhouse dining privileges, and a tight-knit community of golf enthusiasts. The gated sections of this community provide the perfect blend of security and <Link href="/golf-homes" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">golf course living</Link>, with homes ranging from $500,000 to $900,000 offering exceptional value for the amenities provided. View all available <Link href="/homes-for-sale" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">Aliante homes for sale</Link> to explore current gated community options.
             </p>
 
             <h3 className="text-2xl font-bold mt-8 mb-4" style={{ color: '#2c5aa0' }}>

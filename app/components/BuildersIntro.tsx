@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 export default function BuildersIntro() {
   return (
     <section className="py-16 px-4 bg-white">
@@ -26,7 +28,7 @@ export default function BuildersIntro() {
           </p>
 
           <p className="leading-relaxed">
-            Beyond the immediate financial benefits, new construction homes in Aliante feature the latest in energy-efficient technology, smart home integration, and open-concept designs that today's buyers demand. You'll enjoy 10-year structural warranties, modern electrical and plumbing systems designed for today's lifestyle, and peace of mind knowing that every component is brand new and covered under warranty. The ability to customize your home during the build process means you can create a space that perfectly matches your family's needs without the cost and hassle of renovations.
+            Beyond the immediate financial benefits, new construction homes in Aliante feature the latest in energy-efficient technology, smart home integration, and open-concept designs that today's buyers demand. You'll enjoy 10-year structural warranties, modern electrical and plumbing systems designed for today's lifestyle, and peace of mind knowing that every component is brand new and covered under warranty. The ability to customize your home during the build process means you can create a space that perfectly matches your family's needs without the cost and hassle of renovations. Learn more about <Link href="/neighborhoods/tule-springs" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">Villages at Tule Springs</Link>, our newest master-planned community with cutting-edge new construction.
           </p>
         </div>
       </div>

@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 export default function MarketReportContent() {
   return (
     <>
@@ -15,7 +17,7 @@ export default function MarketReportContent() {
             </p>
             
             <p className="leading-relaxed">
-              With over 286 active listings currently available, Aliante offers buyers exceptional choice across all price points and property types. From affordable starter homes in The Paseos beginning around $300,000 to luxury estates in The Prominence exceeding $1.2 million, the diverse inventory ensures that families at every stage of life can find their ideal home. The median price of $450,000 reflects a balanced market where buyers have negotiating power while sellers can still achieve strong returns on their investments.
+              With over 286 active listings currently available, Aliante offers buyers exceptional choice across all price points and property types. From affordable starter homes in <Link href="/neighborhoods/paseos" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">The Paseos</Link> beginning around $300,000 to luxury estates in <Link href="/neighborhoods/prominence" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">The Prominence</Link> exceeding $1.2 million, the diverse inventory ensures that families at every stage of life can find their ideal home. Browse all <Link href="/homes-for-sale" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">Aliante homes for sale</Link> to see current listings. The median price of $450,000 reflects a balanced market where buyers have negotiating power while sellers can still achieve strong returns on their investments.
             </p>
 
             <h3 className="text-2xl font-bold mt-8 mb-4" style={{ color: '#2c5aa0' }}>
