@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import NeighborhoodsHero from '../components/NeighborhoodsHero';
+import SchoolsContent from '../components/SchoolsContent';
 import CommunityAmenities from '../components/CommunityAmenities';
 import NeighborhoodCards from '../components/NeighborhoodCards';
 import NeighborhoodsCTA from '../components/NeighborhoodsCTA';
@@ -16,6 +17,7 @@ export default function Schools() {
   return (
     <main>
       <NeighborhoodsHero />
+      <SchoolsContent />
       <CommunityAmenities />
       <NeighborhoodCards />
       <NeighborhoodsCTA />

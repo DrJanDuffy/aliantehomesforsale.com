@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import NeighborhoodsHero from '../components/NeighborhoodsHero';
-import NeighborhoodCards from '../components/NeighborhoodCards';
+import SunCityContent from '../components/SunCityContent';
 import CommunityAmenities from '../components/CommunityAmenities';
 import EnhancedFeaturedProperties from '../components/EnhancedFeaturedProperties';
+import NeighborhoodCards from '../components/NeighborhoodCards';
 import NeighborhoodsCTA from '../components/NeighborhoodsCTA';
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export default function SunCityAliante() {
   return (
     <main>
       <NeighborhoodsHero />
+      <SunCityContent />
       <CommunityAmenities />
       <EnhancedFeaturedProperties />
       <NeighborhoodCards />
