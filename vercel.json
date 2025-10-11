@@ -1,11 +1,28 @@
 {
   "redirects": [
     {
-      "source": "/:path((?!www).*)",
+      "source": "/:path*",
       "has": [
         {
           "type": "host",
           "value": "aliantehomesforsale.com"
+        }
+      ],
+      "destination": "https://www.aliantehomesforsale.com/:path*",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.aliantehomesforsale.com"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
         }
       ],
       "destination": "https://www.aliantehomesforsale.com/:path*",
