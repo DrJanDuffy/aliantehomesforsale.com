@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import SearchForm from '../components/SearchForm';
+import RealScoutAdvancedSearch from '../components/RealScoutAdvancedSearch';
 import StructuredData from '../components/StructuredData';
 
 export const metadata: Metadata = {
@@ -36,7 +36,7 @@ export default function SearchPage() {
             <h2>Find Your Perfect Aliante Home</h2>
             <p>Use our advanced search tools to filter properties by your exact criteria</p>
             
-            <SearchForm />
+            <RealScoutAdvancedSearch />
           </div>
         </section>
 

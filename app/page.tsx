@@ -2,7 +2,7 @@
 
 import { useId } from 'react';
 import StructuredData from './components/StructuredData';
-import PropertySearch from './components/PropertySearch';
+import RealScoutAdvancedSearch from './components/RealScoutAdvancedSearch';
 import FeaturedProperties from './components/FeaturedProperties';
 import PropertyTypes from './components/PropertyTypes';
 import MarketInsights from './components/MarketInsights';
@@ -28,7 +28,7 @@ export default function Home() {
             <h1 id={heroHeadingId}>Find Your Perfect Aliante Home with Local Experts</h1>
             <p className="hero-subtitle">286+ verified MLS listings • Updated every 15 minutes • Free market analysis & buyer consultation</p>
 
-            <PropertySearch />
+            <RealScoutAdvancedSearch />
           </div>
         </section>
 
