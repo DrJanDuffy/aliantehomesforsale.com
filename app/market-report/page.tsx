@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import HomesForSaleHero from '../components/HomesForSaleHero';
 import HomesMarketSnapshot from '../components/HomesMarketSnapshot';
+import MarketReportContent from '../components/MarketReportContent';
 import PropertyCategories from '../components/PropertyCategories';
 import HomesCTA from '../components/HomesCTA';
 
@@ -17,6 +18,7 @@ export default function MarketReport() {
     <main>
       <HomesForSaleHero />
       <HomesMarketSnapshot />
+      <MarketReportContent />
       <PropertyCategories />
       <HomesCTA />
     </main>

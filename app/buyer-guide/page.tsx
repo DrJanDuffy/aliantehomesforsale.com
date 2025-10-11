@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import AboutHero from '../components/AboutHero';
+import BuyerGuideContent from '../components/BuyerGuideContent';
 import ConstructionProcess from '../components/ConstructionProcess';
 import HomesSearchTips from '../components/HomesSearchTips';
 import ContactWhyChoose from '../components/ContactWhyChoose';
@@ -17,6 +18,7 @@ export default function BuyerGuide() {
   return (
     <main>
       <AboutHero />
+      <BuyerGuideContent />
       <HomesSearchTips />
       <ConstructionProcess />
       <ContactWhyChoose />
