@@ -1,57 +1,47 @@
-import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
-  const response = NextResponse.next();
-
-  // Performance optimizations
-  response.headers.set('X-DNS-Prefetch-Control', 'on');
-  response.headers.set('X-Frame-Options', 'SAMEORIGIN');
-  response.headers.set('X-Content-Type-Options', 'nosniff');
-  response.headers.set('Referrer-Policy', 'origin-when-cross-origin');
-
-  // Advanced caching for static assets
-  if (request.nextUrl.pathname.startsWith('/_next/static/')) {
-    response.headers.set('Cache-Control', 'public, max-age=31536000, immutable');
+  const url = request.nextUrl.clone();
+  const hostname = request.headers.get('host') || '';
+  
+  // Canonical domain enforcement (www + HTTPS)
+  const canonicalDomain = 'www.aliantehomesforsale.com';
+  
+  // Check if request is not to canonical domain
+  const needsRedirect = 
+    hostname !== canonicalDomain && 
+    !hostname.includes('localhost') && 
+    !hostname.includes('vercel.app');
+  
+  if (needsRedirect) {
+    // Force HTTPS and www
+    url.protocol = 'https:';
+    url.host = canonicalDomain;
+    
+    // 301 Permanent Redirect
+    return NextResponse.redirect(url, 301);
   }
-
-  // API route optimizations
-  if (request.nextUrl.pathname.startsWith('/api/')) {
-    response.headers.set('Cache-Control', 'public, max-age=0, must-revalidate');
+  
+  // Force HTTPS even on correct domain
+  if (url.protocol === 'http:' && !hostname.includes('localhost')) {
+    url.protocol = 'https:';
+    return NextResponse.redirect(url, 301);
   }
-
-  // Security headers
-  response.headers.set(
-    'Content-Security-Policy',
-    "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://em.realscout.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:;"
-  );
-
-  // Performance monitoring
-  const start = Date.now();
-  response.headers.set('X-Response-Time', `${Date.now() - start}ms`);
-
-  // Rate limiting (basic implementation)
-  const ip =
-    request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown';
-
-  // You can implement more sophisticated rate limiting here
-  // For now, we'll just add the header
-  response.headers.set('X-RateLimit-Limit', '1000');
-  response.headers.set('X-RateLimit-Remaining', '999');
-  response.headers.set('X-Client-IP', ip);
-
-  return response;
+  
+  return NextResponse.next();
 }
 
 export const config = {
   matcher: [
     /*
-     * Match all request paths except for the ones starting with:
+     * Match all request paths except:
      * - api (API routes)
      * - _next/static (static files)
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)
+     * - public files (public folder)
      */
-    '/((?!api|_next/static|_next/image|favicon.ico).*)',
+    '/((?!api|_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|xml|txt)).*)',
   ],
 };
