@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import AboutHero from '../components/AboutHero';
 import BuyerGuideContent from '../components/BuyerGuideContent';
+import ConstructualLinks from '../components/ContextualLinks';
 import ConstructionProcess from '../components/ConstructionProcess';
 import HomesSearchTips from '../components/HomesSearchTips';
 import ContactWhyChoose from '../components/ContactWhyChoose';
@@ -19,6 +20,9 @@ export default function BuyerGuide() {
     <main>
       <AboutHero />
       <BuyerGuideContent />
+      <div className="px-4">
+        <ContextualLinks variant="buying" />
+      </div>
       <HomesSearchTips />
       <ConstructionProcess />
       <ContactWhyChoose />

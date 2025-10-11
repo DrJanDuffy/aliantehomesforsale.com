@@ -3,6 +3,7 @@ import NewConstructionHero from '../components/NewConstructionHero';
 import BuildersIntro from '../components/BuildersIntro';
 import TopBuilders from '../components/TopBuilders';
 import BuilderAdvantages from '../components/BuilderAdvantages';
+import ContextualLinks from '../components/ContextualLinks';
 import BuilderComparison from '../components/BuilderComparison';
 import BuilderIncentivesInfo from '../components/BuilderIncentivesInfo';
 import NewConstructionCTA from '../components/NewConstructionCTA';
@@ -21,6 +22,9 @@ export default function Builders() {
       <NewConstructionHero />
       <BuildersIntro />
       <TopBuilders />
+      <div className="px-4">
+        <ContextualLinks variant="builders" />
+      </div>
       <BuilderAdvantages />
       <BuilderComparison />
       <BuilderIncentivesInfo />

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import HomesForSaleHero from '../components/HomesForSaleHero';
 import HomesMarketSnapshot from '../components/HomesMarketSnapshot';
 import MarketReportContent from '../components/MarketReportContent';
+import ContextualLinks from '../components/ContextualLinks';
 import PropertyCategories from '../components/PropertyCategories';
 import HomesCTA from '../components/HomesCTA';
 
@@ -19,6 +20,9 @@ export default function MarketReport() {
       <HomesForSaleHero />
       <HomesMarketSnapshot />
       <MarketReportContent />
+      <div className="px-4">
+        <ContextualLinks variant="market" />
+      </div>
       <PropertyCategories />
       <HomesCTA />
     </main>

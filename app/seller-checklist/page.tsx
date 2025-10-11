@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import AboutHero from '../components/AboutHero';
 import SellerChecklistContent from '../components/SellerChecklistContent';
+import ContextualLinks from '../components/ContextualLinks';
 import ConstructionProcess from '../components/ConstructionProcess';
 import AboutExpertise from '../components/AboutExpertise';
 import AboutCTA from '../components/AboutCTA';
@@ -18,6 +19,9 @@ export default function SellerChecklist() {
     <main>
       <AboutHero />
       <SellerChecklistContent />
+      <div className="px-4">
+        <ContextualLinks variant="selling" />
+      </div>
       <ConstructionProcess />
       <AboutExpertise />
       <AboutCTA />

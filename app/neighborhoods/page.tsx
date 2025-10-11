@@ -3,6 +3,7 @@ import StructuredData from '../components/StructuredData';
 import NeighborhoodsHero from '../components/NeighborhoodsHero';
 import NeighborhoodCards from '../components/NeighborhoodCards';
 import CommunityAmenities from '../components/CommunityAmenities';
+import ContextualLinks from '../components/ContextualLinks';
 import NeighborhoodComparison from '../components/NeighborhoodComparison';
 import NeighborhoodsCTA from '../components/NeighborhoodsCTA';
 
@@ -25,6 +26,11 @@ export default function Neighborhoods() {
 
         {/* Neighborhood Cards */}
         <NeighborhoodCards />
+
+        {/* Contextual Links */}
+        <div className="px-4">
+          <ContextualLinks variant="neighborhoods" />
+        </div>
 
         {/* Community Amenities */}
         <CommunityAmenities />
