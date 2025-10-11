@@ -27,9 +27,12 @@ export default function RealScoutAdvancedSearch() {
       `}</style>
 
       {/* RealScout Advanced Search Widget */}
-      <div className="realscout-search-container">
-        <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
-      </div>
+      <div 
+        className="realscout-search-container"
+        dangerouslySetInnerHTML={{
+          __html: '<realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>'
+        }}
+      />
     </>
   );
 }
