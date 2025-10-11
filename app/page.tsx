@@ -25,8 +25,8 @@ export default function Home() {
         {/* Hero Section */}
         <section className="hero" aria-labelledby={heroHeadingId}>
           <div className="hero-content">
-            <h1 id={heroHeadingId}>Find Your Perfect Aliante Home with Local Experts</h1>
-            <p className="hero-subtitle">286+ verified MLS listings • Updated every 15 minutes • Free market analysis & buyer consultation</p>
+            <h1 id={heroHeadingId}>Aliante North Las Vegas Real Estate & Homes For Sale</h1>
+            <p className="hero-subtitle">286+ MLS listings updated every 15 minutes • Gated communities • Sun City 55+ • New construction • Expert local guidance since 2018</p>
 
             <RealScoutAdvancedSearch />
           </div>

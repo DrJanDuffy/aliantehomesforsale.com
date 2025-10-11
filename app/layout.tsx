@@ -21,11 +21,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Aliante Homes For Sale - Expert Local Realtors | North Las Vegas NV',
+  title: 'Aliante North Las Vegas Real Estate & Homes For Sale | 286+ MLS Listings',
   description:
-    'Find your perfect Aliante home with local experts. 286+ verified MLS listings updated every 15 minutes. Free market analysis & buyer consultation. Call (702) 555-0123',
+    'Browse 286+ Aliante homes for sale in North Las Vegas, NV. Updated every 15 minutes from MLS. Gated communities, Sun City Aliante 55+, new construction. Call (702) 707-7273 for expert local guidance.',
   keywords:
-    'Aliante homes for sale, Las Vegas real estate, Aliante real estate, homes in Aliante, Las Vegas homes, North Las Vegas real estate, Aliante neighborhoods, new construction Aliante',
+    'Aliante North Las Vegas homes for sale, Aliante real estate, North Las Vegas homes, 89084 homes for sale, Aliante gated community, Sun City Aliante, Club Aliante, new construction Aliante, Aliante MLS listings, houses for rent Aliante',
   authors: [{ name: 'Aliante Real Estate' }],
   creator: 'Aliante Real Estate',
   publisher: 'Aliante Real Estate',
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Aliante Homes For Sale - Expert Local Realtors | North Las Vegas NV',
-    description: 'Find your perfect Aliante home with local experts. 286+ verified MLS listings updated every 15 minutes. Free market analysis & buyer consultation. Call (702) 555-0123',
+    title: 'Aliante North Las Vegas Real Estate & Homes For Sale | 286+ MLS Listings',
+    description: 'Browse 286+ Aliante homes for sale in North Las Vegas, NV. Updated every 15 minutes from MLS. Gated communities, Sun City Aliante 55+, new construction.',
     url: 'https://www.aliantehomesforsale.com',
     siteName: 'Aliante Real Estate',
     locale: 'en_US',
@@ -56,8 +56,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Aliante Homes For Sale - Expert Local Realtors | North Las Vegas NV',
-    description: 'Find your perfect Aliante home with local experts. 286+ verified MLS listings updated every 15 minutes. Free market analysis & buyer consultation. Call (702) 555-0123',
+    title: 'Aliante North Las Vegas Real Estate & Homes For Sale | 286+ MLS Listings',
+    description: 'Browse 286+ Aliante homes for sale in North Las Vegas, NV. Updated every 15 minutes from MLS. Gated communities, Sun City, new construction.',
     images: ['/og-image.jpg'],
   },
   robots: {

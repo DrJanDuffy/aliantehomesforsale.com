@@ -3,8 +3,9 @@ import RealScoutAdvancedSearch from '../components/RealScoutAdvancedSearch';
 import StructuredData from '../components/StructuredData';
 
 export const metadata: Metadata = {
-  title: 'Homes For Sale in Aliante - 286+ MLS Listings | Updated Every 15 Minutes',
-  description: '286+ verified MLS listings in Aliante, North Las Vegas. Updated every 15 minutes. Search by price, beds, baths. Expert buyer representation.',
+  title: 'Aliante Homes For Sale North Las Vegas NV - 286+ MLS Listings',
+  description: 'Browse 286+ Aliante homes for sale in North Las Vegas, NV. Updated every 15 minutes from Greater Las Vegas MLS. Gated communities, Sun City 55+, golf course homes, new construction. Call (702) 707-7273.',
+  keywords: 'Aliante homes for sale, North Las Vegas homes, 89084 homes for sale, Aliante real estate, gated community Las Vegas, Sun City Aliante',
   alternates: {
     canonical: 'https://www.aliantehomesforsale.com/homes-for-sale',
   },
