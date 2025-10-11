@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 export default function SunCityContent() {
   return (
     <>
@@ -11,7 +13,7 @@ export default function SunCityContent() {
           
           <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
             <p className="leading-relaxed">
-              Sun City Aliante represents the pinnacle of active adult 55+ living in North Las Vegas, offering a resort-style lifestyle with world-class amenities, social engagement opportunities, and maintenance-free living that allows residents to focus on enjoying retirement rather than home upkeep. Developed by Del Webb, the nation's premier builder of active adult communities, Sun City Aliante spans over 1,400 acres and includes multiple neighborhoods, extensive recreational facilities, and a vibrant social scene that keeps residents active and engaged throughout their retirement years.
+              Sun City Aliante represents the pinnacle of active adult 55+ living in North Las Vegas, offering a resort-style lifestyle with world-class amenities, social engagement opportunities, and maintenance-free living that allows residents to focus on enjoying retirement rather than home upkeep. Developed by <Link href="/builders/del-webb" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">Del Webb</Link>, the nation's premier builder of active adult communities, Sun City Aliante spans over 1,400 acres and includes multiple <Link href="/neighborhoods" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">neighborhoods</Link>, extensive recreational facilities, and a vibrant social scene that keeps residents active and engaged throughout their retirement years. Explore current <Link href="/homes-for-sale" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">homes for sale</Link> in Sun City Aliante.
             </p>
             
             <p className="leading-relaxed">

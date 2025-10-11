@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 export default function GolfHomesContent() {
   return (
     <>
@@ -11,7 +13,7 @@ export default function GolfHomesContent() {
           
           <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
             <p className="leading-relaxed">
-              Golf course homes in Aliante represent the pinnacle of resort-style living, combining the natural beauty of manicured fairways with the convenience of having a championship golf course as your backyard. Club Aliante, designed by renowned architect Billy Casper, features 7,092 yards of challenging play with stunning elevation changes, strategic bunkers, and lush landscaping that creates a true desert oasis. The 32+ available golf course properties range from cozy villas overlooking signature par-3 holes to expansive estate homes with panoramic views spanning multiple fairways.
+              Golf course homes in Aliante represent the pinnacle of resort-style living, combining the natural beauty of manicured fairways with the convenience of having a championship golf course as your backyard. <Link href="/neighborhoods/club-aliante" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">Club Aliante</Link>, designed by renowned architect Billy Casper, features 7,092 yards of challenging play with stunning elevation changes, strategic bunkers, and lush landscaping that creates a true desert oasis. The 32+ available golf course properties range from cozy villas overlooking signature par-3 holes to expansive estate homes with panoramic views spanning multiple fairways. Browse current <Link href="/homes-for-sale" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">homes for sale</Link> to see available golf course properties.
             </p>
             
             <p className="leading-relaxed">

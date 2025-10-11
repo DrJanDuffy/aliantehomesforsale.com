@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 export default function SellerChecklistContent() {
   return (
     <>
@@ -11,7 +13,7 @@ export default function SellerChecklistContent() {
           
           <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
             <p className="leading-relaxed">
-              Selling your Aliante home successfully requires strategic planning, professional execution, and expert market knowledge. The difference between an average sale and an exceptional one often comes down to preparation, pricing strategy, and marketing execution. As your listing agent with over six years of experience in the Aliante market, I'll guide you through a proven process that maximizes your sale price while minimizing time on market and stress throughout the transaction.
+              Selling your Aliante home successfully requires strategic planning, professional execution, and expert <Link href="/market-report" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">market knowledge</Link>. The difference between an average sale and an exceptional one often comes down to preparation, pricing strategy, and marketing execution. As your listing agent with over six years of experience in the Aliante market, I'll guide you through a proven process that maximizes your sale price while minimizing time on market and stress throughout the transaction. Get started with a <Link href="/home-valuation" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">free home valuation</Link> to understand your property's current worth.
             </p>
             
             <p className="leading-relaxed">

@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 export default function InvestmentAnalysisContent() {
   return (
     <>
@@ -11,7 +13,7 @@ export default function InvestmentAnalysisContent() {
           
           <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
             <p className="leading-relaxed">
-              Aliante has emerged as one of North Las Vegas's most attractive markets for real estate investment, combining strong rental demand with solid appreciation potential. The area's master-planned infrastructure, quality schools, and proximity to major employment centers create a stable tenant base of families and professionals seeking longer-term leases. Investment properties in Aliante typically generate higher rents and experience lower vacancy rates compared to older North Las Vegas neighborhoods, while appreciation rates have consistently outpaced the broader Las Vegas valley average.
+              Aliante has emerged as one of North Las Vegas's most attractive markets for real estate investment, combining strong rental demand with solid appreciation potential. The area's master-planned infrastructure, quality <Link href="/schools" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">schools</Link>, and proximity to major employment centers create a stable tenant base of families and professionals seeking longer-term leases. Investment properties in Aliante typically generate higher rents and experience lower vacancy rates compared to older North Las Vegas neighborhoods, while appreciation rates have consistently outpaced the broader Las Vegas valley average. Review our <Link href="/market-report" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">market report</Link> for detailed investment performance data.
             </p>
             
             <p className="leading-relaxed">
