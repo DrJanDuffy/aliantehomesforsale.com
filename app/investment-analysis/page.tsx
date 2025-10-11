@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import HomesForSaleHero from '../components/HomesForSaleHero';
 import HomesMarketSnapshot from '../components/HomesMarketSnapshot';
+import InvestmentAnalysisContent from '../components/InvestmentAnalysisContent';
 import AboutExpertise from '../components/AboutExpertise';
 import EnhancedContactForm from '../components/EnhancedContactForm';
 import HomesCTA from '../components/HomesCTA';
@@ -18,6 +19,7 @@ export default function InvestmentAnalysis() {
     <main>
       <HomesForSaleHero />
       <HomesMarketSnapshot />
+      <InvestmentAnalysisContent />
       <AboutExpertise />
       <section className="py-16 px-4 bg-white">
         <div className="container">

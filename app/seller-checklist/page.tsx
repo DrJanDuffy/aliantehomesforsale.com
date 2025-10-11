@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import AboutHero from '../components/AboutHero';
+import SellerChecklistContent from '../components/SellerChecklistContent';
 import ConstructionProcess from '../components/ConstructionProcess';
 import AboutExpertise from '../components/AboutExpertise';
 import AboutCTA from '../components/AboutCTA';
@@ -16,6 +17,7 @@ export default function SellerChecklist() {
   return (
     <main>
       <AboutHero />
+      <SellerChecklistContent />
       <ConstructionProcess />
       <AboutExpertise />
       <AboutCTA />
