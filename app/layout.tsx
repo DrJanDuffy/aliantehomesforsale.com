@@ -7,6 +7,7 @@ import EnhancedFooter from './components/EnhancedFooter';
 import PerformanceMonitor from './components/PerformanceMonitor';
 import GoogleAnalytics from './components/GoogleAnalytics';
 import StructuredData from './components/StructuredData';
+import LocationSchema from './components/LocationSchema';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -96,9 +97,10 @@ export default function RootLayout({
         <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-XXXXXXXXXX'} />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {/* Core Structured Data - Organization & LocalBusiness */}
+        {/* Core Structured Data - Organization & LocalBusiness & Location */}
         <StructuredData type="Organization" />
         <StructuredData type="LocalBusiness" />
+        <LocationSchema />
         
         <EnhancedNavigation />
         <Breadcrumbs />
