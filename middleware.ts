@@ -4,32 +4,37 @@ import type { NextRequest } from 'next/server';
 export function middleware(request: NextRequest) {
   const url = request.nextUrl.clone();
   const hostname = request.headers.get('host') || '';
-  
+
   // Canonical domain enforcement (www + HTTPS)
   const canonicalDomain = 'www.aliantehomesforsale.com';
-  
-  // Check if request is not to canonical domain
-  const needsRedirect = 
-    hostname !== canonicalDomain && 
-    !hostname.includes('localhost') && 
-    !hostname.includes('vercel.app');
-  
+  const isLocalhost = hostname.includes('localhost');
+  const isVercel = hostname.includes('vercel.app');
+
+  // Skip redirects for development/preview environments
+  if (isLocalhost || isVercel) {
+    return NextResponse.next();
+  }
+
+  // Check if request needs redirect to canonical domain
+  // This handles: http://domain.com, https://domain.com, http://www.domain.com
+  const needsRedirect =
+    hostname !== canonicalDomain ||
+    url.protocol === 'http:';
+
   if (needsRedirect) {
-    // Force HTTPS and www
+    // Force HTTPS and www in a single redirect (avoid redirect chains)
     url.protocol = 'https:';
     url.host = canonicalDomain;
-    
-    // 301 Permanent Redirect
-    return NextResponse.redirect(url, 301);
+
+    // 301 Permanent Redirect - tells search engines this is permanent
+    return NextResponse.redirect(url, { status: 301 });
   }
-  
-  // Force HTTPS even on correct domain
-  if (url.protocol === 'http:' && !hostname.includes('localhost')) {
-    url.protocol = 'https:';
-    return NextResponse.redirect(url, 301);
-  }
-  
-  return NextResponse.next();
+
+  // Add canonical URL header for proper indexing
+  const response = NextResponse.next();
+  response.headers.set('X-Canonical-URL', `https://${canonicalDomain}${url.pathname}${url.search}`);
+
+  return response;
 }
 
 export const config = {

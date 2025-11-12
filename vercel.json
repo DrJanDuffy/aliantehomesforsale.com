@@ -35,6 +35,14 @@
       "source": "/(.*)",
       "headers": [
         {
+          "key": "Link",
+          "value": "<https://www.aliantehomesforsale.com/$1>; rel=\"canonical\""
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow"
+        },
+        {
           "key": "X-DNS-Prefetch-Control",
           "value": "on"
         },

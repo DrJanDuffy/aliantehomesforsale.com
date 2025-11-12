@@ -22,7 +22,7 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
-    host: baseUrl,
+    // Note: 'host' directive removed - deprecated by Google and can cause confusion
   };
 }
 
