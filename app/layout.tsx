@@ -26,7 +26,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Aliante North Las Vegas Real Estate & Homes For Sale | 286+ MLS Listings',
   description:
-    'Browse 286+ Aliante homes for sale in North Las Vegas, NV. Updated every 15 minutes from MLS. Gated communities, Sun City Aliante 55+, new construction. Call (702) 707-7273 for expert local guidance.',
+    'Discover your dream home in Aliante, North Las Vegas with 286+ MLS listings updated every 15 minutes. Expert guidance from Dr. Jan Duffy on gated communities, Sun City Aliante 55+, and new construction. Call (702) 707-7273 today.',
   keywords:
     'Aliante North Las Vegas homes for sale, Aliante real estate, North Las Vegas homes, 89084 homes for sale, Aliante gated community, Sun City Aliante, Club Aliante, new construction Aliante, Aliante MLS listings, houses for rent Aliante',
   authors: [{ name: 'Aliante Las Vegas | Homes by Dr. Jan Duffy' }],
@@ -41,9 +41,16 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
+  manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'Aliante Homes',
+  },
+  applicationName: 'Aliante Homes For Sale',
   openGraph: {
     title: 'Aliante North Las Vegas Real Estate & Homes For Sale | 286+ MLS Listings',
-    description: 'Browse 286+ Aliante homes for sale in North Las Vegas, NV. Updated every 15 minutes from MLS. Gated communities, Sun City Aliante 55+, new construction.',
+    description: 'Find your perfect home in Aliante with expert guidance from Dr. Jan Duffy. 286+ listings updated every 15 minutes. Explore gated communities, Sun City Aliante 55+, and new construction options.',
     url: 'https://www.aliantehomesforsale.com',
     siteName: 'Aliante Las Vegas | Homes by Dr. Jan Duffy',
     locale: 'en_US',
@@ -60,7 +67,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Aliante North Las Vegas Real Estate & Homes For Sale | 286+ MLS Listings',
-    description: 'Browse 286+ Aliante homes for sale in North Las Vegas, NV. Updated every 15 minutes from MLS. Gated communities, Sun City, new construction.',
+    description: 'Find your dream home in Aliante with Dr. Jan Duffy. 286+ MLS listings updated every 15 minutes. Gated communities, Sun City 55+, new construction.',
     images: ['https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&h=630&fit=crop&q=80'],
   },
   robots: {
@@ -93,6 +100,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="theme-color" content="#2563eb" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+        {/* Performance Optimizations - Preconnect to external domains */}
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
         {/* Google Analytics */}
         <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-XXXXXXXXXX'} />
       </head>

@@ -22,12 +22,15 @@ function PropertyCard({ price, address, city, beds, baths, sqft, features, gradi
     <article className="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group">
       {/* Property Image */}
       <div className="relative h-56 overflow-hidden">
-        <img 
+        <img
           src={imageUrl}
-          alt={`${address}, ${city}`}
+          alt={`${beds} bedroom, ${baths} bathroom home at ${address}, ${city} - ${sqft} square feet with modern amenities`}
           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+          loading="lazy"
+          width="600"
+          height="400"
         />
-        
+
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
 
