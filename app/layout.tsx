@@ -95,6 +95,15 @@ export default function RootLayout({
       <head>
         {/* Google Analytics */}
         <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-XXXXXXXXXX'} />
+
+        {/* RealScout Web Components */}
+        <script src="https://em.realscout.com/widgets/realscout-web-components.umd.js" type="module"></script>
+        <style>{`
+          realscout-office-listings {
+            --rs-listing-divider-color: rgb(101, 141, 172);
+            width: 100%;
+          }
+        `}</style>
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {/* Core Structured Data - Organization & LocalBusiness & Location */}
@@ -107,6 +116,17 @@ export default function RootLayout({
         
         {children}
         <PerformanceMonitor />
+
+        {/* RealScout Office Listings - Below the fold */}
+        <div className="realscout-widget-container">
+          <realscout-office-listings
+            agent-encoded-id="QWdlbnQtMjI1MDUw"
+            sort-order="STATUS_AND_SIGNIFICANT_CHANGE"
+            listing-status="For Sale,Rented"
+            property-types="SFR,MF,LAL,MOBILE,OTHER"
+            price-min="500000">
+          </realscout-office-listings>
+        </div>
 
         {/* Enhanced Footer with SEO-optimized structure */}
         <EnhancedFooter />
