@@ -18,7 +18,7 @@ export default function RealScoutAdvancedSearch() {
         realscout-advanced-search {
           --rs-as-button-text-color: #ffffff;
           --rs-as-background-color: #ffffff;
-          --rs-as-button-color: rgb(35, 93, 137);
+          --rs-as-button-color: #ed8936;
           --rs-as-widget-width: 500px !important;
           display: block;
           margin: 2rem auto;
@@ -27,7 +27,7 @@ export default function RealScoutAdvancedSearch() {
       `}</style>
 
       {/* RealScout Advanced Search Widget */}
-      <div 
+      <div
         className="realscout-search-container"
         dangerouslySetInnerHTML={{
           __html: '<realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>'
