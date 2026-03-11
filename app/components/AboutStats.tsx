@@ -23,23 +23,23 @@ export default function AboutStats() {
     {
       number: '500+',
       label: 'Successful Transactions',
-      icon: '🏠'
+      icon: '🏠',
     },
     {
       number: '6+ Years',
       label: 'Local Market Experience',
-      icon: '📅'
+      icon: '📅',
     },
     {
       number: '4.9/5',
       label: 'Client Satisfaction Rating',
-      icon: '⭐'
+      icon: '⭐',
     },
     {
       number: '127',
       label: 'Verified Reviews',
-      icon: '💬'
-    }
+      icon: '💬',
+    },
   ];
 
   return (
@@ -50,9 +50,10 @@ export default function AboutStats() {
             Who We Are
           </h2>
           <p className="text-lg sm:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-            Dr. Jan Duffy and Aliante Las Vegas have been serving the North Las Vegas community since 2018, 
-            specializing exclusively in Aliante and surrounding areas. With over 500 successful 
-            transactions, we've built our reputation on local expertise, integrity, and results.
+            Dr. Jan Duffy and Aliante Las Vegas have been serving the North Las Vegas community
+            since 2018, specializing exclusively in Aliante and surrounding areas. With over 500
+            successful transactions, we've built our reputation on local expertise, integrity, and
+            results.
           </p>
         </div>
 
@@ -65,4 +66,3 @@ export default function AboutStats() {
     </section>
   );
 }
-

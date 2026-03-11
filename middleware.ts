@@ -4,31 +4,31 @@ import type { NextRequest } from 'next/server';
 export function middleware(request: NextRequest) {
   const url = request.nextUrl.clone();
   const hostname = request.headers.get('host') || '';
-  
+
   // Canonical domain enforcement (www + HTTPS)
   const canonicalDomain = 'www.aliantehomesforsale.com';
-  
+
   // Check if request is not to canonical domain
-  const needsRedirect = 
-    hostname !== canonicalDomain && 
-    !hostname.includes('localhost') && 
+  const needsRedirect =
+    hostname !== canonicalDomain &&
+    !hostname.includes('localhost') &&
     !hostname.includes('vercel.app');
-  
+
   if (needsRedirect) {
     // Force HTTPS and www
     url.protocol = 'https:';
     url.host = canonicalDomain;
-    
+
     // 301 Permanent Redirect
     return NextResponse.redirect(url, 301);
   }
-  
+
   // Force HTTPS even on correct domain
   if (url.protocol === 'http:' && !hostname.includes('localhost')) {
     url.protocol = 'https:';
     return NextResponse.redirect(url, 301);
   }
-  
+
   return NextResponse.next();
 }
 

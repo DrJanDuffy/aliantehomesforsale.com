@@ -7,7 +7,8 @@ import HomesCTA from '../components/HomesCTA';
 
 export const metadata: Metadata = {
   title: 'Golf Course Homes Aliante - Club Aliante Properties',
-  description: 'Golf course homes in Aliante with stunning fairway views. Club Aliante Golf Course access. Browse 32+ available properties.',
+  description:
+    'Golf course homes in Aliante with stunning fairway views. Club Aliante Golf Course access. Browse 32+ available properties.',
   alternates: {
     canonical: 'https://www.aliantehomesforsale.com/golf-homes',
   },

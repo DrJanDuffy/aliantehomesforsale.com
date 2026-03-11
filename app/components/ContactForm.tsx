@@ -28,20 +28,22 @@ export default function ContactForm() {
     if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('event', 'form_submit', {
         form_name: 'contact_form',
-        event_category: 'contact'
+        event_category: 'contact',
       });
     }
     // Here you would typically send the form data to your backend
     console.log('Form submitted:', formData);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
     const { name, value, type } = e.target;
     if (type === 'checkbox') {
       const checked = (e.target as HTMLInputElement).checked;
-      setFormData(prev => ({ ...prev, [name]: checked }));
+      setFormData((prev) => ({ ...prev, [name]: checked }));
     } else {
-      setFormData(prev => ({ ...prev, [name]: value }));
+      setFormData((prev) => ({ ...prev, [name]: value }));
     }
   };
 
@@ -60,7 +62,7 @@ export default function ContactForm() {
             placeholder="Your first name"
           />
         </div>
-        
+
         <div className="form-group">
           <label htmlFor={lastNameId}>Last Name *</label>
           <input
@@ -74,7 +76,7 @@ export default function ContactForm() {
           />
         </div>
       </div>
-      
+
       <div className="form-row">
         <div className="form-group">
           <label htmlFor={emailId}>Email *</label>
@@ -88,7 +90,7 @@ export default function ContactForm() {
             placeholder="your.email@example.com"
           />
         </div>
-        
+
         <div className="form-group">
           <label htmlFor={phoneId}>Phone *</label>
           <input
@@ -102,12 +104,12 @@ export default function ContactForm() {
           />
         </div>
       </div>
-      
+
       <div className="form-group">
         <label htmlFor={inquiryTypeId}>What can we help you with? *</label>
-        <select 
-          id={inquiryTypeId} 
-          name="inquiryType" 
+        <select
+          id={inquiryTypeId}
+          name="inquiryType"
           value={formData.inquiryType}
           onChange={handleChange}
           required
@@ -122,7 +124,7 @@ export default function ContactForm() {
           <option value="other">Other</option>
         </select>
       </div>
-      
+
       <div className="form-group">
         <label htmlFor={messageId}>Additional Details</label>
         <textarea
@@ -134,11 +136,11 @@ export default function ContactForm() {
           placeholder="Tell us more about what you're looking for, any specific neighborhoods, or questions you have..."
         ></textarea>
       </div>
-      
+
       <div className="form-group checkbox-group">
         <label htmlFor={newsletterId} className="checkbox-label">
-          <input 
-            type="checkbox" 
+          <input
+            type="checkbox"
             id={newsletterId}
             name="newsletter"
             checked={formData.newsletter}
@@ -147,7 +149,7 @@ export default function ContactForm() {
           <span>Subscribe to our newsletter for market updates and new listings</span>
         </label>
       </div>
-      
+
       <button type="submit" className="submit-button">
         Send Message
       </button>

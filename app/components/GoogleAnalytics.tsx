@@ -138,4 +138,3 @@ declare global {
     dataLayer: unknown[];
   }
 }
-

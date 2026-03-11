@@ -7,7 +7,8 @@ import NeighborhoodsCTA from '../../components/NeighborhoodsCTA';
 
 export const metadata: Metadata = {
   title: 'Villages at Tule Springs - New Master-Planned Community',
-  description: 'Villages at Tule Springs master-planned community. New construction, parks, trails. $450K-$750K.',
+  description:
+    'Villages at Tule Springs master-planned community. New construction, parks, trails. $450K-$750K.',
   alternates: { canonical: 'https://www.aliantehomesforsale.com/neighborhoods/tule-springs' },
 };
 

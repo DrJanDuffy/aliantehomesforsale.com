@@ -13,9 +13,7 @@ function ReasonCard({ icon, title, description }: ReasonProps) {
       <h3 className="text-xl font-bold mb-3" style={{ color: '#1a365d' }}>
         {title}
       </h3>
-      <p className="text-gray-700 leading-relaxed">
-        {description}
-      </p>
+      <p className="text-gray-700 leading-relaxed">{description}</p>
     </div>
   );
 }
@@ -25,23 +23,23 @@ export default function ContactWhyChoose() {
     {
       icon: '🏠',
       title: 'Local Expertise',
-      description: '6+ years specializing exclusively in Aliante and North Las Vegas properties'
+      description: '6+ years specializing exclusively in Aliante and North Las Vegas properties',
     },
     {
       icon: '🤝',
       title: 'Builder Relationships',
-      description: 'Direct relationships with all major builders for better deals and incentives'
+      description: 'Direct relationships with all major builders for better deals and incentives',
     },
     {
       icon: '📊',
       title: 'Market Intelligence',
-      description: 'Real-time market data and insights to help you make informed decisions'
+      description: 'Real-time market data and insights to help you make informed decisions',
     },
     {
       icon: '⭐',
       title: 'Proven Track Record',
-      description: '500+ successful transactions with verified client testimonials'
-    }
+      description: '500+ successful transactions with verified client testimonials',
+    },
   ];
 
   return (
@@ -62,4 +60,3 @@ export default function ContactWhyChoose() {
     </section>
   );
 }
-

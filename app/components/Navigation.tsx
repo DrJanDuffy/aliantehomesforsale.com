@@ -10,8 +10,10 @@ export default function Navigation() {
       <div className="nav-container">
         <div className="nav-brand">
           <a href="/" className="brand-link">
-          <h1>Aliante Las Vegas</h1>
-          <span className="brand-subtitle">Homes by Dr. Jan Duffy | Your Trusted Local Expert Since 2018</span>
+            <h1>Aliante Las Vegas</h1>
+            <span className="brand-subtitle">
+              Homes by Dr. Jan Duffy | Your Trusted Local Expert Since 2018
+            </span>
           </a>
         </div>
 

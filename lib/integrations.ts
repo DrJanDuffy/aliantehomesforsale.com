@@ -29,7 +29,7 @@ export async function sendLeadToFollowUpBoss(lead: FollowUpBossLead) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey}`,
+        Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
         firstName: lead.firstName,
@@ -249,4 +249,3 @@ export function checkIntegrations() {
     },
   };
 }
-

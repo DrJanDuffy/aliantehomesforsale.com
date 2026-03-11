@@ -8,7 +8,8 @@ import HomesCTA from '../components/HomesCTA';
 
 export const metadata: Metadata = {
   title: 'Investment Property Analysis Aliante - ROI Calculator',
-  description: 'Investment property analysis for Aliante real estate. ROI calculations, rental market data, and expert guidance.',
+  description:
+    'Investment property analysis for Aliante real estate. ROI calculations, rental market data, and expert guidance.',
   alternates: {
     canonical: 'https://www.aliantehomesforsale.com/investment-analysis',
   },

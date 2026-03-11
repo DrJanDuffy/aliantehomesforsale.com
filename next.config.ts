@@ -37,7 +37,8 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 60,
     // Advanced image optimizations
     dangerouslyAllowSVG: true,
-    contentSecurityPolicy: "default-src 'self'; script-src 'self' https://em.realscout.com; sandbox;",
+    contentSecurityPolicy:
+      "default-src 'self'; script-src 'self' https://em.realscout.com; sandbox;",
     // Performance optimizations
     unoptimized: false,
     loader: 'default',
@@ -132,7 +133,6 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-
 
   // Advanced Next.js optimizations
   compiler: {

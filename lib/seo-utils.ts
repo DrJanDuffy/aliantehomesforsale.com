@@ -3,7 +3,8 @@ import type { Metadata } from 'next';
 const SITE_URL = 'https://www.aliantehomesforsale.com';
 const SITE_NAME = 'Aliante Las Vegas | Homes by Dr. Jan Duffy';
 const DEFAULT_TITLE = 'Aliante Homes For Sale - Expert Local Realtors | North Las Vegas NV';
-const DEFAULT_DESCRIPTION = 'Find your perfect Aliante home with local experts. 286+ verified MLS listings updated every 15 minutes. Free market analysis & buyer consultation. Call (702) 555-0123';
+const DEFAULT_DESCRIPTION =
+  'Find your perfect Aliante home with local experts. 286+ verified MLS listings updated every 15 minutes. Free market analysis & buyer consultation. Call (702) 555-0123';
 
 interface SEOConfig {
   title?: string;
@@ -99,7 +100,7 @@ export function generateMetadata(config: SEOConfig = {}): Metadata {
       'geo.region': 'US-NV',
       'geo.placename': 'Aliante, North Las Vegas',
       'geo.position': '36.1699;-115.1398',
-      'ICBM': '36.1699, -115.1398',
+      ICBM: '36.1699, -115.1398',
     },
   };
 }
@@ -108,22 +109,36 @@ export function generateMetadata(config: SEOConfig = {}): Metadata {
 export const neighborhoodSEO = {
   prominence: {
     title: 'The Prominence Homes For Sale - Luxury Gated Community Aliante',
-    description: 'Explore luxury homes in The Prominence, Aliante\'s premier gated community. Large estates, premium amenities, golf course access. Expert local guidance.',
-    keywords: ['The Prominence', 'luxury homes Aliante', 'gated community Las Vegas', 'premium real estate'],
+    description:
+      "Explore luxury homes in The Prominence, Aliante's premier gated community. Large estates, premium amenities, golf course access. Expert local guidance.",
+    keywords: [
+      'The Prominence',
+      'luxury homes Aliante',
+      'gated community Las Vegas',
+      'premium real estate',
+    ],
   },
   'desert-willows': {
     title: 'Desert Willows Homes For Sale - Family-Friendly Neighborhood Aliante',
-    description: 'Find your perfect family home in Desert Willows, Aliante. Top-rated schools, parks, community pools. Affordable prices from $300k.',
-    keywords: ['Desert Willows', 'family homes Aliante', 'good schools Las Vegas', 'affordable homes'],
+    description:
+      'Find your perfect family home in Desert Willows, Aliante. Top-rated schools, parks, community pools. Affordable prices from $300k.',
+    keywords: [
+      'Desert Willows',
+      'family homes Aliante',
+      'good schools Las Vegas',
+      'affordable homes',
+    ],
   },
   'club-aliante': {
     title: 'Club Aliante Homes For Sale - Golf Course Community Las Vegas',
-    description: 'Golf course living in Club Aliante. Championship golf access, resort-style amenities, guard-gated security. Homes from $400k.',
+    description:
+      'Golf course living in Club Aliante. Championship golf access, resort-style amenities, guard-gated security. Homes from $400k.',
     keywords: ['Club Aliante', 'golf course homes', 'resort living Las Vegas', 'golf community'],
   },
   paseos: {
     title: 'The Paseos Homes For Sale - First-Time Buyers Aliante',
-    description: 'Affordable homes in The Paseos, perfect for first-time buyers. Community parks, low HOA fees, excellent value. Starting at $280k.',
+    description:
+      'Affordable homes in The Paseos, perfect for first-time buyers. Community parks, low HOA fees, excellent value. Starting at $280k.',
     keywords: ['The Paseos', 'first-time buyer homes', 'affordable Aliante', 'low HOA'],
   },
 };
@@ -132,27 +147,37 @@ export const neighborhoodSEO = {
 export const pageSEO = {
   'homes-for-sale': {
     title: 'Homes For Sale in Aliante - Updated Every 15 Minutes | MLS Listings',
-    description: '286+ verified MLS listings in Aliante, North Las Vegas. Updated every 15 minutes. Search by price, beds, baths. Expert buyer representation. Call (702) 555-0123',
-    keywords: ['Aliante homes for sale', 'MLS listings Aliante', 'real-time listings', 'verified properties'],
+    description:
+      '286+ verified MLS listings in Aliante, North Las Vegas. Updated every 15 minutes. Search by price, beds, baths. Expert buyer representation. Call (702) 555-0123',
+    keywords: [
+      'Aliante homes for sale',
+      'MLS listings Aliante',
+      'real-time listings',
+      'verified properties',
+    ],
   },
   'new-construction': {
     title: 'New Construction Homes Aliante - Builder Incentives & Floor Plans',
-    description: 'New construction homes in Aliante from Lennar, DR Horton, Tri Pointe. Special builder incentives up to $25k. Pre-construction pricing available.',
+    description:
+      'New construction homes in Aliante from Lennar, DR Horton, Tri Pointe. Special builder incentives up to $25k. Pre-construction pricing available.',
     keywords: ['new construction Aliante', 'builder incentives', 'Lennar homes', 'DR Horton'],
   },
   'home-valuation': {
     title: 'Free Home Valuation Aliante - Instant Property Value Estimate',
-    description: 'Get your free home valuation in Aliante. Instant estimate powered by MLS data. Professional CMA included. Sell your home for top dollar.',
+    description:
+      'Get your free home valuation in Aliante. Instant estimate powered by MLS data. Professional CMA included. Sell your home for top dollar.',
     keywords: ['home valuation Aliante', 'property value estimate', 'CMA', 'sell my home'],
   },
   contact: {
     title: 'Contact Aliante Real Estate - Call (702) 555-0123',
-    description: 'Contact our local Aliante real estate experts. Office: 2590 Nature Park Drive, Suite 275. Open 7 days a week. Free buyer consultation.',
+    description:
+      'Contact our local Aliante real estate experts. Office: 2590 Nature Park Drive, Suite 275. Open 7 days a week. Free buyer consultation.',
     keywords: ['contact Aliante realtor', 'real estate agent', 'buyer consultation'],
   },
   search: {
     title: 'Search Aliante Homes - Advanced Property Search Tool',
-    description: 'Advanced property search for Aliante homes. Filter by price, beds, baths, neighborhoods, school districts. Save searches, get instant alerts.',
+    description:
+      'Advanced property search for Aliante homes. Filter by price, beds, baths, neighborhoods, school districts. Save searches, get instant alerts.',
     keywords: ['property search Aliante', 'home search tool', 'MLS search', 'real estate search'],
   },
 };
@@ -193,7 +218,7 @@ export function generateLocalBusinessSchema() {
     '@context': 'https://schema.org',
     '@type': 'RealEstateAgent',
     '@id': `${SITE_URL}/#organization`,
-          name: 'Aliante Las Vegas | Homes by Dr. Jan Duffy',
+    name: 'Aliante Las Vegas | Homes by Dr. Jan Duffy',
     image: `${SITE_URL}/logo.png`,
     url: SITE_URL,
     telephone: '+17025550123',
@@ -288,7 +313,7 @@ export function generateOrganizationSchema() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     '@id': `${SITE_URL}/#organization`,
-          name: 'Aliante Las Vegas | Homes by Dr. Jan Duffy',
+    name: 'Aliante Las Vegas | Homes by Dr. Jan Duffy',
     url: SITE_URL,
     logo: {
       '@type': 'ImageObject',
@@ -314,4 +339,3 @@ export function generateOrganizationSchema() {
     },
   };
 }
-

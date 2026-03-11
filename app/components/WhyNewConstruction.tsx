@@ -13,9 +13,7 @@ function BenefitCard({ icon, title, description }: BenefitCardProps) {
       <h3 className="text-xl font-bold mb-3 text-center" style={{ color: '#1a365d' }}>
         {title}
       </h3>
-      <p className="text-gray-700 leading-relaxed text-center">
-        {description}
-      </p>
+      <p className="text-gray-700 leading-relaxed text-center">{description}</p>
     </div>
   );
 }
@@ -25,33 +23,39 @@ export default function WhyNewConstruction() {
     {
       icon: '🏗️',
       title: 'Never Been Lived In',
-      description: 'Brand new home with latest building codes, modern design, and energy-efficient construction. No repairs or updates needed for years.'
+      description:
+        'Brand new home with latest building codes, modern design, and energy-efficient construction. No repairs or updates needed for years.',
     },
     {
       icon: '🎨',
       title: 'Customize Your Dream Home',
-      description: 'Choose your lot, floor plan, colors, finishes, and upgrades. Create the perfect home for your lifestyle and taste.'
+      description:
+        'Choose your lot, floor plan, colors, finishes, and upgrades. Create the perfect home for your lifestyle and taste.',
     },
     {
       icon: '💰',
       title: 'Builder Incentives & Savings',
-      description: 'Up to $25,000 in closing costs, upgrades, or rate buydowns. We help you maximize every available incentive.'
+      description:
+        'Up to $25,000 in closing costs, upgrades, or rate buydowns. We help you maximize every available incentive.',
     },
     {
       icon: '✅',
       title: 'Comprehensive Warranties',
-      description: '10-year structural warranty, builder warranties on all systems and components. Peace of mind for a decade.'
+      description:
+        '10-year structural warranty, builder warranties on all systems and components. Peace of mind for a decade.',
     },
     {
       icon: '⚡',
       title: 'Energy Efficiency',
-      description: 'Latest energy codes mean lower utility bills. Smart home technology, efficient HVAC, LED lighting, and solar-ready.'
+      description:
+        'Latest energy codes mean lower utility bills. Smart home technology, efficient HVAC, LED lighting, and solar-ready.',
     },
     {
       icon: '🎯',
       title: 'Our Expert Guidance',
-      description: 'We represent you in negotiations, monitor construction quality, and ensure you get the best deal possible.'
-    }
+      description:
+        'We represent you in negotiations, monitor construction quality, and ensure you get the best deal possible.',
+    },
   ];
 
   return (
@@ -72,4 +76,3 @@ export default function WhyNewConstruction() {
     </section>
   );
 }
-

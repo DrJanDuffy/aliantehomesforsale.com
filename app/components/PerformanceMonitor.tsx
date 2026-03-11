@@ -81,9 +81,10 @@ export default function PerformanceMonitor() {
         )[0] as PerformanceNavigationTiming;
         if (navEntry) {
           metrics.ttfb = navEntry.responseStart - navEntry.requestStart;
-          metrics.domContentLoaded = navEntry.domContentLoadedEventEnd - navEntry.domContentLoadedEventStart;
+          metrics.domContentLoaded =
+            navEntry.domContentLoadedEventEnd - navEntry.domContentLoadedEventStart;
           metrics.loadComplete = navEntry.loadEventEnd - navEntry.loadEventStart;
-          
+
           // Send navigation metrics to analytics
           if (window.gtag) {
             window.gtag('event', 'navigation_timing', {

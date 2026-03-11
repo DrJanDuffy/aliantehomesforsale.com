@@ -8,7 +8,8 @@ import NeighborhoodsCTA from '../../components/NeighborhoodsCTA';
 
 export const metadata: Metadata = {
   title: 'The Prominence Aliante - Luxury Gated Community',
-  description: 'The Prominence luxury gated community in Aliante. Golf course views, premium amenities. $600K-$1.2M+.',
+  description:
+    'The Prominence luxury gated community in Aliante. Golf course views, premium amenities. $600K-$1.2M+.',
   alternates: { canonical: 'https://www.aliantehomesforsale.com/neighborhoods/prominence' },
 };
 

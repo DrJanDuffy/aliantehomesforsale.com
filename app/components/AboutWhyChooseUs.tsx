@@ -9,16 +9,17 @@ interface ReasonProps {
 function ReasonCard({ title, description, icon }: ReasonProps) {
   return (
     <div className="flex items-start gap-4 p-6 bg-white rounded-xl shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1">
-      <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-2xl" style={{ backgroundColor: '#e6f0ff' }}>
+      <div
+        className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-2xl"
+        style={{ backgroundColor: '#e6f0ff' }}
+      >
         {icon}
       </div>
       <div>
         <h3 className="text-xl font-bold mb-2" style={{ color: '#1a365d' }}>
           {title}
         </h3>
-        <p className="text-gray-700 leading-relaxed">
-          {description}
-        </p>
+        <p className="text-gray-700 leading-relaxed">{description}</p>
       </div>
     </div>
   );
@@ -29,28 +30,28 @@ export default function AboutWhyChooseUs() {
     {
       title: 'Local Focus',
       description: 'We exclusively serve Aliante and North Las Vegas - this is our neighborhood',
-      icon: '📍'
+      icon: '📍',
     },
     {
       title: 'Builder Relationships',
       description: 'Direct access to builder reps for better deals and incentives',
-      icon: '🤝'
+      icon: '🤝',
     },
     {
       title: 'Market Mastery',
       description: 'We track every listing, price change, and market trend',
-      icon: '📈'
+      icon: '📈',
     },
     {
       title: 'Client-First',
       description: 'Your goals are our priority - no pressure, just expert guidance',
-      icon: '💙'
+      icon: '💙',
     },
     {
       title: 'Proven Results',
       description: '500+ satisfied clients and growing',
-      icon: '✨'
-    }
+      icon: '✨',
+    },
   ];
 
   return (
@@ -74,4 +75,3 @@ export default function AboutWhyChooseUs() {
     </section>
   );
 }
-

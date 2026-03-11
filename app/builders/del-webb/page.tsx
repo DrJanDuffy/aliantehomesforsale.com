@@ -7,7 +7,8 @@ import NewConstructionCTA from '../../components/NewConstructionCTA';
 
 export const metadata: Metadata = {
   title: 'Del Webb Sun City Aliante - Active Adult 55+ Homes',
-  description: 'Del Webb homes in Sun City Aliante. Active adult 55+ community. Resort amenities, golf courses. 25+ homes available.',
+  description:
+    'Del Webb homes in Sun City Aliante. Active adult 55+ community. Resort amenities, golf courses. 25+ homes available.',
   alternates: { canonical: 'https://www.aliantehomesforsale.com/builders/del-webb' },
 };
 

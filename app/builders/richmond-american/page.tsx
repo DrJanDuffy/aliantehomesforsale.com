@@ -7,7 +7,8 @@ import NewConstructionCTA from '../../components/NewConstructionCTA';
 
 export const metadata: Metadata = {
   title: 'Richmond American Homes - Quality New Construction',
-  description: 'Richmond American Homes near Aliante. Quality construction with customization options. 12+ homes available.',
+  description:
+    'Richmond American Homes near Aliante. Quality construction with customization options. 12+ homes available.',
   alternates: { canonical: 'https://www.aliantehomesforsale.com/builders/richmond-american' },
 };
 

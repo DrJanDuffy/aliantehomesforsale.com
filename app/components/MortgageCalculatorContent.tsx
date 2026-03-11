@@ -10,26 +10,65 @@ export default function MortgageCalculatorContent() {
           <h2 className="text-3xl sm:text-4xl font-bold mb-6" style={{ color: '#1a365d' }}>
             Understanding Mortgage Payments and Affordability
           </h2>
-          
+
           <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
             <p className="leading-relaxed">
-              Calculating accurate mortgage payments is essential for understanding true affordability when shopping for Aliante homes. Your monthly housing payment includes multiple components beyond just principal and interest on your loan – property taxes, homeowners insurance, HOA fees (for properties in master-planned communities or gated neighborhoods), and potentially private mortgage insurance (PMI) if your down payment is less than 20%. Understanding these costs upfront helps you set realistic home search parameters and avoid surprises during the lending process.
+              Calculating accurate mortgage payments is essential for understanding true
+              affordability when shopping for Aliante homes. Your monthly housing payment includes
+              multiple components beyond just principal and interest on your loan – property taxes,
+              homeowners insurance, HOA fees (for properties in master-planned communities or gated
+              neighborhoods), and potentially private mortgage insurance (PMI) if your down payment
+              is less than 20%. Understanding these costs upfront helps you set realistic home
+              search parameters and avoid surprises during the lending process.
             </p>
-            
+
             <p className="leading-relaxed">
-              For a median-priced Aliante home at $450,000 with 10% down ($45,000), here's how a typical monthly payment breaks down: Principal and interest at 7% rate equals approximately $2,696, property taxes of roughly $375/month, homeowners insurance around $150/month, HOA fees averaging $100-$200/month, and PMI of approximately $270/month. Total monthly housing payment: $3,591-$3,691. This comprehensive view helps you understand the true cost of home ownership beyond just the mortgage payment you see advertised. View current <Link href="/homes-for-sale" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">Aliante homes for sale</Link> to calculate payments on specific properties, or check our <Link href="/market-report" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">market report</Link> for current pricing trends.
+              For a median-priced Aliante home at $450,000 with 10% down ($45,000), here's how a
+              typical monthly payment breaks down: Principal and interest at 7% rate equals
+              approximately $2,696, property taxes of roughly $375/month, homeowners insurance
+              around $150/month, HOA fees averaging $100-$200/month, and PMI of approximately
+              $270/month. Total monthly housing payment: $3,591-$3,691. This comprehensive view
+              helps you understand the true cost of home ownership beyond just the mortgage payment
+              you see advertised. View current{' '}
+              <Link
+                href="/homes-for-sale"
+                className="text-blue-600 hover:text-blue-800 font-semibold hover:underline"
+              >
+                Aliante homes for sale
+              </Link>{' '}
+              to calculate payments on specific properties, or check our{' '}
+              <Link
+                href="/market-report"
+                className="text-blue-600 hover:text-blue-800 font-semibold hover:underline"
+              >
+                market report
+              </Link>{' '}
+              for current pricing trends.
             </p>
 
             <h3 className="text-2xl font-bold mt-8 mb-4" style={{ color: '#2c5aa0' }}>
               Current Interest Rate Environment
             </h3>
-            
+
             <p className="leading-relaxed">
-              Interest rates remain the single most important variable affecting affordability. A 1% change in rates can alter your monthly payment by $200-$300, effectively changing your buying power by $30,000-$50,000. In today's environment, rates fluctuate based on Federal Reserve policy, inflation trends, and broader economic conditions. Working with lenders who can lock favorable rates quickly when market conditions improve is crucial – rates can change daily, and being prepared to act when opportunities emerge provides real financial advantage.
+              Interest rates remain the single most important variable affecting affordability. A 1%
+              change in rates can alter your monthly payment by $200-$300, effectively changing your
+              buying power by $30,000-$50,000. In today's environment, rates fluctuate based on
+              Federal Reserve policy, inflation trends, and broader economic conditions. Working
+              with lenders who can lock favorable rates quickly when market conditions improve is
+              crucial – rates can change daily, and being prepared to act when opportunities emerge
+              provides real financial advantage.
             </p>
 
             <p className="leading-relaxed">
-              Many builders offer rate buydown programs where they pay points to temporarily reduce your interest rate during the first 1-2 years of your loan. A common 2-1 buydown might give you 5% rate in year one, 6% in year two, then your permanent rate of 7% in years three through thirty. This significantly improves early affordability and gives you time to refinance if rates decrease. Some builders are also offering permanent rate buydowns or closing cost assistance that effectively reduces your rate throughout the entire loan term. As your buyer's agent, I'll help you evaluate which incentive structures provide the best overall value.
+              Many builders offer rate buydown programs where they pay points to temporarily reduce
+              your interest rate during the first 1-2 years of your loan. A common 2-1 buydown might
+              give you 5% rate in year one, 6% in year two, then your permanent rate of 7% in years
+              three through thirty. This significantly improves early affordability and gives you
+              time to refinance if rates decrease. Some builders are also offering permanent rate
+              buydowns or closing cost assistance that effectively reduces your rate throughout the
+              entire loan term. As your buyer's agent, I'll help you evaluate which incentive
+              structures provide the best overall value.
             </p>
           </div>
         </div>
@@ -40,26 +79,52 @@ export default function MortgageCalculatorContent() {
           <h2 className="text-3xl sm:text-4xl font-bold mb-8" style={{ color: '#1a365d' }}>
             Down Payment Options and Loan Programs
           </h2>
-          
+
           <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
             <p className="leading-relaxed">
-              Down payment requirements vary significantly by loan program. Conventional loans allow as little as 3% down for first-time buyers, though 5-20% is more common. FHA loans require 3.5% minimum down payment and accept lower credit scores than conventional programs, making them popular with first-time buyers. VA loans available to qualifying veterans and active military offer 0% down payment with no PMI requirement – an exceptional benefit that can save tens of thousands of dollars over the life of the loan.
+              Down payment requirements vary significantly by loan program. Conventional loans allow
+              as little as 3% down for first-time buyers, though 5-20% is more common. FHA loans
+              require 3.5% minimum down payment and accept lower credit scores than conventional
+              programs, making them popular with first-time buyers. VA loans available to qualifying
+              veterans and active military offer 0% down payment with no PMI requirement – an
+              exceptional benefit that can save tens of thousands of dollars over the life of the
+              loan.
             </p>
 
             <p className="leading-relaxed">
-              Each program has trade-offs beyond just down payment percentage. FHA loans require both upfront and monthly mortgage insurance premiums that remain for the life of the loan if you put down less than 10%, adding significant cost compared to conventional PMI that drops off once you reach 20-22% equity. Conventional loans offer the best rates and lowest fees for borrowers with strong credit (720+ scores) and larger down payments. VA loans provide unmatched benefits for those who qualify but include a funding fee (waived for disabled veterans) that must be paid upfront or financed into the loan.
+              Each program has trade-offs beyond just down payment percentage. FHA loans require
+              both upfront and monthly mortgage insurance premiums that remain for the life of the
+              loan if you put down less than 10%, adding significant cost compared to conventional
+              PMI that drops off once you reach 20-22% equity. Conventional loans offer the best
+              rates and lowest fees for borrowers with strong credit (720+ scores) and larger down
+              payments. VA loans provide unmatched benefits for those who qualify but include a
+              funding fee (waived for disabled veterans) that must be paid upfront or financed into
+              the loan.
             </p>
 
             <h3 className="text-2xl font-bold mt-8 mb-4" style={{ color: '#2c5aa0' }}>
               Hidden Costs and Budget Planning
             </h3>
-            
+
             <p className="leading-relaxed">
-              Beyond your monthly payment, homeownership includes additional costs that renters don't face. Budget for maintenance and repairs averaging 1-2% of home value annually – for a $450,000 home, that's $4,500-$9,000 per year. HVAC servicing, pool maintenance for homes with pools, landscaping costs, and periodic replacement of major systems (roof, water heater, appliances) all require planning. Many buyers are surprised by these costs if they're transitioning from rental properties where landlords handled all maintenance.
+              Beyond your monthly payment, homeownership includes additional costs that renters
+              don't face. Budget for maintenance and repairs averaging 1-2% of home value annually –
+              for a $450,000 home, that's $4,500-$9,000 per year. HVAC servicing, pool maintenance
+              for homes with pools, landscaping costs, and periodic replacement of major systems
+              (roof, water heater, appliances) all require planning. Many buyers are surprised by
+              these costs if they're transitioning from rental properties where landlords handled
+              all maintenance.
             </p>
 
             <p className="leading-relaxed">
-              Closing costs typically range 2-4% of purchase price and include lender fees, title insurance, escrow fees, appraisal costs, and prepaid items like property taxes and insurance. On a $450,000 purchase, expect $9,000-$18,000 in closing costs beyond your down payment. Many buyers negotiate seller-paid closing costs, particularly in balanced markets where sellers have flexibility. Some lenders also offer no-closing-cost loans where fees are built into slightly higher interest rates – this can be beneficial for buyers who plan to refinance within a few years if rates decrease.
+              Closing costs typically range 2-4% of purchase price and include lender fees, title
+              insurance, escrow fees, appraisal costs, and prepaid items like property taxes and
+              insurance. On a $450,000 purchase, expect $9,000-$18,000 in closing costs beyond your
+              down payment. Many buyers negotiate seller-paid closing costs, particularly in
+              balanced markets where sellers have flexibility. Some lenders also offer
+              no-closing-cost loans where fees are built into slightly higher interest rates – this
+              can be beneficial for buyers who plan to refinance within a few years if rates
+              decrease.
             </p>
           </div>
         </div>
@@ -70,14 +135,26 @@ export default function MortgageCalculatorContent() {
           <h2 className="text-3xl sm:text-4xl font-bold mb-8" style={{ color: '#1a365d' }}>
             Working with Experienced Mortgage Professionals
           </h2>
-          
+
           <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
             <p className="leading-relaxed">
-              Selecting the right lender is nearly as important as finding the right home. I work with several excellent mortgage professionals who specialize in the Las Vegas market and consistently deliver competitive rates, efficient processing, and reliable closings. These lenders understand unique situations like self-employment income, investment property financing, and non-traditional credit profiles. They'll provide multiple loan program options with detailed cost comparisons so you can make informed decisions about which structure best fits your situation.
+              Selecting the right lender is nearly as important as finding the right home. I work
+              with several excellent mortgage professionals who specialize in the Las Vegas market
+              and consistently deliver competitive rates, efficient processing, and reliable
+              closings. These lenders understand unique situations like self-employment income,
+              investment property financing, and non-traditional credit profiles. They'll provide
+              multiple loan program options with detailed cost comparisons so you can make informed
+              decisions about which structure best fits your situation.
             </p>
 
             <p className="leading-relaxed">
-              Getting pre-approved (not just pre-qualified) before beginning your home search is absolutely essential in today's market. Pre-approval involves submitting full documentation and receiving underwriter approval for a specific loan amount, making your offers as strong as cash from a seller's perspective. This process typically takes 2-3 business days and costs nothing – it's a free service that positions you to act immediately when the right home appears. Contact me today to receive introductions to my preferred lenders and begin the pre-approval process.
+              Getting pre-approved (not just pre-qualified) before beginning your home search is
+              absolutely essential in today's market. Pre-approval involves submitting full
+              documentation and receiving underwriter approval for a specific loan amount, making
+              your offers as strong as cash from a seller's perspective. This process typically
+              takes 2-3 business days and costs nothing – it's a free service that positions you to
+              act immediately when the right home appears. Contact me today to receive introductions
+              to my preferred lenders and begin the pre-approval process.
             </p>
           </div>
         </div>
@@ -85,4 +162,3 @@ export default function MortgageCalculatorContent() {
     </>
   );
 }
-

@@ -7,7 +7,8 @@ import NeighborhoodsCTA from '../../components/NeighborhoodsCTA';
 
 export const metadata: Metadata = {
   title: 'The Paseos Aliante - Affordable Family Homes',
-  description: 'The Paseos affordable homes in Aliante. Quality homes for first-time buyers and families. $300K-$500K.',
+  description:
+    'The Paseos affordable homes in Aliante. Quality homes for first-time buyers and families. $300K-$500K.',
   alternates: { canonical: 'https://www.aliantehomesforsale.com/neighborhoods/paseos' },
 };
 

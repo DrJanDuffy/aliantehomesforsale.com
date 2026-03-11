@@ -8,9 +8,7 @@ export default function NeighborhoodComparison() {
           <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: '#1a365d' }}>
             Neighborhood Comparison
           </h2>
-          <p className="text-xl text-gray-600">
-            Compare key features to find your perfect match
-          </p>
+          <p className="text-xl text-gray-600">Compare key features to find your perfect match</p>
         </div>
 
         <div className="overflow-x-auto rounded-xl shadow-xl">
@@ -26,35 +24,45 @@ export default function NeighborhoodComparison() {
             </thead>
             <tbody>
               <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
-                <td className="px-6 py-4 font-bold" style={{ color: '#1a365d' }}>Starting Price</td>
+                <td className="px-6 py-4 font-bold" style={{ color: '#1a365d' }}>
+                  Starting Price
+                </td>
                 <td className="px-6 py-4 text-gray-700">$600K</td>
                 <td className="px-6 py-4 text-gray-700">$400K</td>
                 <td className="px-6 py-4 text-gray-700">$500K</td>
                 <td className="px-6 py-4 text-gray-700">$300K</td>
               </tr>
               <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
-                <td className="px-6 py-4 font-bold" style={{ color: '#1a365d' }}>Home Types</td>
+                <td className="px-6 py-4 font-bold" style={{ color: '#1a365d' }}>
+                  Home Types
+                </td>
                 <td className="px-6 py-4 text-gray-700">Luxury SF</td>
                 <td className="px-6 py-4 text-gray-700">SF, Townhomes</td>
                 <td className="px-6 py-4 text-gray-700">Golf Homes</td>
                 <td className="px-6 py-4 text-gray-700">SF, Townhomes</td>
               </tr>
               <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
-                <td className="px-6 py-4 font-bold" style={{ color: '#1a365d' }}>Golf Access</td>
+                <td className="px-6 py-4 font-bold" style={{ color: '#1a365d' }}>
+                  Golf Access
+                </td>
                 <td className="px-6 py-4 text-gray-700">Premium</td>
                 <td className="px-6 py-4 text-gray-700">Nearby</td>
                 <td className="px-6 py-4 text-gray-700">Direct</td>
                 <td className="px-6 py-4 text-gray-700">Nearby</td>
               </tr>
               <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
-                <td className="px-6 py-4 font-bold" style={{ color: '#1a365d' }}>Security</td>
+                <td className="px-6 py-4 font-bold" style={{ color: '#1a365d' }}>
+                  Security
+                </td>
                 <td className="px-6 py-4 text-gray-700">Gated</td>
                 <td className="px-6 py-4 text-gray-700">Open</td>
                 <td className="px-6 py-4 text-gray-700">Gated</td>
                 <td className="px-6 py-4 text-gray-700">Open</td>
               </tr>
               <tr className="hover:bg-gray-50 transition-colors">
-                <td className="px-6 py-4 font-bold" style={{ color: '#1a365d' }}>School Rating</td>
+                <td className="px-6 py-4 font-bold" style={{ color: '#1a365d' }}>
+                  School Rating
+                </td>
                 <td className="px-6 py-4 text-gray-700">9/10</td>
                 <td className="px-6 py-4 text-gray-700">8/10</td>
                 <td className="px-6 py-4 text-gray-700">9/10</td>
@@ -68,9 +76,9 @@ export default function NeighborhoodComparison() {
           <a
             href="/neighborhoods/compare"
             className="inline-block py-3 px-8 rounded-lg font-semibold transition-all transform hover:scale-105 border-2 focus:ring-4 focus:ring-blue-300 focus:outline-none"
-            style={{ 
+            style={{
               color: '#2c5aa0',
-              borderColor: '#2c5aa0'
+              borderColor: '#2c5aa0',
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = '#2c5aa0';
@@ -88,4 +96,3 @@ export default function NeighborhoodComparison() {
     </section>
   );
 }
-

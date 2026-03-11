@@ -16,7 +16,10 @@ app.use(express.text());
 // CORS for local development
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, x-vercel-signature');
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept, x-vercel-signature'
+  );
   next();
 });
 
@@ -29,33 +32,33 @@ app.get('/health', (req, res) => {
 app.post('/webhook', async (req, res) => {
   try {
     console.log('📨 Received webhook:', req.body);
-    
+
     const data = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
-    
+
     if (data.type === 'deployment.failed') {
       console.log('🚨 Deployment failed detected!');
-      
+
       // Trigger the Cursor integration service
       await triggerCursorFix(data.payload);
-      
-      res.json({ 
-        success: true, 
+
+      res.json({
+        success: true,
         message: 'Cursor fix triggered',
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
       });
     } else {
-      res.json({ 
-        success: true, 
+      res.json({
+        success: true,
         message: 'Webhook received',
         type: data.type,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
       });
     }
   } catch (error) {
     console.error('❌ Webhook error:', error);
-    res.status(500).json({ 
+    res.status(500).json({
       error: 'Internal server error',
-      message: error.message 
+      message: error.message,
     });
   }
 });
@@ -64,53 +67,53 @@ app.post('/webhook', async (req, res) => {
 app.post('/fix-deployment', async (req, res) => {
   try {
     const { projectId, deploymentId, error, logs } = req.body;
-    
+
     console.log('🛠️ Manually triggering Cursor fix...');
     console.log('Project ID:', projectId);
     console.log('Deployment ID:', deploymentId);
-    
+
     // Trigger the Cursor integration service
     await triggerCursorFix({ projectId, deploymentId, error, logs });
-    
-    res.json({ 
-      success: true, 
+
+    res.json({
+      success: true,
       message: 'Cursor fix completed',
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
     });
   } catch (error) {
     console.error('❌ Manual fix error:', error);
-    res.status(500).json({ 
+    res.status(500).json({
       error: 'Fix failed',
-      message: error.message 
+      message: error.message,
     });
   }
 });
 
 async function triggerCursorFix(deploymentData) {
   console.log('🚀 Starting Cursor integration service...');
-  
+
   return new Promise((resolve, reject) => {
     const cursorService = spawn('node', ['cursor-integration-service.js'], {
       cwd: __dirname,
       env: {
         ...process.env,
-        DEPLOYMENT_DATA: JSON.stringify(deploymentData)
-      }
+        DEPLOYMENT_DATA: JSON.stringify(deploymentData),
+      },
     });
-    
+
     let output = '';
-    
+
     cursorService.stdout.on('data', (data) => {
       const message = data.toString();
       output += message;
       console.log('📤 Cursor Service:', message.trim());
     });
-    
+
     cursorService.stderr.on('data', (data) => {
       const message = data.toString();
       console.error('❌ Cursor Service Error:', message.trim());
     });
-    
+
     cursorService.on('close', (code) => {
       if (code === 0) {
         console.log('✅ Cursor integration service completed successfully');
@@ -120,7 +123,7 @@ async function triggerCursorFix(deploymentData) {
         reject(new Error(`Service failed with code ${code}`));
       }
     });
-    
+
     cursorService.on('error', (error) => {
       console.error('❌ Failed to start Cursor integration service:', error);
       reject(error);

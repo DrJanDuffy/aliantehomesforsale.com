@@ -10,18 +10,28 @@ interface QuickMoveInHomeProps {
   gradient: string;
 }
 
-function QuickMoveInCard({ badge, builder, community, specs, price, features }: QuickMoveInHomeProps) {
+function QuickMoveInCard({
+  badge,
+  builder,
+  community,
+  specs,
+  price,
+  features,
+}: QuickMoveInHomeProps) {
   // Use different Unsplash images for each builder
-  const imageId = builder === 'Lennar' ? 'photo-1600585154340-be6161a56a0c' : 
-                  builder === 'D.R. Horton' ? 'photo-1600047509807-ba8f99d2cdde' : 
-                  'photo-1600573472592-401b489a3cdc';
+  const imageId =
+    builder === 'Lennar'
+      ? 'photo-1600585154340-be6161a56a0c'
+      : builder === 'D.R. Horton'
+        ? 'photo-1600047509807-ba8f99d2cdde'
+        : 'photo-1600573472592-401b489a3cdc';
   const imageUrl = `https://images.unsplash.com/${imageId}?w=600&h=400&fit=crop&q=80`;
-  
+
   return (
     <article className="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
       {/* Property Image */}
       <div className="relative h-48 overflow-hidden">
-        <img 
+        <img
           src={imageUrl}
           alt={`${builder} new construction home in ${community}`}
           className="w-full h-full object-cover"
@@ -42,13 +52,13 @@ function QuickMoveInCard({ badge, builder, community, specs, price, features }: 
           {price}
         </p>
         <p className="text-gray-600 mb-6">{features}</p>
-        
+
         <a
           href="/contact"
           className="block w-full text-center py-3 px-6 rounded-lg font-semibold text-white transition-all transform hover:scale-105 focus:ring-4 focus:ring-orange-300 focus:outline-none"
           style={{ backgroundColor: '#ed8936' }}
-          onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#dd6b20'}
-          onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#ed8936'}
+          onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#dd6b20')}
+          onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#ed8936')}
         >
           View Details
         </a>
@@ -66,7 +76,7 @@ export default function QuickMoveInHomes() {
       specs: '4 BR | 3 BA | 2,450 sq ft',
       price: '$549,900',
       features: 'Smart home package, gourmet kitchen, 3-car garage',
-      gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+      gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
     },
     {
       badge: 'Ready in 45 Days',
@@ -75,7 +85,7 @@ export default function QuickMoveInHomes() {
       specs: '3 BR | 2.5 BA | 2,180 sq ft',
       price: '$479,000',
       features: 'Open concept, large backyard, top schools',
-      gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
+      gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
     },
     {
       badge: 'Move-In Ready',
@@ -84,8 +94,8 @@ export default function QuickMoveInHomes() {
       specs: '4 BR | 3.5 BA | 3,100 sq ft',
       price: '$729,000',
       features: 'Premium finishes, mountain views, golf course',
-      gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'
-    }
+      gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+    },
   ];
 
   return (
@@ -96,7 +106,8 @@ export default function QuickMoveInHomes() {
             Quick Move-In Homes - Ready Now!
           </h2>
           <p className="text-xl text-gray-600">
-            Move in within 30-60 days! Completed or nearly-completed homes with immediate availability.
+            Move in within 30-60 days! Completed or nearly-completed homes with immediate
+            availability.
           </p>
         </div>
 
@@ -111,8 +122,8 @@ export default function QuickMoveInHomes() {
             href="/contact"
             className="inline-block py-4 px-10 rounded-lg font-semibold text-lg text-white transition-all transform hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-blue-300 focus:outline-none"
             style={{ backgroundColor: '#2c5aa0' }}
-            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#1e3f73'}
-            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#2c5aa0'}
+            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#1e3f73')}
+            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#2c5aa0')}
           >
             View All Quick Move-In Homes
           </a>
@@ -121,4 +132,3 @@ export default function QuickMoveInHomes() {
     </section>
   );
 }
-

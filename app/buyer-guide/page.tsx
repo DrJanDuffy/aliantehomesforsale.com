@@ -9,7 +9,8 @@ import HomesCTA from '../components/HomesCTA';
 
 export const metadata: Metadata = {
   title: 'First-Time Home Buyer Guide Aliante - Expert Tips',
-  description: 'Complete guide for first-time home buyers in Aliante. Step-by-step process, expert tips, and local market insights.',
+  description:
+    'Complete guide for first-time home buyers in Aliante. Step-by-step process, expert tips, and local market insights.',
   alternates: {
     canonical: 'https://www.aliantehomesforsale.com/buyer-guide',
   },

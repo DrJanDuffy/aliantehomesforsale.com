@@ -8,7 +8,8 @@ import NeighborhoodsCTA from '../../components/NeighborhoodsCTA';
 
 export const metadata: Metadata = {
   title: 'Club Aliante Golf Course Homes - Premier Golf Living',
-  description: 'Club Aliante golf course homes. Championship golf, clubhouse amenities, stunning views. $500K-$900K.',
+  description:
+    'Club Aliante golf course homes. Championship golf, clubhouse amenities, stunning views. $500K-$900K.',
   alternates: { canonical: 'https://www.aliantehomesforsale.com/neighborhoods/club-aliante' },
 };
 

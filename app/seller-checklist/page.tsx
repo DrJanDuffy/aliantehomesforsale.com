@@ -8,7 +8,8 @@ import AboutCTA from '../components/AboutCTA';
 
 export const metadata: Metadata = {
   title: 'Home Selling Checklist Aliante - Maximize Your Sale Price',
-  description: 'Complete checklist for selling your Aliante home. Expert guidance to maximize sale price and minimize time on market.',
+  description:
+    'Complete checklist for selling your Aliante home. Expert guidance to maximize sale price and minimize time on market.',
   alternates: {
     canonical: 'https://www.aliantehomesforsale.com/seller-checklist',
   },

@@ -11,29 +11,32 @@ export default function NewConstructionHero() {
     { id: 'dr-horton', name: 'D.R. Horton', count: '32' },
     { id: 'toll-brothers', name: 'Toll Brothers', count: '28' },
     { id: 'tri-pointe', name: 'Tri Pointe', count: '18' },
-    { id: 'del-webb', name: 'Del Webb 55+', count: '25' }
+    { id: 'del-webb', name: 'Del Webb 55+', count: '25' },
   ];
 
   return (
-    <section 
+    <section
       className="relative min-h-[60vh] flex items-center justify-center px-4 py-16"
       style={{
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
       }}
       aria-labelledby="nc-hero-heading"
     >
       {/* Background pattern overlay */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-          backgroundSize: '40px 40px'
-        }} />
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+            backgroundSize: '40px 40px',
+          }}
+        />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto w-full">
         {/* Main Heading */}
         <div className="text-center mb-12">
-          <h1 
+          <h1
             id="nc-hero-heading"
             className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight"
             style={{ textShadow: '0 2px 10px rgba(0,0,0,0.3)' }}
@@ -42,14 +45,18 @@ export default function NewConstructionHero() {
           </h1>
 
           <p className="text-lg sm:text-xl text-white/95 max-w-4xl mx-auto leading-relaxed">
-            95+ new homes available • Luxury to affordable • Builder incentives up to $25,000 • Expert guidance through the entire process
+            95+ new homes available • Luxury to affordable • Builder incentives up to $25,000 •
+            Expert guidance through the entire process
           </p>
         </div>
 
         {/* Filter Section */}
         <div className="max-w-5xl mx-auto">
           <div className="bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl p-6 sm:p-8">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-center" style={{ color: '#1a365d' }}>
+            <h2
+              className="text-2xl sm:text-3xl font-bold mb-4 text-center"
+              style={{ color: '#1a365d' }}
+            >
               Find Your Perfect New Home
             </h2>
             <p className="text-center text-gray-600 mb-6">
@@ -77,9 +84,7 @@ export default function NewConstructionHero() {
           </div>
 
           {/* Incentives Banner */}
-          <div 
-            className="mt-6 bg-gradient-to-r from-orange-500 to-pink-500 rounded-xl p-6 text-center shadow-xl"
-          >
+          <div className="mt-6 bg-gradient-to-r from-orange-500 to-pink-500 rounded-xl p-6 text-center shadow-xl">
             <h3 className="text-2xl font-bold text-white mb-2">
               🎉 Current Builder Incentives - October 2025
             </h3>
@@ -99,4 +104,3 @@ export default function NewConstructionHero() {
     </section>
   );
 }
-

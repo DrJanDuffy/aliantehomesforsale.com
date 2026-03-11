@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import { useState, useId } from "react";
+import { useState, useId } from 'react';
 
 export default function SearchForm() {
   const [searchParams, setSearchParams] = useState({
-    location: "",
-    propertyType: "",
-    minPrice: "",
-    maxPrice: "",
-    bedrooms: "",
-    bathrooms: "",
-    sqft: "",
+    location: '',
+    propertyType: '',
+    minPrice: '',
+    maxPrice: '',
+    bedrooms: '',
+    bathrooms: '',
+    sqft: '',
   });
 
   // Generate unique IDs for accessibility
@@ -24,7 +24,7 @@ export default function SearchForm() {
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
     const { name, value } = e.target;
-    setSearchParams(prev => ({ ...prev, [name]: value }));
+    setSearchParams((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -167,15 +167,21 @@ export default function SearchForm() {
           <button type="submit" className="search-button primary">
             Search Properties
           </button>
-          <button type="button" className="search-button secondary" onClick={() => setSearchParams({
-            location: '',
-            propertyType: '',
-            minPrice: '',
-            maxPrice: '',
-            bedrooms: '',
-            bathrooms: '',
-            sqft: '',
-          })}>
+          <button
+            type="button"
+            className="search-button secondary"
+            onClick={() =>
+              setSearchParams({
+                location: '',
+                propertyType: '',
+                minPrice: '',
+                maxPrice: '',
+                bedrooms: '',
+                bathrooms: '',
+                sqft: '',
+              })
+            }
+          >
             Clear Filters
           </button>
         </div>

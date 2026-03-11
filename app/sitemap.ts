@@ -3,7 +3,7 @@ import type { MetadataRoute } from 'next';
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.aliantehomesforsale.com';
   const currentDate = new Date();
-  
+
   // Core pages - highest priority, updated frequently
   const corePages: MetadataRoute.Sitemap = [
     {
@@ -258,4 +258,3 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...legalPages,
   ];
 }
-

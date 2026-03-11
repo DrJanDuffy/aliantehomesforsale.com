@@ -21,27 +21,31 @@ export default function AdvancedSearchForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Build query params
     const params = new URLSearchParams();
-    if (filters.neighborhoods.length) params.append('neighborhoods', filters.neighborhoods.join(','));
+    if (filters.neighborhoods.length)
+      params.append('neighborhoods', filters.neighborhoods.join(','));
     if (filters.priceMin) params.append('priceMin', filters.priceMin);
     if (filters.priceMax) params.append('priceMax', filters.priceMax);
     if (filters.bedrooms) params.append('beds', filters.bedrooms);
     if (filters.bathrooms) params.append('baths', filters.bathrooms);
     if (filters.propertyTypes.length) params.append('types', filters.propertyTypes.join(','));
     if (filters.amenities.length) params.append('amenities', filters.amenities.join(','));
-    
+
     // Navigate to results
     window.location.href = `/search-results?${params.toString()}`;
   };
 
-  const handleCheckbox = (category: 'neighborhoods' | 'propertyTypes' | 'amenities' | 'status', value: string) => {
-    setFilters(prev => ({
+  const handleCheckbox = (
+    category: 'neighborhoods' | 'propertyTypes' | 'amenities' | 'status',
+    value: string
+  ) => {
+    setFilters((prev) => ({
       ...prev,
       [category]: prev[category].includes(value)
-        ? prev[category].filter(v => v !== value)
-        : [...prev[category], value]
+        ? prev[category].filter((v) => v !== value)
+        : [...prev[category], value],
     }));
   };
 
@@ -81,7 +85,7 @@ export default function AdvancedSearchForm() {
           <h3 className="text-2xl font-bold mb-6" style={{ color: '#2c5aa0' }}>
             Location & Price Range
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Neighborhoods */}
             <div className="md:col-span-3">
@@ -97,8 +101,8 @@ export default function AdvancedSearchForm() {
                   'Sun City Aliante',
                   'Tule Springs',
                   'Gated Communities',
-                  'Golf Course Homes'
-                ].map(neighborhood => (
+                  'Golf Course Homes',
+                ].map((neighborhood) => (
                   <label key={neighborhood} className="flex items-center space-x-2 cursor-pointer">
                     <input
                       type="checkbox"
@@ -114,7 +118,11 @@ export default function AdvancedSearchForm() {
 
             {/* Price Min */}
             <div>
-              <label htmlFor="priceMin" className="block text-sm font-bold mb-2" style={{ color: '#1a365d' }}>
+              <label
+                htmlFor="priceMin"
+                className="block text-sm font-bold mb-2"
+                style={{ color: '#1a365d' }}
+              >
                 Minimum Price
               </label>
               <div className="relative">
@@ -133,7 +141,11 @@ export default function AdvancedSearchForm() {
 
             {/* Price Max */}
             <div>
-              <label htmlFor="priceMax" className="block text-sm font-bold mb-2" style={{ color: '#1a365d' }}>
+              <label
+                htmlFor="priceMax"
+                className="block text-sm font-bold mb-2"
+                style={{ color: '#1a365d' }}
+              >
                 Maximum Price
               </label>
               <div className="relative">
@@ -162,8 +174,8 @@ export default function AdvancedSearchForm() {
                   'New Construction',
                   'Active Adult 55+',
                   'Golf Course',
-                  'Gated Community'
-                ].map(type => (
+                  'Gated Community',
+                ].map((type) => (
                   <label key={type} className="flex items-center space-x-2 cursor-pointer">
                     <input
                       type="checkbox"
@@ -184,11 +196,15 @@ export default function AdvancedSearchForm() {
           <h3 className="text-2xl font-bold mb-6" style={{ color: '#2c5aa0' }}>
             Property Details
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {/* Bedrooms */}
             <div>
-              <label htmlFor="bedrooms" className="block text-sm font-bold mb-2" style={{ color: '#1a365d' }}>
+              <label
+                htmlFor="bedrooms"
+                className="block text-sm font-bold mb-2"
+                style={{ color: '#1a365d' }}
+              >
                 Bedrooms
               </label>
               <select
@@ -209,7 +225,11 @@ export default function AdvancedSearchForm() {
 
             {/* Bathrooms */}
             <div>
-              <label htmlFor="bathrooms" className="block text-sm font-bold mb-2" style={{ color: '#1a365d' }}>
+              <label
+                htmlFor="bathrooms"
+                className="block text-sm font-bold mb-2"
+                style={{ color: '#1a365d' }}
+              >
                 Bathrooms
               </label>
               <select
@@ -231,7 +251,11 @@ export default function AdvancedSearchForm() {
 
             {/* Square Feet Min */}
             <div>
-              <label htmlFor="sqftMin" className="block text-sm font-bold mb-2" style={{ color: '#1a365d' }}>
+              <label
+                htmlFor="sqftMin"
+                className="block text-sm font-bold mb-2"
+                style={{ color: '#1a365d' }}
+              >
                 Min Sq Ft
               </label>
               <input
@@ -247,7 +271,11 @@ export default function AdvancedSearchForm() {
 
             {/* Square Feet Max */}
             <div>
-              <label htmlFor="sqftMax" className="block text-sm font-bold mb-2" style={{ color: '#1a365d' }}>
+              <label
+                htmlFor="sqftMax"
+                className="block text-sm font-bold mb-2"
+                style={{ color: '#1a365d' }}
+              >
                 Max Sq Ft
               </label>
               <input
@@ -268,14 +296,26 @@ export default function AdvancedSearchForm() {
           <h3 className="text-2xl font-bold mb-6" style={{ color: '#2c5aa0' }}>
             Amenities & Features
           </h3>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              'Pool', 'Spa/Hot Tub', 'Fireplace', 'Upgraded Kitchen',
-              'Walk-in Closets', 'Home Office', 'Covered Patio', 'Outdoor Kitchen',
-              'Mountain View', 'Golf Course View', 'RV Parking', '3-Car Garage',
-              'Gated Security', 'Club Amenities', 'Tennis Courts', 'Fitness Center'
-            ].map(amenity => (
+              'Pool',
+              'Spa/Hot Tub',
+              'Fireplace',
+              'Upgraded Kitchen',
+              'Walk-in Closets',
+              'Home Office',
+              'Covered Patio',
+              'Outdoor Kitchen',
+              'Mountain View',
+              'Golf Course View',
+              'RV Parking',
+              '3-Car Garage',
+              'Gated Security',
+              'Club Amenities',
+              'Tennis Courts',
+              'Fitness Center',
+            ].map((amenity) => (
               <label key={amenity} className="flex items-center space-x-2 cursor-pointer">
                 <input
                   type="checkbox"
@@ -298,13 +338,13 @@ export default function AdvancedSearchForm() {
           >
             Clear All Filters
           </button>
-          
+
           <button
             type="submit"
             className="flex-1 py-4 px-8 rounded-lg font-bold text-lg text-white transition-all transform hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-orange-300 focus:outline-none"
             style={{ backgroundColor: '#ed8936' }}
-            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#dd6b20'}
-            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#ed8936'}
+            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#dd6b20')}
+            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#ed8936')}
           >
             🔍 Search Properties
           </button>
@@ -313,4 +353,3 @@ export default function AdvancedSearchForm() {
     </div>
   );
 }
-

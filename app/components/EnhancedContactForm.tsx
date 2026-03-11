@@ -32,14 +32,14 @@ export default function EnhancedContactForm() {
     if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('event', 'form_submit', {
         form_name: 'contact_form',
-        event_category: 'contact'
+        event_category: 'contact',
       });
     }
 
     // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
-      alert('Thank you! We\'ll be in touch within 2 hours.');
+      alert("Thank you! We'll be in touch within 2 hours.");
       setFormData({
         firstName: '',
         lastName: '',
@@ -52,13 +52,15 @@ export default function EnhancedContactForm() {
     }, 1000);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
     const { name, value, type } = e.target;
     if (type === 'checkbox') {
       const checked = (e.target as HTMLInputElement).checked;
-      setFormData(prev => ({ ...prev, [name]: checked }));
+      setFormData((prev) => ({ ...prev, [name]: checked }));
     } else {
-      setFormData(prev => ({ ...prev, [name]: value }));
+      setFormData((prev) => ({ ...prev, [name]: value }));
     }
   };
 
@@ -77,7 +79,7 @@ export default function EnhancedContactForm() {
         {/* Name Row */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
-            <label 
+            <label
               htmlFor={firstNameId}
               className="block text-sm font-bold mb-2"
               style={{ color: '#1a365d' }}
@@ -98,7 +100,7 @@ export default function EnhancedContactForm() {
           </div>
 
           <div>
-            <label 
+            <label
               htmlFor={lastNameId}
               className="block text-sm font-bold mb-2"
               style={{ color: '#1a365d' }}
@@ -122,7 +124,7 @@ export default function EnhancedContactForm() {
         {/* Email & Phone Row */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
-            <label 
+            <label
               htmlFor={emailId}
               className="block text-sm font-bold mb-2"
               style={{ color: '#1a365d' }}
@@ -143,7 +145,7 @@ export default function EnhancedContactForm() {
           </div>
 
           <div>
-            <label 
+            <label
               htmlFor={phoneId}
               className="block text-sm font-bold mb-2"
               style={{ color: '#1a365d' }}
@@ -166,7 +168,7 @@ export default function EnhancedContactForm() {
 
         {/* Inquiry Type */}
         <div>
-          <label 
+          <label
             htmlFor={inquiryTypeId}
             className="block text-sm font-bold mb-2"
             style={{ color: '#1a365d' }}
@@ -195,7 +197,7 @@ export default function EnhancedContactForm() {
 
         {/* Message */}
         <div>
-          <label 
+          <label
             htmlFor={messageId}
             className="block text-sm font-bold mb-2"
             style={{ color: '#1a365d' }}
@@ -223,10 +225,7 @@ export default function EnhancedContactForm() {
             onChange={handleChange}
             className="mt-1 w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-2 focus:ring-blue-500"
           />
-          <label 
-            htmlFor={newsletterId}
-            className="text-gray-700 cursor-pointer"
-          >
+          <label htmlFor={newsletterId} className="text-gray-700 cursor-pointer">
             Subscribe to our newsletter for market updates and new listings
           </label>
         </div>
@@ -236,9 +235,9 @@ export default function EnhancedContactForm() {
           type="submit"
           disabled={isSubmitting}
           className="w-full py-4 px-8 rounded-lg font-bold text-lg text-white transition-all transform hover:scale-[1.02] hover:shadow-xl focus:ring-4 focus:ring-orange-300 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
-          style={{ 
+          style={{
             backgroundColor: '#ed8936',
-            minHeight: '56px'
+            minHeight: '56px',
           }}
           onMouseEnter={(e) => !isSubmitting && (e.currentTarget.style.backgroundColor = '#dd6b20')}
           onMouseLeave={(e) => !isSubmitting && (e.currentTarget.style.backgroundColor = '#ed8936')}
@@ -256,4 +255,3 @@ export default function EnhancedContactForm() {
     </div>
   );
 }
-

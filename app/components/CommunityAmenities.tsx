@@ -35,8 +35,8 @@ export default function CommunityAmenities() {
         'Pro shop and golf lessons',
         'Tennis and pickleball courts',
         'Swimming pools and spas',
-        'Fitness center and yoga studio'
-      ]
+        'Fitness center and yoga studio',
+      ],
     },
     {
       icon: '🛍️',
@@ -46,8 +46,8 @@ export default function CommunityAmenities() {
         'Premium shopping centers',
         'Fine dining restaurants',
         'Casual eateries and cafes',
-        'Entertainment venues'
-      ]
+        'Entertainment venues',
+      ],
     },
     {
       icon: '🎓',
@@ -57,8 +57,8 @@ export default function CommunityAmenities() {
         'Private school options',
         'Community parks and playgrounds',
         'Family activity centers',
-        'Library and learning resources'
-      ]
+        'Library and learning resources',
+      ],
     },
     {
       icon: '🚗',
@@ -68,9 +68,9 @@ export default function CommunityAmenities() {
         'Public transportation',
         'Bike lanes and walking trails',
         'Airport proximity (15 minutes)',
-        'Downtown Las Vegas access'
-      ]
-    }
+        'Downtown Las Vegas access',
+      ],
+    },
   ];
 
   return (
@@ -94,4 +94,3 @@ export default function CommunityAmenities() {
     </section>
   );
 }
-

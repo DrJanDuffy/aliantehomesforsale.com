@@ -14,16 +14,28 @@ export default function ContextualLinks({ variant }: ContextualLinksProps) {
           Explore Aliante Neighborhoods
         </h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <Link href="/neighborhoods/prominence" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">
+          <Link
+            href="/neighborhoods/prominence"
+            className="text-blue-600 hover:text-blue-800 font-semibold hover:underline"
+          >
             The Prominence →
           </Link>
-          <Link href="/neighborhoods/club-aliante" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">
+          <Link
+            href="/neighborhoods/club-aliante"
+            className="text-blue-600 hover:text-blue-800 font-semibold hover:underline"
+          >
             Club Aliante Golf →
           </Link>
-          <Link href="/neighborhoods/sun-city" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">
+          <Link
+            href="/neighborhoods/sun-city"
+            className="text-blue-600 hover:text-blue-800 font-semibold hover:underline"
+          >
             Sun City 55+ →
           </Link>
-          <Link href="/gated-communities" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">
+          <Link
+            href="/gated-communities"
+            className="text-blue-600 hover:text-blue-800 font-semibold hover:underline"
+          >
             Gated Communities →
           </Link>
         </div>
@@ -35,22 +47,40 @@ export default function ContextualLinks({ variant }: ContextualLinksProps) {
           Top New Construction Builders in Aliante
         </h3>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          <Link href="/builders/lennar" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">
+          <Link
+            href="/builders/lennar"
+            className="text-blue-600 hover:text-blue-800 font-semibold hover:underline"
+          >
             Lennar Homes →
           </Link>
-          <Link href="/builders/dr-horton" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">
+          <Link
+            href="/builders/dr-horton"
+            className="text-blue-600 hover:text-blue-800 font-semibold hover:underline"
+          >
             D.R. Horton →
           </Link>
-          <Link href="/builders/tri-pointe" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">
+          <Link
+            href="/builders/tri-pointe"
+            className="text-blue-600 hover:text-blue-800 font-semibold hover:underline"
+          >
             Tri Pointe Luxury →
           </Link>
-          <Link href="/builders/del-webb" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">
+          <Link
+            href="/builders/del-webb"
+            className="text-blue-600 hover:text-blue-800 font-semibold hover:underline"
+          >
             Del Webb 55+ →
           </Link>
-          <Link href="/builders/toll-brothers" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">
+          <Link
+            href="/builders/toll-brothers"
+            className="text-blue-600 hover:text-blue-800 font-semibold hover:underline"
+          >
             Toll Brothers →
           </Link>
-          <Link href="/builders/incentives" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">
+          <Link
+            href="/builders/incentives"
+            className="text-blue-600 hover:text-blue-800 font-semibold hover:underline"
+          >
             Builder Incentives →
           </Link>
         </div>
@@ -62,22 +92,40 @@ export default function ContextualLinks({ variant }: ContextualLinksProps) {
           Home Buying Resources
         </h3>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          <Link href="/buyer-guide" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">
+          <Link
+            href="/buyer-guide"
+            className="text-blue-600 hover:text-blue-800 font-semibold hover:underline"
+          >
             First-Time Buyer Guide →
           </Link>
-          <Link href="/mortgage-calculator" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">
+          <Link
+            href="/mortgage-calculator"
+            className="text-blue-600 hover:text-blue-800 font-semibold hover:underline"
+          >
             Mortgage Calculator →
           </Link>
-          <Link href="/market-report" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">
+          <Link
+            href="/market-report"
+            className="text-blue-600 hover:text-blue-800 font-semibold hover:underline"
+          >
             Market Report →
           </Link>
-          <Link href="/schools" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">
+          <Link
+            href="/schools"
+            className="text-blue-600 hover:text-blue-800 font-semibold hover:underline"
+          >
             School Information →
           </Link>
-          <Link href="/investment-analysis" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">
+          <Link
+            href="/investment-analysis"
+            className="text-blue-600 hover:text-blue-800 font-semibold hover:underline"
+          >
             Investment Analysis →
           </Link>
-          <Link href="/homes-for-sale" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">
+          <Link
+            href="/homes-for-sale"
+            className="text-blue-600 hover:text-blue-800 font-semibold hover:underline"
+          >
             Browse All Homes →
           </Link>
         </div>
@@ -89,16 +137,28 @@ export default function ContextualLinks({ variant }: ContextualLinksProps) {
           Home Selling Resources
         </h3>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          <Link href="/seller-checklist" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">
+          <Link
+            href="/seller-checklist"
+            className="text-blue-600 hover:text-blue-800 font-semibold hover:underline"
+          >
             Seller Checklist →
           </Link>
-          <Link href="/home-valuation" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">
+          <Link
+            href="/home-valuation"
+            className="text-blue-600 hover:text-blue-800 font-semibold hover:underline"
+          >
             Free Home Valuation →
           </Link>
-          <Link href="/market-report" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">
+          <Link
+            href="/market-report"
+            className="text-blue-600 hover:text-blue-800 font-semibold hover:underline"
+          >
             Current Market Data →
           </Link>
-          <Link href="/contact" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">
+          <Link
+            href="/contact"
+            className="text-blue-600 hover:text-blue-800 font-semibold hover:underline"
+          >
             Schedule Consultation →
           </Link>
         </div>
@@ -110,22 +170,40 @@ export default function ContextualLinks({ variant }: ContextualLinksProps) {
           Related Market Information
         </h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <Link href="/homes-for-sale" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">
+          <Link
+            href="/homes-for-sale"
+            className="text-blue-600 hover:text-blue-800 font-semibold hover:underline"
+          >
             Browse Homes →
           </Link>
-          <Link href="/neighborhoods" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">
+          <Link
+            href="/neighborhoods"
+            className="text-blue-600 hover:text-blue-800 font-semibold hover:underline"
+          >
             Neighborhoods →
           </Link>
-          <Link href="/new-construction" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">
+          <Link
+            href="/new-construction"
+            className="text-blue-600 hover:text-blue-800 font-semibold hover:underline"
+          >
             New Construction →
           </Link>
-          <Link href="/gated-communities" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">
+          <Link
+            href="/gated-communities"
+            className="text-blue-600 hover:text-blue-800 font-semibold hover:underline"
+          >
             Gated Communities →
           </Link>
-          <Link href="/investment-analysis" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">
+          <Link
+            href="/investment-analysis"
+            className="text-blue-600 hover:text-blue-800 font-semibold hover:underline"
+          >
             Investment Properties →
           </Link>
-          <Link href="/home-valuation" className="text-blue-600 hover:text-blue-800 font-semibold hover:underline">
+          <Link
+            href="/home-valuation"
+            className="text-blue-600 hover:text-blue-800 font-semibold hover:underline"
+          >
             Home Valuation →
           </Link>
         </div>
@@ -135,4 +213,3 @@ export default function ContextualLinks({ variant }: ContextualLinksProps) {
 
   return linkSets[variant];
 }
-

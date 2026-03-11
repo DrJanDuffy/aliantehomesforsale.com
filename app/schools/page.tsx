@@ -7,7 +7,8 @@ import NeighborhoodsCTA from '../components/NeighborhoodsCTA';
 
 export const metadata: Metadata = {
   title: 'Aliante Schools Guide - Top-Rated School Districts',
-  description: 'Complete guide to schools in Aliante. Top-rated public schools, private options, and school district information.',
+  description:
+    'Complete guide to schools in Aliante. Top-rated public schools, private options, and school district information.',
   alternates: {
     canonical: 'https://www.aliantehomesforsale.com/schools',
   },

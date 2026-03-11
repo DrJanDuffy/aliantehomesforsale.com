@@ -43,25 +43,27 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Aliante North Las Vegas Real Estate & Homes For Sale | 286+ MLS Listings',
-    description: 'Browse 286+ Aliante homes for sale in North Las Vegas, NV. Updated every 15 minutes from MLS. Gated communities, Sun City Aliante 55+, new construction.',
+    description:
+      'Browse 286+ Aliante homes for sale in North Las Vegas, NV. Updated every 15 minutes from MLS. Gated communities, Sun City Aliante 55+, new construction.',
     url: 'https://www.aliantehomesforsale.com',
     siteName: 'Aliante Las Vegas | Homes by Dr. Jan Duffy',
     locale: 'en_US',
     type: 'website',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&h=630&fit=crop&q=80',
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Luxury Home in Aliante North Las Vegas',
+        alt: 'Aliante North Las Vegas Real Estate & Homes For Sale',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Aliante North Las Vegas Real Estate & Homes For Sale | 286+ MLS Listings',
-    description: 'Browse 286+ Aliante homes for sale in North Las Vegas, NV. Updated every 15 minutes from MLS. Gated communities, Sun City, new construction.',
-    images: ['https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&h=630&fit=crop&q=80'],
+    description:
+      'Browse 286+ Aliante homes for sale in North Las Vegas, NV. Updated every 15 minutes from MLS. Gated communities, Sun City, new construction.',
+    images: ['/og-image.jpg'],
   },
   robots: {
     index: true,
@@ -81,30 +83,28 @@ export const metadata: Metadata = {
     'geo.region': 'US-NV',
     'geo.placename': 'Aliante, North Las Vegas',
     'geo.position': '36.1699;-115.1398',
-    'ICBM': '36.1699, -115.1398',
+    ICBM: '36.1699, -115.1398',
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
         {/* Google Analytics */}
-        <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-XXXXXXXXXX'} />
+        <GoogleAnalytics
+          measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-XXXXXXXXXX'}
+        />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {/* Core Structured Data - Organization & LocalBusiness & Location */}
         <StructuredData type="Organization" />
         <StructuredData type="LocalBusiness" />
         <LocationSchema />
-        
+
         <EnhancedNavigation />
         <Breadcrumbs />
-        
+
         {children}
         <PerformanceMonitor />
 

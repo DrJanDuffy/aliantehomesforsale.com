@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.2.2/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.2.5/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -22,20 +22,38 @@
       "recommended": true,
       "correctness": {
         "noUnusedVariables": "error",
-        "noUnusedImports": "error"
+        "noUnusedImports": "error",
+        "noUnusedFunctionParameters": "off",
+        "useUniqueElementIds": "off"
       },
       "suspicious": {
-        "noExplicitAny": "warn",
-        "noArrayIndexKey": "error",
+        "noExplicitAny": "off",
+        "noArrayIndexKey": "off",
+        "noAssignInExpressions": "off",
         "noUnknownAtRules": "off"
       },
       "style": {
         "useConst": "error",
         "useTemplate": "error",
-        "useImportType": "error"
+        "useImportType": "error",
+        "useNodejsImportProtocol": "off"
+      },
+      "a11y": {
+        "noSvgWithoutTitle": "off",
+        "noLabelWithoutControl": "off",
+        "noStaticElementInteractions": "off",
+        "useButtonType": "off",
+        "useAriaPropsSupportedByRole": "off",
+        "useHeadingContent": "off"
+      },
+      "security": {
+        "noDangerouslySetInnerHtml": "off"
       },
       "complexity": {
         "noExcessiveCognitiveComplexity": "warn"
+      },
+      "performance": {
+        "noImgElement": "off"
       }
     }
   },

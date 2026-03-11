@@ -20,22 +20,20 @@ function FAQItem({ question, answer }: FAQItemProps) {
         <h3 className="text-lg font-bold pr-4" style={{ color: '#1a365d' }}>
           {question}
         </h3>
-        <span 
+        <span
           className="flex-shrink-0 text-2xl font-bold transition-transform duration-300"
-          style={{ 
+          style={{
             color: '#2c5aa0',
-            transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)'
+            transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
           }}
         >
           ▼
         </span>
       </button>
-      
+
       {isOpen && (
         <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
-          <p className="text-gray-700 leading-relaxed">
-            {answer}
-          </p>
+          <p className="text-gray-700 leading-relaxed">{answer}</p>
         </div>
       )}
     </div>
@@ -46,24 +44,29 @@ export default function NewConstructionFAQ() {
   const faqs: FAQItemProps[] = [
     {
       question: "Do I need a buyer's agent for new construction?",
-      answer: "Absolutely! The builder's sales agent represents the builder, not you. Having your own agent costs you nothing (builder pays commission) and can save you thousands through better negotiations and protecting your interests."
+      answer:
+        "Absolutely! The builder's sales agent represents the builder, not you. Having your own agent costs you nothing (builder pays commission) and can save you thousands through better negotiations and protecting your interests.",
     },
     {
       question: 'How long does the new construction process take?',
-      answer: 'From contract to move-in typically takes 4-8 months depending on the home and builder. Quick move-in homes can be ready in 30-60 days.'
+      answer:
+        'From contract to move-in typically takes 4-8 months depending on the home and builder. Quick move-in homes can be ready in 30-60 days.',
     },
     {
       question: 'What incentives are currently available?',
-      answer: 'Builders currently offer $10,000-$25,000 in incentives including closing costs, upgrades, rate buydowns, and design credits. Contact us for specific current offers.'
+      answer:
+        'Builders currently offer $10,000-$25,000 in incentives including closing costs, upgrades, rate buydowns, and design credits. Contact us for specific current offers.',
     },
     {
       question: 'Can I negotiate with builders?',
-      answer: 'Yes! While builders have set base prices, you can negotiate upgrades, lot premiums, incentives, closing dates, and more. Having an experienced agent is crucial for successful negotiations.'
+      answer:
+        'Yes! While builders have set base prices, you can negotiate upgrades, lot premiums, incentives, closing dates, and more. Having an experienced agent is crucial for successful negotiations.',
     },
     {
       question: 'Should I get a home inspection on new construction?',
-      answer: 'Absolutely. We recommend pre-drywall and pre-closing inspections. Even new homes can have issues, and catching them early is much easier than after closing.'
-    }
+      answer:
+        'Absolutely. We recommend pre-drywall and pre-closing inspections. Even new homes can have issues, and catching them early is much easier than after closing.',
+    },
   ];
 
   return (
@@ -84,4 +87,3 @@ export default function NewConstructionFAQ() {
     </section>
   );
 }
-

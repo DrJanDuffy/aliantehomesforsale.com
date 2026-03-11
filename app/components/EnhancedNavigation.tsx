@@ -67,28 +67,51 @@ export default function EnhancedNavigation() {
                 >
                   New Construction
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
                   </svg>
                 </button>
 
                 {activeDropdown === 'construction' && (
                   <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2">
-                    <Link href="/new-construction" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                    <Link
+                      href="/new-construction"
+                      className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                    >
                       Overview
                     </Link>
-                    <Link href="/builders/lennar" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                    <Link
+                      href="/builders/lennar"
+                      className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                    >
                       Lennar (#1 Volume)
                     </Link>
-                    <Link href="/builders/dr-horton" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                    <Link
+                      href="/builders/dr-horton"
+                      className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                    >
                       D.R. Horton
                     </Link>
-                    <Link href="/builders/tri-pointe" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                    <Link
+                      href="/builders/tri-pointe"
+                      className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                    >
                       Tri Pointe (Luxury)
                     </Link>
-                    <Link href="/builders/del-webb" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                    <Link
+                      href="/builders/del-webb"
+                      className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                    >
                       Del Webb (55+)
                     </Link>
-                    <Link href="/builders/incentives" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors font-semibold">
+                    <Link
+                      href="/builders/incentives"
+                      className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors font-semibold"
+                    >
                       Builder Incentives
                     </Link>
                   </div>
@@ -107,28 +130,51 @@ export default function EnhancedNavigation() {
                 >
                   Neighborhoods
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
                   </svg>
                 </button>
 
                 {activeDropdown === 'neighborhoods' && (
                   <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2">
-                    <Link href="/neighborhoods" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                    <Link
+                      href="/neighborhoods"
+                      className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                    >
                       All Neighborhoods
                     </Link>
-                    <Link href="/neighborhoods/prominence" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                    <Link
+                      href="/neighborhoods/prominence"
+                      className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                    >
                       The Prominence
                     </Link>
-                    <Link href="/neighborhoods/club-aliante" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                    <Link
+                      href="/neighborhoods/club-aliante"
+                      className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                    >
                       Club Aliante (Golf)
                     </Link>
-                    <Link href="/neighborhoods/sun-city" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                    <Link
+                      href="/neighborhoods/sun-city"
+                      className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                    >
                       Sun City (55+)
                     </Link>
-                    <Link href="/gated-communities" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                    <Link
+                      href="/gated-communities"
+                      className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                    >
                       Gated Communities
                     </Link>
-                    <Link href="/neighborhoods/compare" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors font-semibold">
+                    <Link
+                      href="/neighborhoods/compare"
+                      className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors font-semibold"
+                    >
                       Compare Neighborhoods
                     </Link>
                   </div>
@@ -171,7 +217,12 @@ export default function EnhancedNavigation() {
                 style={{ color: '#1a365d' }}
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
                 </svg>
                 (702) 707-7273
               </a>
@@ -194,12 +245,34 @@ export default function EnhancedNavigation() {
               aria-expanded={isMenuOpen}
             >
               {isMenuOpen ? (
-                <svg className="w-6 h-6" style={{ color: '#1a365d' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <svg
+                  className="w-6 h-6"
+                  style={{ color: '#1a365d' }}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               ) : (
-                <svg className="w-6 h-6" style={{ color: '#1a365d' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                <svg
+                  className="w-6 h-6"
+                  style={{ color: '#1a365d' }}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
                 </svg>
               )}
             </button>
@@ -223,8 +296,19 @@ export default function EnhancedNavigation() {
                 className="absolute top-4 right-4 p-2 rounded-md hover:bg-gray-100"
                 aria-label="Close menu"
               >
-                <svg className="w-6 h-6" style={{ color: '#1a365d' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <svg
+                  className="w-6 h-6"
+                  style={{ color: '#1a365d' }}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               </button>
 
@@ -239,37 +323,88 @@ export default function EnhancedNavigation() {
 
               {/* Mobile Navigation Links */}
               <nav className="space-y-1">
-                <Link href="/homes-for-sale" className="block py-3 px-4 rounded-md font-medium transition-colors" style={{ color: '#1a365d' }} onClick={() => setIsMenuOpen(false)}>
+                <Link
+                  href="/homes-for-sale"
+                  className="block py-3 px-4 rounded-md font-medium transition-colors"
+                  style={{ color: '#1a365d' }}
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   Homes for Sale
                 </Link>
-                <Link href="/new-construction" className="block py-3 px-4 rounded-md font-medium transition-colors" style={{ color: '#1a365d' }} onClick={() => setIsMenuOpen(false)}>
+                <Link
+                  href="/new-construction"
+                  className="block py-3 px-4 rounded-md font-medium transition-colors"
+                  style={{ color: '#1a365d' }}
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   New Construction
                 </Link>
-                <Link href="/builders" className="block py-2 px-8 text-sm text-gray-600" onClick={() => setIsMenuOpen(false)}>
+                <Link
+                  href="/builders"
+                  className="block py-2 px-8 text-sm text-gray-600"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   All Builders
                 </Link>
-                <Link href="/builders/incentives" className="block py-2 px-8 text-sm text-gray-600" onClick={() => setIsMenuOpen(false)}>
+                <Link
+                  href="/builders/incentives"
+                  className="block py-2 px-8 text-sm text-gray-600"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   Builder Incentives
                 </Link>
-                <Link href="/neighborhoods" className="block py-3 px-4 rounded-md font-medium transition-colors" style={{ color: '#1a365d' }} onClick={() => setIsMenuOpen(false)}>
+                <Link
+                  href="/neighborhoods"
+                  className="block py-3 px-4 rounded-md font-medium transition-colors"
+                  style={{ color: '#1a365d' }}
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   Neighborhoods
                 </Link>
-                <Link href="/gated-communities" className="block py-2 px-8 text-sm text-gray-600" onClick={() => setIsMenuOpen(false)}>
+                <Link
+                  href="/gated-communities"
+                  className="block py-2 px-8 text-sm text-gray-600"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   Gated Communities
                 </Link>
-                <Link href="/golf-homes" className="block py-2 px-8 text-sm text-gray-600" onClick={() => setIsMenuOpen(false)}>
+                <Link
+                  href="/golf-homes"
+                  className="block py-2 px-8 text-sm text-gray-600"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   Golf Course Homes
                 </Link>
-                <Link href="/market-report" className="block py-3 px-4 rounded-md font-medium transition-colors" style={{ color: '#1a365d' }} onClick={() => setIsMenuOpen(false)}>
+                <Link
+                  href="/market-report"
+                  className="block py-3 px-4 rounded-md font-medium transition-colors"
+                  style={{ color: '#1a365d' }}
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   Market Report
                 </Link>
-                <Link href="/about" className="block py-3 px-4 rounded-md font-medium transition-colors" style={{ color: '#1a365d' }} onClick={() => setIsMenuOpen(false)}>
+                <Link
+                  href="/about"
+                  className="block py-3 px-4 rounded-md font-medium transition-colors"
+                  style={{ color: '#1a365d' }}
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   About Us
                 </Link>
-                <Link href="/contact" className="block py-3 px-4 rounded-md font-medium transition-colors" style={{ color: '#1a365d' }} onClick={() => setIsMenuOpen(false)}>
+                <Link
+                  href="/contact"
+                  className="block py-3 px-4 rounded-md font-medium transition-colors"
+                  style={{ color: '#1a365d' }}
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   Contact
                 </Link>
-                <Link href="/search" className="block py-3 px-4 rounded-md font-semibold text-white text-center mt-4" style={{ backgroundColor: '#2c5aa0' }} onClick={() => setIsMenuOpen(false)}>
+                <Link
+                  href="/search"
+                  className="block py-3 px-4 rounded-md font-semibold text-white text-center mt-4"
+                  style={{ backgroundColor: '#2c5aa0' }}
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   Search Properties
                 </Link>
               </nav>
@@ -283,4 +418,3 @@ export default function EnhancedNavigation() {
     </>
   );
 }
-

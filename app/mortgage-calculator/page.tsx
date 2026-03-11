@@ -7,7 +7,8 @@ import HomesCTA from '../components/HomesCTA';
 
 export const metadata: Metadata = {
   title: 'Mortgage Calculator Aliante - Estimate Your Payment',
-  description: 'Calculate your mortgage payment for Aliante homes. Current rates, payment estimates, and lender recommendations.',
+  description:
+    'Calculate your mortgage payment for Aliante homes. Current rates, payment estimates, and lender recommendations.',
   alternates: {
     canonical: 'https://www.aliantehomesforsale.com/mortgage-calculator',
   },

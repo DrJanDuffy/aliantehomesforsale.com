@@ -2,17 +2,20 @@
 
 export default function NeighborhoodsCTA() {
   return (
-    <section 
+    <section
       className="py-16 px-4 relative overflow-hidden"
       style={{
-        background: 'linear-gradient(135deg, #0A2540 0%, #3A8DDE 100%)'
+        background: 'linear-gradient(135deg, #0A2540 0%, #3A8DDE 100%)',
       }}
     >
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-          backgroundSize: '40px 40px'
-        }} />
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+            backgroundSize: '40px 40px',
+          }}
+        />
       </div>
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
@@ -27,23 +30,23 @@ export default function NeighborhoodsCTA() {
           <a
             href="/contact"
             className="inline-block py-4 px-10 rounded-lg font-semibold text-lg transition-all transform hover:scale-105 hover:shadow-2xl focus:ring-4 focus:ring-white/30 focus:outline-none"
-            style={{ 
+            style={{
               backgroundColor: '#ed8936',
-              color: 'white'
+              color: 'white',
             }}
-            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#dd6b20'}
-            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#ed8936'}
+            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#dd6b20')}
+            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#ed8936')}
           >
             Schedule a Neighborhood Tour
           </a>
-          
+
           <a
             href="/homes-for-sale"
             className="inline-block py-4 px-10 rounded-lg font-semibold text-lg transition-all transform hover:scale-105 hover:shadow-2xl border-2 focus:ring-4 focus:ring-white/30 focus:outline-none"
-            style={{ 
+            style={{
               backgroundColor: 'transparent',
               color: 'white',
-              borderColor: 'white'
+              borderColor: 'white',
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = 'white';
@@ -61,4 +64,3 @@ export default function NeighborhoodsCTA() {
     </section>
   );
 }
-

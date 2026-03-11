@@ -7,7 +7,8 @@ import NeighborhoodsCTA from '../../components/NeighborhoodsCTA';
 
 export const metadata: Metadata = {
   title: 'Compare Aliante Neighborhoods - Side by Side Analysis',
-  description: 'Compare all Aliante neighborhoods side by side. Prices, amenities, schools, and features.',
+  description:
+    'Compare all Aliante neighborhoods side by side. Prices, amenities, schools, and features.',
   alternates: { canonical: 'https://www.aliantehomesforsale.com/neighborhoods/compare' },
 };
 

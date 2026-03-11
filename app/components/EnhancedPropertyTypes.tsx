@@ -24,7 +24,10 @@ function PropertyTypeCard({ icon, title, features, link }: PropertyTypeCardProps
       <ul className="space-y-3 mb-6">
         {features.map((feature, index) => (
           <li key={index} className="flex items-start gap-3 text-gray-700">
-            <span className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold text-white" style={{ backgroundColor: '#16B286' }}>
+            <span
+              className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold text-white"
+              style={{ backgroundColor: '#16B286' }}
+            >
               ✓
             </span>
             <span className="text-sm leading-relaxed">{feature}</span>
@@ -36,9 +39,9 @@ function PropertyTypeCard({ icon, title, features, link }: PropertyTypeCardProps
       <a
         href={link}
         className="block w-full text-center py-3 px-6 rounded-lg font-semibold transition-all border-2 group-hover:text-white focus:ring-4 focus:ring-blue-300 focus:outline-none"
-        style={{ 
+        style={{
           color: '#2c5aa0',
-          borderColor: '#2c5aa0'
+          borderColor: '#2c5aa0',
         }}
         onMouseEnter={(e) => {
           e.currentTarget.style.backgroundColor = '#2c5aa0';
@@ -65,9 +68,9 @@ export default function EnhancedPropertyTypes() {
         'Gourmet kitchens & spa bathrooms',
         'Smart home technology included',
         'Private pools & outdoor living',
-        'Mountain & golf course views'
+        'Mountain & golf course views',
       ],
-      link: '/neighborhoods/prominence'
+      link: '/neighborhoods/prominence',
     },
     {
       icon: '🏰',
@@ -77,9 +80,9 @@ export default function EnhancedPropertyTypes() {
         'Resort-style amenities',
         'Well-maintained landscapes',
         'Community events & activities',
-        'Higher property values'
+        'Higher property values',
       ],
-      link: '/gated-communities'
+      link: '/gated-communities',
     },
     {
       icon: '🌅',
@@ -89,9 +92,9 @@ export default function EnhancedPropertyTypes() {
         'World-class golf courses',
         'Fitness centers & clubs',
         'Social activities & events',
-        'Low-maintenance living'
+        'Low-maintenance living',
       ],
-      link: '/neighborhoods/sun-city'
+      link: '/neighborhoods/sun-city',
     },
     {
       icon: '🏗️',
@@ -101,10 +104,10 @@ export default function EnhancedPropertyTypes() {
         'Modern floor plans & finishes',
         'Energy-efficient features',
         'Builder warranties included',
-        'Customize to your taste'
+        'Customize to your taste',
       ],
-      link: '/new-construction'
-    }
+      link: '/new-construction',
+    },
   ];
 
   return (
@@ -116,7 +119,8 @@ export default function EnhancedPropertyTypes() {
             Explore Property Types
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            From luxury estates to active adult communities, find the perfect match for your lifestyle.
+            From luxury estates to active adult communities, find the perfect match for your
+            lifestyle.
           </p>
         </div>
 
@@ -129,15 +133,13 @@ export default function EnhancedPropertyTypes() {
 
         {/* Additional CTA */}
         <div className="mt-12 text-center">
-          <p className="text-lg text-gray-700 mb-4">
-            Not sure which type is right for you?
-          </p>
+          <p className="text-lg text-gray-700 mb-4">Not sure which type is right for you?</p>
           <a
             href="/contact"
             className="inline-block py-3 px-8 rounded-lg font-semibold text-white transition-all transform hover:scale-105 focus:ring-4 focus:ring-teal-300 focus:outline-none"
             style={{ backgroundColor: '#16B286' }}
-            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#0F9B6E'}
-            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#16B286'}
+            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#0F9B6E')}
+            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#16B286')}
           >
             Schedule a Free Consultation
           </a>
@@ -146,4 +148,3 @@ export default function EnhancedPropertyTypes() {
     </section>
   );
 }
-

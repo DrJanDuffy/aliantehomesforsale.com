@@ -9,9 +9,12 @@ interface ProcessStepProps {
 
 function ProcessStep({ number, title, description, details }: ProcessStepProps) {
   return (
-    <div className="bg-white rounded-xl p-8 shadow-lg border-l-4" style={{ borderLeftColor: '#2c5aa0' }}>
+    <div
+      className="bg-white rounded-xl p-8 shadow-lg border-l-4"
+      style={{ borderLeftColor: '#2c5aa0' }}
+    >
       <div className="flex items-center gap-4 mb-4">
-        <div 
+        <div
           className="flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold text-white"
           style={{ backgroundColor: '#2c5aa0' }}
         >
@@ -21,10 +24,8 @@ function ProcessStep({ number, title, description, details }: ProcessStepProps) 
           {title}
         </h3>
       </div>
-      
-      <p className="text-gray-700 mb-4 leading-relaxed">
-        {description}
-      </p>
+
+      <p className="text-gray-700 mb-4 leading-relaxed">{description}</p>
 
       <ul className="space-y-2">
         {details.map((detail, index) => (
@@ -43,62 +44,67 @@ export default function ConstructionProcess() {
     {
       number: 1,
       title: 'Builder & Community Selection',
-      description: 'We help you choose the right builder and community based on your lifestyle, budget, and preferences. Compare builders, floor plans, and amenities.',
+      description:
+        'We help you choose the right builder and community based on your lifestyle, budget, and preferences. Compare builders, floor plans, and amenities.',
       details: [
         'Review all builders and communities',
         'Compare quality and reputation',
         'Analyze price vs. value',
-        'Visit model homes together'
-      ]
+        'Visit model homes together',
+      ],
     },
     {
       number: 2,
       title: 'Strategic Lot Selection',
-      description: 'Lot placement affects resale value, views, privacy, and daily living. We analyze every factor to help you choose the best lot.',
+      description:
+        'Lot placement affects resale value, views, privacy, and daily living. We analyze every factor to help you choose the best lot.',
       details: [
         'Corner vs. interior lots',
         'View premiums vs. standard',
         'Sun exposure and orientation',
-        'Proximity to amenities/streets'
-      ]
+        'Proximity to amenities/streets',
+      ],
     },
     {
       number: 3,
       title: 'Design Center & Upgrades',
-      description: 'Maximize your investment with strategic upgrade choices. We help you decide which upgrades add value and which to skip.',
+      description:
+        'Maximize your investment with strategic upgrade choices. We help you decide which upgrades add value and which to skip.',
       details: [
         'Flooring and finishes selection',
         'Kitchen and bath upgrades',
         'Structural vs. cosmetic changes',
-        'Negotiate upgrade credits'
-      ]
+        'Negotiate upgrade credits',
+      ],
     },
     {
       number: 4,
       title: 'Construction Monitoring',
-      description: 'We monitor your build progress, coordinate inspections at critical phases, and ensure quality standards are met.',
+      description:
+        'We monitor your build progress, coordinate inspections at critical phases, and ensure quality standards are met.',
       details: [
         'Foundation and framing inspections',
         'Pre-drywall walkthrough',
         'MEP systems verification',
-        'Quality control checkpoints'
-      ]
+        'Quality control checkpoints',
+      ],
     },
     {
       number: 5,
       title: 'Final Walkthrough & Closing',
-      description: 'Detailed pre-closing inspection, punch list management, and smooth closing process. We ensure everything is perfect before you get the keys.',
+      description:
+        'Detailed pre-closing inspection, punch list management, and smooth closing process. We ensure everything is perfect before you get the keys.',
       details: [
         'Comprehensive final walkthrough',
         'Punch list creation and follow-up',
         'Warranty documentation review',
-        'Closing coordination and support'
-      ]
-    }
+        'Closing coordination and support',
+      ],
+    },
   ];
 
   return (
-    <section 
+    <section
       className="py-16 px-4"
       style={{ background: 'linear-gradient(135deg, #0A2540 0%, #3A8DDE 100%)' }}
     >
@@ -121,4 +127,3 @@ export default function ConstructionProcess() {
     </section>
   );
 }
-

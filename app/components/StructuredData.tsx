@@ -3,7 +3,16 @@
 import { useId } from 'react';
 
 interface StructuredDataProps {
-  type: 'RealEstateAgent' | 'PropertyListing' | 'NeighborhoodDetail' | 'NeighborhoodGuide' | 'WebSite' | 'LocalBusiness' | 'Organization' | 'Breadcrumbs' | 'FAQPage';
+  type:
+    | 'RealEstateAgent'
+    | 'PropertyListing'
+    | 'NeighborhoodDetail'
+    | 'NeighborhoodGuide'
+    | 'WebSite'
+    | 'LocalBusiness'
+    | 'Organization'
+    | 'Breadcrumbs'
+    | 'FAQPage';
   property?: {
     title: string;
     description: string;
@@ -19,9 +28,15 @@ interface StructuredDataProps {
   customData?: Record<string, unknown>;
 }
 
-export default function StructuredData({ type, property, breadcrumbs, faqs, customData }: StructuredDataProps) {
+export default function StructuredData({
+  type,
+  property,
+  breadcrumbs,
+  faqs,
+  customData,
+}: StructuredDataProps) {
   const scriptId = useId();
-  
+
   const getSchemaData = () => {
     if (type === 'RealEstateAgent') {
       return {
@@ -56,15 +71,16 @@ export default function StructuredData({ type, property, breadcrumbs, faqs, cust
             '@type': 'Review',
             author: {
               '@type': 'Person',
-              name: 'John Smith'
+              name: 'John Smith',
             },
             reviewRating: {
               '@type': 'Rating',
               ratingValue: '5',
-              bestRating: '5'
+              bestRating: '5',
             },
-            reviewBody: 'Dr. Duffy helped us find our dream home in The Prominence. Her knowledge of Aliante neighborhoods and builder negotiations saved us over $20,000 on our new construction home. Highly recommended!'
-          }
+            reviewBody:
+              'Dr. Duffy helped us find our dream home in The Prominence. Her knowledge of Aliante neighborhoods and builder negotiations saved us over $20,000 on our new construction home. Highly recommended!',
+          },
         ],
       };
     }
@@ -100,7 +116,8 @@ export default function StructuredData({ type, property, breadcrumbs, faqs, cust
         '@context': 'https://schema.org',
         '@type': 'WebPage',
         name: 'Aliante Neighborhoods Guide',
-        description: 'Comprehensive guide to Aliante neighborhoods: The Prominence, Desert Willows, Club Aliante, and The Paseos. Find your perfect community with detailed information.',
+        description:
+          'Comprehensive guide to Aliante neighborhoods: The Prominence, Desert Willows, Club Aliante, and The Paseos. Find your perfect community with detailed information.',
         url: 'https://www.aliantehomesforsale.com/neighborhoods',
         mainEntity: {
           '@type': 'ItemList',
@@ -162,7 +179,8 @@ export default function StructuredData({ type, property, breadcrumbs, faqs, cust
         '@type': 'WebSite',
         name: 'Aliante Homes For Sale',
         url: 'https://www.aliantehomesforsale.com',
-        description: 'Find your dream home in Aliante, North Las Vegas with expert real estate guidance since 2018',
+        description:
+          'Find your dream home in Aliante, North Las Vegas with expert real estate guidance since 2018',
         potentialAction: {
           '@type': 'SearchAction',
           target: 'https://www.aliantehomesforsale.com/search?q={search_term_string}',
@@ -188,7 +206,8 @@ export default function StructuredData({ type, property, breadcrumbs, faqs, cust
         '@context': 'https://schema.org',
         '@type': 'Place',
         name: 'Aliante Neighborhoods',
-        description: 'Discover the best neighborhoods in Aliante, North Las Vegas with detailed community information, amenities, and lifestyle details.',
+        description:
+          'Discover the best neighborhoods in Aliante, North Las Vegas with detailed community information, amenities, and lifestyle details.',
         url: 'https://www.aliantehomesforsale.com/neighborhoods',
         address: {
           '@type': 'PostalAddress',
@@ -352,13 +371,9 @@ export default function StructuredData({ type, property, breadcrumbs, faqs, cust
 
   // Create a script element safely without XSS risk
   const scriptContent = JSON.stringify(schemaData);
-  
+
   return (
-    <script
-      type="application/ld+json"
-      id={scriptId}
-      suppressHydrationWarning
-    >
+    <script type="application/ld+json" id={scriptId} suppressHydrationWarning>
       {scriptContent}
     </script>
   );

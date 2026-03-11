@@ -10,7 +10,8 @@ import NewConstructionCTA from '../components/NewConstructionCTA';
 
 export const metadata: Metadata = {
   title: 'New Construction Builders in Aliante - Compare All Builders',
-  description: 'Compare all new construction builders in Aliante: Lennar, D.R. Horton, Tri Pointe, Del Webb. Incentives, floor plans, and expert guidance.',
+  description:
+    'Compare all new construction builders in Aliante: Lennar, D.R. Horton, Tri Pointe, Del Webb. Incentives, floor plans, and expert guidance.',
   alternates: {
     canonical: 'https://www.aliantehomesforsale.com/builders',
   },

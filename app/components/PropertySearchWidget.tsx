@@ -16,14 +16,14 @@ export default function PropertySearchWidget({ variant = 'hero' }: SearchWidgetP
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Build query params
     const params = new URLSearchParams();
     if (filters.neighborhood) params.append('neighborhood', filters.neighborhood);
     if (filters.priceRange) params.append('price', filters.priceRange);
     if (filters.bedrooms) params.append('beds', filters.bedrooms);
     if (filters.bathrooms) params.append('baths', filters.bathrooms);
-    
+
     // Navigate to search results
     window.location.href = `/search?${params.toString()}`;
   };
@@ -75,23 +75,27 @@ export default function PropertySearchWidget({ variant = 'hero' }: SearchWidgetP
   const isHero = variant === 'hero';
 
   return (
-    <div className={`${isHero ? 'bg-white/95 backdrop-blur-sm' : 'bg-white'} rounded-xl shadow-2xl p-6 md:p-8`}>
+    <div
+      className={`${isHero ? 'bg-white/95 backdrop-blur-sm' : 'bg-white'} rounded-xl shadow-2xl p-6 md:p-8`}
+    >
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Header */}
         <div className="border-b pb-4">
           <h2 className="text-2xl md:text-3xl font-bold" style={{ color: '#1a365d' }}>
             Search Aliante Homes
           </h2>
-          <p className="text-gray-600 mt-2">
-            286+ MLS listings updated every 15 minutes
-          </p>
+          <p className="text-gray-600 mt-2">286+ MLS listings updated every 15 minutes</p>
         </div>
 
         {/* Search Fields */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {/* Neighborhood */}
           <div>
-            <label htmlFor="neighborhood" className="block text-sm font-semibold mb-2" style={{ color: '#1a365d' }}>
+            <label
+              htmlFor="neighborhood"
+              className="block text-sm font-semibold mb-2"
+              style={{ color: '#1a365d' }}
+            >
               📍 Neighborhood
             </label>
             <select
@@ -112,7 +116,11 @@ export default function PropertySearchWidget({ variant = 'hero' }: SearchWidgetP
 
           {/* Price Range */}
           <div>
-            <label htmlFor="price" className="block text-sm font-semibold mb-2" style={{ color: '#1a365d' }}>
+            <label
+              htmlFor="price"
+              className="block text-sm font-semibold mb-2"
+              style={{ color: '#1a365d' }}
+            >
               💰 Price Range
             </label>
             <select
@@ -133,7 +141,11 @@ export default function PropertySearchWidget({ variant = 'hero' }: SearchWidgetP
 
           {/* Bedrooms */}
           <div>
-            <label htmlFor="bedrooms" className="block text-sm font-semibold mb-2" style={{ color: '#1a365d' }}>
+            <label
+              htmlFor="bedrooms"
+              className="block text-sm font-semibold mb-2"
+              style={{ color: '#1a365d' }}
+            >
               🛏️ Bedrooms
             </label>
             <select
@@ -154,7 +166,11 @@ export default function PropertySearchWidget({ variant = 'hero' }: SearchWidgetP
 
           {/* Bathrooms */}
           <div>
-            <label htmlFor="bathrooms" className="block text-sm font-semibold mb-2" style={{ color: '#1a365d' }}>
+            <label
+              htmlFor="bathrooms"
+              className="block text-sm font-semibold mb-2"
+              style={{ color: '#1a365d' }}
+            >
               🚿 Bathrooms
             </label>
             <select
@@ -180,12 +196,12 @@ export default function PropertySearchWidget({ variant = 'hero' }: SearchWidgetP
             type="submit"
             className="w-full py-4 px-8 rounded-lg font-bold text-lg text-white transition-all transform hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-orange-300 focus:outline-none"
             style={{ backgroundColor: '#ed8936' }}
-            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#dd6b20'}
-            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#ed8936'}
+            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#dd6b20')}
+            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#ed8936')}
           >
             🔍 Search 286+ Homes
           </button>
-          
+
           <a
             href="/search"
             className="block text-center font-semibold transition-colors hover:underline"
@@ -198,4 +214,3 @@ export default function PropertySearchWidget({ variant = 'hero' }: SearchWidgetP
     </div>
   );
 }
-

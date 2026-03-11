@@ -6,8 +6,9 @@ import AboutExpertise from '../components/AboutExpertise';
 import AboutCTA from '../components/AboutCTA';
 
 export const metadata: Metadata = {
-  title: 'Free Home Valuation Aliante - What\'s Your Home Worth?',
-  description: 'Get a free, accurate home valuation for your Aliante property. CMA analysis from local experts.',
+  title: "Free Home Valuation Aliante - What's Your Home Worth?",
+  description:
+    'Get a free, accurate home valuation for your Aliante property. CMA analysis from local experts.',
   alternates: {
     canonical: 'https://www.aliantehomesforsale.com/home-valuation',
   },

@@ -7,7 +7,7 @@ export default function EnhancedHero() {
     neighborhood: '',
     priceRange: '',
     beds: '',
-    baths: ''
+    baths: '',
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -18,36 +18,39 @@ export default function EnhancedHero() {
     if (formData.priceRange) params.append('price', formData.priceRange);
     if (formData.beds) params.append('beds', formData.beds);
     if (formData.baths) params.append('baths', formData.baths);
-    
+
     window.location.href = `/search?${params.toString()}`;
   };
 
   return (
-    <section 
+    <section
       className="relative min-h-[90vh] flex items-center justify-center px-4 py-16 overflow-hidden"
       aria-labelledby="hero-heading"
     >
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img 
+        <img
           src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1920&h=1080&fit=crop&q=80"
           alt="Aliante Luxury Homes"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-purple-900/90 to-indigo-900/90"></div>
       </div>
-      
+
       {/* Background pattern overlay */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-          backgroundSize: '40px 40px'
-        }} />
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+            backgroundSize: '40px 40px',
+          }}
+        />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto w-full text-center">
         {/* Main Heading */}
-        <h1 
+        <h1
           id="hero-heading"
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
           style={{ textShadow: '0 2px 10px rgba(0,0,0,0.3)' }}
@@ -57,7 +60,8 @@ export default function EnhancedHero() {
 
         {/* Subheading */}
         <p className="text-lg sm:text-xl md:text-2xl text-white/95 mb-8 max-w-4xl mx-auto leading-relaxed">
-          286+ MLS listings • Updated every 15 minutes • Gated communities • Sun City 55+ • New construction
+          286+ MLS listings • Updated every 15 minutes • Gated communities • Sun City 55+ • New
+          construction
         </p>
 
         {/* Trust Badges */}
@@ -73,28 +77,26 @@ export default function EnhancedHero() {
             </p>
           </div>
           <div className="bg-white/20 backdrop-blur-md border border-white/30 px-6 py-3 rounded-full">
-            <p className="text-white font-semibold text-sm sm:text-base">
-              📊 286+ Active Listings
-            </p>
+            <p className="text-white font-semibold text-sm sm:text-base">📊 286+ Active Listings</p>
           </div>
         </div>
 
         {/* Property Search Widget */}
         <div className="max-w-5xl mx-auto">
-          <div 
+          <div
             className="bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl p-6 sm:p-8"
             style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.3)' }}
           >
             <h2 className="text-2xl sm:text-3xl font-bold mb-6" style={{ color: '#1a365d' }}>
               Find Your Dream Home
             </h2>
-            
+
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {/* Neighborhood */}
                 <div>
-                  <label 
-                    htmlFor="neighborhood" 
+                  <label
+                    htmlFor="neighborhood"
                     className="block text-sm font-semibold mb-2"
                     style={{ color: '#1a365d' }}
                   >
@@ -103,7 +105,7 @@ export default function EnhancedHero() {
                   <select
                     id="neighborhood"
                     value={formData.neighborhood}
-                    onChange={(e) => setFormData({...formData, neighborhood: e.target.value})}
+                    onChange={(e) => setFormData({ ...formData, neighborhood: e.target.value })}
                     className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-700"
                     style={{ minHeight: '48px' }}
                   >
@@ -119,8 +121,8 @@ export default function EnhancedHero() {
 
                 {/* Price Range */}
                 <div>
-                  <label 
-                    htmlFor="price-range" 
+                  <label
+                    htmlFor="price-range"
                     className="block text-sm font-semibold mb-2"
                     style={{ color: '#1a365d' }}
                   >
@@ -129,7 +131,7 @@ export default function EnhancedHero() {
                   <select
                     id="price-range"
                     value={formData.priceRange}
-                    onChange={(e) => setFormData({...formData, priceRange: e.target.value})}
+                    onChange={(e) => setFormData({ ...formData, priceRange: e.target.value })}
                     className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-700"
                     style={{ minHeight: '48px' }}
                   >
@@ -144,8 +146,8 @@ export default function EnhancedHero() {
 
                 {/* Bedrooms */}
                 <div>
-                  <label 
-                    htmlFor="beds" 
+                  <label
+                    htmlFor="beds"
                     className="block text-sm font-semibold mb-2"
                     style={{ color: '#1a365d' }}
                   >
@@ -154,7 +156,7 @@ export default function EnhancedHero() {
                   <select
                     id="beds"
                     value={formData.beds}
-                    onChange={(e) => setFormData({...formData, beds: e.target.value})}
+                    onChange={(e) => setFormData({ ...formData, beds: e.target.value })}
                     className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-700"
                     style={{ minHeight: '48px' }}
                   >
@@ -169,8 +171,8 @@ export default function EnhancedHero() {
 
                 {/* Bathrooms */}
                 <div>
-                  <label 
-                    htmlFor="baths" 
+                  <label
+                    htmlFor="baths"
                     className="block text-sm font-semibold mb-2"
                     style={{ color: '#1a365d' }}
                   >
@@ -179,7 +181,7 @@ export default function EnhancedHero() {
                   <select
                     id="baths"
                     value={formData.baths}
-                    onChange={(e) => setFormData({...formData, baths: e.target.value})}
+                    onChange={(e) => setFormData({ ...formData, baths: e.target.value })}
                     className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-700"
                     style={{ minHeight: '48px' }}
                   >
@@ -196,12 +198,12 @@ export default function EnhancedHero() {
               <button
                 type="submit"
                 className="w-full py-4 px-8 rounded-lg font-semibold text-lg text-white transition-all transform hover:scale-[1.02] hover:shadow-xl focus:ring-4 focus:ring-orange-300 focus:outline-none"
-                style={{ 
+                style={{
                   backgroundColor: '#ed8936',
-                  minHeight: '56px'
+                  minHeight: '56px',
                 }}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#dd6b20'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#ed8936'}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#dd6b20')}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#ed8936')}
               >
                 🔍 Search Properties
               </button>
@@ -210,7 +212,7 @@ export default function EnhancedHero() {
             {/* Quick Contact */}
             <div className="mt-6 pt-6 border-t-2 border-gray-100 text-center">
               <p className="text-gray-600 mb-2">Need personalized help?</p>
-              <a 
+              <a
                 href="tel:+17027077273"
                 className="inline-flex items-center gap-2 text-2xl font-bold hover:underline"
                 style={{ color: '#2c5aa0' }}
@@ -224,4 +226,3 @@ export default function EnhancedHero() {
     </section>
   );
 }
-

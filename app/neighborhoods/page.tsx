@@ -9,7 +9,8 @@ import NeighborhoodsCTA from '../components/NeighborhoodsCTA';
 
 export const metadata: Metadata = {
   title: 'Aliante Neighborhoods Guide | North Las Vegas Communities',
-  description: 'Explore Aliante neighborhoods: The Prominence, Desert Willows, Club Aliante, The Paseos. Find your perfect community with amenities, schools, and lifestyle.',
+  description:
+    'Explore Aliante neighborhoods: The Prominence, Desert Willows, Club Aliante, The Paseos. Find your perfect community with amenities, schools, and lifestyle.',
   alternates: {
     canonical: 'https://www.aliantehomesforsale.com/neighborhoods',
   },
@@ -19,7 +20,7 @@ export default function Neighborhoods() {
   return (
     <>
       <StructuredData type="NeighborhoodGuide" />
-      
+
       <main className="neighborhoods-page">
         {/* Hero Section */}
         <NeighborhoodsHero />

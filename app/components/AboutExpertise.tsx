@@ -8,16 +8,17 @@ interface ExpertiseCardProps {
 
 function ExpertiseCard({ icon, title, description }: ExpertiseCardProps) {
   return (
-    <article className="bg-white rounded-xl p-8 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl border-l-4" style={{ borderLeftColor: '#2c5aa0' }}>
+    <article
+      className="bg-white rounded-xl p-8 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl border-l-4"
+      style={{ borderLeftColor: '#2c5aa0' }}
+    >
       <div className="flex items-start gap-4 mb-4">
         <div className="text-4xl flex-shrink-0">{icon}</div>
         <h3 className="text-2xl font-bold" style={{ color: '#1a365d' }}>
           {title}
         </h3>
       </div>
-      <p className="text-gray-700 leading-relaxed">
-        {description}
-      </p>
+      <p className="text-gray-700 leading-relaxed">{description}</p>
     </article>
   );
 }
@@ -27,23 +28,27 @@ export default function AboutExpertise() {
     {
       icon: '🏗️',
       title: 'New Construction Specialists',
-      description: 'Direct relationships with all major builders in North Las Vegas: Lennar, D.R. Horton, Tri Pointe, Del Webb, and Richmond American. We track incentives, negotiate on your behalf, and guide you through every construction phase.'
+      description:
+        'Direct relationships with all major builders in North Las Vegas: Lennar, D.R. Horton, Tri Pointe, Del Webb, and Richmond American. We track incentives, negotiate on your behalf, and guide you through every construction phase.',
     },
     {
       icon: '🏘️',
       title: 'Neighborhood Experts',
-      description: 'Intimate knowledge of every Aliante neighborhood: The Prominence, Desert Willows, Club Aliante, The Paseos, and Sun City Aliante. We can match you with the perfect community for your lifestyle.'
+      description:
+        'Intimate knowledge of every Aliante neighborhood: The Prominence, Desert Willows, Club Aliante, The Paseos, and Sun City Aliante. We can match you with the perfect community for your lifestyle.',
     },
     {
       icon: '📊',
       title: 'Market Intelligence',
-      description: 'Real-time MLS data updated every 15 minutes, comprehensive market reports, and insider knowledge of upcoming developments and trends in North Las Vegas real estate.'
+      description:
+        'Real-time MLS data updated every 15 minutes, comprehensive market reports, and insider knowledge of upcoming developments and trends in North Las Vegas real estate.',
     },
     {
       icon: '🤝',
       title: 'Buyer & Seller Advocacy',
-      description: 'Whether you\'re buying your first home or selling your dream property, we provide expert guidance, skillful negotiation, and personalized service every step of the way.'
-    }
+      description:
+        "Whether you're buying your first home or selling your dream property, we provide expert guidance, skillful negotiation, and personalized service every step of the way.",
+    },
   ];
 
   return (
@@ -67,4 +72,3 @@ export default function AboutExpertise() {
     </section>
   );
 }
-

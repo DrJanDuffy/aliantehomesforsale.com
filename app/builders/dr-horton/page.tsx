@@ -8,7 +8,8 @@ import NewConstructionCTA from '../../components/NewConstructionCTA';
 
 export const metadata: Metadata = {
   title: 'D.R. Horton Homes Tule Springs - Dr. Duffy #1 Premiere Agent',
-  description: 'D.R. Horton new construction in Tule Springs. Dr. Duffy is #1 Premiere Agent. Average $18K+ savings.',
+  description:
+    'D.R. Horton new construction in Tule Springs. Dr. Duffy is #1 Premiere Agent. Average $18K+ savings.',
   alternates: { canonical: 'https://www.aliantehomesforsale.com/builders/dr-horton' },
 };
 

@@ -6,7 +6,7 @@ export default function PropertySearch() {
   const [isSearching, setIsSearching] = useState(false);
   const [searchSuccess, setSearchSuccess] = useState(false);
   const [searchResults, setSearchResults] = useState<number | null>(null);
-  
+
   const searchHeadingId = useId();
   const propertyTypeHelpId = useId();
   const searchHelpId = useId();
@@ -17,42 +17,42 @@ export default function PropertySearch() {
 
   const handleSearch = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    
+
     setIsSearching(true);
     setSearchSuccess(false);
-    
+
     // Collect form data
     const formData = new FormData(event.currentTarget);
     const searchCriteria = {
       propertyType: formData.get('property-type'),
       priceMin: formData.get('price-min'),
       priceMax: formData.get('price-max'),
-      bedrooms: formData.get('bedrooms')
+      bedrooms: formData.get('bedrooms'),
     };
-    
+
     // Simulate realistic search with variable timing based on criteria
-    const searchTime = Object.values(searchCriteria).filter(v => v).length * 400 + 1200;
-    
+    const searchTime = Object.values(searchCriteria).filter((v) => v).length * 400 + 1200;
+
     setTimeout(() => {
       setIsSearching(false);
       setSearchSuccess(true);
-      
+
       // Generate realistic results count
       const resultsCount = Math.floor(Math.random() * 25) + 15; // 15-40 results
       setSearchResults(resultsCount);
-      
+
       // Hide success message after 5 seconds
       setTimeout(() => {
         setSearchSuccess(false);
       }, 5000);
-      
+
       // Track search for analytics (would integrate with actual analytics)
       if (typeof window !== 'undefined' && window.gtag) {
         window.gtag('event', 'property_search', {
           property_type: searchCriteria.propertyType,
-          'price_min': searchCriteria.priceMin,
-          'price_max': searchCriteria.priceMax,
-          'bedrooms': searchCriteria.bedrooms
+          price_min: searchCriteria.priceMin,
+          price_max: searchCriteria.priceMax,
+          bedrooms: searchCriteria.bedrooms,
         });
       }
     }, searchTime);
@@ -72,9 +72,11 @@ export default function PropertySearch() {
             <option value="new-construction">New Construction</option>
             <option value="55-plus">55+ Active Adult</option>
           </select>
-          <small id={propertyTypeHelpId} className="sr-only">Choose the type of property you're looking for</small>
+          <small id={propertyTypeHelpId} className="sr-only">
+            Choose the type of property you're looking for
+          </small>
         </div>
-        
+
         <div className="form-group">
           <label htmlFor={priceMinId}>Minimum Price</label>
           <select id={priceMinId} name="price-min">
@@ -86,7 +88,7 @@ export default function PropertySearch() {
             <option value="750000">$750,000+</option>
           </select>
         </div>
-        
+
         <div className="form-group">
           <label htmlFor={priceMaxId}>Maximum Price</label>
           <select id={priceMaxId} name="price-max">
@@ -98,7 +100,7 @@ export default function PropertySearch() {
             <option value="1000000">$1,000,000+</option>
           </select>
         </div>
-        
+
         <div className="form-group">
           <label htmlFor={bedroomsId}>Bedrooms</label>
           <select id={bedroomsId} name="bedrooms">
@@ -110,16 +112,23 @@ export default function PropertySearch() {
             <option value="5">5+ Bedrooms</option>
           </select>
         </div>
-        
-        <button type="submit" className="search-btn" aria-describedby={searchHelpId} disabled={isSearching}>
+
+        <button
+          type="submit"
+          className="search-btn"
+          aria-describedby={searchHelpId}
+          disabled={isSearching}
+        >
           <span className="search-text">
             {isSearching ? 'Searching...' : 'Search 286+ Properties'}
           </span>
           {isSearching && <span className="loading" aria-hidden="true"></span>}
         </button>
-        <small id={searchHelpId} className="sr-only">Search through our verified MLS listings updated every 15 minutes</small>
+        <small id={searchHelpId} className="sr-only">
+          Search through our verified MLS listings updated every 15 minutes
+        </small>
       </form>
-      
+
       {searchSuccess && (
         <div className="success-message" role="alert" aria-live="polite">
           ✅ Found {searchResults} matching properties! Scroll down to see featured listings.

@@ -7,7 +7,8 @@ import HomesCTA from '../components/HomesCTA';
 
 export const metadata: Metadata = {
   title: 'Gated Communities in Aliante - 24/7 Security & Luxury',
-  description: 'Explore gated communities in Aliante with 24/7 security, resort amenities. The Prominence, Club Aliante, and more premium communities.',
+  description:
+    'Explore gated communities in Aliante with 24/7 security, resort amenities. The Prominence, Club Aliante, and more premium communities.',
   alternates: {
     canonical: 'https://www.aliantehomesforsale.com/gated-communities',
   },

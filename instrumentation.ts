@@ -19,7 +19,7 @@ export async function register() {
       const metrics = (globalThis as any).serverMetrics as ServerMetrics;
       metrics.requests++;
       metrics.memoryUsage = process.memoryUsage();
-      
+
       // Log performance metrics
       console.log('Server Metrics:', {
         uptime: Date.now() - metrics.startTime,

@@ -12,28 +12,36 @@ export default function AboutCommitment() {
 
         <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 sm:p-12 shadow-lg">
           <p className="text-lg sm:text-xl text-gray-800 leading-relaxed text-center mb-8">
-            We believe in <strong style={{ color: '#2c5aa0' }}>transparency</strong>, <strong style={{ color: '#2c5aa0' }}>integrity</strong>, and <strong style={{ color: '#2c5aa0' }}>putting our clients first</strong>. Every decision 
-            we make is guided by what's best for you - whether that means negotiating harder for 
-            a better price, walking away from the wrong deal, or connecting you with trusted 
-            service providers.
+            We believe in <strong style={{ color: '#2c5aa0' }}>transparency</strong>,{' '}
+            <strong style={{ color: '#2c5aa0' }}>integrity</strong>, and{' '}
+            <strong style={{ color: '#2c5aa0' }}>putting our clients first</strong>. Every decision
+            we make is guided by what's best for you - whether that means negotiating harder for a
+            better price, walking away from the wrong deal, or connecting you with trusted service
+            providers.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
             <div className="text-center p-6 bg-white rounded-xl shadow-sm">
               <div className="text-4xl mb-3">🎯</div>
-              <h3 className="text-xl font-bold mb-2" style={{ color: '#1a365d' }}>Transparency</h3>
+              <h3 className="text-xl font-bold mb-2" style={{ color: '#1a365d' }}>
+                Transparency
+              </h3>
               <p className="text-gray-600">Clear communication at every step</p>
             </div>
 
             <div className="text-center p-6 bg-white rounded-xl shadow-sm">
               <div className="text-4xl mb-3">💎</div>
-              <h3 className="text-xl font-bold mb-2" style={{ color: '#1a365d' }}>Integrity</h3>
+              <h3 className="text-xl font-bold mb-2" style={{ color: '#1a365d' }}>
+                Integrity
+              </h3>
               <p className="text-gray-600">Honest advice you can trust</p>
             </div>
 
             <div className="text-center p-6 bg-white rounded-xl shadow-sm">
               <div className="text-4xl mb-3">❤️</div>
-              <h3 className="text-xl font-bold mb-2" style={{ color: '#1a365d' }}>Client-First</h3>
+              <h3 className="text-xl font-bold mb-2" style={{ color: '#1a365d' }}>
+                Client-First
+              </h3>
               <p className="text-gray-600">Your success is our success</p>
             </div>
           </div>
@@ -42,4 +50,3 @@ export default function AboutCommitment() {
     </section>
   );
 }
-

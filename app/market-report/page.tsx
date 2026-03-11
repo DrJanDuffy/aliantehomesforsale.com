@@ -8,7 +8,8 @@ import HomesCTA from '../components/HomesCTA';
 
 export const metadata: Metadata = {
   title: 'Aliante Market Report - Real-Time MLS Data & Trends',
-  description: 'Live Aliante market data updated every 15 minutes. Median prices, inventory levels, days on market, and market trends.',
+  description:
+    'Live Aliante market data updated every 15 minutes. Median prices, inventory levels, days on market, and market trends.',
   alternates: {
     canonical: 'https://www.aliantehomesforsale.com/market-report',
   },

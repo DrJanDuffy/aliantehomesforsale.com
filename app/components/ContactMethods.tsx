@@ -16,10 +16,7 @@ function ContactMethodCard({ icon, title, primary, details, href, featured }: Co
       <h3 className="text-2xl font-bold mb-4" style={{ color: '#1a365d' }}>
         {title}
       </h3>
-      <p 
-        className="text-2xl sm:text-3xl font-bold mb-4"
-        style={{ color: '#2c5aa0' }}
-      >
+      <p className="text-2xl sm:text-3xl font-bold mb-4" style={{ color: '#2c5aa0' }}>
         {primary}
       </p>
       {details.map((detail, index) => (
@@ -38,21 +35,14 @@ function ContactMethodCard({ icon, title, primary, details, href, featured }: Co
 
   if (href) {
     return (
-      <a
-        href={href}
-        className={baseClasses}
-        style={{ borderColor }}
-      >
+      <a href={href} className={baseClasses} style={{ borderColor }}>
         {content}
       </a>
     );
   }
 
   return (
-    <div
-      className={baseClasses}
-      style={{ borderColor }}
-    >
+    <div className={baseClasses} style={{ borderColor }}>
       {content}
     </div>
   );
@@ -64,40 +54,29 @@ export default function ContactMethods() {
       icon: '📞',
       title: 'Call Us Today',
       primary: '(702) 707-7273',
-      details: [
-        'Available 7 days a week',
-        '9:00 AM - 8:00 PM PST'
-      ],
+      details: ['Available 7 days a week', '9:00 AM - 8:00 PM PST'],
       href: 'tel:+17027077273',
-      featured: true
+      featured: true,
     },
     {
       icon: '✉️',
       title: 'Email Us',
       primary: 'DrDuffy@AlianteHomesForSale.com',
-      details: [
-        'Response within 2 hours'
-      ],
-      href: 'mailto:DrDuffy@AlianteHomesForSale.com'
+      details: ['Response within 2 hours'],
+      href: 'mailto:DrDuffy@AlianteHomesForSale.com',
     },
     {
       icon: '📍',
       title: 'Visit Our Office',
       primary: '2590 Nature Park Drive',
-      details: [
-        'Suite 275',
-        'North Las Vegas, NV 89084'
-      ]
+      details: ['Suite 275', 'North Las Vegas, NV 89084'],
     },
     {
       icon: '⏰',
       title: 'Office Hours',
       primary: 'Mon-Fri: 9AM-6PM',
-      details: [
-        'Saturday: 10AM-4PM',
-        'Sunday: By appointment'
-      ]
-    }
+      details: ['Saturday: 10AM-4PM', 'Sunday: By appointment'],
+    },
   ];
 
   return (
@@ -112,4 +91,3 @@ export default function ContactMethods() {
     </section>
   );
 }
-
