@@ -1,30 +1,24 @@
 import type { Metadata } from 'next';
+import NewConstructionHero from '../../components/NewConstructionHero';
+import TopBuilders from '../../components/TopBuilders';
+import CommunityAmenities from '../../components/CommunityAmenities';
+import SunCityContent from '../../components/SunCityContent';
+import NewConstructionCTA from '../../components/NewConstructionCTA';
 
 export const metadata: Metadata = {
-  title: 'Del Webb Sun City Aliante - Active Adult 55+ Community',
+  title: 'Del Webb Sun City Aliante - Active Adult 55+ Homes',
+  description: 'Del Webb homes in Sun City Aliante. Active adult 55+ community. Resort amenities, golf courses. 25+ homes available.',
   alternates: { canonical: 'https://www.aliantehomesforsale.com/builders/del-webb' },
 };
 
-export default function DelWebbBuilder() {
+export default function DelWebb() {
   return (
-    <main className="builder-detail-page">
-      <section className="page-hero">
-        <div className="hero-content">
-          <h1>Del Webb - Sun City Aliante</h1>
-          <p className="hero-subtitle">Active Adult 55+ Living</p>
-        </div>
-      </section>
-      <section className="builder-content">
-        <div className="container">
-          <h2>Sun City Aliante Lifestyle</h2>
-          <p>Resort-style amenities, social activities, and low-maintenance living for active adults 55+.</p>
-          <div className="cta-buttons">
-            <a href="/contact" className="cta-button primary">Tour Sun City</a>
-            <a href="/builders" className="cta-button secondary">All Builders</a>
-          </div>
-        </div>
-      </section>
+    <main>
+      <NewConstructionHero />
+      <TopBuilders />
+      <SunCityContent />
+      <CommunityAmenities />
+      <NewConstructionCTA />
     </main>
   );
 }
-

@@ -1,87 +1,44 @@
 import type { Metadata } from 'next';
+import AboutHero from '../components/AboutHero';
+import LegalContent from '../components/LegalContent';
 
 export const metadata: Metadata = {
-  title: 'Fair Housing Policy - Aliante Real Estate',
-  description: 'Aliante Real Estate is committed to fair housing practices and equal opportunity for all persons regardless of race, color, religion, sex, handicap, familial status, or national origin.',
+  title: 'Fair Housing Statement - Aliante Homes For Sale',
+  description: 'Fair housing commitment. Equal opportunity housing provider.',
   alternates: { canonical: 'https://www.aliantehomesforsale.com/fair-housing' },
-  robots: { index: false, follow: true },
 };
 
 export default function FairHousing() {
   return (
-    <main className="legal-page">
-      <section className="page-hero">
-        <div className="hero-content">
-          <h1>Fair Housing Policy</h1>
-          <p className="hero-subtitle">Equal Housing Opportunity</p>
+    <main>
+      <AboutHero />
+      <LegalContent title="Fair Housing and Equal Opportunity Statement">
+        <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
+          <p className="leading-relaxed">
+            Dr. Jan Duffy and Aliante Homes For Sale are committed to full compliance with the Fair Housing Act and all applicable federal, state, and local fair housing and civil rights laws. We are dedicated to ensuring equal professional service and access to housing opportunities for all persons regardless of race, color, religion, sex, disability, familial status, national origin, sexual orientation, gender identity, or any other characteristic protected by law.
+          </p>
+          
+          <p className="leading-relaxed">
+            The Fair Housing Act prohibits discrimination in the sale, rental, and financing of dwellings, and in other housing-related transactions, based on protected characteristics. This prohibition extends to all aspects of the real estate transaction, including advertising, showing properties, negotiating purchase terms, financing arrangements, and providing brokerage services. We take these obligations seriously and maintain strict policies and procedures to ensure compliance with all fair housing requirements.
+          </p>
+
+          <h3 className="text-2xl font-bold mt-8 mb-4" style={{ color: '#2c5aa0' }}>
+            Our Commitment to Equal Housing Opportunity
+          </h3>
+          
+          <p className="leading-relaxed">
+            We provide professional real estate services to all clients and customers without regard to protected characteristics. All persons shall have equal access to our services, properties, and housing opportunities. We do not engage in discriminatory practices in any form, including steering (directing people toward or away from certain neighborhoods), redlining, discriminatory advertising, or providing different terms or conditions based on protected characteristics.
+          </p>
+          
+          <p className="leading-relaxed">
+            Our advertising and marketing materials comply with fair housing requirements by using inclusive language and imagery that welcomes all prospective buyers and renters. We do not make, print, or publish any statement with respect to the sale or rental of a dwelling that indicates any preference, limitation, or discrimination based on protected characteristics. All property listings and marketing materials focus on the features and attributes of the properties themselves, not on the characteristics of the surrounding neighborhood's residents.
+          </p>
+          
+          <p className="leading-relaxed">
+            If you believe you have experienced discrimination in a housing transaction, you have the right to file a complaint with the U.S. Department of Housing and Urban Development (HUD) by calling 1-800-669-9777 or visiting www.hud.gov. Complaints may also be filed with the Nevada Equal Rights Commission. We take all discrimination complaints seriously and will cooperate fully with any investigation of fair housing practices.
+          </p>
         </div>
-      </section>
-
-      <section className="legal-content">
-        <div className="container">
-          <h2>Our Fair Housing Commitment</h2>
-          <p>
-            Aliante Real Estate is committed to providing equal professional service to all persons without regard to race, color, religion, sex, handicap, familial status, national origin, sexual orientation, or gender identity.
-          </p>
-
-          <h2>Fair Housing Act</h2>
-          <p>
-            The Fair Housing Act prohibits discrimination in housing because of:
-          </p>
-          <ul>
-            <li>Race or Color</li>
-            <li>National Origin</li>
-            <li>Religion</li>
-            <li>Sex (including sexual orientation and gender identity)</li>
-            <li>Familial Status (families with children under 18)</li>
-            <li>Disability</li>
-          </ul>
-
-          <h2>Nevada Fair Housing Law</h2>
-          <p>
-            In addition to federal protections, Nevada law provides additional protections against housing discrimination based on ancestry, sexual orientation, and gender identity or expression.
-          </p>
-
-          <h2>Our Practices</h2>
-          <p>
-            We provide equal professional real estate services to all clients including:
-          </p>
-          <ul>
-            <li>Showing all available properties that meet clients' stated criteria</li>
-            <li>Providing the same quality of service to all clients</li>
-            <li>Treating all offers equally regardless of the buyer's protected class</li>
-            <li>Never steering clients to or away from neighborhoods based on protected characteristics</li>
-            <li>Providing reasonable accommodations for persons with disabilities</li>
-          </ul>
-
-          <h2>Reporting Discrimination</h2>
-          <p>
-            If you believe you have been discriminated against in housing, you may file a complaint with:
-          </p>
-          <ul>
-            <li><strong>U.S. Department of Housing and Urban Development (HUD)</strong><br/>
-            Phone: 1-800-669-9777<br/>
-            Website: www.hud.gov</li>
-            <li><strong>Nevada Equal Rights Commission</strong><br/>
-            Phone: (775) 823-6690</li>
-          </ul>
-
-          <h2>Questions</h2>
-          <p>
-            If you have questions about our fair housing practices, please contact us:
-          </p>
-          <p>
-            Email: DrDuffy@AlianteHomesForSale.com<br/>
-            Phone: (702) 707-7273<br/>
-            Office: 2590 Nature Park Drive, Suite 275, North Las Vegas, NV 89084
-          </p>
-
-          <div style={{ marginTop: '2rem', textAlign: 'center' }}>
-            <p><strong>🏠 EQUAL HOUSING OPPORTUNITY</strong></p>
-          </div>
-        </div>
-      </section>
+      </LegalContent>
     </main>
   );
 }
-

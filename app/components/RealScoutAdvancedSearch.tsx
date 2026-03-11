@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect } from 'react';
 import Script from 'next/script';
 
 export default function RealScoutAdvancedSearch() {
@@ -14,7 +13,9 @@ export default function RealScoutAdvancedSearch() {
       />
 
       {/* RealScout Advanced Search Styles */}
-      <style jsx global>{`
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
         realscout-advanced-search {
           --rs-as-button-text-color: #ffffff;
           --rs-as-background-color: #ffffff;
@@ -24,7 +25,9 @@ export default function RealScoutAdvancedSearch() {
           margin: 2rem auto;
           max-width: 600px;
         }
-      `}</style>
+      `,
+        }}
+      />
 
       {/* RealScout Advanced Search Widget */}
       <div 

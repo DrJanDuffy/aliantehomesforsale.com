@@ -7,6 +7,7 @@ import EnhancedFeaturedProperties from './components/EnhancedFeaturedProperties'
 import EnhancedPropertyTypes from './components/EnhancedPropertyTypes';
 import EnhancedMarketInsights from './components/EnhancedMarketInsights';
 import EnhancedTrustAuthority from './components/EnhancedTrustAuthority';
+import AlianteFAQ from './components/AlianteFAQ';
 
 // Enhanced Real Estate Website - Modern, High-Converting Design
 
@@ -34,6 +35,9 @@ export default function Home() {
 
         {/* Trust & Authority Section */}
         <EnhancedTrustAuthority />
+
+        {/* FAQ Section with Schema */}
+        <AlianteFAQ />
       </main>
     </>
   );

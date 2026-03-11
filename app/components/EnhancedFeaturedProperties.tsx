@@ -11,27 +11,25 @@ interface PropertyCardProps {
   gradient?: string;
 }
 
-function PropertyCard({ price, address, city, beds, baths, sqft, features, gradient }: PropertyCardProps) {
-  const bgGradient = gradient || 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+function PropertyCard({ price, address, city, beds, baths, sqft, features }: PropertyCardProps) {
+  // Use Unsplash images based on price range
+  const imageId = price.includes('$349') ? 'photo-1570129477492-45c003edd2be' : 
+                  price.includes('$595') ? 'photo-1600596542815-ffad4c1539a9' : 
+                  'photo-1613490493576-7fde63acd811';
+  const imageUrl = `https://images.unsplash.com/${imageId}?w=600&h=400&fit=crop&q=80`;
   
   return (
     <article className="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group">
-      {/* Property Image Placeholder */}
-      <div 
-        className="relative h-56 flex items-center justify-center"
-        style={{ background: bgGradient }}
-      >
-        {/* Overlay pattern */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.4"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
-          }} />
-        </div>
+      {/* Property Image */}
+      <div className="relative h-56 overflow-hidden">
+        <img 
+          src={imageUrl}
+          alt={`${address}, ${city}`}
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+        />
         
-        {/* Home Icon */}
-        <div className="relative z-10 text-white text-6xl">
-          🏠
-        </div>
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
 
         {/* Price Tag */}
         <div 

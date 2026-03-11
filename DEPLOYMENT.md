@@ -1,106 +1,44 @@
-# Vercel Deployment Guide
+# Deployment (Vercel)
 
-## Overview
-This project has been optimized for Vercel deployment with performance, SEO, and security enhancements.
+**Project:** aliantehomesforsale.com  
+**Project ID (API):** `prj_0RZw34lbC34PRwztLG5bqduiRxwY`
 
-## Pre-deployment Checklist
+## Make push to `main` trigger a Vercel deploy
 
-### 1. Environment Variables
-Set these in your Vercel dashboard:
+**Option A – Vercel Git (recommended)**  
+1. [Vercel Dashboard](https://vercel.com) → your **aliantehomesforsale** project.  
+2. **Settings** → **Git**.  
+3. Under **Connected Git Repository**:  
+   - If none: **Connect Git Repository** → choose **GitHub** → **DrJanDuffy/aliantehomesforsale.com**.  
+   - If already connected: confirm **Production Branch** is **main**.  
+4. Save. Every push to `main` will trigger a new production deployment.
+
+**Option B – GitHub Actions**  
+The repo’s CI/CD workflow deploys to Vercel when:
+
+- Event is a **push** to **main**, and  
+- Jobs **quality**, **build**, and **security** succeed.
+
+Required repo secrets (Settings → Secrets and variables → Actions):
+
+| Secret | Description | Value (example) |
+|--------|-------------|-----------------|
+| `VERCEL_TOKEN` | Vercel API token | From [Vercel Account → Tokens](https://vercel.com/account/tokens) |
+| `VERCEL_ORG_ID` | Team/org ID | From Vercel project **Settings → General** (URL or API) |
+| `VERCEL_PROJECT_ID` | Project ID for API | `prj_0RZw34lbC34PRwztLG5bqduiRxwY` (aliantehomesforsale.com) |
+
+If any of these are missing or a required job fails, the deploy step will not run.
+
+## Deploy now (without pushing)
+
+From the project root:
+
 ```bash
-# Required for production
-NODE_ENV=production
-NEXT_PUBLIC_SITE_URL=https://aliantehomesforsale.com
-
-# Optional: Google Analytics
-NEXT_PUBLIC_GA_ID=your-ga-id
-GOOGLE_VERIFICATION=your-google-verification-code
-
-# Optional: Database (if using)
-DATABASE_URL=your-database-url
+npx vercel --prod
 ```
 
-### 2. Build Settings
-- **Framework Preset**: Next.js
-- **Build Command**: `npm run build`
-- **Output Directory**: `.next`
-- **Install Command**: `npm install`
+(Use `vercel link` first if the project isn’t linked.)
 
-### 3. Domain Configuration
-- Add your custom domain in Vercel dashboard
-- Configure DNS records as instructed by Vercel
-- Enable HTTPS (automatic with Vercel)
+## Production URL
 
-## Performance Optimizations
-
-### Core Web Vitals
-- Font optimization with `display: swap`
-- Image optimization with WebP/AVIF support
-- Lazy loading for images
-- Performance monitoring component
-
-### Caching Strategy
-- Static assets: 1 year cache
-- API routes: 24 hour cache
-- HTML pages: No cache (for dynamic content)
-
-### Security Headers
-- X-Content-Type-Options: nosniff
-- X-Frame-Options: DENY
-- X-XSS-Protection: 1; mode=block
-- Referrer-Policy: origin-when-cross-origin
-
-## SEO Features
-
-### Meta Tags
-- Open Graph tags for social media
-- Twitter Card support
-- Structured data ready
-- Canonical URLs
-
-### Sitemap & Robots
-- Dynamic sitemap generation
-- Robots.txt with crawl directives
-- Search engine friendly URLs
-
-## Monitoring & Analytics
-
-### Vercel Analytics
-- Automatic performance monitoring
-- Core Web Vitals tracking
-- Real user metrics
-
-### Performance Metrics
-- Largest Contentful Paint (LCP)
-- First Input Delay (FID)
-- Cumulative Layout Shift (CLS)
-- Time to First Byte (TTFB)
-
-## Post-deployment
-
-### 1. Verify Performance
-- Run Lighthouse audit
-- Check Core Web Vitals in Vercel dashboard
-- Monitor real user metrics
-
-### 2. SEO Verification
-- Submit sitemap to Google Search Console
-- Verify Google Analytics tracking
-- Test social media sharing
-
-### 3. Security Check
-- Run security audit
-- Verify HTTPS is working
-- Check security headers
-
-## Troubleshooting
-
-### Common Issues
-1. **Build Failures**: Check Node.js version (18+ required)
-2. **Performance Issues**: Review image optimization settings
-3. **SEO Problems**: Verify meta tags and structured data
-
-### Support
-- Vercel Documentation: https://vercel.com/docs
-- Next.js Documentation: https://nextjs.org/docs
-- Performance Monitoring: Vercel Analytics dashboard
+- **Live site:** https://www.aliantehomesforsale.com

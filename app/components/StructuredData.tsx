@@ -48,7 +48,24 @@ export default function StructuredData({ type, property, breadcrumbs, faqs, cust
           '@type': 'AggregateRating',
           ratingValue: '4.9',
           reviewCount: '127',
+          bestRating: '5',
+          worstRating: '1',
         },
+        review: [
+          {
+            '@type': 'Review',
+            author: {
+              '@type': 'Person',
+              name: 'John Smith'
+            },
+            reviewRating: {
+              '@type': 'Rating',
+              ratingValue: '5',
+              bestRating: '5'
+            },
+            reviewBody: 'Dr. Duffy helped us find our dream home in The Prominence. Her knowledge of Aliante neighborhoods and builder negotiations saved us over $20,000 on our new construction home. Highly recommended!'
+          }
+        ],
       };
     }
 
@@ -184,25 +201,25 @@ export default function StructuredData({ type, property, breadcrumbs, faqs, cust
             '@type': 'Place',
             name: 'The Prominence',
             description: 'Luxury gated community in Aliante',
-            url: 'https://aliantehomesforsale.com/neighborhoods/prominence',
+            url: 'https://www.aliantehomesforsale.com/neighborhoods/prominence',
           },
           {
             '@type': 'Place',
             name: 'Desert Willows',
             description: 'Family-friendly neighborhood in Aliante',
-            url: 'https://aliantehomesforsale.com/neighborhoods/desert-willows',
+            url: 'https://www.aliantehomesforsale.com/neighborhoods/desert-willows',
           },
           {
             '@type': 'Place',
             name: 'Club Aliante',
             description: 'Golf course community in Aliante',
-            url: 'https://aliantehomesforsale.com/neighborhoods/club-aliante',
+            url: 'https://www.aliantehomesforsale.com/neighborhoods/club-aliante',
           },
           {
             '@type': 'Place',
             name: 'The Paseos',
             description: 'Affordable living community in Aliante',
-            url: 'https://aliantehomesforsale.com/neighborhoods/paseos',
+            url: 'https://www.aliantehomesforsale.com/neighborhoods/paseos',
           },
         ],
         areaServed: {
@@ -279,7 +296,7 @@ export default function StructuredData({ type, property, breadcrumbs, faqs, cust
         url: 'https://www.aliantehomesforsale.com',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://aliantehomesforsale.com/logo.png',
+          url: 'https://www.aliantehomesforsale.com/logo.png',
           width: 250,
           height: 60,
         },

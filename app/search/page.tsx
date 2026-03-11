@@ -1,69 +1,32 @@
 import type { Metadata } from 'next';
-import RealScoutAdvancedSearch from '../components/RealScoutAdvancedSearch';
-import StructuredData from '../components/StructuredData';
+import HomesForSaleHero from '../components/HomesForSaleHero';
+import AdvancedSearchForm from '../components/AdvancedSearchForm';
+import SearchPageContent from '../components/SearchPageContent';
+import PropertyCategories from '../components/PropertyCategories';
+import HomesSearchTips from '../components/HomesSearchTips';
+import HomesCTA from '../components/HomesCTA';
 
 export const metadata: Metadata = {
-  title: 'Search Aliante Homes for Sale | Advanced Property Search',
-  description: 'Search 286+ verified Aliante homes for sale with advanced filters. Find your perfect home by neighborhood, price, bedrooms, and more.',
-  keywords: 'Aliante property search, homes for sale search, Aliante MLS search, advanced property filters',
-  openGraph: {
-    title: 'Search Aliante Homes for Sale | Advanced Property Search',
-    description: 'Search 286+ verified Aliante homes for sale with advanced filters. Find your perfect home by neighborhood, price, bedrooms, and more.',
-    type: 'website',
-    url: 'https://aliantehomesforsale.com/search',
+  title: 'Search Aliante Homes - Advanced MLS Search',
+  description: 'Search all Aliante homes with advanced MLS filters. Updated every 15 minutes.',
+  alternates: {
+    canonical: 'https://www.aliantehomesforsale.com/search',
   },
 };
 
-export default function SearchPage() {
+export default function Search() {
   return (
-    <>
-      <StructuredData type="NeighborhoodGuide" />
-      
-
-      
-      <main className="search-page">
-        <section className="page-hero">
-          <div className="hero-content">
-            <h1>Search Aliante Homes for Sale</h1>
-            <p className="hero-subtitle">
-              Advanced property search with 286+ verified listings updated every 15 minutes
-            </p>
-          </div>
-        </section>
-
-        <section className="search-section">
-          <div className="container">
-            <h2>Find Your Perfect Aliante Home</h2>
-            <p>Use our advanced search tools to filter properties by your exact criteria</p>
-            
-            <RealScoutAdvancedSearch />
-          </div>
-        </section>
-
-        <section className="search-tips">
-          <div className="container">
-            <h2>Search Tips</h2>
-            <div className="tips-grid">
-              <div className="tip-card">
-                <h3>🎯 Start Broad</h3>
-                <p>Begin with basic criteria and narrow down as you see results</p>
-              </div>
-              <div className="tip-card">
-                <h3>📍 Location Matters</h3>
-                <p>Consider different neighborhoods for better value and amenities</p>
-              </div>
-              <div className="tip-card">
-                <h3>💰 Price Flexibility</h3>
-                <p>Set a range to see more options within your budget</p>
-              </div>
-              <div className="tip-card">
-                <h3>🏠 Property Type</h3>
-                <p>Explore different property types for the best fit</p>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-    </>
+    <main>
+      <HomesForSaleHero />
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="container mx-auto">
+          <AdvancedSearchForm />
+        </div>
+      </section>
+      <SearchPageContent />
+      <PropertyCategories />
+      <HomesSearchTips />
+      <HomesCTA />
+    </main>
   );
 }

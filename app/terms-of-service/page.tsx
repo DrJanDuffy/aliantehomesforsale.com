@@ -1,55 +1,44 @@
 import type { Metadata } from 'next';
+import AboutHero from '../components/AboutHero';
+import LegalContent from '../components/LegalContent';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service - Aliante Real Estate',
-  description: 'Terms of service for using the Aliante Real Estate website and services.',
+  title: 'Terms of Service - Aliante Homes For Sale',
+  description: 'Terms of service for AlianteHomesForSale.com.',
   alternates: { canonical: 'https://www.aliantehomesforsale.com/terms-of-service' },
-  robots: { index: false, follow: true },
 };
 
 export default function TermsOfService() {
   return (
-    <main className="legal-page">
-      <section className="page-hero">
-        <div className="hero-content">
-          <h1>Terms of Service</h1>
-          <p className="hero-subtitle">Last updated: October 10, 2025</p>
-        </div>
-      </section>
+    <main>
+      <AboutHero />
+      <LegalContent title="Terms of Service Agreement">
+        <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
+          <p className="leading-relaxed">
+            Welcome to AlianteHomesForSale.com. These Terms of Service govern your use of our website and services provided by Dr. Jan Duffy, a licensed real estate professional in Nevada. By accessing or using our website, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing this site.
+          </p>
+          
+          <p className="leading-relaxed">
+            The materials and information contained on this website are provided for general informational purposes only. While we strive to provide accurate and up-to-date information, we make no warranties or representations regarding the accuracy, completeness, or timeliness of any information on this site. Real estate market conditions, property availability, and pricing information can change rapidly, and information on this site may not reflect the most current status.
+          </p>
 
-      <section className="legal-content">
-        <div className="container">
-          <h2>Acceptance of Terms</h2>
-          <p>By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement.</p>
-
-          <h2>Use License</h2>
-          <p>Permission is granted to temporarily access the materials (information or software) on Aliante Real Estate's website for personal, non-commercial transitory viewing only.</p>
-
-          <h2>Disclaimer</h2>
-          <p>The materials on Aliante Real Estate's website are provided on an 'as is' basis. We make no warranties, expressed or implied, and hereby disclaim all other warranties including, without limitation, implied warranties of merchantability, fitness for a particular purpose, or non-infringement of intellectual property.</p>
-
-          <h2>Property Information</h2>
-          <p>All property information is deemed reliable but not guaranteed. All properties are subject to prior sale, change, or withdrawal. Buyers should verify all information independently.</p>
-
-          <h2>MLS Disclaimer</h2>
-          <p>Listing information is provided courtesy of the Greater Las Vegas Association of Realtors MLS. All information should be independently verified.</p>
-
-          <h2>Equal Housing Opportunity</h2>
-          <p>Aliante Real Estate is committed to fair housing practices and equal opportunity for all persons.</p>
-
-          <h2>Limitations</h2>
-          <p>In no event shall Aliante Real Estate or its suppliers be liable for any damages arising out of the use or inability to use the materials on this website.</p>
-
-          <h2>Contact Information</h2>
-          <p>
-            Questions about these terms? Contact us:<br/>
-            Email: DrDuffy@AlianteHomesForSale.com<br/>
-            Phone: (702) 707-7273<br/>
-            Office: 2590 Nature Park Drive, Suite 275, North Las Vegas, NV 89084
+          <h3 className="text-2xl font-bold mt-8 mb-4" style={{ color: '#2c5aa0' }}>
+            Use of Services and Website
+          </h3>
+          
+          <p className="leading-relaxed">
+            You may use our website and services only for lawful purposes and in accordance with these Terms. You agree not to use our website in any way that violates any applicable federal, state, local, or international law or regulation. You agree not to attempt to gain unauthorized access to any portion of the website, other user accounts, or any systems or networks connected to the website through hacking, password mining, or any other means.
+          </p>
+          
+          <p className="leading-relaxed">
+            The information provided through our website, including property listings, market data, and educational content, is for informational purposes only and should not be construed as professional advice. We are not attorneys, accountants, or financial advisors, and nothing on this website should be considered legal, financial, or tax advice. You should consult with appropriate professionals regarding your specific situation and needs.
+          </p>
+          
+          <p className="leading-relaxed">
+            All property listings, photographs, virtual tours, floor plans, and other content on this website are subject to errors, omissions, changes, prior sale, or withdrawal without notice. All property information should be independently verified by prospective buyers or their agents. Square footage, lot sizes, school information, and other property details are approximate and provided for informational purposes only.
           </p>
         </div>
-      </section>
+      </LegalContent>
     </main>
   );
 }
-

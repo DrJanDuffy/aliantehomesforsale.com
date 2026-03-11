@@ -1,69 +1,44 @@
-import type { Metadata } from 'next';
+import type { Metadata} from 'next';
+import AboutHero from '../components/AboutHero';
+import LegalContent from '../components/LegalContent';
 
 export const metadata: Metadata = {
-  title: 'Accessibility Statement - Aliante Real Estate',
-  description: 'Our commitment to web accessibility and ensuring our website is accessible to all users.',
+  title: 'Accessibility Statement - Aliante Homes For Sale',
+  description: 'Accessibility commitment for AlianteHomesForSale.com. WCAG compliance and accessibility features.',
   alternates: { canonical: 'https://www.aliantehomesforsale.com/accessibility' },
-  robots: { index: false, follow: true },
 };
 
 export default function Accessibility() {
   return (
-    <main className="legal-page">
-      <section className="page-hero">
-        <div className="hero-content">
-          <h1>Accessibility Statement</h1>
-          <p className="hero-subtitle">Our Commitment to Accessibility</p>
-        </div>
-      </section>
-
-      <section className="legal-content">
-        <div className="container">
-          <h2>Our Commitment</h2>
-          <p>Aliante Real Estate is committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards.</p>
-
-          <h2>Conformance Status</h2>
-          <p>We aim to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA standards. These guidelines explain how to make web content more accessible for people with disabilities.</p>
-
-          <h2>Measures to Support Accessibility</h2>
-          <p>Aliante Real Estate takes the following measures to ensure accessibility:</p>
-          <ul>
-            <li>Include accessibility as part of our mission statement</li>
-            <li>Provide training to our staff on web accessibility</li>
-            <li>Include people with disabilities in our user testing</li>
-            <li>Test our website regularly for accessibility issues</li>
-          </ul>
-
-          <h2>Technical Specifications</h2>
-          <p>This website is built using semantic HTML5, ARIA landmarks, proper heading hierarchy, and keyboard navigation support.</p>
-
-          <h2>Feedback</h2>
-          <p>
-            We welcome your feedback on the accessibility of this website. Please contact us if you encounter accessibility barriers:
+    <main>
+      <AboutHero />
+      <LegalContent title="Website Accessibility Commitment">
+        <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
+          <p className="leading-relaxed">
+            At Aliante Homes For Sale, we are committed to ensuring digital accessibility for people with disabilities. We continually work to improve the user experience for everyone and apply relevant accessibility standards to ensure our website is accessible to all users, regardless of ability or technology used.
           </p>
-          <ul>
-            <li>Email: DrDuffy@AlianteHomesForSale.com</li>
-            <li>Phone: (702) 707-7273</li>
-            <li>Office: 2590 Nature Park Drive, Suite 275, North Las Vegas, NV 89084</li>
-          </ul>
+          
+          <p className="leading-relaxed">
+            We strive to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA standards published by the World Wide Web Consortium (W3C). These guidelines explain how to make web content more accessible for people with disabilities, including users who are blind or have low vision, are deaf or hard of hearing, have limited mobility, or have cognitive disabilities.
+          </p>
 
-          <h2>Compatibility</h2>
-          <p>This website is designed to be compatible with assistive technologies including screen readers, screen magnifiers, and speech recognition software. It is optimized for recent versions of major browsers including Chrome, Firefox, Safari, and Edge.</p>
-
-          <h2>Assessment and Remediation</h2>
-          <p>We assess the accessibility of this website using:</p>
-          <ul>
-            <li>Self-evaluation and internal testing</li>
-            <li>Automated accessibility testing tools</li>
-            <li>Manual testing with assistive technologies</li>
-            <li>User feedback and testing</li>
-          </ul>
-
-          <h2>Date</h2>
-          <p>This statement was last updated on October 10, 2025.</p>
+          <h3 className="text-2xl font-bold mt-8 mb-4" style={{ color: '#2c5aa0' }}>
+            Accessibility Features
+          </h3>
+          
+          <p className="leading-relaxed">
+            Our website includes several features designed to improve accessibility. We use semantic HTML markup to provide proper structure and meaning to content, making it easier for screen readers and assistive technologies to interpret. All images include descriptive alt text that conveys the content and purpose of the image to users who cannot see them. Interactive elements like buttons and links are clearly labeled and keyboard accessible, allowing users to navigate the site without a mouse.
+          </p>
+          
+          <p className="leading-relaxed">
+            We have implemented color contrast ratios that meet WCAG AA standards to ensure text is readable for users with visual impairments or color blindness. Our forms include clear labels and error messages to guide users through completing required fields. Video content, when available, includes captions and transcripts to ensure deaf and hard of hearing users can access the information. The website is designed to be responsive and function properly across different devices and screen sizes, including when content is zoomed to 200% for users who need larger text.
+          </p>
+          
+          <p className="leading-relaxed">
+            We regularly test our website with various assistive technologies, including screen readers, keyboard-only navigation, and speech recognition software, to identify and address accessibility barriers. Our development team stays informed about accessibility best practices and emerging standards to ensure our website remains accessible as technology and guidelines evolve.
+          </p>
         </div>
-      </section>
+      </LegalContent>
     </main>
   );
 }
-

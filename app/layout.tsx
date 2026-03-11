@@ -1,10 +1,13 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-import Navigation from './components/Navigation';
+import EnhancedNavigation from './components/EnhancedNavigation';
+import Breadcrumbs from './components/Breadcrumbs';
+import EnhancedFooter from './components/EnhancedFooter';
 import PerformanceMonitor from './components/PerformanceMonitor';
 import GoogleAnalytics from './components/GoogleAnalytics';
 import StructuredData from './components/StructuredData';
+import LocationSchema from './components/LocationSchema';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -47,10 +50,10 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image.jpg',
+        url: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&h=630&fit=crop&q=80',
         width: 1200,
         height: 630,
-        alt: 'Aliante Homes For Sale - Expert Local Realtors | North Las Vegas NV',
+        alt: 'Luxury Home in Aliante North Las Vegas',
       },
     ],
   },
@@ -58,7 +61,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Aliante North Las Vegas Real Estate & Homes For Sale | 286+ MLS Listings',
     description: 'Browse 286+ Aliante homes for sale in North Las Vegas, NV. Updated every 15 minutes from MLS. Gated communities, Sun City, new construction.',
-    images: ['/og-image.jpg'],
+    images: ['https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&h=630&fit=crop&q=80'],
   },
   robots: {
     index: true,
@@ -94,87 +97,19 @@ export default function RootLayout({
         <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-XXXXXXXXXX'} />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {/* Core Structured Data - Organization & LocalBusiness */}
+        {/* Core Structured Data - Organization & LocalBusiness & Location */}
         <StructuredData type="Organization" />
         <StructuredData type="LocalBusiness" />
+        <LocationSchema />
         
-        <Navigation />
+        <EnhancedNavigation />
+        <Breadcrumbs />
         
         {children}
         <PerformanceMonitor />
 
-        {/* Enhanced Footer */}
-        <footer className="main-footer" id="contact">
-          <div className="container">
-            <div className="footer-grid">
-              <div className="footer-section">
-                <h3>Contact Dr. Jan Duffy</h3>
-                <p style={{ marginBottom: '1rem' }}>Your trusted partner for Aliante homes since 2018</p>
-                <div>
-                  <p><strong>📞 Phone:</strong> <a href="tel:+17027077273" style={{ color: '#97d8c4' }}>(702) 707-7273</a></p>
-                  <p><strong>✉️ Email:</strong> <a href="mailto:DrDuffy@AlianteHomesForSale.com" style={{ color: '#97d8c4' }}>DrDuffy@AlianteHomesForSale.com</a></p>
-                  <p><strong>📍 Office:</strong> 2590 Nature Park Drive, Suite 275<br />North Las Vegas, NV 89084</p>
-                  <p><strong>🕒 Hours:</strong> Mon-Fri 8AM-7PM, Sat-Sun 9AM-6PM</p>
-                </div>
-                <div style={{ marginTop: '1rem' }}>
-                  <p><strong>Nevada Real Estate License #B.0123456.LLC</strong></p>
-                  <p><strong>Equal Housing Opportunity</strong></p>
-                </div>
-              </div>
-              
-              <div className="footer-section">
-                <h3>New Construction Builders</h3>
-                <ul>
-                  <li><a href="/builders">All Builders Comparison Guide</a></li>
-                  <li><a href="/builders/lennar">Lennar (#1 Volume Builder)</a></li>
-                  <li><a href="/builders/dr-horton">D.R. Horton (Tule Springs)</a></li>
-                  <li><a href="/builders/tri-pointe">Tri Pointe (Luxury Homes)</a></li>
-                  <li><a href="/builders/del-webb">Del Webb (Active Adult 55+)</a></li>
-                  <li><a href="/builders/toll-brothers">Toll Brothers (Ultra-Luxury)</a></li>
-                  <li><a href="/builders/richmond-american">Richmond American Homes</a></li>
-                  <li><a href="/builders/incentives">Builder Incentives Tracker</a></li>
-                </ul>
-              </div>
-              
-              <div className="footer-section">
-                <h3>Aliante Neighborhoods</h3>
-                <ul>
-                  <li><a href="/neighborhoods/prominence">The Prominence (Luxury)</a></li>
-                  <li><a href="/neighborhoods/desert-willows">Desert Willows (Family)</a></li>
-                  <li><a href="/neighborhoods/club-aliante">Club Aliante (Golf Course)</a></li>
-                  <li><a href="/neighborhoods/paseos">The Paseos (Gated)</a></li>
-                  <li><a href="/neighborhoods/tule-springs">Villages at Tule Springs</a></li>
-                  <li><a href="/neighborhoods/sun-city">Sun City Aliante (55+)</a></li>
-                  <li><a href="/neighborhoods/compare">Neighborhood Comparison Tool</a></li>
-                </ul>
-              </div>
-              
-              <div className="footer-section">
-                <h3>Buyer & Seller Resources</h3>
-                <ul>
-                  <li><a href="/market-report">Live Market Report & Statistics</a></li>
-                  <li><a href="/mortgage-calculator">Mortgage Calculator & Rates</a></li>
-                  <li><a href="/home-valuation">Free Home Valuation (CMA)</a></li>
-                  <li><a href="/buyer-guide">First-Time Buyer Guide</a></li>
-                  <li><a href="/seller-checklist">Selling Your Home Checklist</a></li>
-                  <li><a href="/investment-analysis">Investment Property Analysis</a></li>
-                  <li><a href="/schools">School District Information</a></li>
-                </ul>
-              </div>
-            </div>
-            
-            <div className="footer-bottom">
-              <p>© 2025 Aliante Las Vegas | Homes by Dr. Jan Duffy. Licensed Real Estate Brokerage in Nevada.</p>
-              <p>All information deemed reliable but not guaranteed. All properties subject to prior sale, change, or withdrawal.</p>
-              <div style={{ marginTop: '1rem' }}>
-                <a href="/privacy-policy" style={{ margin: '0 1rem' }}>Privacy Policy</a> |
-                <a href="/terms-of-service" style={{ margin: '0 1rem' }}>Terms of Service</a> |
-                <a href="/accessibility" style={{ margin: '0 1rem' }}>Accessibility Statement</a> |
-                <a href="/fair-housing" style={{ margin: '0 1rem' }}>Fair Housing</a>
-              </div>
-            </div>
-          </div>
-        </footer>
+        {/* Enhanced Footer with SEO-optimized structure */}
+        <EnhancedFooter />
       </body>
     </html>
   );
