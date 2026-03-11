@@ -9,6 +9,7 @@ import EnhancedFooter from './components/EnhancedFooter';
 import PerformanceMonitor from './components/PerformanceMonitor';
 import GoogleAnalytics from './components/GoogleAnalytics';
 import RealScoutOfficeListingsSection from './components/RealScoutOfficeListingsSection';
+import RealScoutSearchSection from './components/RealScoutSearchSection';
 import StructuredData from './components/StructuredData';
 import LocationSchema from './components/LocationSchema';
 
@@ -115,6 +116,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Breadcrumbs />
 
         {children}
+
+        {/* RealScout search (lead gen): below hero / below the fold on every page */}
+        <RealScoutSearchSection />
 
         {/* RealScout office listings: below the fold on every page */}
         <RealScoutOfficeListingsSection />

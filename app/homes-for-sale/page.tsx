@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import RealScoutAdvancedSearch from '../components/RealScoutAdvancedSearch';
 import StructuredData from '../components/StructuredData';
 import HomesForSaleHero from '../components/HomesForSaleHero';
 import PropertyCategories from '../components/PropertyCategories';
@@ -28,23 +27,7 @@ export default function HomesForSale() {
         {/* Hero Section */}
         <HomesForSaleHero />
 
-        {/* Advanced Search Section */}
-        <section className="py-16 px-4 bg-gray-50">
-          <div className="container max-w-5xl mx-auto">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: '#1a365d' }}>
-                Find Your Perfect Aliante Home
-              </h2>
-              <p className="text-lg text-gray-600">
-                Search 286+ active listings updated live from MLS
-              </p>
-            </div>
-            <div className="bg-white rounded-2xl shadow-xl p-6 sm:p-8">
-              <RealScoutAdvancedSearch />
-            </div>
-          </div>
-        </section>
-
+        {/* Search widget is in layout below the fold on every page (#realscout-search) */}
         {/* Property Categories */}
         <PropertyCategories />
 

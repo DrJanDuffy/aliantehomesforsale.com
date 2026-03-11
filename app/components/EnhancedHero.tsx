@@ -1,7 +1,5 @@
 'use client';
 
-import RealScoutAdvancedSearch from './RealScoutAdvancedSearch';
-
 export default function EnhancedHero() {
   return (
     <section
@@ -62,31 +60,14 @@ export default function EnhancedHero() {
           </div>
         </div>
 
-        {/* Find Your Dream Home — RealScout MLS search widget */}
-        <div className="max-w-5xl mx-auto">
-          <div
-            className="bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl p-6 sm:p-8 hero-realscout-widget"
-            style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.3)' }}
-          >
-            <h2 className="text-2xl sm:text-3xl font-bold mb-6" style={{ color: '#1a365d' }}>
-              Find Your Dream Home
-            </h2>
-            <div className="hero-realscout">
-              <style>{`.hero-realscout realscout-advanced-search { max-width: 100%; width: 100%; }`}</style>
-              <RealScoutAdvancedSearch />
-            </div>
-            <div className="mt-6 pt-6 border-t-2 border-gray-100 text-center">
-              <p className="text-gray-600 mb-2">Need personalized help?</p>
-              <a
-                href="tel:+17027077273"
-                className="inline-flex items-center gap-2 text-2xl font-bold hover:underline"
-                style={{ color: '#2c5aa0' }}
-              >
-                📞 (702) 707-7273
-              </a>
-            </div>
-          </div>
-        </div>
+        {/* CTA: scroll to RealScout search (below the fold on every page) */}
+        <a
+          href="#realscout-search"
+          className="inline-block py-4 px-8 rounded-xl font-semibold text-lg text-white transition-all transform hover:scale-[1.02] hover:shadow-xl focus:ring-4 focus:ring-orange-300 focus:outline-none"
+          style={{ backgroundColor: '#ed8936' }}
+        >
+          🔍 Search Homes Below
+        </a>
       </div>
     </section>
   );
