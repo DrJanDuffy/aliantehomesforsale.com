@@ -1,6 +1,13 @@
 import type { NextConfig } from 'next';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const nextConfig: NextConfig = {
+  // Project root for file tracing (silences multiple-lockfile warning when parent has another lockfile)
+  outputFileTracingRoot: __dirname,
+
   // Vercel optimizations
   poweredByHeader: false,
   compress: true,
@@ -53,6 +60,10 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'cdn.pixabay.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'files.keepingcurrentmatters.com',
       },
     ],
   },

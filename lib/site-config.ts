@@ -29,8 +29,8 @@ export const siteConfig = {
   },
   searchUrlTemplate: 'https://www.aliantehomesforsale.com/search?q={search_term_string}',
 
-  /** Simplifying the Market (KCM) blog feed for Latest News section. Use English feed if available. */
+  /** Simplifying the Market (KCM) blog feed for Latest News section. English feed. */
   kcmFeedUrl:
     process.env.KCM_FEED_URL ||
-    'https://www.simplifyingthemarket.com/es/feed?a=956758-ef2edda2f940e018328655620ea05f18',
+    'https://www.simplifyingthemarket.com/feed?a=956758-ef2edda2f940e018328655620ea05f18',
 } as const;

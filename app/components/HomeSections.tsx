@@ -1,6 +1,5 @@
 'use client';
 
-import { useId } from 'react';
 import EnhancedHero from './EnhancedHero';
 import RealScoutSearchSection from './RealScoutSearchSection';
 import EnhancedFeaturedProperties from './EnhancedFeaturedProperties';
@@ -11,11 +10,10 @@ import EnhancedTrustAuthority from './EnhancedTrustAuthority';
 import HomeCTAStrip from './HomeCTAStrip';
 import AlianteFAQ from './AlianteFAQ';
 
-/** Client-only home page sections. Order matches Purist: Hero → Search → Featured → Agent welcome → Property Types → Market → Trust → CTA strip → FAQ. */
-export default function HomeSections() {
-  const mainContentId = useId();
+/** Top half: Hero through Trust. Latest News is rendered between this and HomeSectionsBottom in page.tsx. */
+export function HomeSectionsTop() {
   return (
-    <div id={mainContentId}>
+    <>
       <EnhancedHero />
       <RealScoutSearchSection />
       <EnhancedFeaturedProperties />
@@ -23,8 +21,16 @@ export default function HomeSections() {
       <EnhancedPropertyTypes />
       <EnhancedMarketInsights />
       <EnhancedTrustAuthority />
+    </>
+  );
+}
+
+/** Bottom half: CTA strip then FAQ. */
+export function HomeSectionsBottom() {
+  return (
+    <>
       <HomeCTAStrip />
       <AlianteFAQ />
-    </div>
+    </>
   );
 }

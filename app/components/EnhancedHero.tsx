@@ -10,7 +10,10 @@ export default function EnhancedHero() {
       <div className="absolute inset-0">
         <img
           src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1920&h=1080&fit=crop&q=80"
-          alt="Aliante Luxury Homes"
+          alt="Aliante luxury homes and North Las Vegas real estate"
+          width={1920}
+          height={1080}
+          fetchPriority="high"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-purple-900/90 to-indigo-900/90"></div>

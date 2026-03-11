@@ -98,6 +98,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        {/* Skip link: WCAG 2.2 / keyboard users (focus visible) */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-white focus:text-gray-900 focus:rounded-md focus:ring-2 focus:ring-offset-2 focus:ring-blue-600"
+        >
+          Skip to main content
+        </a>
         {/* RealScout: load once for all widgets (office-listings, search, etc.) */}
         <Script
           src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
@@ -115,7 +122,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <EnhancedNavigation />
         <Breadcrumbs />
 
-        {children}
+        <div id="main-content" tabIndex={-1}>
+          {children}
+        </div>
 
         {/* RealScout search (lead gen): below hero on home (in page); below content on other pages */}
         <RealScoutSearchSectionLayout />
