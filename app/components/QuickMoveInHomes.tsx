@@ -10,7 +10,7 @@ interface QuickMoveInHomeProps {
   gradient: string;
 }
 
-function QuickMoveInCard({ badge, builder, community, specs, price, features, gradient }: QuickMoveInHomeProps) {
+function QuickMoveInCard({ badge, builder, community, specs, price, features }: QuickMoveInHomeProps) {
   // Use different Unsplash images for each builder
   const imageId = builder === 'Lennar' ? 'photo-1600585154340-be6161a56a0c' : 
                   builder === 'D.R. Horton' ? 'photo-1600047509807-ba8f99d2cdde' : 

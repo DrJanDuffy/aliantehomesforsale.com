@@ -11,7 +11,7 @@ interface PropertyCardProps {
   gradient?: string;
 }
 
-function PropertyCard({ price, address, city, beds, baths, sqft, features, gradient }: PropertyCardProps) {
+function PropertyCard({ price, address, city, beds, baths, sqft, features }: PropertyCardProps) {
   // Use Unsplash images based on price range
   const imageId = price.includes('$349') ? 'photo-1570129477492-45c003edd2be' : 
                   price.includes('$595') ? 'photo-1600596542815-ffad4c1539a9' : 

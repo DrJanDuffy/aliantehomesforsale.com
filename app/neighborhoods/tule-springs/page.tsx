@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import NeighborhoodsHero from '../../components/NeighborhoodsHero';
 import NewConstructionHero from '../../components/NewConstructionHero';
 import TopBuilders from '../../components/TopBuilders';
 import BuilderDetailContent from '../../components/BuilderDetailContent';
