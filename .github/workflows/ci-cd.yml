@@ -8,9 +8,13 @@ on:
   release:
     types: [ published ]
 
+permissions:
+  contents: read
+  security-events: write
+
 env:
   NODE_VERSION: '18'
-  NEXT_VERSION: '15.5.0'
+  NEXT_VERSION: '15.5.10'
 
 jobs:
   # Code Quality & Testing
@@ -142,11 +146,11 @@ jobs:
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           vercel-args: '--prod'
 
-  # Deploy to Production
+  # Deploy to Production (performance not in needs: Lighthouse runs against localhost with no server)
   deploy-production:
     name: Deploy Production
     runs-on: ubuntu-latest
-    needs: [quality, build, performance, security]
+    needs: [quality, build, security]
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     environment: production
     steps:
