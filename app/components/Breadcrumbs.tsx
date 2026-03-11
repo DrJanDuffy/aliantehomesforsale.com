@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { siteConfig } from '../../lib/site-config';
 
 export default function Breadcrumbs() {
   const pathname = usePathname();
@@ -31,7 +32,7 @@ export default function Breadcrumbs() {
       '@type': 'ListItem',
       position: index + 1,
       name: item.name,
-      item: `https://www.aliantehomesforsale.com${item.url}`,
+      item: `${siteConfig.siteUrl}${item.url}`,
     })),
   };
 

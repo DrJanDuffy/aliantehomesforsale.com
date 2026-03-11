@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import Script from 'next/script';
+import { siteConfig } from '../lib/site-config';
 import './globals.css';
 import EnhancedNavigation from './components/EnhancedNavigation';
 import Breadcrumbs from './components/Breadcrumbs';
@@ -26,29 +27,27 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Aliante North Las Vegas Real Estate & Homes For Sale | 286+ MLS Listings',
-  description:
-    'Browse 286+ Aliante homes for sale in North Las Vegas, NV. Updated every 15 minutes from MLS. Gated communities, Sun City Aliante 55+, new construction. Call (702) 707-7273 for expert local guidance.',
+  title: siteConfig.defaultTitle,
+  description: siteConfig.defaultDescription,
   keywords:
     'Aliante North Las Vegas homes for sale, Aliante real estate, North Las Vegas homes, 89084 homes for sale, Aliante gated community, Sun City Aliante, Club Aliante, new construction Aliante, Aliante MLS listings, houses for rent Aliante',
-  authors: [{ name: 'Aliante Las Vegas | Homes by Dr. Jan Duffy' }],
-  creator: 'Aliante Las Vegas | Homes by Dr. Jan Duffy',
-  publisher: 'Aliante Las Vegas | Homes by Dr. Jan Duffy',
+  authors: [{ name: siteConfig.siteName }],
+  creator: siteConfig.siteName,
+  publisher: siteConfig.siteName,
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://www.aliantehomesforsale.com'),
+  metadataBase: new URL(siteConfig.siteUrl),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Aliante North Las Vegas Real Estate & Homes For Sale | 286+ MLS Listings',
-    description:
-      'Browse 286+ Aliante homes for sale in North Las Vegas, NV. Updated every 15 minutes from MLS. Gated communities, Sun City Aliante 55+, new construction.',
-    url: 'https://www.aliantehomesforsale.com',
-    siteName: 'Aliante Las Vegas | Homes by Dr. Jan Duffy',
+    title: siteConfig.defaultTitle,
+    description: siteConfig.defaultDescription,
+    url: siteConfig.siteUrl,
+    siteName: siteConfig.siteName,
     locale: 'en_US',
     type: 'website',
     images: [
@@ -62,9 +61,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Aliante North Las Vegas Real Estate & Homes For Sale | 286+ MLS Listings',
-    description:
-      'Browse 286+ Aliante homes for sale in North Las Vegas, NV. Updated every 15 minutes from MLS. Gated communities, Sun City, new construction.',
+    title: siteConfig.defaultTitle,
+    description: siteConfig.defaultDescription,
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -83,9 +81,9 @@ export const metadata: Metadata = {
   },
   other: {
     'geo.region': 'US-NV',
-    'geo.placename': 'Aliante, North Las Vegas',
-    'geo.position': '36.1699;-115.1398',
-    ICBM: '36.1699, -115.1398',
+    'geo.placename': `${siteConfig.areaName}, ${siteConfig.region}`,
+    'geo.position': `${siteConfig.geo.latitude};${siteConfig.geo.longitude}`,
+    ICBM: `${siteConfig.geo.latitude}, ${siteConfig.geo.longitude}`,
   },
 };
 
@@ -106,9 +104,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="module"
         />
 
-        {/* Core Structured Data - Organization & LocalBusiness & Location */}
+        {/* Core Structured Data - Organization, LocalBusiness, RealEstateAgent, WebSite (GEO/AEO) */}
         <StructuredData type="Organization" />
         <StructuredData type="LocalBusiness" />
+        <StructuredData type="RealEstateAgent" />
+        <StructuredData type="WebSite" />
         <LocationSchema />
 
         <EnhancedNavigation />

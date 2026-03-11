@@ -1,6 +1,7 @@
 'use client';
 
 import { useId } from 'react';
+import { siteConfig } from '../../lib/site-config';
 
 interface StructuredDataProps {
   type:
@@ -42,22 +43,22 @@ export default function StructuredData({
       return {
         '@context': 'https://schema.org',
         '@type': 'RealEstateAgent',
-        name: 'Aliante Las Vegas | Homes by Dr. Jan Duffy',
-        description: 'Expert real estate services in Aliante, North Las Vegas',
-        url: 'https://www.aliantehomesforsale.com',
+        name: siteConfig.siteName,
+        description: `Expert real estate services in ${siteConfig.areaName}, ${siteConfig.region}`,
+        url: siteConfig.siteUrl,
         address: {
           '@type': 'PostalAddress',
-          streetAddress: '2590 Nature Park Drive, Suite 275',
-          addressLocality: 'North Las Vegas',
-          addressRegion: 'NV',
-          postalCode: '89084',
-          addressCountry: 'US',
+          streetAddress: siteConfig.address.streetAddress,
+          addressLocality: siteConfig.address.addressLocality,
+          addressRegion: siteConfig.address.addressRegion,
+          postalCode: siteConfig.address.postalCode,
+          addressCountry: siteConfig.address.addressCountry,
         },
-        telephone: '(702) 707-7273',
-        email: 'DrDuffy@AlianteHomesForSale.com',
+        telephone: siteConfig.phone,
+        email: siteConfig.email,
         areaServed: {
           '@type': 'Place',
-          name: 'Aliante, North Las Vegas, Nevada',
+          name: siteConfig.areaServed,
         },
         aggregateRating: {
           '@type': 'AggregateRating',
@@ -177,25 +178,24 @@ export default function StructuredData({
       return {
         '@context': 'https://schema.org',
         '@type': 'WebSite',
-        name: 'Aliante Homes For Sale',
-        url: 'https://www.aliantehomesforsale.com',
-        description:
-          'Find your dream home in Aliante, North Las Vegas with expert real estate guidance since 2018',
+        name: siteConfig.siteName,
+        url: siteConfig.siteUrl,
+        description: `Find your dream home in ${siteConfig.areaName}, ${siteConfig.region} with expert real estate guidance since 2018`,
         potentialAction: {
           '@type': 'SearchAction',
-          target: 'https://www.aliantehomesforsale.com/search?q={search_term_string}',
+          target: siteConfig.searchUrlTemplate,
           'query-input': 'required name=search_term_string',
         },
         publisher: {
           '@type': 'RealEstateAgent',
-          name: 'Aliante Las Vegas | Homes by Dr. Jan Duffy',
+          name: siteConfig.siteName,
           address: {
             '@type': 'PostalAddress',
-            streetAddress: '2590 Nature Park Drive, Suite 275',
-            addressLocality: 'North Las Vegas',
-            addressRegion: 'NV',
-            postalCode: '89084',
-            addressCountry: 'US',
+            streetAddress: siteConfig.address.streetAddress,
+            addressLocality: siteConfig.address.addressLocality,
+            addressRegion: siteConfig.address.addressRegion,
+            postalCode: siteConfig.address.postalCode,
+            addressCountry: siteConfig.address.addressCountry,
           },
         },
       };
@@ -252,24 +252,24 @@ export default function StructuredData({
       return {
         '@context': 'https://schema.org',
         '@type': 'RealEstateAgent',
-        '@id': 'https://www.aliantehomesforsale.com/#organization',
-        name: 'Aliante Las Vegas | Homes by Dr. Jan Duffy',
-        image: 'https://www.aliantehomesforsale.com/logo.png',
-        url: 'https://www.aliantehomesforsale.com',
+        '@id': `${siteConfig.siteUrl}/#organization`,
+        name: siteConfig.siteName,
+        image: `${siteConfig.siteUrl}/logo.png`,
+        url: siteConfig.siteUrl,
         telephone: '+17027077273',
-        email: 'DrDuffy@AlianteHomesForSale.com',
+        email: siteConfig.email,
         address: {
           '@type': 'PostalAddress',
-          streetAddress: '2590 Nature Park Drive, Suite 275',
-          addressLocality: 'North Las Vegas',
-          addressRegion: 'NV',
-          postalCode: '89084',
-          addressCountry: 'US',
+          streetAddress: siteConfig.address.streetAddress,
+          addressLocality: siteConfig.address.addressLocality,
+          addressRegion: siteConfig.address.addressRegion,
+          postalCode: siteConfig.address.postalCode,
+          addressCountry: siteConfig.address.addressCountry,
         },
         geo: {
           '@type': 'GeoCoordinates',
-          latitude: 36.1699,
-          longitude: -115.1398,
+          latitude: siteConfig.geo.latitude,
+          longitude: siteConfig.geo.longitude,
         },
         openingHoursSpecification: [
           {
@@ -310,19 +310,19 @@ export default function StructuredData({
       return {
         '@context': 'https://schema.org',
         '@type': 'Organization',
-        '@id': 'https://www.aliantehomesforsale.com/#organization',
-        name: 'Aliante Las Vegas | Homes by Dr. Jan Duffy',
-        url: 'https://www.aliantehomesforsale.com',
+        '@id': `${siteConfig.siteUrl}/#organization`,
+        name: siteConfig.siteName,
+        url: siteConfig.siteUrl,
         logo: {
           '@type': 'ImageObject',
-          url: 'https://www.aliantehomesforsale.com/logo.png',
+          url: `${siteConfig.siteUrl}/logo.png`,
           width: 250,
           height: 60,
         },
-        description: 'Expert real estate services in Aliante, North Las Vegas since 2018',
+        description: `Expert real estate services in ${siteConfig.areaName}, ${siteConfig.region} since 2018`,
         contactPoint: {
           '@type': 'ContactPoint',
-          telephone: '+1-702-707-7273',
+          telephone: siteConfig.phone,
           contactType: 'Customer Service',
           areaServed: 'US-NV',
           availableLanguage: ['English', 'Spanish'],

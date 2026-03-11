@@ -1,7 +1,6 @@
 'use client';
 
 import { useId } from 'react';
-import StructuredData from './components/StructuredData';
 import EnhancedHero from './components/EnhancedHero';
 import EnhancedFeaturedProperties from './components/EnhancedFeaturedProperties';
 import EnhancedPropertyTypes from './components/EnhancedPropertyTypes';
@@ -16,10 +15,7 @@ export default function Home() {
 
   return (
     <>
-      {/* Structured Data for SEO */}
-      <StructuredData type="RealEstateAgent" />
-      <StructuredData type="WebSite" />
-
+      {/* RealEstateAgent + WebSite schema in root layout for every page */}
       <main id={mainContentId}>
         {/* Hero Section with Integrated Search */}
         <EnhancedHero />

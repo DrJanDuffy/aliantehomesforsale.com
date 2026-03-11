@@ -1,27 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import RealScoutAdvancedSearch from './RealScoutAdvancedSearch';
 
 export default function EnhancedHero() {
-  const [formData, setFormData] = useState({
-    neighborhood: '',
-    priceRange: '',
-    beds: '',
-    baths: '',
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Redirect to search with parameters
-    const params = new URLSearchParams();
-    if (formData.neighborhood) params.append('neighborhood', formData.neighborhood);
-    if (formData.priceRange) params.append('price', formData.priceRange);
-    if (formData.beds) params.append('beds', formData.beds);
-    if (formData.baths) params.append('baths', formData.baths);
-
-    window.location.href = `/search?${params.toString()}`;
-  };
-
   return (
     <section
       className="relative min-h-[90vh] flex items-center justify-center px-4 py-16 overflow-hidden"
@@ -81,135 +62,19 @@ export default function EnhancedHero() {
           </div>
         </div>
 
-        {/* Property Search Widget */}
+        {/* Find Your Dream Home — RealScout MLS search widget */}
         <div className="max-w-5xl mx-auto">
           <div
-            className="bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl p-6 sm:p-8"
+            className="bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl p-6 sm:p-8 hero-realscout-widget"
             style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.3)' }}
           >
             <h2 className="text-2xl sm:text-3xl font-bold mb-6" style={{ color: '#1a365d' }}>
               Find Your Dream Home
             </h2>
-
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                {/* Neighborhood */}
-                <div>
-                  <label
-                    htmlFor="neighborhood"
-                    className="block text-sm font-semibold mb-2"
-                    style={{ color: '#1a365d' }}
-                  >
-                    Neighborhood
-                  </label>
-                  <select
-                    id="neighborhood"
-                    value={formData.neighborhood}
-                    onChange={(e) => setFormData({ ...formData, neighborhood: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-700"
-                    style={{ minHeight: '48px' }}
-                  >
-                    <option value="">All Neighborhoods</option>
-                    <option value="prominence">The Prominence</option>
-                    <option value="club-aliante">Club Aliante</option>
-                    <option value="sun-city">Sun City Aliante</option>
-                    <option value="desert-willows">Desert Willows</option>
-                    <option value="paseos">The Paseos</option>
-                    <option value="tule-springs">Tule Springs</option>
-                  </select>
-                </div>
-
-                {/* Price Range */}
-                <div>
-                  <label
-                    htmlFor="price-range"
-                    className="block text-sm font-semibold mb-2"
-                    style={{ color: '#1a365d' }}
-                  >
-                    Price Range
-                  </label>
-                  <select
-                    id="price-range"
-                    value={formData.priceRange}
-                    onChange={(e) => setFormData({ ...formData, priceRange: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-700"
-                    style={{ minHeight: '48px' }}
-                  >
-                    <option value="">Any Price</option>
-                    <option value="0-300000">Under $300K</option>
-                    <option value="300000-450000">$300K - $450K</option>
-                    <option value="450000-600000">$450K - $600K</option>
-                    <option value="600000-800000">$600K - $800K</option>
-                    <option value="800000-plus">$800K+</option>
-                  </select>
-                </div>
-
-                {/* Bedrooms */}
-                <div>
-                  <label
-                    htmlFor="beds"
-                    className="block text-sm font-semibold mb-2"
-                    style={{ color: '#1a365d' }}
-                  >
-                    Bedrooms
-                  </label>
-                  <select
-                    id="beds"
-                    value={formData.beds}
-                    onChange={(e) => setFormData({ ...formData, beds: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-700"
-                    style={{ minHeight: '48px' }}
-                  >
-                    <option value="">Any Beds</option>
-                    <option value="1">1+ Beds</option>
-                    <option value="2">2+ Beds</option>
-                    <option value="3">3+ Beds</option>
-                    <option value="4">4+ Beds</option>
-                    <option value="5">5+ Beds</option>
-                  </select>
-                </div>
-
-                {/* Bathrooms */}
-                <div>
-                  <label
-                    htmlFor="baths"
-                    className="block text-sm font-semibold mb-2"
-                    style={{ color: '#1a365d' }}
-                  >
-                    Bathrooms
-                  </label>
-                  <select
-                    id="baths"
-                    value={formData.baths}
-                    onChange={(e) => setFormData({ ...formData, baths: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-700"
-                    style={{ minHeight: '48px' }}
-                  >
-                    <option value="">Any Baths</option>
-                    <option value="1">1+ Baths</option>
-                    <option value="2">2+ Baths</option>
-                    <option value="3">3+ Baths</option>
-                    <option value="4">4+ Baths</option>
-                  </select>
-                </div>
-              </div>
-
-              {/* Search Button */}
-              <button
-                type="submit"
-                className="w-full py-4 px-8 rounded-lg font-semibold text-lg text-white transition-all transform hover:scale-[1.02] hover:shadow-xl focus:ring-4 focus:ring-orange-300 focus:outline-none"
-                style={{
-                  backgroundColor: '#ed8936',
-                  minHeight: '56px',
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#dd6b20')}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#ed8936')}
-              >
-                🔍 Search Properties
-              </button>
-            </form>
-
-            {/* Quick Contact */}
+            <div className="hero-realscout">
+              <style>{`.hero-realscout realscout-advanced-search { max-width: 100%; width: 100%; }`}</style>
+              <RealScoutAdvancedSearch />
+            </div>
             <div className="mt-6 pt-6 border-t-2 border-gray-100 text-center">
               <p className="text-gray-600 mb-2">Need personalized help?</p>
               <a

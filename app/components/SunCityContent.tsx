@@ -13,10 +13,10 @@ export default function SunCityContent() {
 
           <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
             <p className="leading-relaxed">
-              Sun City Aliante represents the pinnacle of active adult 55+ living in North Las
-              Vegas, offering a resort-style lifestyle with world-class amenities, social engagement
-              opportunities, and maintenance-free living that allows residents to focus on enjoying
-              retirement rather than home upkeep. Developed by{' '}
+              Sun City Aliante is an active adult 55+ community in North Las Vegas built by Del
+              Webb, offering resort-style living with world-class amenities, social engagement, and
+              maintenance-free homes. It represents the pinnacle of 55+ living in the area, with
+              residents focusing on enjoying retirement rather than home upkeep. Developed by{' '}
               <Link
                 href="/builders/del-webb"
                 className="text-blue-600 hover:text-blue-800 font-semibold hover:underline"
