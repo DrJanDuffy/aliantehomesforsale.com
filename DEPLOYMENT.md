@@ -3,6 +3,21 @@
 **Project:** aliantehomesforsale.com  
 **Project ID (API):** `prj_0RZw34lbC34PRwztLG5bqduiRxwY`
 
+## Still not deploying?
+
+Do this first so every push to `main` deploys regardless of CI:
+
+1. Open **[Vercel Dashboard](https://vercel.com)** → **janet-duffys-projects** (or your team) → project **aliantehomesforsale.com**.
+2. Go to **Settings** → **Git**.
+3. If **Connected Git Repository** is empty: click **Connect Git Repository** → **GitHub** → authorize if needed → select **DrJanDuffy/aliantehomesforsale.com**.
+4. Set **Production Branch** to `main` and save.
+
+After this, each push to `main` will appear under **Deployments** and trigger a new production build. No GitHub Actions required.
+
+If the repo is already connected, check **Deployments**: the latest run should show the commit you pushed. If there is no new deployment for your push, disconnect and reconnect the repo once.
+
+---
+
 ## Make push to `main` trigger a Vercel deploy
 
 **Option A – Vercel Git (recommended)**  
