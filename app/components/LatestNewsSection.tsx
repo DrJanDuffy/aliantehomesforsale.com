@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { getKcmFeedItems } from '../../lib/kcm-feed';
 
 /** Blog section powered by Simplifying the Market (KCM) RSS feed. Images from files.keepingcurrentmatters.com — img-src must allow that host. */
@@ -30,14 +31,16 @@ export default async function LatestNewsSection() {
               className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gray-100"
             >
               {item.image && (
-                <Link href={item.link} target="_blank" rel="noopener noreferrer">
-                  <img
+                <Link href={item.link} target="_blank" rel="noopener noreferrer" className="block">
+                  <Image
                     src={item.image}
                     alt={item.title}
                     width={400}
                     height={220}
-                    className="w-full h-52 object-cover"
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     loading="lazy"
+                    decoding="async"
+                    className="w-full h-52 object-cover"
                   />
                 </Link>
               )}

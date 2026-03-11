@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 interface PropertyCardProps {
   price: string;
   address: string;
@@ -22,12 +24,17 @@ function PropertyCard({ price, address, city, beds, baths, sqft, features }: Pro
 
   return (
     <article className="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group">
-      {/* Property Image */}
+      {/* Property Image: next/image for AVIF/WebP, responsive sizes, no CLS */}
       <div className="relative h-56 overflow-hidden">
-        <img
+        <Image
           src={imageUrl}
-          alt={`${address}, ${city}`}
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+          alt={`${address}, ${city} — Aliante homes for sale`}
+          width={600}
+          height={400}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          loading="lazy"
+          decoding="async"
+          className="object-cover transition-transform duration-300 group-hover:scale-110"
         />
 
         {/* Gradient Overlay */}

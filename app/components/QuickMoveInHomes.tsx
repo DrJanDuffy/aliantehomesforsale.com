@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 interface QuickMoveInHomeProps {
   badge: string;
   builder: string;
@@ -29,12 +31,17 @@ function QuickMoveInCard({
 
   return (
     <article className="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
-      {/* Property Image */}
+      {/* Property Image: next/image for AVIF/WebP, responsive sizes */}
       <div className="relative h-48 overflow-hidden">
-        <img
+        <Image
           src={imageUrl}
           alt={`${builder} new construction home in ${community}`}
-          className="w-full h-full object-cover"
+          width={600}
+          height={400}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          loading="lazy"
+          decoding="async"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
         <div className="absolute top-4 left-4 bg-green-500 text-white px-4 py-2 rounded-full font-bold text-sm shadow-lg">

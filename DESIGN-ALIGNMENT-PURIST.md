@@ -36,7 +36,7 @@ Goal: Align aliantehomesforsale.com structure, sections, and visual tone with th
 ## Recommended Implementation Phases
 
 ### Phase 1 – High impact, no new content
-- **Hero**: Add hero slideshow (2–3 slides), template-style headline (“Dr. Jan Duffy | Aliante North Las Vegas Real Estate”), subtext about RealScout + “Search Homes Below”). *Not yet done.*
+- **Hero**: ✅ Slideshow (3 slides), headline “Dr. Jan Duffy | Aliante North Las Vegas Real Estate”, RealScout subtext, “Search Homes Below” CTA, dot indicators + prev/next, pause on hover/focus.
 - **Section order**: ✅ Reordered: Hero → RealScout Search → Featured Properties → **Agent welcome** → Property Types → Market Insights → Trust → **CTA strip** → FAQ → Latest News.
 - **CTA strip**: ✅ `HomeCTAStrip.tsx`: View Listings (/homes-for-sale), Explore Neighborhoods (/neighborhoods), What’s My Home Worth (/contact).
 - **Agent welcome**: ✅ `AgentWelcomeSection.tsx`: “Dr. Jan Duffy Real Estate” block + Learn More → /about.

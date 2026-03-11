@@ -28,10 +28,17 @@ This project follows current best practices for Next.js 15, React 19, real estat
 
 ---
 
+## Images (March 2026)
+
+- **next/image everywhere** – Hero, featured properties, quick move-in, and Latest News use the Next.js `Image` component for automatic AVIF/WebP, responsive `srcset`, and LCP/CLS optimization. [Image Optimization 2026](https://askseocoach.com/technical-seo/web-performance/images/)
+- **Hero** – First slide uses `priority` and `sizes="100vw"`; other slides lazy-load with `fill` and `quality={80}`.
+- **Cards** – Explicit `width`/`height`, `sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"` for 3-column grids; `loading="lazy"` and `decoding="async"`.
+- **Config** – `next.config.ts` has `formats: ['image/webp', 'image/avif']` and `remotePatterns` for Unsplash and KCM.
+
 ## Core Web Vitals
 
-- **LCP (≤2.5s)** – Hero image uses `fetchPriority="high"`, explicit `width`/`height`; fonts use `display: 'swap'`. [Core Web Vitals 2025](https://www.digitalapplied.com/blog/core-webvitals-optimization-guide-2025)
-- **CLS (<0.1)** – All above-the-fold images have width/height; reserve space for dynamic content.
+- **LCP (≤2.5s)** – Hero uses `next/image` with `priority`; fonts use `display: 'swap'`. [Core Web Vitals 2025](https://www.digitalapplied.com/blog/core-webvitals-optimization-guide-2025)
+- **CLS (<0.1)** – All images use `next/image` with intrinsic dimensions or `fill` in a sized container.
 - **INP (≤200ms)** – Defer non-critical JS; RealScout script uses `strategy="afterInteractive"`.
 
 ---
