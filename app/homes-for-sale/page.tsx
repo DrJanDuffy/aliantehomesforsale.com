@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import StructuredData from '../components/StructuredData';
 import HomesForSaleHero from '../components/HomesForSaleHero';
+import RealScoutSearchSection from '../components/RealScoutSearchSection';
 import PropertyCategories from '../components/PropertyCategories';
 import HomesMarketSnapshot from '../components/HomesMarketSnapshot';
 import HomesSearchTips from '../components/HomesSearchTips';
@@ -27,7 +28,9 @@ export default function HomesForSale() {
         {/* Hero Section */}
         <HomesForSaleHero />
 
-        {/* Search widget is in layout below the fold on every page (#realscout-search) */}
+        {/* RealScout search: right below hero (primary lead-gen) */}
+        <RealScoutSearchSection />
+
         {/* Property Categories */}
         <PropertyCategories />
 
