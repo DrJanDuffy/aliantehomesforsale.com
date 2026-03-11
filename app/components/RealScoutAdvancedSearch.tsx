@@ -1,17 +1,9 @@
 'use client';
 
-import Script from 'next/script';
-
 export default function RealScoutAdvancedSearch() {
   return (
     <>
-      {/* Load RealScout Web Components Script */}
-      <Script
-        src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
-        type="module"
-        strategy="afterInteractive"
-      />
-
+      {/* RealScout script loaded once in root layout */}
       {/* RealScout Advanced Search Styles */}
       <style
         dangerouslySetInnerHTML={{

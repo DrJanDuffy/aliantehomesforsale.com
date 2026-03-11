@@ -38,7 +38,7 @@ const nextConfig: NextConfig = {
     // Advanced image optimizations
     dangerouslyAllowSVG: true,
     contentSecurityPolicy:
-      "default-src 'self'; script-src 'self' https://em.realscout.com; sandbox;",
+      "default-src 'self'; script-src 'self' https://em.realscout.com https://www.realscout.com; sandbox;",
     // Performance optimizations
     unoptimized: false,
     loader: 'default',

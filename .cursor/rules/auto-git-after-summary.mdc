@@ -1,0 +1,21 @@
+---
+description: When the chat shows a conversation summary, run git add, commit, and push.
+alwaysApply: true
+---
+
+# Auto Git After Summary
+
+When there is a **summary** in the chat (for example after "Conversation was summarized" or when you have produced a summary of completed work), automatically:
+
+1. **git add** – Stage all changes (`git add -A` or equivalent).
+2. **git commit** – Commit with a short, descriptive message based on the summary or changes (e.g. conventional commit style when appropriate).
+3. **git push** – Push to the current branch (`git push` or `git push origin <current-branch>`).
+
+## Before running
+
+- If the working tree is clean (`git status` shows nothing to commit), skip commit and push; you may still report that everything is already committed and pushed.
+- If the user has asked not to push, or to only add/commit, follow their instruction instead of this rule.
+
+## Scope
+
+This applies when a summary is present in the conversation (system-generated or your own summary of work done). It does not require the user to say "push" explicitly.

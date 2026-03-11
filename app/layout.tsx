@@ -1,11 +1,13 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import EnhancedNavigation from './components/EnhancedNavigation';
 import Breadcrumbs from './components/Breadcrumbs';
 import EnhancedFooter from './components/EnhancedFooter';
 import PerformanceMonitor from './components/PerformanceMonitor';
 import GoogleAnalytics from './components/GoogleAnalytics';
+import RealScoutOfficeListingsSection from './components/RealScoutOfficeListingsSection';
 import StructuredData from './components/StructuredData';
 import LocationSchema from './components/LocationSchema';
 
@@ -97,6 +99,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        {/* RealScout: load once for all widgets (office-listings, search, etc.) */}
+        <Script
+          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
+          strategy="afterInteractive"
+          type="module"
+        />
+
         {/* Core Structured Data - Organization & LocalBusiness & Location */}
         <StructuredData type="Organization" />
         <StructuredData type="LocalBusiness" />
@@ -106,6 +115,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Breadcrumbs />
 
         {children}
+
+        {/* RealScout office listings: below the fold on every page */}
+        <RealScoutOfficeListingsSection />
+
         <PerformanceMonitor />
 
         {/* Enhanced Footer with SEO-optimized structure */}

@@ -83,10 +83,10 @@ async function handleRequest(request) {
   // Add Content Security Policy that allows RealScout and Google Analytics
   const csp = [
     "default-src 'self'",
-    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://em.realscout.com https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com",
+    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://em.realscout.com https://www.realscout.com https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com",
     "style-src 'self' 'unsafe-inline'",
     "img-src 'self' data: https: https://www.google-analytics.com",
-    "connect-src 'self' https://em.realscout.com https://www.google-analytics.com https://region1.google-analytics.com https://region1.analytics.google.com",
+    "connect-src 'self' https://em.realscout.com https://www.realscout.com https://www.google-analytics.com https://region1.google-analytics.com https://region1.analytics.google.com",
     "font-src 'self' data:",
     "frame-src 'self'",
     "object-src 'none'",
