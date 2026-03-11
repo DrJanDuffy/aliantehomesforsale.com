@@ -28,4 +28,9 @@ export const siteConfig = {
     longitude: -115.1398,
   },
   searchUrlTemplate: 'https://www.aliantehomesforsale.com/search?q={search_term_string}',
+
+  /** Simplifying the Market (KCM) blog feed for Latest News section. Use English feed if available. */
+  kcmFeedUrl:
+    process.env.KCM_FEED_URL ||
+    'https://www.simplifyingthemarket.com/es/feed?a=956758-ef2edda2f940e018328655620ea05f18',
 } as const;
